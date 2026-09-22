@@ -375,6 +375,44 @@
   @media (max-width:1020px){ .courses-grid{grid-template-columns:1fr 1fr;} }
   @media (max-width:560px){ .courses-grid{grid-template-columns:1fr;} }
 
+  /* ---------- Destaque: turma nova ---------- */
+  .course-highlight{
+    display:flex; gap:28px; align-items:center; justify-content:space-between; flex-wrap:wrap;
+    background:#fff; border:2px solid var(--coral); border-radius:var(--radius-card);
+    padding:28px 30px; margin-bottom:30px; position:relative; overflow:hidden;
+    box-shadow:var(--shadow);
+  }
+  .course-highlight::before{
+    content:""; position:absolute; top:-50px; right:-50px; width:180px; height:180px; border-radius:50%;
+    background:radial-gradient(circle, rgba(239,68,94,0.16), transparent 70%);
+  }
+  .course-highlight .copy{position:relative; min-width:0;}
+  .course-highlight .badge-new{
+    display:inline-flex; align-items:center; gap:6px;
+    background:var(--coral); color:#fff; font-size:0.72rem; font-weight:800;
+    letter-spacing:0.06em; text-transform:uppercase; padding:6px 13px; border-radius:100px;
+    margin-bottom:12px;
+  }
+  .course-highlight .badge-new svg{width:14px; height:14px;}
+  .course-highlight h3{font-size:1.35rem;}
+  .course-highlight p{color:var(--ink-soft); margin-top:8px; font-size:0.98rem; max-width:56ch;}
+  .course-highlight .hl-meta{display:flex; flex-wrap:wrap; gap:8px; margin-top:16px;}
+  .course-highlight .hl-meta span{
+    font-size:0.78rem; font-weight:700; color:var(--plum-deep); background:var(--paper-alt);
+    padding:5px 12px; border-radius:100px;
+  }
+  .course-highlight .hl-cta{position:relative; flex:none; display:flex; flex-direction:column; gap:10px; align-items:flex-start;}
+  .course-highlight .hl-cta .mini-cta{
+    font-weight:700; font-size:0.86rem; color:var(--coral-dark); text-decoration:none;
+    display:inline-flex; align-items:center; gap:6px;
+  }
+  .course-highlight .hl-cta .mini-cta svg{width:15px;height:15px;}
+  @media (max-width:720px){
+    .course-highlight{flex-direction:column; align-items:flex-start;}
+    .course-highlight .hl-cta{width:100%;}
+    .course-highlight .hl-cta .btn{width:100%; justify-content:center;}
+  }
+
   /* ---------- Metodologia (dark section, compact) ---------- */
   .method{
     background:var(--plum-deep);
@@ -700,6 +738,26 @@
         <span class="eyebrow">modalidades</span>
         <h2>Escolha a melhor opção pra você</h2>
         <p class="sub">Trabalhamos com aulas individuais, em dupla ou em pequenos grupos — no formato que funcionar melhor para você. Confira as modalidades, do primeiro contato com o inglês até a fluência para o mundo profissional.</p>
+      </div>
+      <div class="course-highlight reveal">
+        <div class="copy">
+          <span class="badge-new"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l1.8 5.6L19 9l-5.2 1.4L12 16l-1.8-5.6L5 9l5.2-1.4L12 2z"/></svg> Turma nova</span>
+          <h3>Inglês 101 — Turma para Iniciantes Adultos (Nível A0)</h3>
+          <p>Nunca estudou inglês? Comece do jeito certo, no seu ritmo, com quem entende as dificuldades de começar do zero. Turmas pequenas, 100% online, com certificado ao final.</p>
+          <div class="hl-meta">
+            <span>Nível A0</span>
+            <span>Quintas, 20h–21h30</span>
+            <span>Início 08/10/2026</span>
+            <span>Turmas de 2 a 6 alunos</span>
+          </div>
+        </div>
+        <div class="hl-cta">
+          <a class="btn btn-primary" href="ingles101.html">
+            Saiba mais
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg>
+          </a>
+          <a class="mini-cta" href="https://wa.me/message/C7VR3N4I2BXJH1" target="_blank" rel="noopener">Vagas limitadas — garantir vaga <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m9 6 6 6-6 6"/></svg></a>
+        </div>
       </div>
       <div class="courses-grid reveal">
         <div class="course-card">
