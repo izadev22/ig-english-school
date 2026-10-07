@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="14" fill="#432C3E"/>
+  <g transform="rotate(-9 32 32)">
+    <circle cx="32" cy="32" r="25" fill="none" stroke="#EFC868" stroke-width="3.5"/>
+    <text x="32" y="36.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-weight="700" font-size="22" fill="#EFC868">B2</text>
+    <text x="32" y="47" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="7.5" letter-spacing="1" fill="#EFC868">FIRST</text>
+  </g>
+</svg>

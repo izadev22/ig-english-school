@@ -4,7 +4,8 @@
 
   var UNITS = [
     {n:1, title:"Lifestyle", href:"unit-01.html", topics:"Habitual behaviour · used to and would · be/get used to · clothes · get"},
-    {n:2, title:"High energy", href:"unit-02.html", topics:"Gerunds and infinitives · music · sport · affixes"}
+    {n:2, title:"High energy", href:"unit-02.html", topics:"Gerunds and infinitives · music · sport · affixes"},
+    {n:3, title:"A change for the better?", href:"unit-03.html", topics:"Comparisons · articles · technology · nouns · diphthongs"}
   ];
   var TOTAL_UNITS = 12;
 

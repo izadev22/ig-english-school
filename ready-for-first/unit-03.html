@@ -1,0 +1,871 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Unit 3 · A change for the better? — Ready for First practice</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Ready for First Unit 3 (A change for the better?): interactive practice for the Cambridge B2 First exam.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Caveat:wght@600;700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet">
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/icon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta name="theme-color" content="#432C3E">
+<link rel="stylesheet" href="assets/rff.css">
+</head>
+<body>
+
+<div class="tb">
+  <div class="tb-inner">
+    <a class="tb-back" href="../index.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+      IG English School
+    </a>
+    <div class="tb-title">
+      <a href="index.html"><strong>Ready for First</strong></a>
+      <span>Practice notebook · Cambridge B2 First</span>
+    </div>
+  </div>
+</div>
+
+<main class="shell">
+  <aside class="rail" id="rail"></aside>
+  <div class="content">
+    <header class="view-head">
+      <span class="kicker">Unit 3</span>
+      <h1>A change for the better?</h1>
+      <p>Comparisons, articles, technology, nouns, expressions with as ... as, diphthongs. Exam practice: Reading and Use of English Parts 3, 4 and 5, Writing Parts 1 and 2, Listening Parts 2 and 3, Speaking Parts 1, 3 and 4.</p>
+    </header>
+
+    <nav class="tabs" aria-label="Unit 3 sections">
+      <button class="tab-btn active" data-tab="vocab">Vocabulary</button>
+      <button class="tab-btn" data-tab="grammar">Grammar</button>
+      <button class="tab-btn" data-tab="rue">Reading &amp; Use of English</button>
+      <button class="tab-btn" data-tab="writing">Writing</button>
+      <button class="tab-btn" data-tab="listening">Listening</button>
+      <button class="tab-btn" data-tab="speaking">Speaking</button>
+      <button class="tab-btn" data-tab="pron">Pronunciation</button>
+    </nav>
+
+    <!-- ================= VOCABULARY ================= -->
+    <section class="page active" data-tab="vocab">
+
+      <div class="block" data-ex="wf-nouns-listening">
+        <span class="kicker">Word formation · Nouns</span>
+        <h3>Nouns from the listening</h3>
+        <p class="instr">Write the correct noun form of the words in brackets to complete these extracts from the RoboCup talk. You may need a plural form.</p>
+        <div class="gaptext" id="nounsListen"></div>
+        <button class="btn btn-primary btn-sm" data-check="nounsListen">Check answers</button>
+        <p class="result-line" id="nounsListen-result"></p>
+      </div>
+
+      <div class="block" data-ex="wf-nouns-suffix">
+        <h3>One suffix, four nouns</h3>
+        <p class="instr">Use one suffix from the box for all four words in each group. The last word in each group also needs a spelling change. Example: <em>object, react, predict, convert → objection, reaction, prediction, conversion</em>.</p>
+        <div class="bank"><span>-ance</span><span>-ation</span><span>-ence</span><span>-ity</span><span>-ness</span><span>-ment</span></div>
+        <div class="gaptext" id="nounsSuffix"></div>
+        <button class="btn btn-primary btn-sm" data-check="nounsSuffix">Check answers</button>
+        <p class="result-line" id="nounsSuffix-result"></p>
+      </div>
+
+      <div class="block" data-ex="wf-nouns-texts">
+        <h3>Nouns in context</h3>
+        <p class="instr">Use the word in capitals to form a noun that fits the gap. You may need a plural form. Read the whole paragraph first: is the noun singular or plural, positive or negative?</p>
+        <div class="gaptext" id="nounsTexts"></div>
+        <button class="btn btn-primary btn-sm" data-check="nounsTexts">Check answers</button>
+        <p class="result-line" id="nounsTexts-result"></p>
+      </div>
+
+      <div class="block">
+        <span class="kicker">Vocabulary · Technology</span>
+        <h3>How do you do it?</h3>
+        <p class="instr">Work with a partner. Which of these alternatives do you do? Which do you prefer? Give reasons.</p>
+        <ul class="statements" style="list-style:disc;">
+          <li>call people using a landline, smartphone, tablet, laptop or desktop computer</li>
+          <li>communicate with people via email, text or social media</li>
+          <li>use predictive text, abbreviations or whole words when messaging people</li>
+          <li>access the internet via smartphone, tablet, laptop, desktop or other device</li>
+          <li>comment on posts, threads, blogs or photos</li>
+          <li>share memes, GIFs or links on social media</li>
+          <li>use a headset or chat to communicate with other players when gaming</li>
+          <li>take photos with a camera, phone, tablet or other device</li>
+        </ul>
+      </div>
+
+      <div class="block" data-ex="voc-abbrev">
+        <h3>Messaging abbreviations</h3>
+        <p class="instr">Choose the correct meaning of each abbreviation.</p>
+        <div id="abbrev"></div>
+      </div>
+
+      <div class="block" data-ex="voc-asas">
+        <span class="kicker">Vocabulary · Expressions with as ... as</span>
+        <h3>From the listening</h3>
+        <p class="instr">Complete these sentences from the listening with a word from the box.</p>
+        <div class="bank"><span>far</span><span>long</span><span>many</span><span>soon</span><span>well</span></div>
+        <div class="gaptext" id="asAs"></div>
+        <button class="btn btn-primary btn-sm" data-check="asAs">Check answers</button>
+        <p class="result-line" id="asAs-result"></p>
+      </div>
+
+      <div class="block" data-ex="voc-asas-meaning">
+        <h3>What do they mean?</h3>
+        <p class="instr">Match each expression to a word or phrase with a similar meaning.</p>
+        <div id="asAsMeaning"></div>
+        <button class="btn btn-primary btn-sm" data-check="asAsMeaning" style="margin-top:10px;">Check answers</button>
+        <p class="result-line" id="asAsMeaning-result"></p>
+      </div>
+
+    </section>
+
+    <!-- ================= GRAMMAR ================= -->
+    <section class="page" data-tab="grammar">
+
+      <div class="block" data-ex="gram-comp-text">
+        <span class="kicker">Grammar · Comparisons</span>
+        <h3>Comparisons in <em>My digital detox</em></h3>
+        <p class="instr">Complete these sentences from the article. If a word is given in brackets, write the correct form of it. You may need more than one word.</p>
+        <div class="gaptext" id="compText"></div>
+        <button class="btn btn-primary btn-sm" data-check="compText">Check answers</button>
+        <p class="result-line" id="compText-result"></p>
+      </div>
+
+      <div class="block" data-ex="gram-comp-forms">
+        <h3>Comparative and superlative forms</h3>
+        <p class="instr">Write the comparative and superlative of each word. Example: <em>strange → stranger, the strangest</em>.</p>
+        <div class="gaptext" id="compForms"></div>
+        <button class="btn btn-primary btn-sm" data-check="compForms">Check answers</button>
+        <p class="result-line" id="compForms-result"></p>
+      </div>
+
+      <div class="block">
+        <h3>The rules in brief</h3>
+        <div class="margin-note">
+          <p><strong>Form:</strong> one-syllable adjectives add <em>-er/-est</em> (cheap, cheaper, the cheapest; double the consonant after a short vowel: thin, thinner). Two-syllable adjectives ending in <em>-y</em> change to <em>-ier/-iest</em> (happier). Most other adjectives with two or more syllables, and most adverbs, use <em>more/the most</em> (more sincere, more quietly). Some two-syllable adjectives can do both (cleverer / more clever). Irregular: good/well → better → the best; bad/badly → worse → the worst; far → further/farther → the furthest/farthest.</p>
+          <p><strong>Small and big differences:</strong> <em>a bit, a little, slightly</em> + comparative (slightly bigger); <em>much, (quite) a lot, far, significantly</em> + comparative (much faster). <em>By far / easily</em> + superlative (by far the best). Use <em>in</em> before the group: the naughtiest boy <em>in</em> the class.</p>
+          <p><strong>as ... as:</strong> <em>(just) as</em> + adjective + <em>as</em> for similarity; <em>not (quite / nearly / so) ... as</em> for differences (<em>not nearly as bad as</em> = a big difference). <em>as much</em> + uncountable, <em>as many</em> + countable. <em>the same</em> + noun + <em>as</em> (the same age as my dad).</p>
+          <p><strong>Other patterns:</strong> <em>less/the least</em> are the opposites of <em>more/the most</em>; <em>fewer</em> with plural nouns. <em>The</em> + comparative, <em>the</em> + comparative for changes that happen together (The more money I have, the faster I spend it). <em>There isn't much difference between ...</em>. <em>make more of an effort / pose more of a danger</em>.</p>
+        </div>
+      </div>
+
+      <div class="block" data-ex="gram-comp-rfg1">
+        <span class="kicker">Ready for Grammar</span>
+        <h3>Choose an adjective and the right form</h3>
+        <p class="instr">Complete the sentences with adjectives from the box. You may need the comparative or superlative form, or you may not need to change the adjective.</p>
+        <div class="bank"><span>boring</span><span>careful</span><span>cold</span><span>early</span><span>fast</span><span>good</span><span>hard</span><span>hot</span><span>quiet</span><span>tired</span></div>
+        <div class="gaptext" id="compRfg1"></div>
+        <button class="btn btn-primary btn-sm" data-check="compRfg1">Check answers</button>
+        <p class="result-line" id="compRfg1-result"></p>
+      </div>
+
+      <div class="block" data-ex="gram-comp-rfg2">
+        <h3>Same meaning</h3>
+        <p class="instr">Complete sentence b so that it means the same as sentence a. Use words from the box; some are used more than once.</p>
+        <div class="bank"><span>as</span><span>between</span><span>great</span><span>many</span><span>more</span><span>much</span><span>not</span><span>same</span><span>such</span><span>the</span></div>
+        <div class="gaptext" id="compRfg2"></div>
+        <button class="btn btn-primary btn-sm" data-check="compRfg2">Check answers</button>
+        <p class="result-line" id="compRfg2-result"></p>
+      </div>
+
+      <div class="block" data-ex="gram-comp-review">
+        <span class="kicker">Review · Comparisons</span>
+        <h3>Max has changed</h3>
+        <p class="instr">Complete the blog post with words from the box. You won't need all the words.</p>
+        <div class="bank"><span>by</span><span>in</span><span>less</span><span>little</span><span>lot</span><span>many</span><span>more</span><span>most</span><span>much</span><span>nearly</span><span>of</span><span>so</span><span>such</span><span>the</span><span>to</span></div>
+        <div class="gaptext" id="compReview"></div>
+        <button class="btn btn-primary btn-sm" data-check="compReview">Check answers</button>
+        <p class="result-line" id="compReview-result"></p>
+      </div>
+
+      <div class="block" data-ex="gram-articles-text">
+        <span class="kicker">Grammar · Articles</span>
+        <h3>A century of change</h3>
+        <p class="instr">Complete each gap with <em>a</em>, <em>an</em> or <em>the</em>, or type a dash (–) if no article is needed. There is an example at the beginning (0).</p>
+        <div class="gaptext" id="articlesText"></div>
+        <button class="btn btn-primary btn-sm" data-check="articlesText">Check answers</button>
+        <p class="result-line" id="articlesText-result"></p>
+      </div>
+
+      <div class="block">
+        <h3>Articles: the rules in brief</h3>
+        <div class="margin-note">
+          <p><strong>the</strong>: when there is only one (the manager); when something is mentioned again; when both people know what you mean (The film starts in 10 minutes); for a specific part of something (the beginning of the film); for groups like inventions and animal species (The mop was invented in Spain); with adjectives for groups of people (the homeless, the rich); with superlatives; with musical instruments (play the piano); with transport on a timetable (get the bus); with some countries (the USA), oceans, mountain ranges, deserts and rivers.</p>
+          <p><strong>a/an</strong>: when you first mention a singular countable noun; for any one of several things (Could you pass me a biscuit?); for jobs (She's a nuclear scientist); with some numbers (a hundred, a thousand); meaning <em>per</em> (twice a day, 50 miles an hour).</p>
+          <p><strong>No article</strong>: for plural or uncountable nouns in general (Do you think computers will replace teachers?); with most streets, towns, cities and countries; in common expressions like <em>go home, be at work/school, in hospital, go by car, on holiday, have breakfast, at night</em>.</p>
+        </div>
+      </div>
+
+      <div class="block" data-ex="gram-articles-rfg">
+        <span class="kicker">Ready for Grammar</span>
+        <h3>Article or no article?</h3>
+        <p class="instr">Write <em>a</em>, <em>an</em> or <em>the</em>, or a dash (–) for no article.</p>
+        <div class="gaptext" id="articlesRfg"></div>
+        <button class="btn btn-primary btn-sm" data-check="articlesRfg">Check answers</button>
+        <p class="result-line" id="articlesRfg-result"></p>
+      </div>
+
+      <div class="block" data-ex="gram-articles-errors">
+        <span class="kicker">Review · Articles</span>
+        <h3>Find the mistake</h3>
+        <p class="instr">Each line has one mistake with articles: an article is missing, wrong or not needed. Rewrite the underlined part correctly. The first two have been done for you: <em>always <b>a</b> good idea</em>; <em>in <s>the</s> different ways</em>.</p>
+        <div class="gaptext" id="articlesErrors"></div>
+        <button class="btn btn-primary btn-sm" data-check="articlesErrors">Check answers</button>
+        <p class="result-line" id="articlesErrors-result"></p>
+      </div>
+
+    </section>
+
+    <!-- ================= READING & USE OF ENGLISH ================= -->
+    <section class="page" data-tab="rue">
+
+      <div class="block wide" data-ex="rue-part5">
+        <span class="kicker">Part 5 · Multiple choice</span>
+        <h3>My digital detox</h3>
+        <p class="instr">Read the article, then for questions 1–6 choose the answer (A, B, C or D) which fits best according to the text.</p>
+        <div class="tip"><strong>How to go about it:</strong> read the article first for an overall understanding. The questions are in the same order as the information in the text, so find the part that relates to each question. Eliminate the options that are clearly wrong, then check the others. If you still can't decide, choose one: marks are not taken off for wrong answers.</div>
+        <div class="passage" id="detoxText"></div>
+        <div id="part5Qs"></div>
+        <div class="tip">In the exam, Part 5 questions can test a detail (question 1), the writer's attitude or opinion (2), a comparison (3), or the meaning of a phrase in context (5). The last question sometimes tests the whole text: the writer's purpose or the overall tone.</div>
+      </div>
+
+      <div class="block wide" data-ex="rue-part3-circus">
+        <span class="kicker">Ready for Use of English · Part 3</span>
+        <h3>Careers information: circus performers</h3>
+        <p class="instr">Use the word in capitals to form a word that fits the gap. There is an example at the beginning (0).</p>
+        <div class="gaptext" id="circus"></div>
+        <button class="btn btn-primary btn-sm" data-check="circus">Check answers</button>
+        <p class="result-line" id="circus-result"></p>
+      </div>
+
+      <div class="block wide" data-ex="rue-part3-hart">
+        <span class="kicker">Review · Part 3 · Word formation</span>
+        <h3>Michael Hart</h3>
+        <p class="instr">Use the word in capitals to form a word that fits the gap. There is an example at the beginning (0).</p>
+        <div class="gaptext" id="hart"></div>
+        <button class="btn btn-primary btn-sm" data-check="hart">Check answers</button>
+        <p class="result-line" id="hart-result"></p>
+      </div>
+
+      <div class="block" data-ex="rue-part4">
+        <span class="kicker">Review · Part 4 · Key word transformation</span>
+        <h3>Same meaning, different words</h3>
+        <p class="instr">Complete the second sentence so that it means the same as the first, using the word given. Use between two and five words, including the word given.</p>
+        <div id="kwt3"></div>
+        <button class="btn btn-primary btn-sm" data-check="kwt3" style="margin-top:6px;">Check answers</button>
+        <p class="result-line" id="kwt3-result"></p>
+      </div>
+
+    </section>
+
+    <!-- ================= WRITING ================= -->
+    <section class="page" data-tab="writing">
+
+      <div class="block wide" data-ex="writing-essay">
+        <span class="kicker">Part 1 · Essay</span>
+        <h3>Has technology made a positive contribution to sport today?</h3>
+        <div class="margin-note"><p><strong>The task:</strong> Your English class has been discussing the effect of technology on sport. Now your English teacher has asked you to write an essay. Write an essay using <strong>all</strong> the notes and giving reasons for your point of view. <em>Notes — write about: 1 the use of technology to improve performance; 2 the use of technology in refereeing decisions; 3 ... (your own idea).</em></p></div>
+        <div class="model-answer show" style="margin-bottom:16px;">
+          <p class="letter"><strong>1</strong> <u>Some people feel</u> that technology has helped to improve our enjoyment of sport and they approve of its use. <u>Others, however, believe</u> it has a negative effect and would prefer to see its influence limited.
+<strong>2</strong> <u>On the positive side</u>, the use of technology in football to decide if a goal has been scored or not, or in tennis to judge whether the ball is in or out, clearly helps to make the games fairer. Communication between sports officials via microphones also improves the quality of their decisions. <u>Another positive influence</u> of technology is its role in increasing safety for competitors. Modern helmet design in cycling is an example of this.
+<strong>3</strong> <u>On the negative side</u>, the use of technology to improve performance can give some sportspeople an unfair advantage over others. <u>For this reason</u>, full-length swimsuits and so-called 'superbikes' have now both been banned from some swimming and cycling competitions.
+<strong>4</strong> <u>In conclusion</u>, I think that as long as sporting achievements remain the result of human effort, rather than scientific advances, then the contribution of technology will always be positive.</p>
+        </div>
+        <div id="essayQs"></div>
+        <p class="instr" style="margin-top:8px;">What is the purpose of each paragraph?</p>
+        <div id="essayParas"></div>
+        <button class="btn btn-primary btn-sm" data-check="essayParas" style="margin-top:10px;">Check answers</button>
+        <p class="result-line" id="essayParas-result"></p>
+      </div>
+
+      <div class="block" data-ex="writing-linkers">
+        <h3>Linking expressions</h3>
+        <p class="instr">What is each linking expression used for? Some come from the model answer, the others are useful alternatives.</p>
+        <div id="linkers"></div>
+        <button class="btn btn-primary btn-sm" data-check="linkers" style="margin-top:10px;">Check answers</button>
+        <p class="result-line" id="linkers-result"></p>
+      </div>
+
+      <div class="block">
+        <h3>Your turn: essay</h3>
+        <div class="margin-note"><p>Your English class has been discussing the role of information and communications technology in today's world. Now your English teacher has asked you to write an essay. Write an essay using <strong>all</strong> the notes and giving reasons for your point of view.</p>
+          <p><strong>Do we really need the internet to enjoy life to the full?</strong> Notes — write about: 1 friendships; 2 entertainment; 3 ... (your own idea).</p></div>
+        <div class="tip"><strong>Choosing your own idea:</strong> consider how technology does and doesn't help us enjoy life. <em>Reference material</em>: quick, easy access to information gives us more time for leisure. <em>Shopping</em>: simple, with a wider range of products, but perhaps less fun than going to shops with friends. <em>Working at home</em>: more time with family, but it can be lonely and boring. <em>Health</em>: a sedentary lifestyle, back problems, eyesight.</div>
+        <div class="tip"><strong>How to go about it:</strong> for each note, list positive and negative ideas (friendships — positive: we can be in constant contact; negative: we might not develop good social skills, and it's no substitute for face-to-face conversation). Choose the points you want to include, then plan your introduction and conclusion. Use paragraphs and linking devices, a range of vocabulary and grammar, and a consistently formal or neutral style. Check your grammar, spelling and punctuation at the end.</div>
+        <div class="freewrite">
+          <textarea id="essayFree" placeholder="Do we really need the internet to enjoy life to the full?" aria-label="Your essay"></textarea>
+          <p class="word-counter" id="essayFreeCounter">0 words (target: 140–190)</p>
+        </div>
+        <ul class="checklist">
+          <li><label><input type="checkbox"> I wrote about both notes and added my own idea</label></li>
+          <li><label><input type="checkbox"> I gave both sides of the argument and a clear conclusion</label></li>
+          <li><label><input type="checkbox"> I used paragraphs and a range of linking expressions</label></li>
+          <li><label><input type="checkbox"> My style is formal or neutral throughout (no contractions)</label></li>
+        </ul>
+        <button class="btn btn-ghost btn-sm" data-script="essayModel" data-open-label="Hide the sample answer" aria-expanded="false" style="margin-top:14px;">Show a sample answer</button>
+        <div class="model-answer" id="essayModel">
+          <p class="letter">The internet is everywhere and there are many advantages for have it. However, it is not sure that we must have it for to enjoy the life completely.
+On the one hand it is much better to speak with your friends personally and don't get in touch with them online all the time. The only way to keep your friends and have a good relationship with them is see them regularly, rather than to chat on the social media. Also, about the entertainment, it is better to play the games or watch the films with other people, not by your own.
+On the other hand, shopping online is better that go to the shops. There are more products for to choose and it is not so tired as walk round shops all the day try the clothes.
+To conclude, we don't really need the internet to enjoy the life to the full. A computer or a phone cannot give you the good relations you have when you are with another people. However, it is useful for some things, like the shopping.</p>
+          <p style="margin-top:6px;">181 words · Mark: <strong>pass</strong></p>
+          <h4>Examiner comments</h4>
+          <p><strong>Content:</strong> All content is relevant and the reader is on the whole informed, though not fully. The student refers to both friendships and entertainment, but the latter point is not fully developed. Shopping is the student's own idea. A clear conclusion says that computers and phones are no substitute for contact with real people, although they can be useful.</p>
+          <p><strong>Communicative achievement:</strong> There is a clear essay structure: an opening statement, two paragraphs on the pros and cons of the internet, and a concluding paragraph with the writer's opinion. The register is consistently neutral, with some more formal language to introduce ideas (<em>On the one hand; On the other hand; To conclude; However</em>).</p>
+          <p><strong>Organisation:</strong> Clear paragraphs and a reasonable selection of linking words, particularly across paragraphs. The student probably means <em>as for entertainment</em> when writing <em>about the entertainment</em>.</p>
+          <p><strong>Language:</strong> The errors do not stop communication, but there are so many of them that they distract the reader, especially with verb forms (<em>advantages for have it; for to enjoy; better that go</em>) and articles (<em>enjoy the life; chat on the social media; the games or the films</em>). Some complex structures and less common vocabulary are used successfully (<em>it is much better to speak with your friends personally; get in touch with them online</em>).</p>
+        </div>
+      </div>
+
+      <div class="block">
+        <span class="kicker">Review · Part 2 · Article</span>
+        <h3>Your turn: life changes</h3>
+        <div class="margin-note"><p>You have seen this announcement in an international magazine. <strong>LIFE CHANGES.</strong> Write us an article about a time in your life when something changed. Mention the reasons for the change and describe your feelings before and after it. We will publish the most interesting articles next month.</p></div>
+        <p class="instr">Write your article in 140–190 words. Remember what makes a good article (Unit 2): an interesting title, a strong opening, a lively style that talks to the reader, and a memorable ending.</p>
+        <div class="freewrite">
+          <textarea id="articleFree" placeholder="Title ..." aria-label="Your article"></textarea>
+          <p class="word-counter" id="articleFreeCounter">0 words (target: 140–190)</p>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ================= LISTENING ================= -->
+    <section class="page" data-tab="listening">
+
+      <div class="block" data-ex="listening-part2">
+        <span class="kicker">Part 2 · Sentence completion</span>
+        <h3>RoboCup</h3>
+        <p class="instr">You will hear an Australian student called Paul giving a talk about RoboCup, an international robotics competition. For questions 1–10, complete the sentences with a word or short phrase.</p>
+        <div class="tip"><strong>Before you listen:</strong> read the sentences and think about the kind of information that fits each gap: a place, a number, a noun, an adjective? You may hear information that could fit a gap but doesn't answer the question.</div>
+        <div class="audio-box">
+          <span class="audio-label">Track 3.1</span>
+          <audio controls preload="none" src="audio/unit-03/track-3.1.mp3"></audio>
+          <span class="audio-note">Listen twice, as in the exam.</span>
+        </div>
+        <div class="gaptext" id="robo"></div>
+        <div class="btn-row" style="margin-top:8px;">
+          <button class="btn btn-primary btn-sm" data-check="robo">Check answers</button>
+          <button class="btn btn-ghost btn-sm" data-script="roboScript" data-open-label="Hide the audioscript" aria-expanded="false">Show where the answers are</button>
+        </div>
+        <p class="result-line" id="robo-result"></p>
+        <div class="script-lines" id="roboScript"></div>
+        <div class="tip">Discuss: Would you be interested in attending or taking part in RoboCup? Do you agree with Paul that robots "might become a reality in the home in the future"?</div>
+      </div>
+
+      <div class="block" data-ex="listening-part3">
+        <span class="kicker">Part 3 · Multiple matching</span>
+        <h3>Changes at school</h3>
+        <p class="instr">You will hear five short extracts in which secondary school teachers are talking about changes that have been made in their schools. For questions 1–5, choose from the list (A–H) what each speaker says about the changes. Use the letters only once. There are three extra letters which you do not need to use.</p>
+        <div class="tip"><strong>How to go about it:</strong> underline the key words in the eight options (A: <em>a number of new problems</em>). But if you hear one of those words, don't assume that option is the answer. Listen carefully both times before you decide.</div>
+        <ol class="statements" type="A">
+          <li>The change has resulted in a number of new problems.</li>
+          <li>Too many changes have been introduced.</li>
+          <li>The change is insufficient to solve a problem.</li>
+          <li>We should have been consulted about the change.</li>
+          <li>The change is being made for selfish reasons.</li>
+          <li>Most parents support the change.</li>
+          <li>The change has brought unexpected benefits.</li>
+          <li>Most of the teachers feel the change is unnecessary.</li>
+        </ol>
+        <div class="audio-box">
+          <span class="audio-label">Track 3.2</span>
+          <audio controls preload="none" src="audio/unit-03/track-3.2.mp3"></audio>
+          <span class="audio-note">Listen twice, as in the exam.</span>
+        </div>
+        <div id="teachers"></div>
+        <div class="btn-row" style="margin-top:10px;">
+          <button class="btn btn-primary btn-sm" data-check="teachers">Check answers</button>
+          <button class="btn btn-ghost btn-sm" data-script="teachersScript" data-open-label="Hide the audioscript" aria-expanded="false">Show where the answers are</button>
+        </div>
+        <p class="result-line" id="teachers-result"></p>
+        <div class="script-lines" id="teachersScript"></div>
+        <div class="tip">Speak: tell your partner about at least two changes that have happened recently in your life. Describe the reasons for them and how you feel about them.</div>
+      </div>
+
+    </section>
+
+    <!-- ================= SPEAKING ================= -->
+    <section class="page" data-tab="speaking">
+
+      <div class="block wide">
+        <span class="kicker">Part 1 · Interview</span>
+        <h3>Change: answer in 20 seconds</h3>
+        <p class="instr">Press Start and answer out loud. Develop your answers with reasons and examples.</p>
+        <div id="speakingP1List"></div>
+      </div>
+
+      <div class="block wide">
+        <span class="kicker">Part 3 · Collaborative task</span>
+        <h3>A century of change</h3>
+        <p class="instr">Your class has decided to do a project on changes and developments over the last century. Talk with your partner about some of the changes that have taken place in the different areas of our lives below.</p>
+        <div class="mindmap">
+          <span class="mm-centre">What changes have taken place in these different areas over the last century?</span>
+          <span>Free time</span>
+          <span>Communication</span>
+          <span>Education</span>
+          <span>Medicine</span>
+          <span>Travel and transport</span>
+        </div>
+        <div class="timer-box"><span class="q">Task 1 · discuss together</span><span class="clock" id="clockP3a">2:00</span><button class="btn btn-ghost btn-sm" data-timer="120" data-clock="clockP3a">Start</button></div>
+        <button class="btn btn-ghost btn-sm" data-script="p3Task2" data-open-label="Hide the second question" aria-expanded="false">I've finished task 1: show the second question</button>
+        <div class="script-lines" id="p3Task2">
+          <p style="font-size:1rem; color:var(--plum-deep);"><strong>Now decide in which two areas the most positive changes have taken place.</strong></p>
+          <div class="timer-box"><span class="q">Task 2 · decide together</span><span class="clock" id="clockP3b">1:00</span><button class="btn btn-ghost btn-sm" data-timer="60" data-clock="clockP3b">Start</button></div>
+        </div>
+        <button class="btn btn-ghost btn-sm" data-script="p3Lang" data-open-label="Hide useful language" aria-expanded="false">Show useful language</button>
+        <div class="phrase-bank" id="p3Lang">
+          <h4>Relevant grammar</h4>
+          <ul>
+            <li>Present perfect: <em>Technology has changed the way we communicate.</em></li>
+            <li>Past habits: <em>We used to play outside more.</em></li>
+            <li>Present habits: <em>It's quite normal for schools to provide tablets now.</em></li>
+            <li>Comparisons: <em>We're a lot healthier now, thanks to medical advances.</em></li>
+          </ul>
+          <h4>Asking questions</h4>
+          <ul><li>Can you think of any more changes?</li><li>Do you have any other ideas?</li><li>Do you agree with me on that?</li></ul>
+          <h4>Agreeing and disagreeing</h4>
+          <ul><li>That's right/true. · I think so, too. · I agree (up to a point).</li><li>That's not right/true. · I really don't think so. · I completely disagree.</li></ul>
+        </div>
+      </div>
+
+      <div class="block wide">
+        <span class="kicker">Part 4 · Discussion</span>
+        <h3>More about change</h3>
+        <p class="instr">Give full answers with reasons. You can also discuss the questions with your partner.</p>
+        <div id="speakingP4List"></div>
+      </div>
+
+    </section>
+
+    <!-- ================= PRONUNCIATION ================= -->
+    <section class="page" data-tab="pron">
+
+      <div class="block" data-ex="pron-match">
+        <span class="kicker">Pronunciation · Diphthongs</span>
+        <h3>Match the words to their pronunciation</h3>
+        <p class="instr">These words come from <em>My digital detox</em>. Match each one to its pronunciation, then listen to check.</p>
+        <div class="audio-box">
+          <span class="audio-label">Track 3.3</span>
+          <audio controls preload="none" src="audio/unit-03/track-3.3.mp3"></audio>
+        </div>
+        <div id="diphMatch"></div>
+        <button class="btn btn-primary btn-sm" data-check="diphMatch" style="margin-top:10px;">Check answers</button>
+        <p class="result-line" id="diphMatch-result"></p>
+      </div>
+
+      <div class="block" data-ex="pron-rules">
+        <h3>What is a diphthong?</h3>
+        <p class="instr">Choose the correct option to complete each rule.</p>
+        <div id="diphRules"></div>
+      </div>
+
+      <div class="block" data-ex="pron-columns">
+        <h3>Which diphthong?</h3>
+        <p class="instr">Choose the diphthong in each word. The first eight are from the exercise above. Then listen to track 3.4 and do the same for the words you hear.</p>
+        <div id="diphCols"></div>
+        <div class="audio-box" style="margin-top:14px;">
+          <span class="audio-label">Track 3.4</span>
+          <audio controls preload="none" src="audio/unit-03/track-3.4.mp3"></audio>
+        </div>
+        <div id="diphCols2"></div>
+        <button class="btn btn-primary btn-sm" data-check="diphColsAll" style="margin-top:10px;">Check answers</button>
+        <p class="result-line" id="diphColsAll-result"></p>
+        <div class="tip">Now write a sentence using at least four of these words, and practise saying it with a partner. For example: <em>I was disappointed when the robot came home so late.</em></div>
+      </div>
+
+    </section>
+
+  </div>
+</main>
+
+<footer class="rf-footer">
+  Content based on <em>Ready for First</em> (Macmillan Education), Unit 3 · A change for the better? For study use by IG English School students.
+</footer>
+
+<script src="assets/rff.js"></script>
+<script>
+(function(){
+  "use strict";
+  var R = RFF, el = R.el, buildChoice = R.buildChoice, buildGapText = R.buildGapText, buildMatching = R.buildMatching;
+
+  R.initPage({page:"unit-03", unit:{id:"unit-03", n:3, ids:[
+    "wf-nouns-listening","wf-nouns-suffix","wf-nouns-texts","voc-abbrev","voc-asas","voc-asas-meaning",
+    "gram-comp-text","gram-comp-forms","gram-comp-rfg1","gram-comp-rfg2","gram-comp-review","gram-articles-text","gram-articles-rfg","gram-articles-errors",
+    "rue-part5","rue-part3-circus","rue-part3-hart","rue-part4","writing-essay","writing-linkers",
+    "listening-part2","listening-part3","pron-match","pron-rules","pron-columns"]}});
+
+  function opts(list){ return list.map(function(w){ return {key:w, label:w}; }); }
+  function g(){ return {gap:true, answers:Array.prototype.slice.call(arguments)}; }
+  function k(key){ var a = Array.prototype.slice.call(arguments, 1); return {gap:true, answers:a, key:key}; }
+  var ART = function(){ var a = Array.prototype.slice.call(arguments); return {gap:true, answers:a.map(function(x){ return x === "-" ? "–|-|0|no article|x" : x; }).join("|").split("|")}; };
+  function kwt(container, items){
+    items.forEach(function(item, idx){
+      var wrap = el("div","qitem");
+      wrap.appendChild(el("p","qtext", (idx+1) + ". " + item.orig + (item.key ? " <span class=\"keyword\">" + item.key + "</span>" : "")));
+      var gt = el("p","gaptext");
+      buildGapText(gt, [{text:item.stem + " "}, {gap:true, answers:item.answers}, {text:" " + item.tail}]);
+      wrap.appendChild(gt);
+      container.appendChild(wrap);
+    });
+  }
+
+  /* =================== VOCABULARY =================== */
+  buildGapText(document.getElementById("nounsListen"), [
+    {text:"1. The "}, g("competition"), {text:" (compete) is usually organised in a different country every year.\n2. And that can be anything from storytelling to a dance or a theatre "},
+    g("performance"), {text:" (perform).\n3. It's good "}, g("entertainment"), {text:" (entertain) and a great way for the public to learn about the latest "},
+    g("developments"), {text:" (develop) in robot technology.\n4. ... the robots have to follow their designers' spoken "}, g("instructions"), {text:" (instruct) ..."}
+  ]);
+
+  var sfx = [
+    ["enjoy","treat","govern","argue"],["enjoyment","treatment","government","argument"],
+    ["original","popular","major","able"],["originality","popularity","majority","ability"],
+    ["appear","assist","annoy","tolerate"],["appearance","assistance","annoyance","tolerance"],
+    ["sad","weak","careless","lonely"],["sadness","weakness","carelessness","loneliness"],
+    ["inform","resign","present","explain"],["information","resignation","presentation","explanation"],
+    ["differ","exist","depend","obey"],["difference","existence","dependence","obedience"]
+  ];
+  var sfxSegs = [];
+  for(var i = 0; i < sfx.length; i += 2){
+    sfxSegs.push({text:(i ? "\n" : "") + (i/2+1) + ". " + sfx[i].join(", ") + " → "});
+    sfx[i+1].forEach(function(w, j){ if(j) sfxSegs.push({text:", "}); sfxSegs.push(g(w)); });
+  }
+  buildGapText(document.getElementById("nounsSuffix"), sfxSegs);
+
+  buildGapText(document.getElementById("nounsTexts"), [
+    {text:"<b>1.</b> Carla could not hide her <b>amusement</b> at the sight of her father's first-ever laptop. He had quite a "}, k("COLLECT","collection"),
+    {text:" of what he called 'technological antiques' and this was his favourite. It had plenty of "}, k("SIMILAR","similarities"),
+    {text:" to her own model, but it was the weight and "}, k("THICK","thickness"),
+    {text:" of it that caused her to smile.\n\n<b>2.</b> One of the many "}, k("ACTIVE","activities"),
+    {text:" during our Science Week this year is a trip to the Technology Museum. A single "}, k("PAY","payment"),
+    {text:" of £15 should be made by Friday, 7 October. Please also sign the attached form giving "}, k("PERMIT","permission"),
+    {text:" for your child to attend.\n\n<b>3.</b> Aunt Gwen's "}, k("GENEROUS","generosity"),
+    {text:" on birthdays was unquestionable but it had to be said that most of her present-buying "}, k("DECIDE","decisions"),
+    {text:" were not the best – a pink jumper and a romantic novel, for example. Prepared for "}, k("DISAPPOINT","disappointment"),
+    {text:", Paul unwrapped her gift and was amazed to find a top-of-the-range smartphone."}
+  ]);
+
+  [
+    ["TL;DR",["too long; didn't read","talk later; do ring","too late; don't respect"],0],
+    ["BRB",["bring right back","be right back","bounce right back"],1],
+    ["LOL",["laugh off loud","laugh over loud","laugh out loud"],2],
+    ["BTW",["by the way","back the way","beyond the way"],0],
+    ["IDK",["I don't kiss","I don't know","I don't kick"],1],
+    ["IMHO",["in my honest opinion","it's my home office","I'm moving her out"],0],
+    ["HBD",["home before dark","happy birthday","had a big dinner"],1],
+    ["FYI",["find your identity","free young individuals","for your information"],2],
+    ["ROFL",["rolling on (the) floor laughing","rolling off (the) floor laughing","rolling out (the) floor laughing"],0],
+    ["OTT",["over the total","over the top","over the table"],1]
+  ].forEach(function(q, i){
+    buildChoice(document.getElementById("abbrev"), (i+1) + ". <em>" + q[0] + "</em>", q[1], q[2], null, "voc-abbrev");
+  });
+
+  buildGapText(document.getElementById("asAs"), [
+    {text:"1. As "}, g("well"), {text:" as having absolutely no interpersonal skills, he has a habit of making changes without bothering to find out what anyone else thinks first. (Speaker 2)\n2. I teach maths to as "},
+    g("many"), {text:" as two hundred students every year. (Speaker 3)\n3. I think it's fine, as "},
+    g("long"), {text:" as it's carefully written. (Speaker 3)\n4. It's a waste of time as "},
+    g("far"), {text:" as I'm concerned. (Speaker 3)\n5. As "},
+    g("soon"), {text:" as the work's finished, I'm moving straight back to my old room. (Speaker 5)"}
+  ]);
+
+  buildMatching(document.getElementById("asAsMeaning"), [
+    {left:"as well as", answer:"in addition to"},
+    {left:"as many as", answer:"a surprisingly large number of"},
+    {left:"as long as", answer:"provided"},
+    {left:"as far as I'm concerned", answer:"in my opinion"},
+    {left:"as soon as", answer:"immediately"}
+  ], opts(["a surprisingly large number of","immediately","in addition to","in my opinion","provided"]));
+
+  /* =================== GRAMMAR =================== */
+  buildGapText(document.getElementById("compText"), [
+    {text:"1. But as we all know, there is another, "}, g("darker"), {text:" (dark) side to it all.\n2. I was ... spending more "},
+    g("than"), {text:" four hours online; not as much "}, g("as"), {text:" some people, perhaps ...\n3. Our phone addiction, we are told, is making us "},
+    g("more anxious"), {text:" (anxious) and depressed.\n4. Social media can cause young people in particular to feel "},
+    g("less confident"), {text:" (confident), as they continually compare themselves to their peers; so-and-so looks "},
+    g("better"), {text:" (good), wears "}, g("trendier"), {text:" (trendy) clothes, has "}, g("more expensive"),
+    {text:" (expensive) holidays, leads a "}, g("more interesting"), {text:" (interesting) life.\n5. I took what I considered to be the "},
+    g("most useful"), {text:" (useful) ideas from a number of books and websites I consulted.\n6. The "},
+    g("less"), {text:" time I spend on my phone, the "}, g("more"), {text:" time I have to myself. My imagination wanders "},
+    g("more freely"), {text:" (freely), ideas for articles come "}, g("more easily"), {text:" (easily) and assignments are completed "},
+    g("more quickly"), {text:" (quickly)."}
+  ]);
+
+  var forms = [
+    ["fast",["faster"],["the fastest","fastest"]],
+    ["hot",["hotter"],["the hottest","hottest"]],
+    ["happy",["happier"],["the happiest","happiest"]],
+    ["slowly",["more slowly"],["the most slowly","most slowly"]],
+    ["difficult",["more difficult"],["the most difficult","most difficult"]],
+    ["common",["more common","commoner"],["the most common","most common","the commonest","commonest"]],
+    ["bad",["worse"],["the worst","worst"]],
+    ["far",["further","farther"],["the furthest","the farthest","furthest","farthest"]]
+  ];
+  var fSegs = [];
+  forms.forEach(function(f, i){
+    fSegs.push({text:(i ? "\n" : "") + f[0] + " → "});
+    fSegs.push({gap:true, answers:f[1]});
+    fSegs.push({text:", "});
+    fSegs.push({gap:true, answers:f[2]});
+  });
+  buildGapText(document.getElementById("compForms"), fSegs);
+
+  buildGapText(document.getElementById("compRfg1"), [
+    {text:"1. I knew the exam would be difficult, but I didn't expect it to be as "}, g("hard"),
+    {text:" as that.\n2. Last summer was the "}, g("hottest"),
+    {text:" since records began, with temperatures reaching 40º in some parts of Britain.\n3. There are too many mistakes in this essay. You need to be a lot "}, g("more careful"),
+    {text:".\n4. He was very ill last week, but I'm pleased to say he seems to be getting "}, g("better"),
+    {text:" now.\n5. They put the heating on today so the school wasn't quite so "}, g("cold"),
+    {text:" as it was yesterday.\n6. That was the "}, g("most boring"),
+    {text:" film I've ever seen. I almost fell asleep near the end.\n7. The later you go to bed, the "}, g("tireder","more tired"),
+    {text:" you'll feel tomorrow.\n8. We were the first guests to arrive at the party. We got there half an hour "}, g("earlier"),
+    {text:" than anybody else.\n9. Life in the countryside is so much "}, g("quieter","more quiet"),
+    {text:" than in the city; no traffic, no crowds and no neighbours!\n10. The cheetah, which can run at a speed of 110 kilometres an hour, is the "}, g("fastest"),
+    {text:" animal in the world."}
+  ]);
+
+  buildGapText(document.getElementById("compRfg2"), [
+    {text:"1a. Our television is almost as big as a double bed!\n1b. Our television is almost the "}, g("same"), {text:" size "}, g("as"),
+    {text:" a double bed!\n\n2a. I used to be far more interested in playing video games than I am now.\n2b. I'm "}, g("not"), {text:" nearly as interested in playing video games now "}, g("as"),
+    {text:" I used to be.\n\n3a. My taste in music is very similar to that of my best friend.\n3b. There's not a "}, g("great"), {text:" deal of difference "}, g("between"),
+    {text:" my taste in music and that of my best friend.\n\n4a. The most stylish phone I've ever owned is the one I have now.\n4b. I've never owned "}, g("such"), {text:" a stylish phone "}, g("as"),
+    {text:" the one I have now.\n\n5a. If I have a lot of screen time in the evening, it takes me a long time to get to sleep.\n5b. The "}, g("more"), {text:" screen time I have in the evening, "}, g("the"),
+    {text:" longer it takes me to get to sleep.\n\n6a. I study far less than I should; I'll need to work harder if I want to pass the First exam.\n6b. I don't study nearly as "}, g("much"), {text:" as I should; I'll need to make "}, g("more"),
+    {text:" of an effort if I want to pass the First exam.\n\n7a. I had fewer problems with this exercise than I thought I would.\n7b. I didn't have as "}, g("many"), {text:" problems with this exercise "}, g("as"),
+    {text:" I thought I would."}
+  ]);
+
+  buildGapText(document.getElementById("compReview"), [
+    {text:"Max has changed since our days at school together. The older he gets, "}, g("the"),
+    {text:" more sociable he seems to be. He was never the "}, g("most"), {text:" confident boy "}, g("in"),
+    {text:" the class and he didn't have as "}, g("many"), {text:" friends as he probably would like to have had. But he's "}, g("much"),
+    {text:" less reserved now, and not "}, g("nearly"), {text:" as nervous. Physically, he's different as well. He's quite a "}, g("lot"),
+    {text:" larger than he used to be and not "}, g("so"), {text:" pale and sickly looking. In those days he was "}, g("by"),
+    {text:" far the thinnest of my friends, but he's put on a bit of weight and he looks "}, g("less"), {text:" delicate now."}
+  ]);
+
+  buildGapText(document.getElementById("articlesText"), [
+    {text:"Since (0) <b>the</b> beginning of the last century there have been enormous changes in the way "}, ART("-"),
+    {text:" people live. "}, ART("The"), {text:" world has become a much smaller place and "}, ART("-"),
+    {text:" life is much faster.\n\nIn the first half of the twentieth century, "}, ART("the"), {text:" horse was gradually replaced by "}, ART("the"),
+    {text:" motor car as "}, ART("the"), {text:" most popular form of transport. One hundred years ago, air travel was still in its infancy; now there are around 100,000 commercial flights "}, ART("a"),
+    {text:" day worldwide. In the 1940s, "}, ART("-"), {text:" steam trains were still a common sight on the world's railways. They have now all but disappeared from mainline routes and in several countries electric-powered high-speed trains can be seen racing across "}, ART("the"),
+    {text:" countryside at around 300 kilometres "}, ART("an"),
+    {text:" hour.\n\nAnd "}, ART("-"), {text:" information travels faster, too, thanks to developments in information technology, telecommunications and mass media. Having your own computer at "}, ART("-"),
+    {text:" home was almost unheard of in 1970, but just forty years later in 2010 there were over "}, ART("a"),
+    {text:" billion personal computers in use worldwide. Now, however, smartphones have taken over as the world's favourite computing device. "}, ART("The"),
+    {text:" telephone was already fairly widely in use by 1920, with some twenty million installed in the United States alone. But who could have predicted that a century later over half the world's population would own "}, ART("a"),
+    {text:" mobile device that could do everything a telephone can and much more besides?"}
+  ]);
+
+  buildGapText(document.getElementById("articlesRfg"), [
+    {text:"1. I read that "}, ART("the"), {text:" electric toaster was invented at "}, ART("the"), {text:" end of "}, ART("the"),
+    {text:" nineteenth century, but "}, ART("-"), {text:" consumers didn't show "}, ART("-","an"), {text:" interest in it until much later.\n2. When we were on "},
+    ART("-"), {text:" holiday in "}, ART("the"), {text:" mountains last week we saw "}, ART("a"), {text:" bear.\n3. She works as "},
+    ART("a"), {text:" teacher in "}, ART("a"), {text:" school for "}, ART("the"), {text:" blind in "}, ART("-"), {text:" Northern Ireland. "},
+    ART("The"), {text:" school has over "}, ART("a"), {text:" thousand pupils.\n4. I have to say that "},
+    ART("-"), {text:" life has been good to me. I've been happily married for over "}, ART("-"), {text:" fifty years and I have "},
+    ART("a"), {text:" wonderful family. My wife and I were lucky enough to be able to give up "}, ART("-"), {text:" work in our fifties and we've spent "},
+    ART("the"), {text:" last thirty years travelling to "}, ART("-"), {text:" different countries – we've been all over "}, ART("the"),
+    {text:" world.\n5. <i>Moira:</i> I'm looking forward to "}, ART("the"), {text:" concert. You've got "}, ART("the"),
+    {text:" tickets, haven't you?\n<i>Jack:</i> Oh no! I've left them at "}, ART("-"), {text:" home on "}, ART("the"),
+    {text:" kitchen table. Don't worry, though. I'll get "}, ART("a"), {text:" taxi – I can be there and back in half "}, ART("an"), {text:" hour."}
+  ]);
+
+  buildGapText(document.getElementById("articlesErrors"), [
+    {text:"3. Others, however, prefer <u>a stability</u> and avoid change as much as possible. → "}, g("stability","prefer stability"),
+    {text:"\n4. One advantage of <u>altering way</u> you do things is that it gives you the chance to ... → "}, g("altering the way","the way"),
+    {text:"\n5. ... make improvements and <u>become better student</u>, employee or person. → "}, g("become a better student","a better student"),
+    {text:"\n6. ... consider different approaches and decide <u>which is a best one</u>. → "}, g("which is the best one","the best one","is the best one"),
+    {text:"\n7. ... it adds variety to <u>the life</u> and prevents you from ... → "}, g("life","to life"),
+    {text:"\n8. This also helps to make you <u>the more dynamic</u> and interesting. → "}, g("more dynamic","you more dynamic"),
+    {text:"\n9. <u>On a negative side</u>, change can be stressful ... → "}, g("On the negative side","the negative side"),
+    {text:"\n10. For this reason, <u>the many people</u> like to stay ... → "}, g("many people"),
+    {text:"\n11. ... stay in <u>same place</u> all the time ... → "}, g("the same place","in the same place"),
+    {text:"\n12. <u>In the conclusion</u>, I think it is easier ... → "}, g("In conclusion","conclusion"),
+    {text:"\n13. <u>Older you are</u>, the more ... → "}, g("The older you are","The older"),
+    {text:"\n14. ... the more <u>of effort</u> it takes to do things differently ... → "}, g("of an effort","an effort")
+  ]);
+
+  /* =================== READING & USE OF ENGLISH =================== */
+  document.getElementById("detoxText").innerHTML =
+    "<p><em><b>According to a recent survey by Ofcom, people in the UK spend an average of two and a half hours each day on their smartphones, which they check every twelve minutes. Journalist Steven Rice reveals the steps he took to combat his own obsession.</b></em></p>" +
+    "<p>Some weeks ago, I downloaded a screen time tracking app onto my phone, just one of a series of measures I adopted to tackle my growing, and potentially unhealthy addiction to the device. Looking back, I had been in obvious denial about how it was affecting my ability to concentrate, and the impact this was having on my work. But I could not ignore my wife's increasingly loud tutting at my frequent scrolling, nor the fact that even my digitally native, generation-Z daughters were rolling their eyes whenever they caught me chuckling at memes or watching cat videos on YouTube. It was clearly time for a change; time for a detox.</p>" +
+    "<p>My newly installed app told me that I was picking up my phone over forty times each day and spending more than four hours online; not as much as some people, perhaps, but this was no consolation. It was still above the national average and no less cause for concern. We shouldn't, of course, go all out to demonise phones; they have become indispensable items, and our online life is often closely intertwined with our offline one. My phone enables me to deal with work-related issues, arrange to meet up with friends, book concert tickets and holidays, and yes, even buy books to read.</p>" +
+    "<p>But as we all know, there is another, darker side to it all. Our phone addiction, we are told, is making us more anxious and depressed. Social media can cause young people, in particular, to feel less confident, as they continually compare themselves to their peers; so-and-so looks better, wears trendier clothes, has more expensive holidays, leads a more interesting life. And we are constantly bombarded with information, challenging our ability to focus, causing us to skim briefly rather than pause to reflect on what we read. Our minds have become like butterflies flitting from one subject to another, hindering our ability to apply ourselves for any length of time to one task.</p>" +
+    "<p>In planning my detox, I took what I considered to be the most useful ideas from a number of books and websites I consulted, with names like <i>How to break up with your phone</i> and <i>Time to Log Off</i>. Despite the titles, none advocated anything as final as a permanent break-up or logging-off. The phone itself is not the problem, but how you use it, so the route to a healthier relationship with technology is to learn moderation and good habits. And since this can be quite daunting, it's better to ease yourself into it with a step-by-step rather than an all-at-once approach. My first step was to switch off notifications for all social media apps on my phone.</p>" +
+    "<p>The result was disappointing. Having my phone on my desk when I worked at home was still a distraction; I kept looking at it, wondering if I was missing out on anything, and sometimes, I'm afraid to say, secretly giving in to temptation. 'Out of sight, out of mind,' I thought, and promptly moved it to the kitchen. If I wanted to check for messages, I'd have to get up and go to the other end of my flat. As predicted, I soon stopped thinking about the phone and was able to give all my attention to my work. Likewise, I banned the device from my bedroom; no more late-night screen time before I turn the light out, or early-morning scrolling as soon as I wake up. I sometimes take a book to bed instead – though I often nod off after just a page or two.</p>" +
+    "<p>By the end of the first week, I began switching off my phone completely for a whole morning or afternoon, and now I occasionally leave it at home if I go out in the evening. And what are the benefits? For one thing, I can concentrate on living my own life rather than worrying about what others are doing with theirs. The less time I spend on my phone, the more time I have to myself. My imagination wanders more freely, ideas for articles come more easily and assignments are completed more quickly. Oh, and yesterday, only nine pick-ups and forty-three minutes online. Can't be bad.</p>";
+
+  [
+    ["What encouraged the writer to begin a digital detox?",
+      ["the negative effect his phone use was having on his work","the disapproving gestures of his family at his phone use","the realisation that his phone use was harming his health","the results of an app he installed to help limit his phone use"], 1,
+      "\"I could not ignore my wife's increasingly loud tutting ... nor the fact that even my ... daughters were rolling their eyes\". He admits he had been <em>in denial</em> about his work (A), and he installed the app <em>after</em> deciding (D)."],
+    ["What feeling does the writer express in the second paragraph?",
+      ["He is annoyed at the influence the internet has on our daily lives.","He is pleased that others have worse phone habits than him.","He is convinced of the fact that the phone is a useful tool.","He is worried about how other people might judge him."], 2,
+      "\"they have become indispensable items ... My phone enables me to deal with work-related issues, arrange to meet up with friends ...\""],
+    ["The writer compares our minds to butterflies in order to highlight",
+      ["the speed with which we are able to process information.","the attractiveness of our ability to multitask.","the delicate and fragile nature of our brains.","the difficulty we have in concentrating."], 3,
+      "\"flitting from one subject to another, hindering our ability to apply ourselves for any length of time to one task.\""],
+    ["What advice does the writer give for reducing phone use in the fourth paragraph?",
+      ["Obtain help from a variety of sources.","Switch off the phone regularly.","Introduce changes gradually.","Stop using social media."], 2,
+      "\"it's better to ease yourself into it with a step-by-step rather than an all-at-once approach.\""],
+    ["The writer uses the expression 'Out of sight, out of mind' to indicate that",
+      ["he could not see enough progress, so he considered giving up the detox.","he could check his messages because he knew nobody could see him.","he felt frustrated at not being able to see the messages on his phone.","he believed he would forget about his phone if he could not see it."], 3,
+      "\"If I wanted to check for messages, I'd have to get up and go to the other end of my flat. As predicted, I soon stopped thinking about the phone ...\""],
+    ["What improvement to his life does the writer mention?",
+      ["He has become more creative.","He socialises more than before.","He sleeps more deeply at night.","He reads much more than he used to."], 0,
+      "\"My imagination wanders more freely, ideas for articles come more easily ...\" He reads in bed, but often falls asleep after a page or two (D)."]
+  ].forEach(function(q, i){
+    buildChoice(document.getElementById("part5Qs"), (i+1) + ". " + q[0],
+      q[1].map(function(o, j){ return "<b>" + "ABCD"[j] + "</b>" + o; }), q[2], "In the text: " + q[3], "rue-part5");
+  });
+
+  buildGapText(document.getElementById("circus"), [
+    {text:"Here is some brief (0) <b>information</b> "}, {text:'<span class="keyword">INFORM</span>'},
+    {text:" for anyone thinking of following a career in the circus. There is, of course, a wide range of jobs available: trapeze artists, acrobats, clowns, "}, k("MAGIC","magicians"),
+    {text:", fire-eaters and tight-rope walkers are all to be found in the big top. A few circuses train their own performers, but usually they are more "}, k("INTEREST","interested"),
+    {text:" in someone who can already demonstrate a circus-related "}, k("ABLE","ability"),
+    {text:" or skill. Circus schools are the best way for aspiring artists to develop their talents, and can be either connected to a large circus or else totally "}, k("DEPEND","independent"),
+    {text:". Circus performers need to be physically fit and possess the necessary mental "}, k("STRONG","strength"),
+    {text:" to cope with the intense training and obvious demands of the job. They are also flexible and able to adapt "}, k("EASY","easily"),
+    {text:" to new situations, particularly as circuses are frequently on the move. Additionally, for many jobs within the circus, good concentration is essential. Fire-eaters and acrobats cannot afford to be "}, k("CARE","careless"),
+    {text:" as mistakes can have "}, k("DISASTER","disastrous"), {text:" consequences."}
+  ]);
+
+  buildGapText(document.getElementById("hart"), [
+    {text:"Michael Hart (1947–2011) was the (0) <b>founder</b> "}, {text:'<span class="keyword">FOUND</span>'},
+    {text:" of Project Gutenberg, one of the "}, k("EARLY","earliest"),
+    {text:" and longest-lasting online literary projects. His life's aim was to digitise the world's literature and make it freely available online. As a result of his work, he is widely considered to be the "}, k("INVENT","inventor"),
+    {text:" of the eBook.\n\nIn 1971, Hart typed a copy of the United States Declaration of Independence into the computer at the University of Illinois, where he was a student. The internet was used only by academic and military "}, k("RESEARCH","researchers"),
+    {text:": the World Wide Web would not come into "}, k("EXIST","existence"),
+    {text:" for another two decades. Yet Hart spent the next fifteen or so years typing up historic texts such as the works of Shakespeare and the American Constitution, using "}, k("EQUIP","equipment"),
+    {text:" he had begged, borrowed or made himself. In 1987, with over 300 books in the online "}, k("COLLECT","collection"),
+    {text:", he took on an "}, k("ASSIST","assistant"),
+    {text:", and together they recruited volunteers worldwide to help with typing and proofreading "}, k("RESPONSIBLE","responsibilities"),
+    {text:". Project Gutenberg now offers more than 60,000 free eBooks to download in over 60 different languages."}
+  ]);
+
+  kwt(document.getElementById("kwt3"), [
+    {orig:"The new version of this phone isn't nearly as big as I thought it would be.", key:"MUCH", stem:"The new version of this phone", tail:"I thought it would be.", answers:["is much smaller than","'s much smaller than"]},
+    {orig:"This is easily the most boring game I've downloaded recently.", key:"ENJOYABLE", stem:"This is by", tail:"game I've downloaded recently.", answers:["far the least enjoyable"]},
+    {orig:"There are fewer teachers in my school than there were last year.", key:"NOT", stem:"There", tail:"teachers in my school as there were last year.", answers:["are not as many","are not so many","aren't as many","aren't so many"]},
+    {orig:"If you work harder now, you won't have to do so much later.", key:"THE", stem:"The harder", tail:"you'll have to do later.", answers:["you work now, the less","you work now the less"]},
+    {orig:"Lucy is as tall as her mother.", key:"HEIGHT", stem:"Lucy", tail:"her mother.", answers:["is the same height as","'s the same height as"]},
+    {orig:"Technology has had a bigger effect on our lives than we could ever have imagined.", key:"MORE", stem:"Technology has", tail:"a difference to our lives than we could ever have imagined.", answers:["made more of"]}
+  ]);
+
+  /* =================== WRITING =================== */
+  buildChoice(document.getElementById("essayQs"), "The third note asks for 'your own idea'. What is the writer's own idea?",
+    ["fairer refereeing","safety for competitors","unfair advantages from equipment"], 1,
+    "The safety aspects: <em>its role in increasing safety for competitors</em>, such as modern cycling helmets.", "writing-essay");
+  buildChoice(document.getElementById("essayQs"), "Why is this called a 'balanced' essay?",
+    ["It has the same number of words in each paragraph.","It considers both sides of the argument before giving an opinion.","It doesn't give the writer's opinion."], 1,
+    "The writer looks at the positive and negative aspects of technology in sport, then gives their opinion in the conclusion.", "writing-essay");
+
+  buildMatching(document.getElementById("essayParas"), [
+    {left:"Paragraph 1", answer:"intro"},{left:"Paragraph 2", answer:"pos"},{left:"Paragraph 3", answer:"neg"},{left:"Paragraph 4", answer:"concl"}
+  ], [{key:"intro",label:"a general introduction"},{key:"pos",label:"positive aspects of technology"},{key:"neg",label:"negative aspects of technology"},{key:"concl",label:"conclusion"}]);
+
+  var LK = [{key:"one",label:"introducing one side of the argument"},{key:"other",label:"introducing the other side"},{key:"add",label:"making additional points"},{key:"result",label:"introducing a result"},{key:"concl",label:"concluding"}];
+  buildMatching(document.getElementById("linkers"),
+    [["Some people feel","one"],["Others, however, believe","other"],["On the positive side","one"],["Another positive influence","add"],["On the negative side","other"],["For this reason","result"],["In conclusion","concl"],
+     ["On the one hand","one"],["On the other hand","other"],["In addition (to this)","add"],["Furthermore","add"],["Moreover","add"],["Firstly / Secondly / Finally","add"],["Consequently","result"],["As a result","result"],["On balance","concl"],["To sum up","concl"]]
+      .map(function(s){ return {left:s[0], answer:s[1]}; }), LK);
+
+  R.wireWordCounter("essayFree","essayFreeCounter",140,190);
+  R.wireWordCounter("articleFree","articleFreeCounter",140,190);
+
+  /* =================== LISTENING =================== */
+  buildGapText(document.getElementById("robo"), [
+    {text:"1. RoboCup was held for the first time in "}, g("Japan"),
+    {text:" in 1997.\n2. The categories in the children's competition are Soccer, OnStage and "}, g("Rescue"),
+    {text:".\n3. Paul says he didn't watch any videos of teams performing a "}, g("magic show"),
+    {text:" in the OnStage event.\n4. Paul's favourite video of an OnStage performance featured a robot dressed as a "}, g("penguin"),
+    {text:".\n5. Team members in the OnStage event are interviewed about their involvement in the design and "}, g("programming"),
+    {text:" of their robots.\n6. The maximum total time each team can spend on the stage is "}, g("six","6"),
+    {text:" minutes.\n7. Paul was impressed by the fact that the robots in RoboCupSoccer are all "}, g("autonomous"),
+    {text:".\n8. Paul says that all of the robot soccer teams he watched lacked a good "}, g("solid defence","defence","solid defense","defense"),
+    {text:".\n9. In RoboCup@Home, designers have to communicate with their robots by using their "}, g("voice","voices"),
+    {text:".\n10. Paul watched robots fetch objects from the "}, g("kitchen"),
+    {text:" and give them to their designer in another room of the apartment."}
+  ]);
+  document.getElementById("roboScript").innerHTML = [
+    "... it's been held no fewer than four times in <b>Japan</b>, which is where the first event took place in 1997. (Australia hosted it for the first time in 2000: a distractor.)",
+    "... and the OnStage and <b>Rescue</b> categories in RoboCupJunior, which is for kids up to the age of nineteen.",
+    "... or apparently, even a <b>magic show</b>, though I didn't find any videos of that one on the internet.",
+    "... the star of the video I enjoyed most was a robot in a <b>penguin</b> costume.",
+    "... each member has to answer questions about the part they played in the design and <b>programming</b> of their robots.",
+    "They have a total of five minutes for their performance ... and then an extra minute to clear up – so no more than <b>six</b> minutes altogether on the stage.",
+    "What amazed me most about it is the fact that there are no radio signals, or remote controls ... – all the robots are <b>autonomous</b>.",
+    "... none of the teams had what you could call a <b>solid defence</b>.",
+    "... the only way they can do that is by <b>voice</b>.",
+    "I saw them do things like open the curtains in the bedroom, or go into the <b>kitchen</b> and get something like a bottle or a cup and take it back to the designer who was in the lounge."
+  ].map(function(t, i){ return "<p><strong>" + (i+1) + "</strong> \"" + t + "\"</p>"; }).join("");
+
+  var tKey = [
+    ["e","She clearly has her own interests at heart rather than those of the kids."],
+    ["d","I do think he could have let us have some say in the matter before going ahead."],
+    ["h","It's a waste of time as far as I'm concerned, and I know the majority of my colleagues feel the same."],
+    ["c","Mixing up the classes like that – splitting up the troublemakers – is a step in the right direction, but it doesn't go far enough."],
+    ["a","The ceiling's high and the acoustics are terrible for the piano. Plus I have to shout to make myself heard, so my throat is suffering. And then the sun streams in during the afternoon and sends the kids to sleep."]
+  ];
+  var STAT = ["The change has resulted in a number of new problems.","Too many changes have been introduced.","The change is insufficient to solve a problem.","We should have been consulted about the change.","The change is being made for selfish reasons.","Most parents support the change.","The change has brought unexpected benefits.","Most of the teachers feel the change is unnecessary."];
+  buildMatching(document.getElementById("teachers"),
+    tKey.map(function(t, i){ return {left:"Speaker " + (i+1), answer:t[0]}; }),
+    STAT.map(function(s, i){ var l = "abcdefgh"[i]; return {key:l, label:l.toUpperCase() + " – " + s}; }));
+  document.getElementById("teachersScript").innerHTML = tKey.map(function(t, i){
+    return "<p><strong>Speaker " + (i+1) + " · " + t[0].toUpperCase() + "</strong> \"" + t[1] + "\"</p>";
+  }).join("") + "<p><em>Watch out for the distractors: Speaker 1 says \"Perhaps I should have spoken out at the consultation meeting\" (not D); Speaker 2 says \"I'm not saying that a change wasn't necessary\" (not H); Speaker 5 says \"I've changed rooms many times before\" (not B).</em></p>";
+
+  /* =================== SPEAKING =================== */
+  R.buildTimers(document.getElementById("speakingP1List"), [
+    "How often do you change your phone?",
+    "What apps do you use the most?",
+    "How do you think your life will change in the next twelve months?",
+    "Talk about someone you know who has changed in some way in recent years.",
+    "What changes do you think should be made to your school, college or workplace?"
+  ], 20);
+  R.buildTimers(document.getElementById("speakingP4List"), [
+    "Do you think the quality of life in general is better now than it used to be?",
+    "Some people say we have too much choice nowadays. What do you think?",
+    "How could the education system in your country be improved?",
+    "If you could change one thing in your life, what would it be?",
+    "Some people don't like change. Why do you think that is?",
+    "What do you think will be the biggest changes in the next 100 years?"
+  ], 45);
+
+  /* =================== PRONUNCIATION =================== */
+  buildMatching(document.getElementById("diphMatch"),
+    [["/tʃeɪndʒ/","change"],["/taɪm/","time"],["/laʊd/","loud"],["/həʊm/","home"],["/kənˈtɪnjuəli/","continually"],["/kəmˈpeə(r)/","compare"],["/ˈklɪə(r)li/","clearly"],["/ˌdɪsəˈpɔɪntɪŋ/","disappointing"]]
+      .map(function(s){ return {left:s[0], answer:s[1]}; }),
+    opts(["change","clearly","compare","continually","disappointing","home","loud","time"]));
+
+  [
+    ["British English has ___ diphthongs.", ["eight","ten"], 0],
+    ["Diphthongs are long ___ sounds.", ["consonant","vowel"], 1],
+    ["They are made from ___ short sounds.", ["two","three"], 0],
+    ["We pronounce diphthongs by ___.", ["saying the two sounds separately","moving quickly from one sound to the next"], 1]
+  ].forEach(function(q, i){
+    buildChoice(document.getElementById("diphRules"), (i+1) + ". " + q[0], q[1], q[2], null, "pron-rules");
+  });
+
+  var DIPH = [
+    {key:"ɪə",label:"/ɪə/ as in year"},{key:"eɪ",label:"/eɪ/ as in break"},{key:"ʊə",label:"/ʊə/ as in sure"},{key:"ɔɪ",label:"/ɔɪ/ as in boy"},
+    {key:"əʊ",label:"/əʊ/ as in phone"},{key:"eə",label:"/eə/ as in hair"},{key:"aɪ",label:"/aɪ/ as in life"},{key:"aʊ",label:"/aʊ/ as in down"}
+  ];
+  buildMatching(document.getElementById("diphCols"),
+    [["clearly","ɪə"],["change","eɪ"],["continually","ʊə"],["disappointing","ɔɪ"],["home","əʊ"],["compare","eə"],["time","aɪ"],["loud","aʊ"]]
+      .map(function(s){ return {left:s[0], answer:s[1]}; }), DIPH);
+  buildMatching(document.getElementById("diphCols2"),
+    [["fear","ɪə"],["space","eɪ"],["during","ʊə"],["annoyed","ɔɪ"],["robot","əʊ"],["aware","eə"],["decide","aɪ"],["without","aʊ"]]
+      .map(function(s){ return {left:"Track 3.4: " + s[0], answer:s[1]}; }), DIPH);
+  var wrapAll = el("div"); wrapAll.id = "diphColsAll";
+  var c1 = document.getElementById("diphCols"), c2 = document.getElementById("diphCols2");
+  c1.parentNode.insertBefore(wrapAll, c1);
+  wrapAll.appendChild(c1);
+  wrapAll.appendChild(c2.previousElementSibling);
+  wrapAll.appendChild(c2);
+})();
+</script>
+</body>
+</html>
