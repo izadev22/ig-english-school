@@ -250,6 +250,7 @@
   .gap:focus{outline:none; border-color:var(--coral); background:var(--gold-soft);}
   .gap.ok{border-color:var(--sage); background:var(--sage-soft); color:var(--sage);}
   .gap.bad{border-color:var(--rust); background:var(--rust-soft); color:var(--rust);}
+  .gap.dict{width:calc(100% - 2ch); max-width:44ch; text-align:left;}
   .gap-fix{font-size:0.8rem; font-weight:700; color:var(--sage); margin-left:4px;}
   .keyword{
     display:inline-block; font-size:0.72rem; font-weight:800; letter-spacing:.04em; color:var(--plum);
@@ -517,7 +518,9 @@
         <button class="tab-btn" data-tab="rue">Reading &amp; Use of English</button>
         <button class="tab-btn" data-tab="writing">Writing</button>
         <button class="tab-btn" data-tab="listening">Listening</button>
-        <button class="tab-btn" data-tab="speaking">Speaking</button>      </nav>
+        <button class="tab-btn" data-tab="speaking">Speaking</button>
+        <button class="tab-btn" data-tab="pron">Pronunciation</button>
+      </nav>
 
       <!-- ================= VOCABULARY ================= -->
       <section class="page active" data-tab="vocab">
@@ -852,6 +855,54 @@ Lucía</p>
 
       </section>
 
+      <!-- ================= PRONUNCIATION ================= -->
+      <section class="page" data-tab="pron">
+
+        <div class="block">
+          <span class="kicker">Pronunciation · Pronouncing questions</span>
+          <h3>Fast and slow questions</h3>
+          <p class="instr">Listen to two speakers asking the questions below. What differences do you notice in the way they speak? Who is easier to understand?</p>
+          <ol class="statements">
+            <li>Why do you like that film?</li>
+            <li>What do you want to talk about?</li>
+            <li>How did you do that?</li>
+            <li>Where did you live?</li>
+          </ol>
+          <div class="audio-box">
+            <span class="audio-label">Track 1.3</span>
+            <audio controls preload="none" src="audio/unit-01/track-1.3.mp3"></audio>
+          </div>
+          <button class="btn btn-ghost btn-sm" data-script="pronBox" data-open-label="Hide the explanation" aria-expanded="false">Check your answer</button>
+          <div class="script-lines" id="pronBox">
+            <p>Many English speakers join words together when they speak quickly. In questions with <em>do/did + you</em>, it can be difficult to hear whether the speaker is saying <em>do</em> or <em>did</em>:</p>
+            <p><em>What do you want to do?</em> /wɒdʒə wɒnə duː/<br><em>How did you travel?</em> /haʊdʒə trævəl/</p>
+            <p>The context usually makes it clear whether the speaker means <em>do</em> or <em>did</em>, even when the difference is hard to hear.</p>
+          </div>
+        </div>
+
+        <div class="block" data-ex="pron-dictation">
+          <h3>Write down the four questions you hear</h3>
+          <p class="instr">Listen and type each question. Listen as many times as you need.</p>
+          <div class="audio-box">
+            <span class="audio-label">Track 1.4</span>
+            <audio controls preload="none" src="audio/unit-01/track-1.4.mp3"></audio>
+          </div>
+          <div id="dictation"></div>
+          <button class="btn btn-primary btn-sm" data-check="dictation" style="margin-top:6px;">Check answers</button>
+          <p class="result-line" id="dictation-result"></p>
+        </div>
+
+        <div class="block">
+          <h3>Now say them</h3>
+          <p class="instr">Work in pairs. First say the four questions as clearly as possible. Then say them again, joining the words together as in the recording.</p>
+          <div class="tip">Stress the information words (question words, nouns and main verbs) and keep the small grammar words weak: <em><strong>Where</strong> did you <strong>go</strong> this <strong>morn</strong>ing?</em> The last important word usually gets the strongest stress.</div>
+          <div class="margin-note">
+            <p><strong>In the exam:</strong> Pronunciation is one of the marking criteria in the Speaking paper. The examiner asks: Are the answers clear, and can the speaker be generally understood? Is the intonation appropriate? Is sentence stress and word stress correct? Are individual sounds clear and correctly produced?</p>
+          </div>
+        </div>
+
+      </section>
+
     </div>
 
     <!-- ===================================================== PHRASAL VERBS -->
@@ -999,7 +1050,7 @@ Lucía</p>
   var PROGRESS_KEY = "rff_progress_v1";
   var UNIT1_IDS = ["voc-lifestyle","voc-clothes","voc-get-meaning","voc-get-phrasal","voc-get-endings",
     "gram-adverb-position","gram-adverb-fix","gram-used-would","gram-used-would-paragraph","gram-usedto-concept","gram-usedto-gapfill","gram-review-gapfill",
-    "rue-part7","rue-part7-phrasal","rue-part1","rue-part2","rue-part4","writing-linking","listening-part3","listening-part1"];
+    "rue-part7","rue-part7-phrasal","rue-part1","rue-part2","rue-part4","writing-linking","listening-part3","listening-part1","pron-dictation"];
   function markDone(id, ratio){
     if(!id) return;
     var p = store(PROGRESS_KEY, {});
@@ -1554,6 +1605,18 @@ Lucía</p>
       (idx+1) + ". " + q[0] + "<br><em>" + q[1] + "</em>",
       q[2].map(function(o, i){ return "<b>" + "ABC"[i] + "</b>" + o; }), q[3],
       "In the recording: \"" + q[4] + "\"", "listening-part1");
+  });
+
+  var dictation = document.getElementById("dictation");
+  ["Who do you want to speak to now?","Where did you go this morning?","When do you have to be there tomorrow?","Why did you say that earlier?"].forEach(function(q, i){
+    var row = el("p","gaptext");
+    row.appendChild(el("span", null, (i+1) + ". "));
+    var inp = document.createElement("input");
+    inp.type = "text"; inp.className = "gap dict"; inp.autocomplete = "off"; inp.spellcheck = false;
+    inp.dataset.answers = q;
+    inp.setAttribute("aria-label", "Question " + (i+1));
+    row.appendChild(inp);
+    dictation.appendChild(row);
   });
 
   document.addEventListener("click", function(e){
