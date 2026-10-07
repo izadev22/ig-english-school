@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Word formation — Ready for First practice</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Word formation practice for Cambridge B2 First Reading and Use of English Part 3, based on Ready for First.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Caveat:wght@600;700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/rff.css">
+</head>
+<body>
+
+<div class="tb">
+  <div class="tb-inner">
+    <a class="tb-back" href="../index.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+      IG English School
+    </a>
+    <div class="tb-title">
+      <a href="index.html"><strong>Ready for First</strong></a>
+      <span>Practice notebook · Cambridge B2 First</span>
+    </div>
+  </div>
+</div>
+
+<main class="shell">
+  <aside class="rail" id="rail"></aside>
+  <div class="content">
+    <header class="view-head">
+      <span class="kicker">Reading &amp; Use of English · Part 3</span>
+      <h1>Word formation</h1>
+      <p>In Part 3 you read a text with eight gaps and change the word in capitals so it fits each gap. You'll often need a prefix, a suffix, a plural or a negative form. These exercises use the word formation list from Ready for First.</p>
+    </header>
+
+    <div class="seg" role="tablist" aria-label="Word formation practice modes">
+      <button class="seg-btn active" data-mode="wf-drill">Quick drill</button>
+      <button class="seg-btn" data-mode="wf-exam">Exam-style texts</button>
+      <button class="seg-btn" data-mode="wf-inged">-ing or -ed?</button>
+      <button class="seg-btn" data-mode="wf-list">Word list</button>
+    </div>
+
+    <div class="mode-pane active" data-mode="wf-drill">
+      <div class="filters">
+        <label>Practise
+          <select id="wfCat">
+            <option value="all">All word types</option>
+            <option value="opposite">Opposites (negative prefixes)</option>
+            <option value="person">People (applicant, musician...)</option>
+            <option value="noun">Nouns</option>
+            <option value="adjective">Adjectives</option>
+            <option value="adverb">Adverbs</option>
+            <option value="verb">Verbs</option>
+          </select>
+        </label>
+        <span class="note" id="wfBest"></span>
+      </div>
+      <div class="round" id="wfRound"></div>
+      <p class="instr" style="font-size:0.82rem; color:var(--ink-soft); margin-top:12px;">Use British spelling, as in the book: organiser, behaviour, colourful, skilful.</p>
+    </div>
+
+    <div class="mode-pane" data-mode="wf-exam">
+      <div class="block wide">
+        <h3>A year on the other side of the world</h3>
+        <p class="instr">Use the word in capitals to form a word that fits in the gap. There is an example at the beginning (0).</p>
+        <div class="gaptext" id="wfText1"></div>
+        <button class="btn btn-primary btn-sm" data-check="wfText1">Check answers</button>
+        <p class="result-line" id="wfText1-result"></p>
+      </div>
+      <div class="block wide">
+        <h3>Slow down and live longer</h3>
+        <p class="instr">Use the word in capitals to form a word that fits in the gap.</p>
+        <div class="gaptext" id="wfText2"></div>
+        <button class="btn btn-primary btn-sm" data-check="wfText2">Check answers</button>
+        <p class="result-line" id="wfText2-result"></p>
+      </div>
+      <div class="tip">Before you write, ask yourself: what kind of word goes here (noun, adjective, verb, adverb)? Is it positive or negative? Singular or plural? Then check your spelling, because a misspelt word scores zero.</div>
+    </div>
+
+    <div class="mode-pane" data-mode="wf-inged">
+      <div class="block">
+        <h3>-ing or -ed adjectives?</h3>
+        <div class="margin-note">
+          <p><strong>-ed</strong> adjectives describe how we feel: <em>I'm tired after the journey.</em><br><strong>-ing</strong> adjectives describe the thing or person that causes the feeling: <em>The journey was very tiring.</em></p>
+        </div>
+        <div id="ingEdList"></div>
+      </div>
+    </div>
+
+    <div class="mode-pane" data-mode="wf-list">
+      <input class="search" type="search" id="wfSearch" placeholder="Search for a word" aria-label="Search the word formation list">
+      <div id="wfList"></div>
+    </div>
+  </div>
+</main>
+
+<footer class="rf-footer">
+  Content based on the word formation list in <em>Ready for First</em> (Macmillan Education). For study use by IG English School students.
+</footer>
+
+<script src="assets/rff.js"></script>
+<script>
+(function(){
+  "use strict";
+  var R = RFF, el = R.el, norm = R.norm, shuffle = R.shuffle, store = R.store, save = R.save,
+      buildChoice = R.buildChoice, buildGapText = R.buildGapText, buildMatching = R.buildMatching,
+      markDone = R.markDone, Round = R.Round, modeHooks = R.modeHooks;
+
+  RFF.initPage({page:"wf"});
+
+  /* =================================================================
+     WORD FORMATION (whole book)
+  ================================================================= */
+  // pairs separated by |, "base derived/alternative"
+  var WF_GROUPS = [
+    {cls:"opposite", suf:"un-", from:"adjective", list:"clear unclear|common uncommon|concerned unconcerned|happy unhappy|known unknown|likely unlikely|lucky unlucky|pleasant unpleasant|reliable unreliable|selfish unselfish|sociable unsociable|sure unsure|usual unusual"},
+    {cls:"opposite", suf:"in-", from:"adjective", list:"accurate inaccurate|capable incapable|competent incompetent|correct incorrect|direct indirect|efficient inefficient|experienced inexperienced|formal informal|sensitive insensitive|significant insignificant|sincere insincere|sufficient insufficient|tolerant intolerant"},
+    {cls:"opposite", suf:"dis-", from:"adjective", list:"abled disabled|honest dishonest|obedient disobedient|satisfied dissatisfied"},
+    {cls:"opposite", suf:"il-", from:"adjective", list:"legal illegal|legible illegible|literate illiterate|logical illogical"},
+    {cls:"opposite", suf:"im-", from:"adjective", list:"mature immature|modest immodest|moral immoral|patient impatient|perfect imperfect|personal impersonal|polite impolite|possible impossible|practical impractical|probable improbable"},
+    {cls:"opposite", suf:"ir-", from:"adjective", list:"rational irrational|regular irregular|relevant irrelevant|responsible irresponsible"},
+
+    {cls:"person", suf:"-ant", from:"verb", list:"apply applicant|assist assistant|contest contestant|immigrate immigrant|inhabit inhabitant|participate participant"},
+    {cls:"person", suf:"-ee", from:"verb", list:"employ employee|interview interviewee|train trainee"},
+    {cls:"person", suf:"-eer", from:"noun", list:"engine engineer|mountain mountaineer"},
+    {cls:"person", suf:"-er", from:"verb", list:"box boxer|employ employer|entertain entertainer|interview interviewer|listen listener|organise organiser|perform performer|photograph photographer|play player|research researcher|ride rider|run runner|support supporter|teach teacher|train trainer|walk walker|win winner"},
+    {cls:"person", suf:"-ian", from:"noun", list:"comedy comedian|electricity electrician|history historian|library librarian|magic magician|mathematics mathematician|music musician|politics politician"},
+    {cls:"person", suf:"-ist", from:"noun", list:"bicycle cyclist|biology biologist|economy economist|novel novelist|psychology psychologist|science scientist|tour tourist"},
+    {cls:"person", suf:"-or", from:"verb", list:"act actor|collect collector|compete competitor|construct constructor|direct director|instruct instructor|invent inventor|spectate spectator"},
+
+    {cls:"noun", suf:"-al", from:"verb", list:"approve approval/disapproval|arrive arrival|deny denial|propose proposal|refuse refusal|rehearse rehearsal|remove removal|survive survival"},
+    {cls:"noun", suf:"-ance", from:"verb", list:"appear appearance/disappearance|annoy annoyance|assist assistance|enter entrance|perform performance|tolerate tolerance"},
+    {cls:"noun", suf:"-ance", from:"adjective", list:"distant distance|important importance|relevant relevance"},
+    {cls:"noun", suf:"-ence", from:"verb", list:"exist existence|occur occurrence|refer reference"},
+    {cls:"noun", suf:"-ence", from:"adjective", list:"absent absence|convenient convenience/inconvenience|dependent dependence/independence|different difference|evident evidence|innocent innocence|intelligent intelligence|obedient obedience/disobedience|patient patience/impatience|present presence|violent violence"},
+    {cls:"noun", suf:"-ation", from:"verb", list:"adapt adaptation|admire admiration|apply application|combine combination|communicate communication|consider consideration|explain explanation|identify identification|imagine imagination|inform information|inspire inspiration|oblige obligation|observe observation|occupy occupation|present presentation|publish publication|qualify qualification|recommend recommendation|reserve reservation|resign resignation"},
+    {cls:"noun", suf:"-ion", from:"verb", list:"accommodate accommodation|associate association|collect collection|compete competition|complete completion|complicate complication|concentrate concentration|conclude conclusion|confuse confusion|congratulate congratulation/congratulations|connect connection|convert conversion|decide decision|describe description|divide division|expand expansion|explode explosion|fascinate fascination|graduate graduation|imitate imitation|instruct instruction|intend intention|invade invasion|investigate investigation|locate location|object objection|operate operation|permit permission|persuade persuasion|pollute pollution|predict prediction|prescribe prescription|react reaction|reduce reduction|satisfy satisfaction/dissatisfaction|solve solution|substitute substitution"},
+    {cls:"noun", suf:"-ion", from:"adjective", list:"extinct extinction"},
+    {cls:"noun", suf:"-ight", from:"verb", list:"fly flight|see sight|weigh weight"},
+    {cls:"noun", suf:"-ight", from:"adjective", list:"high height"},
+    {cls:"noun", suf:"-ing", from:"verb", list:"advertise advertising|be being|build building|live living|meet meeting|record recording|say saying|set setting|surround surroundings"},
+    {cls:"noun", suf:"-ity", from:"adjective", list:"able ability/inability|active activity/inactivity|available availability/unavailability|complex complexity|curious curiosity|equal equality/inequality|formal formality/informality|generous generosity|hostile hostility|intense intensity|major majority|minor minority|original originality/unoriginality|personal personality|popular popularity/unpopularity|possible possibility/impossibility|prosperous prosperity|pure purity/impurity|real reality|responsible responsibility/irresponsibility|secure security/insecurity|sensitive sensitivity/insensitivity|severe severity|similar similarity|sincere sincerity/insincerity|stupid stupidity"},
+    {cls:"noun", suf:"-ness", from:"adjective", list:"aware awareness|careful carefulness|careless carelessness|conscious consciousness|fit fitness|friendly friendliness|happy happiness|hopeless hopelessness|ill illness|lonely loneliness|mad madness|sad sadness|serious seriousness|sore soreness|thick thickness|tired tiredness|useful usefulness|weak weakness"},
+    {cls:"noun", suf:"-ment", from:"verb", list:"achieve achievement|agree agreement/disagreement|amaze amazement|amuse amusement|announce announcement|argue argument|arrange arrangement|commit commitment|develop development|disappoint disappointment|discourage discouragement|embarrass embarrassment|employ employment/unemployment|encourage encouragement|enjoy enjoyment|entertain entertainment|equip equipment|excite excitement|govern government|improve improvement|invest investment|involve involvement|judge judgement/judgment|manage management|measure measurement|move movement|pay payment|punish punishment|replace replacement|require requirement|retire retirement|state statement|treat treatment"},
+    {cls:"noun", suf:"-ship", from:"noun", list:"champion championship|friend friendship|leader leadership|member membership|partner partnership"},
+    {cls:"noun", suf:"-th", from:"verb", list:"die death|grow growth"},
+    {cls:"noun", suf:"-th", from:"adjective", list:"deep depth|long length|strong strength|true truth|warm warmth|wide width|young youth"},
+    {cls:"noun", suf:"-ure", from:"verb", list:"depart departure|fail failure|please pleasure|press pressure|proceed procedure|sculpt sculpture|sign signature"},
+    {cls:"noun", suf:"-y", from:"adjective", list:"certain certainty|difficult difficulty|honest honesty|poor poverty|safe safety"},
+    {cls:"noun", suf:"-y", from:"verb", list:"discover discovery|enter entry|injure injury"},
+    {cls:"noun", suf:"other changes", from:"verb", list:"advise advice|analyse analysis|behave behaviour|believe belief|complain complaint|choose choice|give gift|know knowledge|laugh laughter|lose loss|practise practice|prove proof|receive receipt|relieve relief|respond response|rob robbery|sell sale|speak speech|succeed success|try trial"},
+    {cls:"noun", suf:"other changes", from:"adjective", list:"hot heat"},
+    {cls:"noun", suf:"other changes", from:"noun", list:"scene scenery"},
+
+    {cls:"adjective", suf:"-able", from:"verb", list:"accept acceptable/unacceptable|advise advisable/inadvisable|avoid avoidable/unavoidable|bear bearable/unbearable|believe believable/unbelievable|consider considerable|enjoy enjoyable/unenjoyable|forget forgettable/unforgettable|imagine imaginable/unimaginable|notice noticeable|predict predictable/unpredictable|prefer preferable|rely reliable/unreliable|remark remarkable/unremarkable|respect respectable|suit suitable/unsuitable|understand understandable"},
+    {cls:"adjective", suf:"-able", from:"noun", list:"comfort comfortable/uncomfortable|fashion fashionable/unfashionable|knowledge knowledgeable|memory memorable/unmemorable|profit profitable/unprofitable|reason reasonable/unreasonable|value valuable/invaluable"},
+    {cls:"adjective", suf:"-ible", from:"noun", list:"access accessible/inaccessible|sense sensible"},
+    {cls:"adjective", suf:"-ible", from:"verb", list:"resist resistible/irresistible|respond responsible/irresponsible"},
+    {cls:"adjective", suf:"-al / -ial", from:"noun", list:"accident accidental|addition additional|benefit beneficial|centre central|commerce commercial|controversy controversial|criticism critical|culture cultural|education educational|emotion emotional/unemotional|environment environmental|exception exceptional/unexceptional|experiment experimental|fiction fictional|finance financial|globe global|industry industrial|influence influential|intention intentional/unintentional|nation national|nature natural/unnatural|occasion occasional|origin original/unoriginal|person personal/impersonal|politics political|practice practical/impractical|profession professional/unprofessional|residence residential|sensation sensational|society social|tradition traditional|universe universal"},
+    {cls:"adjective", suf:"-ical", from:"noun", list:"alphabet alphabetical|biology biological|chemistry chemical|ecology ecological|economy economical/uneconomical|geography geographical|history historical/historic|psychology psychological"},
+    {cls:"adjective", suf:"-ant", from:"verb", list:"ignore ignorant|please pleasant/unpleasant|resist resistant|signify significant/insignificant|tolerate tolerant/intolerant"},
+    {cls:"adjective", suf:"-ant", from:"noun", list:"distance distant|importance important/unimportant|vacancy vacant"},
+    {cls:"adjective", suf:"-ent", from:"verb", list:"appear apparent|confide confident|depend dependent/independent|differ different|obey obedient/disobedient"},
+    {cls:"adjective", suf:"-ent", from:"noun", list:"absence absent|convenience convenient/inconvenient|efficiency efficient/inefficient|evidence evident|frequency frequent/infrequent|innocence innocent|intelligence intelligent/unintelligent|patience patient/impatient|presence present|violence violent"},
+    {cls:"adjective", suf:"-ful / -less", from:"noun", list:"beauty beautiful|breath breathless|care careful/careless|cheer cheerful/cheerless|colour colourful/colourless|delight delightful|effort effortless|end endless|event eventful/uneventful|fault faultless|gratitude grateful/ungrateful|harm harmful/harmless|help helpful/helpless/unhelpful|home homeless|hope hopeful/hopeless|limit limitless/unlimited|meaning meaningful/meaningless|motion motionless|pain painful/painless|peace peaceful|point pointless|power powerful/powerless|price priceless|skill skilful/skilled/unskilled|sleep sleepless|stress stressful/unstressful|success successful/unsuccessful|taste tasty/tasteful/tasteless|thank thankful/thankless|thought thoughtful/thoughtless|use useful/useless|wonder wonderful|worth worthless"},
+    {cls:"adjective", suf:"-ive", from:"noun", list:"aggression aggressive|effect effective/ineffective|expense expensive/inexpensive|mass massive|secret secretive|sense sensitive/insensitive"},
+    {cls:"adjective", suf:"-ive", from:"verb", list:"attract attractive/unattractive|communicate communicative/uncommunicative|compete competitive/uncompetitive|construct constructive/unconstructive|create creative/uncreative|decide decisive/indecisive|defend defensive|describe descriptive|explode explosive|extend extensive|imagine imaginative/unimaginative|impress impressive/unimpressive|inform informative/uninformative|include inclusive|invent inventive|offend offensive/inoffensive|persuade persuasive|possess possessive|produce productive/unproductive|protect protective|receive receptive/unreceptive|represent representative/unrepresentative|support supportive/unsupportive"},
+    {cls:"adjective", suf:"-ous", from:"noun", list:"ambition ambitious/unambitious|advantage advantageous/disadvantageous|anxiety anxious|caution cautious|curiosity curious|danger dangerous|disaster disastrous|generosity generous/ungenerous|humour humorous|infection infectious|marvel marvellous|mystery mysterious|nerve nervous|number numerous|poison poisonous|religion religious|suspicion suspicious|variety various"},
+    {cls:"adjective", suf:"-y", from:"noun", list:"anger angry|cloud cloudy|fault faulty|fog foggy|frost frosty|fun funny|grass grassy|guilt guilty|hair hairy|health healthy|hill hilly|hunger hungry|ice icy|luck lucky/unlucky|mist misty|mud muddy|noise noisy|price pricey/pricy|rain rainy|rock rocky|sleep sleepy|storm stormy|sun sunny|thirst thirsty|wealth wealthy|wind windy"},
+
+    {cls:"adverb", suf:"-ly", from:"adjective", list:"apparent apparently|nervous nervously|pleasant pleasantly|proud proudly|short shortly"},
+    {cls:"adverb", suf:"-ly after -l", from:"adjective", list:"accidental accidentally|careful carefully|eventual eventually|gradual gradually|original originally|total totally"},
+    {cls:"adverb", suf:"-ly after -e", from:"adjective", list:"complete completely|effective effectively/ineffectively|extreme extremely|fortunate fortunately/unfortunately|late lately|sole solely"},
+    {cls:"adverb", suf:"-ly replacing -e", from:"adjective", list:"gentle gently|humble humbly|regrettable regrettably|remarkable remarkably|simple simply|subtle subtly"},
+    {cls:"adverb", suf:"-ally", from:"adjective", list:"automatic automatically|dramatic dramatically|energetic energetically|enthusiastic enthusiastically|historic historically|scientific scientifically"},
+    {cls:"adverb", suf:"-ily", from:"adjective", list:"angry angrily|extraordinary extraordinarily|happy happily|healthy healthily|lucky luckily/unluckily|noisy noisily"},
+    {cls:"adverb", suf:"-ingly", from:"verb", list:"annoy annoyingly|astonish astonishingly|increase increasingly|interest interestingly|surprise surprisingly/unsurprisingly|worry worryingly"},
+    {cls:"adverb", suf:"other changes", from:"adjective", list:"full fully|public publicly|shy shyly|true truly|whole wholly"},
+    {cls:"adverb", suf:"-edly", from:"verb", list:"expect expectedly/unexpectedly|repeat repeatedly|report reportedly|suppose supposedly"},
+    {cls:"adverb", suf:"-ly", from:"noun", list:"day daily"},
+
+    {cls:"verb", suf:"-en", from:"adjective", list:"bright brighten|broad broaden|dark darken|deaf deafen|deep deepen|fat fatten|flat flatten|hard harden|high heighten|less lessen|long lengthen|loose loosen|sad sadden|sharp sharpen|short shorten|soft soften|stiff stiffen|straight straighten|strong strengthen|sweet sweeten|thick thicken|tight tighten|weak weaken|wide widen|worse worsen"},
+    {cls:"verb", suf:"-en", from:"noun", list:"threat threaten"},
+    {cls:"verb", suf:"en-", from:"adjective", list:"able enable|large enlarge|rich enrich|sure ensure"},
+    {cls:"verb", suf:"en-", from:"noun", list:"courage encourage|danger endanger|force enforce"}
+  ];
+  var CLS_LABEL = {opposite:"Opposites", person:"People", noun:"Nouns", adjective:"Adjectives", adverb:"Adverbs", verb:"Verbs"};
+  var CLS_TASK = {opposite:"Make the opposite", person:"Make a noun for a person", noun:"Make a noun", adjective:"Make an adjective", adverb:"Make an adverb", verb:"Make a verb"};
+  var CLS_TO = {opposite:"negative adjective", person:"person", noun:"noun", adjective:"adjective", adverb:"adverb", verb:"verb"};
+
+  var WF = [];
+  WF_GROUPS.forEach(function(g, gi){
+    g.list.split("|").forEach(function(pair){
+      var sp = pair.indexOf(" ");
+      WF.push({base:pair.slice(0, sp), forms:pair.slice(sp + 1).split("/"), cls:g.cls, suf:g.suf, from:g.from, group:gi});
+    });
+  });
+
+  function initWordFormation(){
+    var catSel = document.getElementById("wfCat");
+    var BEST_KEY = "rff_wf_best_v1";
+    var best = store(BEST_KEY, {});
+    function showBest(){
+      var b = best[catSel.value];
+      document.getElementById("wfBest").textContent = b ? "Your best score here: " + b + "/10" : "";
+    }
+    function drillQuestions(){
+      var pool = WF.filter(function(w){ return catSel.value === "all" || w.cls === catSel.value; });
+      var used = {};
+      var picks = [];
+      shuffle(pool).forEach(function(w){
+        var k = w.base + "|" + w.cls;
+        if(picks.length < 10 && !used[k]){ used[k] = true; picks.push(w); }
+      });
+      return picks.map(function(w){
+        var accept = [];
+        WF.forEach(function(x){
+          if(x.base === w.base && x.cls === w.cls) x.forms.forEach(function(f){ if(accept.indexOf(f) === -1) accept.push(f); });
+        });
+        return {
+          type:"type",
+          prompt:'<span class="prompt-label">' + CLS_TASK[w.cls] + ' from this ' + w.from + '</span><span class="prompt-main">' + w.base.toUpperCase() + '</span>',
+          accept: accept,
+          hint: "Try " + (w.suf === "other changes" ? "a spelling change rather than a regular suffix" : "<strong>" + w.suf + "</strong>") + " (" + w.from + " → " + CLS_TO[w.cls] + ").",
+          explain: (accept.length > 1 ? "Possible answers: " : "Answer: ") + "<em>" + accept.join("</em>, <em>") + "</em>."
+        };
+      });
+    }
+    var round = Round(document.getElementById("wfRound"), drillQuestions, function(score, total){
+      if(total === 10 && (!best[catSel.value] || score > best[catSel.value])){
+        best[catSel.value] = score; save(BEST_KEY, best); showBest();
+      }
+    });
+    catSel.addEventListener("change", function(){ showBest(); round.start(); });
+    showBest();
+    round.start();
+
+    /* ----- exam-style texts ----- */
+    buildGapText(document.getElementById("wfText1"), [
+      {text:"I had always been (0) <b>curious</b> "},
+      {text:'<span class="keyword">CURIOSITY</span>'},
+      {text:" about life abroad, so when I was offered a job in New Zealand, I didn't hesitate. Moving there was the most (1) "},
+      {gap:true, answers:["exciting"], key:"EXCITE"},
+      {text:" decision I have ever made.\n\nFinding (2) "},
+      {gap:true, answers:["accommodation"], key:"ACCOMMODATE"},
+      {text:" was difficult at first, and I had to rely on the (3) "},
+      {gap:true, answers:["generosity"], key:"GENEROUS"},
+      {text:" of a family I had met online. Luckily, the local (4) "},
+      {gap:true, answers:["inhabitants"], key:"INHABIT"},
+      {text:" were incredibly welcoming, and I soon developed a close (5) "},
+      {gap:true, answers:["friendship"], key:"FRIEND"},
+      {text:" with my neighbours.\n\nLife wasn't always easy. The weather was completely (6) "},
+      {gap:true, answers:["unpredictable"], key:"PREDICT"},
+      {text:", and I spent many days stuck indoors. But the experience taught me a great deal of (7) "},
+      {gap:true, answers:["patience"], key:"PATIENT"},
+      {text:", and I would recommend it to anyone who feels (8) "},
+      {gap:true, answers:["dissatisfied"], key:"SATISFY"},
+      {text:" with their routine at home."}
+    ]);
+    buildGapText(document.getElementById("wfText2"), [
+      {text:"Modern life is full of (1) "},
+      {gap:true, answers:["pressure"], key:"PRESS"},
+      {text:": emails, deadlines and endless notifications. Even people with busy social lives often experience a sense of (2) "},
+      {gap:true, answers:["loneliness"], key:"LONELY"},
+      {text:".\n\nScientists have found a clear (3) "},
+      {gap:true, answers:["connection"], key:"CONNECT"},
+      {text:" between stress and illness, but the good news is that small changes can make a (4) "},
+      {gap:true, answers:["considerable"], key:"CONSIDER"},
+      {text:" difference. Spending time outdoors, for example, is (5) "},
+      {gap:true, answers:["surprisingly"], key:"SURPRISE"},
+      {text:" effective: even a short daily walk can (6) "},
+      {gap:true, answers:["strengthen"], key:"STRONG"},
+      {text:" your immune system and improve your (7) "},
+      {gap:true, answers:["ability"], key:"ABLE"},
+      {text:" to concentrate.\n\nAbove all, experts say, try not to become too (8) "},
+      {gap:true, answers:["dependent"], key:"DEPEND"},
+      {text:" on your phone."}
+    ]);
+
+    /* ----- -ing / -ed ----- */
+    var ingEd = document.getElementById("ingEdList");
+    [
+      ["I was really ___ by the end of the film. It lasted nearly four hours.", ["bored","boring"], 0],
+      ["The instructions were so ___ that nobody knew what to do.", ["confused","confusing"], 1],
+      ["We were ___ to hear that the concert had been cancelled.", ["disappointed","disappointing"], 0],
+      ["Climbing Everest three times is an ___ achievement.", ["amazed","amazing"], 1],
+      ["Lucas finds horror films absolutely ___.", ["terrified","terrifying"], 1],
+      ["After a twelve-hour day visiting farms, Reo felt completely ___.", ["exhausted","exhausting"], 0],
+      ["It's really ___ when people check their phones during a conversation.", ["annoyed","annoying"], 1],
+      ["Maja finds the advanced classes more ___ than teaching young kids.", ["interested","interesting"], 1],
+      ["I'm not ___ that this is the right decision. Can we talk about it again?", ["convinced","convincing"], 0],
+      ["Sitting by the fire with a good book is so ___.", ["relaxed","relaxing"], 1]
+    ].forEach(function(item){
+      var why = item[2] === 0 ? "This describes how the person feels, so use <strong>-ed</strong>." : "This describes the thing that causes the feeling, so use <strong>-ing</strong>.";
+      buildChoice(ingEd, item[0], item[1], item[2], why, null);
+    });
+
+    /* ----- word list ----- */
+    var listHost = document.getElementById("wfList");
+    var search = document.getElementById("wfSearch");
+    function renderWfList(){
+      var q = norm(search.value);
+      listHost.innerHTML = "";
+      var lastCls = null, shown = 0;
+      WF_GROUPS.forEach(function(g, gi){
+        var items = WF.filter(function(w){
+          return w.group === gi && (!q || w.base.indexOf(q) !== -1 || w.forms.some(function(f){ return f.indexOf(q) !== -1; }));
+        });
+        if(!items.length) return;
+        if(g.cls !== lastCls){
+          var h = el("h3", null, CLS_LABEL[g.cls]);
+          h.style.margin = (lastCls ? "26px" : "0") + " 0 4px";
+          listHost.appendChild(h);
+          lastCls = g.cls;
+        }
+        var d = el("details","wf-group");
+        if(q) d.open = true;
+        d.appendChild(el("summary", null, '<span class="suf">' + g.suf + '</span><span class="from">' + g.from + ' → ' + CLS_TO[g.cls] + '</span><span class="n">' + items.length + (items.length === 1 ? " word" : " words") + '</span>'));
+        var pairs = el("div","wf-pairs");
+        items.forEach(function(w){ pairs.appendChild(el("span", null, w.base + " → <b>" + w.forms.join(" / ") + "</b>")); });
+        d.appendChild(pairs);
+        listHost.appendChild(d);
+        shown += items.length;
+      });
+      if(!shown) listHost.appendChild(el("p","empty","No words match your search."));
+    }
+    search.addEventListener("input", renderWfList);
+    renderWfList();
+  }
+  initWordFormation();
+
+})();
+</script>
+</body>
+</html>

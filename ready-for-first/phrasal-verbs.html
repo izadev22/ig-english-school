@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Phrasal verbs — Ready for First practice</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="All the phrasal verbs from Ready for First: flashcards, quizzes and a searchable list for Cambridge B2 First.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Caveat:wght@600;700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/rff.css">
+</head>
+<body>
+
+<div class="tb">
+  <div class="tb-inner">
+    <a class="tb-back" href="../index.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+      IG English School
+    </a>
+    <div class="tb-title">
+      <a href="index.html"><strong>Ready for First</strong></a>
+      <span>Practice notebook · Cambridge B2 First</span>
+    </div>
+  </div>
+</div>
+
+<main class="shell">
+  <aside class="rail" id="rail"></aside>
+  <div class="content">
+    <header class="view-head">
+      <span class="kicker">Whole-book practice</span>
+      <h1>Phrasal verbs</h1>
+      <p>All <span id="pvTotal"></span> phrasal verbs from Ready for First. They appear in Reading &amp; Use of English Parts 1, 2 and 4, and using them well makes your Speaking and Writing sound more natural. Filter by unit to revise what you've just studied.</p>
+    </header>
+
+    <div class="filters">
+      <label>Unit
+        <select id="pvUnit"></select>
+      </label>
+      <label>Verb
+        <select id="pvVerb"></select>
+      </label>
+      <span class="note" id="pvSelectionNote"></span>
+    </div>
+
+    <div class="seg" role="tablist" aria-label="Phrasal verb practice modes">
+      <button class="seg-btn active" data-mode="pv-cards">Flashcards</button>
+      <button class="seg-btn" data-mode="pv-meaning">Meaning quiz</button>
+      <button class="seg-btn" data-mode="pv-particle">Particle builder</button>
+      <button class="seg-btn" data-mode="pv-list">Full list</button>
+    </div>
+
+    <div class="mode-pane active" data-mode="pv-cards">
+      <div class="flash-wrap" id="pvCards"></div>
+    </div>
+    <div class="mode-pane" data-mode="pv-meaning">
+      <p class="instr" style="color:var(--ink-soft); font-size:0.92rem; margin-bottom:14px;">Read the meaning and choose the phrasal verb. Ten questions per round.</p>
+      <div class="round" id="pvMeaningRound"></div>
+    </div>
+    <div class="mode-pane" data-mode="pv-particle">
+      <p class="instr" style="color:var(--ink-soft); font-size:0.92rem; margin-bottom:14px;">Choose the missing particle. This is exactly what Use of English Parts 1 and 2 test.</p>
+      <div class="round" id="pvParticleRound"></div>
+    </div>
+    <div class="mode-pane" data-mode="pv-list">
+      <input class="search" type="search" id="pvSearch" placeholder="Search phrasal verbs or meanings" aria-label="Search phrasal verbs">
+      <table class="ref-table">
+        <thead><tr><th>Phrasal verb</th><th>Meaning</th><th>Unit</th></tr></thead>
+        <tbody id="pvTable"></tbody>
+      </table>
+      <p class="instr" style="font-size:0.82rem; color:var(--ink-soft); margin-top:12px;">With some phrasal verbs, a noun can go after the particle, but a pronoun must go before it: <em>give out the books</em> / <em>give them out</em>.</p>
+    </div>
+  </div>
+</main>
+
+<footer class="rf-footer">
+  Content based on the phrasal verbs list in <em>Ready for First</em> (Macmillan Education). For study use by IG English School students.
+</footer>
+
+<script src="assets/rff.js"></script>
+<script>
+(function(){
+  "use strict";
+  var R = RFF, el = R.el, norm = R.norm, shuffle = R.shuffle, store = R.store, save = R.save,
+      buildChoice = R.buildChoice, buildGapText = R.buildGapText, buildMatching = R.buildMatching,
+      markDone = R.markDone, Round = R.Round, modeHooks = R.modeHooks;
+
+  RFF.initPage({page:"phrasal"});
+
+  /* =================================================================
+     PHRASAL VERBS (whole book)
+  ================================================================= */
+  // [form with [particle], meaning, units, confusion group]
+  var PV_RAW = [
+    ["back something [up]","support an explanation","10"],
+    ["bolt something [down]","eat something very quickly","12"],
+    ["bring someone [up]","take care of a child until they become an adult","6"],
+    ["bring something [about]","cause","7"],
+    ["carry [on] (doing) something","continue","1/12","continue"],
+    ["carry [out] something","do some work or research","1/2/9"],
+    ["catch [on]","become popular or fashionable","7"],
+    ["catch [on]","begin to understand","8","understand"],
+    ["catch [up on] something","do something that you didn't do enough of before","1"],
+    ["cheer (someone) [up]","become or make (someone) less sad","6"],
+    ["come [across] something/someone","find or meet something/someone by chance","1/8"],
+    ["come [over]","visit someone in the place where they are, especially their house","10","visit"],
+    ["come [up with] something","think of (an idea or plan)","2/7/8"],
+    ["draw something [up]","prepare and write (a plan)","7"],
+    ["fall [out with] someone","stop being friendly with someone because you have had an argument","6"],
+    ["find something [out]","discover","2/7"],
+    ["get [about] (a place)","travel around","8"],
+    ["get [away with] something","manage to do something bad without being punished or criticised for it","10"],
+    ["get [by]","manage to survive or live","1"],
+    ["get [on with] someone","have a good relationship with someone","6"],
+    ["get [over] something","recover from","1/12"],
+    ["give [away] information","tell information that should be kept secret","9"],
+    ["give homework [in]","hand homework to the teacher","9"],
+    ["give [in] (to someone's requests)","agree to something after initial resistance","9"],
+    ["give oneself [up]","allow oneself to be arrested","9"],
+    ["give [out] (books/paper)","distribute something to several people","9","giveout"],
+    ["give [out] information","give information to a lot of people","9","giveout"],
+    ["give something [back]","return something","9","return"],
+    ["give something [up]","stop doing something you do regularly","2/5/6/9/12"],
+    ["go [in for] (a competition)","enter (a competition)","5"],
+    ["go [on]","happen","2/7"],
+    ["go [on] (with something)","continue","2","continue"],
+    ["go [round]","visit a person or place","10","visit"],
+    ["grow [up]","change from being a child to becoming an adult","1/6"],
+    ["gulp something [down]","drink something very quickly","12"],
+    ["head [for] somewhere","go somewhere","8","goto"],
+    ["hit it [off with] someone","like each other on the first meeting","RfR","like"],
+    ["kick someone [out]","force someone to leave a place or organisation; expel","10"],
+    ["let someone [down]","disappoint","6"],
+    ["look [forward to] something","feel happy about something that is going to happen","1/7/12"],
+    ["look [up to] someone","admire and respect","6"],
+    ["make something [up]","invent an explanation for something","10"],
+    ["make [up] one's mind","decide","1/8"],
+    ["move [on to] something","stop discussing something and begin discussing something different","6"],
+    ["open [up to] someone","talk more about your personal feelings","10"],
+    ["own [up to] something","admit or confess that you have done something wrong","10"],
+    ["pick [up] (a bargain)","buy something (cheap)","7"],
+    ["push something [up]","make something increase","7","increase"],
+    ["put clothes [on]","place clothes on your body","11"],
+    ["put [on] an event","organise an event","11"],
+    ["put prices [up]","increase prices","11","increase"],
+    ["put someone [off]","distract someone","11"],
+    ["put someone [off] something","discourage someone","1/2/11/12"],
+    ["put someone [up] (for the night)","accommodate someone","11"],
+    ["put something [off]","postpone something","11"],
+    ["put something [together]","produce (by combining several different things)","7"],
+    ["put music [on]","get something ready to listen to","11"],
+    ["put [up with] something/someone","tolerate something/someone","6"],
+    ["put weight [on]","gain weight","11"],
+    ["put your hand [up]","raise your hand into the air","11"],
+    ["run [into] (thousands of pounds)","reach a particular number or amount","10"],
+    ["run [out of] something","use all of something so that none is left","6/10"],
+    ["sell [out of] something","sell all of something","7"],
+    ["set [off] for somewhere","start going somewhere","1","goto"],
+    ["set something [up]","start (a business)","7"],
+    ["set [up] home","begin living in a place","2"],
+    ["settle [down]","live a quieter life by staying permanently in one place and perhaps getting married","1"],
+    ["show [off]","behave in a way that is intended to attract attention and make people admire you","10"],
+    ["sign [up for] something","agree to do; book","RfR"],
+    ["sort [out] a problem","solve a problem","6"],
+    ["split [up with] someone","end a romantic relationship with someone","6"],
+    ["stand [out]","be easy to notice","2"],
+    ["take [after] someone","resemble (an older family member)","4"],
+    ["take [off]","start to become successful","4","success"],
+    ["take [over]","gain control","4"],
+    ["take someone [aside]","move someone away from other people to talk","4"],
+    ["take someone [on]","employ someone","4/9"],
+    ["take something [back]","return something","7","return"],
+    ["take something [in]","accept something as true","4"],
+    ["take [to] something/someone","start to like something/someone","4","like"],
+    ["take [up] a new sport/hobby","start doing a new sport/hobby","2/4/12"],
+    ["tell someone [off]","criticise someone angrily for doing something wrong","6/12"],
+    ["try something [on]","put on a piece of clothing to see how it looks and whether it fits","7"],
+    ["turn [out]","go somewhere to take part in an event","8"],
+    ["turn [out] (to be a success)","become (a success)","2","success"],
+    ["turn [out] (well/badly)","end (well/badly)","6"],
+    ["turn something [down]","reject something","7"],
+    ["turn something [into]","make something change into something different","7"],
+    ["turn [to] someone","go to someone for help","2"],
+    ["turn [up]","arrive","1"],
+    ["work something [out]","manage to understand","2","understand"]
+  ];
+  var PV = PV_RAW.map(function(r, idx){
+    var m = r[0].match(/\[([^\]]+)\]/);
+    return {
+      id: idx,
+      plain: r[0].replace(/[\[\]]/g,""),
+      blanked: r[0].replace(/\[[^\]]+\]/, "<span class=\"blank\">___</span>"),
+      particle: m[1],
+      verb: r[0].split(" ")[0],
+      meaning: r[1],
+      units: r[2].split("/"),
+      group: r[3] || null
+    };
+  });
+  function unitLabel(u){ return u === "RfR" ? "Ready for Reading" : "Unit " + u; }
+  function unitsText(e){ return e.units.map(unitLabel).join(", "); }
+
+  var PV_KNOWN_KEY = "rff_pv_known_v1";
+  var pvKnown = store(PV_KNOWN_KEY, []);
+  function isKnown(e){ return pvKnown.indexOf(e.plain + "|" + e.meaning) !== -1; }
+  function setKnown(e, yes){
+    var k = e.plain + "|" + e.meaning;
+    var i = pvKnown.indexOf(k);
+    if(yes && i === -1) pvKnown.push(k);
+    if(!yes && i !== -1) pvKnown.splice(i, 1);
+    save(PV_KNOWN_KEY, pvKnown);
+  }
+  document.getElementById("pvTotal").textContent = PV.length;
+
+  function initPhrasal(){
+    var unitSel = document.getElementById("pvUnit");
+    var verbSel = document.getElementById("pvVerb");
+    var units = [];
+    PV.forEach(function(e){ e.units.forEach(function(u){ if(units.indexOf(u) === -1) units.push(u); }); });
+    units.sort(function(a, b){ return (a === "RfR" ? 99 : +a) - (b === "RfR" ? 99 : +b); });
+    unitSel.appendChild(new Option("All units", "all"));
+    units.forEach(function(u){ unitSel.appendChild(new Option(unitLabel(u), u)); });
+
+    var verbCounts = {};
+    PV.forEach(function(e){ verbCounts[e.verb] = (verbCounts[e.verb] || 0) + 1; });
+    verbSel.appendChild(new Option("All verbs", "all"));
+    Object.keys(verbCounts).filter(function(v){ return verbCounts[v] >= 3; }).sort().forEach(function(v){
+      verbSel.appendChild(new Option(v + " (" + verbCounts[v] + ")", v));
+    });
+
+    function pool(){
+      return PV.filter(function(e){
+        return (unitSel.value === "all" || e.units.indexOf(unitSel.value) !== -1) &&
+               (verbSel.value === "all" || e.verb === verbSel.value);
+      });
+    }
+
+    /* ----- flashcards ----- */
+    var cardsHost = document.getElementById("pvCards");
+    var deck = [], pos = 0, hideKnown = false;
+    function buildDeck(){
+      var p = pool();
+      deck = shuffle(hideKnown ? p.filter(function(e){ return !isKnown(e); }) : p);
+      pos = 0;
+      renderCard();
+    }
+    function renderCard(){
+      cardsHost.innerHTML = "";
+      var p = pool();
+      var knownCount = p.filter(isKnown).length;
+      if(!deck.length){
+        cardsHost.appendChild(el("p","empty", p.length ? "You've marked every card in this selection as known. Untick \"Hide cards I know\" to review them, or choose another unit." : "No phrasal verbs match these filters."));
+        cardsHost.appendChild(metaRow(knownCount, p.length));
+        return;
+      }
+      if(pos >= deck.length){ deck = shuffle(deck); pos = 0; }
+      var e = deck[pos];
+      var card = el("button","flash");
+      card.type = "button";
+      card.setAttribute("aria-label","Flashcard: " + e.plain + ". Press to see the meaning.");
+      card.innerHTML = '<span class="tag">' + unitsText(e) + (isKnown(e) ? ' · you know this one' : '') + '</span>' +
+        '<span class="front">' + e.plain + '</span>' +
+        '<span class="back">' + e.meaning + '</span>' +
+        '<span class="turn">Click to turn over</span>';
+      card.addEventListener("click", function(){
+        var f = card.classList.toggle("flipped");
+        card.querySelector(".turn").textContent = f ? "Click to turn back" : "Click to turn over";
+      });
+      cardsHost.appendChild(card);
+      cardsHost.appendChild(metaRow(knownCount, p.length));
+      var row = el("div","btn-row");
+      var again = el("button","btn btn-ghost btn-sm","Still learning");
+      again.type = "button";
+      again.addEventListener("click", function(){ setKnown(e, false); pos++; renderCard(); });
+      var gotIt = el("button","btn btn-primary btn-sm","I know this");
+      gotIt.type = "button";
+      gotIt.addEventListener("click", function(){
+        setKnown(e, true);
+        if(hideKnown){ deck.splice(pos, 1); } else { pos++; }
+        renderCard();
+      });
+      var shuf = el("button","btn btn-ghost btn-sm","Shuffle");
+      shuf.type = "button";
+      shuf.addEventListener("click", function(){ deck = shuffle(deck); pos = 0; renderCard(); });
+      row.appendChild(again); row.appendChild(gotIt); row.appendChild(shuf);
+      cardsHost.appendChild(row);
+    }
+    function metaRow(knownCount, total){
+      var m = el("div","flash-meta");
+      m.appendChild(el("span", null, (deck.length ? "Card " + (pos+1) + " of " + deck.length + " · " : "") + knownCount + " of " + total + " known in this selection"));
+      var lab = el("label");
+      var cb = document.createElement("input");
+      cb.type = "checkbox"; cb.checked = hideKnown;
+      cb.addEventListener("change", function(){ hideKnown = cb.checked; buildDeck(); });
+      lab.appendChild(cb);
+      lab.appendChild(document.createTextNode("Hide cards I know"));
+      m.appendChild(lab);
+      return m;
+    }
+
+    /* ----- meaning quiz ----- */
+    function meaningQuestions(){
+      return shuffle(pool()).slice(0, 10).map(function(e){
+        var candidates = PV.filter(function(x){
+          return x.plain !== e.plain && x.meaning !== e.meaning && !(e.group && x.group === e.group);
+        });
+        var same = shuffle(candidates.filter(function(x){ return x.verb === e.verb; }));
+        var other = shuffle(candidates.filter(function(x){ return x.verb !== e.verb; }));
+        var picks = [];
+        same.concat(other).forEach(function(x){
+          if(picks.length < 3 && picks.indexOf(x.plain) === -1) picks.push(x.plain);
+        });
+        var options = shuffle(picks.concat([e.plain]));
+        return {
+          type:"choice",
+          prompt:'<span class="prompt-label">Which phrasal verb means...</span><span class="prompt-main">' + e.meaning + '</span>',
+          options: options,
+          correct: options.indexOf(e.plain),
+          explain:'<em>' + e.plain + '</em> = ' + e.meaning + ' (' + unitsText(e) + ')'
+        };
+      });
+    }
+    var meaningRound = Round(document.getElementById("pvMeaningRound"), meaningQuestions);
+
+    /* ----- particle builder ----- */
+    var COMMON = ["up","off","on","out","down","over","in","back","away","by","into","round"];
+    function particleQuestions(){
+      return shuffle(pool()).slice(0, 10).map(function(e){
+        var sameVerb = [];
+        PV.forEach(function(x){ if(x.verb === e.verb && x.particle !== e.particle && sameVerb.indexOf(x.particle) === -1) sameVerb.push(x.particle); });
+        var picks = [];
+        shuffle(sameVerb).concat(shuffle(COMMON)).forEach(function(p){
+          if(picks.length < 3 && p !== e.particle && picks.indexOf(p) === -1) picks.push(p);
+        });
+        var options = shuffle(picks.concat([e.particle]));
+        return {
+          type:"choice",
+          prompt:'<span class="prompt-label">Complete the phrasal verb</span><span class="prompt-main">' + e.blanked + '</span><span class="prompt-sub">' + e.meaning + '</span>',
+          options: options,
+          correct: options.indexOf(e.particle),
+          explain:'<em>' + e.plain + '</em> = ' + e.meaning
+        };
+      });
+    }
+    var particleRound = Round(document.getElementById("pvParticleRound"), particleQuestions);
+
+    /* ----- full list ----- */
+    var search = document.getElementById("pvSearch");
+    function renderList(){
+      var q = norm(search.value);
+      var rows = pool().filter(function(e){ return !q || norm(e.plain).indexOf(q) !== -1 || norm(e.meaning).indexOf(q) !== -1; });
+      var tbody = document.getElementById("pvTable");
+      tbody.innerHTML = "";
+      if(!rows.length){ tbody.innerHTML = '<tr><td colspan="3" class="empty">No phrasal verbs match your search.</td></tr>'; return; }
+      rows.forEach(function(e){
+        var tr = el("tr");
+        tr.appendChild(el("td", null, e.plain + (isKnown(e) ? '<span class="known" title="You marked this as known">✓</span>' : '')));
+        tr.appendChild(el("td", null, e.meaning));
+        tr.appendChild(el("td", null, e.units.map(function(u){ return u === "RfR" ? "RfR" : u; }).join(", ")));
+        tbody.appendChild(tr);
+      });
+    }
+    search.addEventListener("input", renderList);
+
+    var started = {};
+    function refreshActive(){
+      var active = document.querySelector('.seg-btn.active').dataset.mode;
+      var p = pool();
+      document.getElementById("pvSelectionNote").textContent = p.length + (p.length === 1 ? " phrasal verb" : " phrasal verbs") + " selected";
+      if(active === "pv-cards") buildDeck();
+      if(active === "pv-meaning"){ meaningRound.start(); started.meaning = true; }
+      if(active === "pv-particle"){ particleRound.start(); started.particle = true; }
+      if(active === "pv-list") renderList();
+      if(active !== "pv-meaning") started.meaning = false;
+      if(active !== "pv-particle") started.particle = false;
+    }
+    unitSel.addEventListener("change", function(){ started = {}; refreshActive(); });
+    verbSel.addEventListener("change", function(){ started = {}; refreshActive(); });
+    modeHooks["pv-cards"] = buildDeck;
+    modeHooks["pv-meaning"] = function(){ if(!started.meaning){ meaningRound.start(); started.meaning = true; } };
+    modeHooks["pv-particle"] = function(){ if(!started.particle){ particleRound.start(); started.particle = true; } };
+    modeHooks["pv-list"] = renderList;
+    refreshActive();
+  }
+  initPhrasal();
+
+})();
+</script>
+</body>
+</html>

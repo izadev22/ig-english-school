@@ -1,0 +1,847 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Unit 1 · Lifestyle — Ready for First practice</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Ready for First Unit 1 (Lifestyle): interactive practice for the Cambridge B2 First exam.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Caveat:wght@600;700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/rff.css">
+</head>
+<body>
+
+<div class="tb">
+  <div class="tb-inner">
+    <a class="tb-back" href="../index.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+      IG English School
+    </a>
+    <div class="tb-title">
+      <a href="index.html"><strong>Ready for First</strong></a>
+      <span>Practice notebook · Cambridge B2 First</span>
+    </div>
+  </div>
+</div>
+
+<main class="shell">
+  <aside class="rail" id="rail"></aside>
+  <div class="content">
+    <header class="view-head">
+      <span class="kicker">Unit 1</span>
+      <h1>Lifestyle</h1>
+      <p>Habitual behaviour, used to and would, be used to and get used to, lifestyle and clothes vocabulary, expressions with get. Exam practice: Reading and Use of English Parts 1, 2, 4 and 7, Writing Part 2, Listening Parts 1 and 3, Speaking Parts 1 and 2.</p>
+    </header>
+
+    <nav class="tabs" aria-label="Unit 1 sections">
+      <button class="tab-btn active" data-tab="vocab">Vocabulary</button>
+      <button class="tab-btn" data-tab="grammar">Grammar</button>
+      <button class="tab-btn" data-tab="rue">Reading &amp; Use of English</button>
+      <button class="tab-btn" data-tab="writing">Writing</button>
+      <button class="tab-btn" data-tab="listening">Listening</button>
+      <button class="tab-btn" data-tab="speaking">Speaking</button>
+      <button class="tab-btn" data-tab="pron">Pronunciation</button>
+    </nav>
+
+    <!-- ================= VOCABULARY ================= -->
+    <section class="page active" data-tab="vocab">
+
+      <div class="block" data-ex="voc-lifestyle">
+        <span class="kicker">Vocabulary · Lifestyle</span>
+        <h3>Adjectives that go with lifestyle</h3>
+        <p class="instr">All of these adjectives collocate with <em>lifestyle</em>: you can <em>have</em>, <em>live</em> or <em>lead</em> a busy, healthy, sedentary... lifestyle. Click each card to check the meaning, then say a sentence about your own lifestyle.</p>
+        <div class="card-grid" id="vocLifestyleCards"></div>
+      </div>
+
+      <div class="block" data-ex="voc-clothes">
+        <span class="kicker">Vocabulary · Clothes</span>
+        <h3>Opposites</h3>
+        <p class="instr">Complete each sentence with the adjective from the box that means the opposite of the word in <b>bold</b>.</p>
+        <div class="bank">
+          <span>baggy</span><span>brand new</span><span>casual</span><span>colourful</span><span>scruffy</span><span>unfashionable</span>
+        </div>
+        <div class="gaptext" id="gapClothes"></div>
+        <button class="btn btn-primary btn-sm" data-check="gapClothes">Check answers</button>
+        <p class="result-line" id="gapClothes-result"></p>
+      </div>
+
+      <div class="block" data-ex="voc-get-meaning">
+        <span class="kicker">Vocabulary · Get</span>
+        <h3>Six meanings of get</h3>
+        <p class="instr">Choose what <em>get</em> means in each sentence.</p>
+        <div id="getMeaningList"></div>
+      </div>
+
+      <div class="block" data-ex="voc-get-phrasal">
+        <span class="kicker">Vocabulary · Get</span>
+        <h3>Expressions with get</h3>
+        <p class="instr">Choose the word that completes each expression.</p>
+        <div id="getPhrasalList"></div>
+      </div>
+
+      <div class="block" data-ex="voc-get-endings">
+        <span class="kicker">Review · Get</span>
+        <h3>Match the beginnings and endings</h3>
+        <p class="instr">Choose the ending that completes each sentence.</p>
+        <div id="getEndingsList"></div>
+        <button class="btn btn-primary btn-sm" data-check="getEndingsList" style="margin-top:10px;">Check answers</button>
+        <p class="result-line" id="getEndingsList-result"></p>
+      </div>
+
+    </section>
+
+    <!-- ================= GRAMMAR ================= -->
+    <section class="page" data-tab="grammar">
+
+      <div class="block" data-ex="gram-adverb-position">
+        <span class="kicker">Grammar · Habitual behaviour</span>
+        <h3>Where does the frequency adverb go?</h3>
+        <p class="instr">Frequency adverbs (always, usually, often, sometimes, rarely, never...) go <strong>before the main verb</strong> and <strong>after an auxiliary verb or be</strong>. Some can also start a sentence; others can't.</p>
+        <div id="advPositionQ"></div>
+      </div>
+
+      <div class="block" data-ex="gram-adverb-fix">
+        <h3>Correct or incorrect?</h3>
+        <p class="instr">Is the adverb in the right position in each sentence?</p>
+        <div id="advFixList"></div>
+      </div>
+
+      <div class="block" data-ex="gram-used-would">
+        <span class="kicker">Grammar · Past habits</span>
+        <h3>Used to or would?</h3>
+        <p class="instr">Both describe past habits that don't happen any more, but only one of them works with states (verbs like <em>be, have, like, know</em>).</p>
+        <div id="usedWouldQ"></div>
+        <div class="margin-note">
+          <p><strong>Rule:</strong> <em>would</em> only works with repeated actions. For states (be, have, like, want, know...), use <em>used to</em>.</p>
+        </div>
+      </div>
+
+      <div class="block" data-ex="gram-used-would-paragraph">
+        <h3>Repeated action, state or one-off event?</h3>
+        <p class="instr">Read the text. For each underlined verb, decide: <strong>(a)</strong> both used to and would are possible, <strong>(b)</strong> only used to is possible, or <strong>(c)</strong> neither is possible, because it's a single event and not a habit.</p>
+        <div class="passage single" id="paragraphText"></div>
+        <div id="paragraphQ"></div>
+      </div>
+
+      <div class="block" data-ex="gram-usedto-concept">
+        <span class="kicker">Grammar · Used to</span>
+        <h3>Be used to, get used to and used to</h3>
+        <div id="usedToConceptQ"></div>
+        <div class="margin-note">
+          <p><strong>be used to</strong> = already accustomed to something (a state).<br><strong>get used to</strong> = becoming accustomed to something (a process, a change).<br><strong>used to + infinitive</strong> = a past habit that has stopped.</p>
+          <p>After <em>be/get used to</em>, always use an <strong>-ing form</strong> or a noun, never an infinitive.</p>
+        </div>
+      </div>
+
+      <div class="block" data-ex="gram-usedto-gapfill">
+        <h3>Complete with the correct form</h3>
+        <p class="instr">Use <em>used to</em>, <em>be used to</em> or <em>get used to</em> in the right form.</p>
+        <div class="gaptext" id="gapUsedTo"></div>
+        <button class="btn btn-primary btn-sm" data-check="gapUsedTo">Check answers</button>
+        <p class="result-line" id="gapUsedTo-result"></p>
+      </div>
+
+      <div class="block" data-ex="gram-review-gapfill">
+        <span class="kicker">Review</span>
+        <h3>Habitual behaviour</h3>
+        <p class="instr">Complete each sentence with a word from the box. You won't need all the words.</p>
+        <div class="bank">
+          <span>always</span><span>almost</span><span>hardly</span><span>never</span><span>not</span><span>tend</span><span>use</span><span>usual</span><span>usually</span><span>very</span><span>will</span><span>would</span>
+        </div>
+        <div class="gaptext" id="gapReview"></div>
+        <button class="btn btn-primary btn-sm" data-check="gapReview">Check answers</button>
+        <p class="result-line" id="gapReview-result"></p>
+      </div>
+
+    </section>
+
+    <!-- ================= READING & USE OF ENGLISH ================= -->
+    <section class="page" data-tab="rue">
+
+      <div class="block wide" data-ex="rue-part7">
+        <span class="kicker">Part 7 · Multiple matching</span>
+        <h3>This is your life</h3>
+        <p class="instr">Read the four accounts. For each question, choose the person (A–D). You can choose a person more than once.</p>
+        <div class="passage" id="part7Passage"></div>
+        <div id="part7Questions"></div>
+        <div class="tip">In the exam, underline the part of the text that gives you each answer. If you get stuck, move on and scan the whole text again at the end.</div>
+      </div>
+
+      <div class="block" data-ex="rue-part7-phrasal">
+        <h3>Phrasal verbs from the text</h3>
+        <p class="instr">Match each phrasal verb to its meaning. Use the context in the texts above to help you.</p>
+        <div id="phrasalMatchList"></div>
+        <button class="btn btn-primary btn-sm" data-check="phrasalMatchList" style="margin-top:10px;">Check answers</button>
+        <p class="result-line" id="phrasalMatchList-result"></p>
+      </div>
+
+      <div class="block wide" data-ex="rue-part1">
+        <span class="kicker">Part 1 · Multiple-choice cloze</span>
+        <h3>Young entrepreneurs</h3>
+        <p class="instr">Read the text and choose the answer (A, B, C or D) that best fits each gap.</p>
+        <div class="passage" id="part1Passage"></div>
+        <div id="part1Questions"></div>
+      </div>
+
+      <div class="block wide" data-ex="rue-part2">
+        <span class="kicker">Part 2 · Open cloze</span>
+        <h3>Blue zones</h3>
+        <p class="instr">Write <strong>one word</strong> in each gap. There are no options, so look carefully at the words before and after each gap.</p>
+        <div class="gaptext" id="part2Text"></div>
+        <button class="btn btn-primary btn-sm" data-check="part2Text">Check answers</button>
+        <p class="result-line" id="part2Text-result"></p>
+      </div>
+
+      <div class="block" data-ex="rue-part4">
+        <span class="kicker">Part 4 · Key word transformation</span>
+        <h3>Same meaning, different words</h3>
+        <p class="instr">Complete the second sentence so that it means the same as the first, using the word given. Use between two and five words, including the word given, and don't change that word.</p>
+        <div id="part4List"></div>
+      </div>
+
+    </section>
+
+    <!-- ================= WRITING ================= -->
+    <section class="page" data-tab="writing">
+
+      <div class="block wide" data-ex="writing-linking">
+        <span class="kicker">Part 2 · Informal letter</span>
+        <h3>Linking words in Hugo's letter</h3>
+        <p class="instr">Paula wrote to her friend Hugo for advice. Complete Hugo's reply with the linking words from the box.</p>
+        <div class="margin-note"><p>"As you know, this is my last year at school, and I can't make up my mind what to do when I leave. My parents want me to go to university, but I'd really like to work as a ski instructor. What do you think I should do? Thanks, Paula"</p></div>
+        <div class="bank">
+          <span>anyway</span><span>as well</span><span>but</span><span>either</span><span>on the other hand</span><span>so</span>
+        </div>
+        <div class="gaptext" id="letterGaps"></div>
+        <button class="btn btn-primary btn-sm" data-check="letterGaps">Check answers</button>
+        <p class="result-line" id="letterGaps-result"></p>
+        <div class="tip">Look at how Hugo organises his reply. Paragraph 1 gives a first opinion on Paula's choice; paragraph 2 gives the advantages and disadvantages of working as a ski instructor; paragraph 3 outlines the advantages of going to university; paragraph 4 advises Paula what to do; paragraph 5 makes some closing comments.</div>
+      </div>
+
+      <div class="block">
+        <h3>Your turn: informal letter</h3>
+        <p class="instr">You have received this letter from your English-speaking friend, Tom. Write your reply in 140–190 words.</p>
+        <div class="margin-note"><p>"I'm not sure what to do during the summer holidays next year. My parents want me to help out in the shop they own, but I'd quite like to work in a hotel in your country – there are plenty of jobs available. What do you think I should do? Write soon, Tom"</p></div>
+        <div class="freewrite">
+          <textarea id="letterFree" placeholder="Dear Tom, ..." aria-label="Your letter to Tom"></textarea>
+          <p class="word-counter" id="letterFreeCounter">0 words (target: 140–190)</p>
+        </div>
+        <ul class="checklist">
+          <li><label><input type="checkbox"> I answered Tom's question and gave clear advice</label></li>
+          <li><label><input type="checkbox"> I looked at the advantages and disadvantages of both options</label></li>
+          <li><label><input type="checkbox"> I used at least three linking words (but, on the other hand, so, anyway...)</label></li>
+          <li><label><input type="checkbox"> I used vocabulary from the unit (lifestyle, get used to, settle down...)</label></li>
+          <li><label><input type="checkbox"> I opened and closed it like a letter to a friend</label></li>
+        </ul>
+        <button class="btn btn-ghost btn-sm" data-script="tomModel" data-open-label="Hide the sample answer" aria-expanded="false" style="margin-top:14px;">Show a sample answer</button>
+        <div class="model-answer" id="tomModel">
+          <p class="letter">Dear Tom,
+It was great to hear from you! That's a very important choice to make, and I think you should think carefully about it before choosing.
+I'm certain you would enjoy working in a hotel and that you would do it very well and, obviously, that would be a great experience and you would earn a great deal of money. However, it's true you would be far from your family and friends and, if you are not used to work many hours, you will find it exhausting.
+On the other hand, as your parents need help, if you stay, you will be giving them a rest from work and also you will be in your city and in your free time you will be able to hang out with your friends.
+Because of that, in my opinion the best thing for you to do is to stay at home and help your parents in the shop. You will have more opportunities to travel abroad when you are older.
+In any case, regardless what you decide, I'm sure you will have a great summer.
+A hug
+Lucía</p>
+          <p style="margin-top:6px;">187 words · Mark: <strong>good pass</strong></p>
+          <h4>Examiner comments</h4>
+          <p><strong>Content:</strong> All the content is relevant and informative. The writer considers both options before advising Tom which to choose.</p>
+          <p><strong>Communicative achievement:</strong> The conventions of letters are used appropriately. The opening and closing comments are generally appropriate, although "A hug" is not usual. The register is consistently informal and the tone friendly and helpful.</p>
+          <p><strong>Organisation:</strong> The letter is well organised into logical paragraphs. A range of linking words is used, particularly at the beginning of sentences (<em>However; On the other hand; Because of that; In any case</em>). However, there is an over-reliance on <em>and</em> to link ideas within sentences.</p>
+          <p><strong>Language:</strong> A reasonable range of everyday language is used (e.g. <em>think carefully; earn a great deal of money; exhausting; have more opportunities to travel abroad; hang out with your friends</em>). Both simple and complex forms are used with good control, and errors do not prevent understanding (<em>you are not used to <s>work</s> working; regardless [of] what you decide</em>).</p>
+        </div>
+      </div>
+
+      <div class="block">
+        <h3>Your turn: article</h3>
+        <p class="instr">Write a short article (140–190 words) about your lifestyle and how you feel about it. You could write about your daily routine, your work or studies, your free-time activities, your social life, your family life or your eating habits. Use the four texts in <em>This is your life</em> as models.</p>
+        <div class="freewrite">
+          <textarea id="articleFree" placeholder="A day in my life ..." aria-label="Your article"></textarea>
+          <p class="word-counter" id="articleFreeCounter">0 words (target: 140–190)</p>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ================= LISTENING ================= -->
+    <section class="page" data-tab="listening">
+
+      <div class="block" data-ex="listening-part3">
+        <span class="kicker">Part 3 · Multiple matching</span>
+        <h3>Five people talk about their clothes</h3>
+        <p class="instr">You will hear five short extracts in which people are talking about the clothes they wear. For questions 1–5, choose from the list (A–H) what each speaker says. Use the letters only once. There are three extra letters which you do not need to use.</p>
+        <div class="tip">
+          <strong>Before you listen:</strong> you won't hear the same words as in sentences A–H, so think of another way of saying each idea. For example, A (<em>I tend to wear the same clothes all the time</em>) could sound like: <em>"I feel really comfortable in a white shirt and jeans, and that's what I wear nearly every day."</em><br>
+          Each extract usually has a distractor too: Speaker 1 mentions designer clothes, but C may not be the answer.
+        </div>
+        <ol class="statements" type="A">
+          <li>I tend to wear the same clothes all the time.</li>
+          <li>I don't really care what clothes I wear.</li>
+          <li>I refuse to wear designer clothes.</li>
+          <li>I'm careful to check the origin of the clothes I buy.</li>
+          <li>I generally wear second-hand clothes.</li>
+          <li>I only throw clothes away when absolutely necessary.</li>
+          <li>I buy quality clothes that are guaranteed to last.</li>
+          <li>I wear clothes that give me self-confidence.</li>
+        </ol>
+        <div class="audio-box">
+          <span class="audio-label">Track 1.1</span>
+          <audio controls preload="none" src="audio/unit-01/track-1.1.mp3"></audio>
+          <span class="audio-note">Listen twice, as in the exam.</span>
+        </div>
+        <div id="part3Match"></div>
+        <div class="btn-row" style="margin-top:10px;">
+          <button class="btn btn-primary btn-sm" data-check="part3Match">Check answers</button>
+          <button class="btn btn-ghost btn-sm" data-script="part3Script" data-open-label="Hide the audioscript" aria-expanded="false">Show where the answers are</button>
+        </div>
+        <p class="result-line" id="part3Match-result"></p>
+        <div class="script-lines" id="part3Script"></div>
+      </div>
+
+      <div class="block" data-ex="listening-part1">
+        <span class="kicker">Part 1 · Multiple choice</span>
+        <h3>Eight short situations</h3>
+        <p class="instr">You will hear people talking in eight different situations. For questions 1–8, choose the best answer (A, B or C).</p>
+        <div class="tip">In the exam you hear each extract twice. Only the first sentence of each question is read out (<em>You hear two people talking about a friend of theirs</em>), not the question or the options, and there are always distractors.</div>
+        <div class="audio-box">
+          <span class="audio-label">Track 1.2</span>
+          <audio controls preload="none" src="audio/unit-01/track-1.2.mp3"></audio>
+          <span class="audio-note">Listen twice, as in the exam.</span>
+        </div>
+        <div id="part1Listening"></div>
+      </div>
+
+    </section>
+
+    <!-- ================= SPEAKING ================= -->
+    <section class="page" data-tab="speaking">
+
+      <div class="block wide">
+        <span class="kicker">Part 1 · Interview</span>
+        <h3>Warm-up: answer in 20 seconds</h3>
+        <p class="instr">Press Start and answer out loud before the time runs out. Don't just say yes or no: give a reason or an example. And don't learn long answers by heart, because you'll sound unnatural.</p>
+        <div id="speakingP1List"></div>
+      </div>
+
+      <div class="block wide">
+        <span class="kicker">Part 2 · Long turn</span>
+        <h3>Compare, don't describe</h3>
+        <p class="instr">The four photos show people who lead different lifestyles. Student A speaks for about one minute; then Student B answers a short question in about 30 seconds.</p>
+        <div class="tip">You don't need to describe the photos in detail. Compare them: talk about similarities (<em>In both pictures...</em>) and differences (<em>In the first picture..., whereas in the second one...</em>), then answer the question.</div>
+
+        <figure class="photo-task">
+          <figcaption class="photo-q">What might the people find difficult about their lifestyles?</figcaption>
+          <div class="photo-pair">
+            <div class="photo"><span class="photo-n">1</span><img src="https://images.unsplash.com/photo-1713947506536-2edbac14d3bb?auto=format&amp;fit=crop&amp;w=900&amp;h=640&amp;q=75" alt="A woman at her office desk talking on the phone while working on a laptop" loading="lazy" width="900" height="640"></div>
+            <div class="photo"><span class="photo-n">2</span><img src="https://images.unsplash.com/photo-1762430815620-fcca603c240c?auto=format&amp;fit=crop&amp;crop=top&amp;w=900&amp;h=640&amp;q=75" alt="A model walking down a catwalk at a fashion show while the audience takes photos" loading="lazy" width="900" height="640"></div>
+          </div>
+        </figure>
+        <div class="margin-note"><p><strong>Student A:</strong> Compare photographs 1 and 2 and say what you think the people might find difficult about their lifestyles.</p></div>
+        <div class="timer-box"><span class="q">Student A · 1 minute</span><span class="clock" id="clockA">1:00</span><button class="btn btn-ghost btn-sm" data-timer="60" data-clock="clockA">Start</button></div>
+        <div class="margin-note"><p><strong>Student B:</strong> When your partner has finished, say whether you like working / would like to work in an office.</p></div>
+        <div class="timer-box"><span class="q">Student B · 30 seconds</span><span class="clock" id="clockA2">0:30</span><button class="btn btn-ghost btn-sm" data-timer="30" data-clock="clockA2">Start</button></div>
+
+        <figure class="photo-task" style="margin-top:34px;">
+          <figcaption class="photo-q">What might the people enjoy about their lifestyles?</figcaption>
+          <div class="photo-pair">
+            <div class="photo"><span class="photo-n">3</span><img src="https://images.unsplash.com/photo-1705849441027-e366643921b3?auto=format&amp;fit=crop&amp;w=900&amp;h=640&amp;q=75" alt="A cowboy on horseback rounding up a large herd of cattle on dusty grassland" loading="lazy" width="900" height="640"></div>
+            <div class="photo"><span class="photo-n">4</span><img src="https://images.unsplash.com/photo-1587391028604-b370121a40f6?auto=format&amp;fit=crop&amp;w=900&amp;h=640&amp;q=75" alt="A fisherman in yellow waterproofs on the deck of a fishing boat as a full net is lifted out of the sea" loading="lazy" width="900" height="640"></div>
+          </div>
+        </figure>
+        <div class="margin-note"><p><strong>Student A:</strong> Compare photographs 3 and 4 and say what you think the people might enjoy about their lifestyles.</p></div>
+        <div class="timer-box"><span class="q">Student A · 1 minute</span><span class="clock" id="clockB">1:00</span><button class="btn btn-ghost btn-sm" data-timer="60" data-clock="clockB">Start</button></div>
+        <div class="margin-note"><p><strong>Student B:</strong> When your partner has finished, say which lifestyle you would prefer to lead.</p></div>
+        <div class="timer-box"><span class="q">Student B · 30 seconds</span><span class="clock" id="clockB2">0:30</span><button class="btn btn-ghost btn-sm" data-timer="30" data-clock="clockB2">Start</button></div>
+        <p class="photo-credit">Photos from Unsplash by Vitaly Gariev (1), Kenula Abeywickrama (2), Carol Highsmith's America (3) and Paul Einerhand (4).</p>
+
+        <button class="btn btn-ghost btn-sm" data-script="phraseBank" data-open-label="Hide useful language" aria-expanded="false" style="margin-top:6px;">Show useful language</button>
+        <div class="phrase-bank" id="phraseBank">
+          <h4>Student A: speculating</h4>
+          <ul>
+            <li>I get the impression it's a stressful life.</li>
+            <li>She might/may have to travel a lot.</li>
+            <li>I doubt that they have much time for a social life.</li>
+            <li>They probably enjoy being outside.</li>
+            <li>I expect/imagine they prefer doing physical work.</li>
+          </ul>
+          <h4>Student B: giving preferences</h4>
+          <ul>
+            <li>(I don't think) I would like to be an office worker.</li>
+            <li>I wouldn't mind working in an office.</li>
+            <li>I'd prefer to have this lifestyle rather than that one.</li>
+            <li>I'd rather ride a horse all day than work at sea.</li>
+          </ul>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ================= PRONUNCIATION ================= -->
+    <section class="page" data-tab="pron">
+
+      <div class="block">
+        <span class="kicker">Pronunciation · Pronouncing questions</span>
+        <h3>Fast and slow questions</h3>
+        <p class="instr">Listen to two speakers asking the questions below. What differences do you notice in the way they speak? Who is easier to understand?</p>
+        <ol class="statements">
+          <li>Why do you like that film?</li>
+          <li>What do you want to talk about?</li>
+          <li>How did you do that?</li>
+          <li>Where did you live?</li>
+        </ol>
+        <div class="audio-box">
+          <span class="audio-label">Track 1.3</span>
+          <audio controls preload="none" src="audio/unit-01/track-1.3.mp3"></audio>
+        </div>
+        <button class="btn btn-ghost btn-sm" data-script="pronBox" data-open-label="Hide the explanation" aria-expanded="false">Check your answer</button>
+        <div class="script-lines" id="pronBox">
+          <p>Many English speakers join words together when they speak quickly. In questions with <em>do/did + you</em>, it can be difficult to hear whether the speaker is saying <em>do</em> or <em>did</em>:</p>
+          <p><em>What do you want to do?</em> /wɒdʒə wɒnə duː/<br><em>How did you travel?</em> /haʊdʒə trævəl/</p>
+          <p>The context usually makes it clear whether the speaker means <em>do</em> or <em>did</em>, even when the difference is hard to hear.</p>
+        </div>
+      </div>
+
+      <div class="block" data-ex="pron-dictation">
+        <h3>Write down the four questions you hear</h3>
+        <p class="instr">Listen and type each question. Listen as many times as you need.</p>
+        <div class="audio-box">
+          <span class="audio-label">Track 1.4</span>
+          <audio controls preload="none" src="audio/unit-01/track-1.4.mp3"></audio>
+        </div>
+        <div id="dictation"></div>
+        <button class="btn btn-primary btn-sm" data-check="dictation" style="margin-top:6px;">Check answers</button>
+        <p class="result-line" id="dictation-result"></p>
+      </div>
+
+      <div class="block">
+        <h3>Now say them</h3>
+        <p class="instr">Work in pairs. First say the four questions as clearly as possible. Then say them again, joining the words together as in the recording.</p>
+        <div class="tip">Stress the information words (question words, nouns and main verbs) and keep the small grammar words weak: <em><strong>Where</strong> did you <strong>go</strong> this <strong>morn</strong>ing?</em> The last important word usually gets the strongest stress.</div>
+        <div class="margin-note">
+          <p><strong>In the exam:</strong> Pronunciation is one of the marking criteria in the Speaking paper. The examiner asks: Are the answers clear, and can the speaker be generally understood? Is the intonation appropriate? Is sentence stress and word stress correct? Are individual sounds clear and correctly produced?</p>
+        </div>
+      </div>
+
+    </section>
+  </div>
+</main>
+
+<footer class="rf-footer">
+  Content based on <em>Ready for First</em> (Macmillan Education), Unit 1 · Lifestyle. For study use by IG English School students.
+</footer>
+
+<script src="assets/rff.js"></script>
+<script>
+(function(){
+  "use strict";
+  var R = RFF, el = R.el, norm = R.norm, shuffle = R.shuffle, store = R.store, save = R.save,
+      buildChoice = R.buildChoice, buildGapText = R.buildGapText, buildMatching = R.buildMatching,
+      markDone = R.markDone, Round = R.Round, modeHooks = R.modeHooks;
+
+  RFF.initPage({page:"unit-01", unit:{id:"unit-01", n:1, ids:["voc-lifestyle","voc-clothes","voc-get-meaning","voc-get-phrasal","voc-get-endings","gram-adverb-position","gram-adverb-fix","gram-used-would","gram-used-would-paragraph","gram-usedto-concept","gram-usedto-gapfill","gram-review-gapfill","rue-part7","rue-part7-phrasal","rue-part1","rue-part2","rue-part4","writing-linking","listening-part3","listening-part1","pron-dictation"]}});
+
+  /* =================================================================
+     UNIT 1 · VOCABULARY
+  ================================================================= */
+  var lifestyleWords = [
+    ["active","involves a lot of movement or exercise"],
+    ["alternative","different from the usual or conventional way of living"],
+    ["busy","full of things to do, with little free time"],
+    ["chaotic","disorganised and unpredictable"],
+    ["comfortable","easy and pleasant, without hardship"],
+    ["healthy","good for your body and mind"],
+    ["luxurious","very comfortable and expensive"],
+    ["outdoor","happens outside rather than indoors"],
+    ["relaxed","calm and free from stress"],
+    ["sedentary","involves a lot of sitting down and little exercise"],
+    ["simple","uncomplicated, with few possessions or worries"],
+    ["stressful","causes a lot of worry and pressure"]
+  ];
+  var vocGrid = document.getElementById("vocLifestyleCards");
+  lifestyleWords.forEach(function(pair){
+    var c = el("button","vcard");
+    c.type = "button";
+    c.appendChild(el("span","w", pair[0]));
+    c.appendChild(el("span","d", pair[1]));
+    c.addEventListener("click", function(){
+      c.classList.toggle("flip");
+      if(vocGrid.querySelectorAll(".vcard.flip").length === lifestyleWords.length) markDone("voc-lifestyle", 1);
+    });
+    vocGrid.appendChild(c);
+  });
+
+  buildGapText(document.getElementById("gapClothes"), [
+    {text:"1. Charlie bought a great <b>second-hand</b> designer sweatshirt in Vintage Gear – it looks "},
+    {gap:true, answers:["brand new","brand-new"]},
+    {text:".\n2. Haven't you got a more <b>formal</b> jacket? That one's a little too "},
+    {gap:true, answers:["casual"]},
+    {text:" for the wedding.\n3. My sister prefers <b>tight-fitting</b> tops and jeans, whereas I like everything to be really "},
+    {gap:true, answers:["baggy"]},
+    {text:".\n4. Clothes that are considered <b>trendy</b> and worn by everyone one year are often "},
+    {gap:true, answers:["unfashionable"]},
+    {text:" and too embarrassing to be seen in the next.\n5. She wore a <b>plain</b> grey dress to the awards ceremony. We expected to see her in something far more "},
+    {gap:true, answers:["colourful"]},
+    {text:".\n6. As a farmer, I don't have many <b>smart</b> clothes; I spend most of my time in "},
+    {gap:true, answers:["scruffy"]},
+    {text:" jeans and an old T-shirt."}
+  ]);
+
+  var MEANINGS = ["arrive at","become","buy","have the opportunity to","obtain","remove from"];
+  [
+    ["I <em>get</em> most of what I wear from charity shops.", "buy"],
+    ["You <em>get</em> to support good causes.", "have the opportunity to"],
+    ["I <em>get</em> suspicious when I see that everything on sale is incredibly cheap.", "become"],
+    ["I usually <em>get</em> that kind of information online.", "obtain"],
+    ["I can <em>get</em> something out of the wardrobe and any feelings of insecurity will just disappear.", "remove from"],
+    ["When I <em>get</em> to work and someone says, 'Hey, that shirt really suits you', it gives me a real lift.", "arrive at"]
+  ].forEach(function(item){
+    buildChoice(document.getElementById("getMeaningList"), item[0], MEANINGS, MEANINGS.indexOf(item[1]), null, "voc-get-meaning");
+  });
+
+  [
+    ["That jumper looks so scruffy. When are you going to get ___ of it?", ["away","along","lost","rid"], 3, "<strong>get rid of</strong> = throw away or remove something you don't want"],
+    ["Here's my phone number in case you need to get in ___ with me.", ["talk","speak","touch","tact"], 2, "<strong>get in touch with</strong> = contact"],
+    ["He was a lovely man – a pity you never got the ___ to meet him.", ["way","event","ability","chance"], 3, "<strong>get the chance</strong> = have the opportunity"],
+    ["I asked Emma how much she got ___, but she refused to tell me.", ["paid","earned","money","salary"], 0, "<strong>get paid</strong> = receive money for work (get + past participle)"],
+    ["Come on, hurry up and get ___! Your bus leaves in five minutes.", ["moved","ready","ordered","fit"], 1, "<strong>get ready</strong> = prepare yourself"],
+    ["Paul's parents are worried about him. He's always getting into ___ at school.", ["problem","trouble","punishment","damage"], 1, "<strong>get into trouble</strong> = do something that gets you punished"],
+    ["Amy was upset when her sister moved out, but she got ___ it eventually.", ["out","off","by","over"], 3, "<strong>get over</strong> = recover from"],
+    ["I can't speak French, but I always manage to get ___ with a dictionary and a few gestures.", ["across","through","by","over"], 2, "<strong>get by</strong> = manage with what you have"],
+    ["We got ___ in a traffic jam and missed the beginning of the concert.", ["stuck","held","kept","halted"], 0, "<strong>get stuck</strong> = be unable to move"]
+  ].forEach(function(item){
+    buildChoice(document.getElementById("getPhrasalList"), item[0], item[1], item[2], item[3], "voc-get-phrasal");
+  });
+
+  buildMatching(document.getElementById("getEndingsList"), [
+    {left:"1. Please do not hesitate to get", answer:"c"},
+    {left:"2. Come in. I have to finish getting", answer:"a"},
+    {left:"3. I want to change jobs. I don't get", answer:"e"},
+    {left:"4. I'm sorry I'm so late. My bus got", answer:"f"},
+    {left:"5. I don't own a car; I can easily get", answer:"g"},
+    {left:"6. When we lived in Australia, I got", answer:"b"},
+    {left:"7. I enjoyed the party once I had got", answer:"d"}
+  ], [
+    {key:"a", label:"ready. I won't keep you waiting long."},
+    {key:"b", label:"the chance to go diving on a coral reef there."},
+    {key:"c", label:"in touch with our sales team if you have any questions."},
+    {key:"d", label:"over my shyness and talked to a few people."},
+    {key:"e", label:"paid enough for the work I do here."},
+    {key:"f", label:"stuck in the snow and I had to walk."},
+    {key:"g", label:"by without one. I just use public transport."}
+  ]);
+
+  /* =================================================================
+     UNIT 1 · GRAMMAR
+  ================================================================= */
+  buildChoice(document.getElementById("advPositionQ"),
+    "Which pair of adverbs can naturally start this sentence? <em>\"___ I get out of bed around midday.\"</em>",
+    ["Normally / Sometimes","Always / Never"], 0,
+    "<em>Normally</em> and <em>Sometimes</em> can start a sentence. <em>Always</em> and <em>Never</em> sound wrong in that position (or need inversion: <em>Never do I...</em>), so put them before the main verb instead.",
+    "gram-adverb-position");
+  buildChoice(document.getElementById("advPositionQ"),
+    "<em>\"Now I'm fully qualified, I ___ the advanced classes.\"</em> Which option is grammatically wrong?",
+    ["tend to get","use to get","usually get"], 1,
+    "<em>use to get</em> is wrong. The correct form is <em>used to get</em>, but that refers to the past, which doesn't fit with <em>Now</em>. <em>Tend to get</em> and <em>usually get</em> are both fine.",
+    "gram-adverb-position");
+
+  [
+    ["I rarely go out on weekday evenings.", true, ""],
+    ["I have usually my dinner in front of the television.", false, "I usually have my dinner in front of the television."],
+    ["Never I spend more than ten minutes doing my English homework.", false, "I never spend more than ten minutes doing my English homework."],
+    ["Someone is always telling me what to do and what not to do – it gets on my nerves.", true, ""],
+    ["Hardly I ever play games on my phone – it hurts my eyes.", false, "I hardly ever play games on my phone."],
+    ["It's rare for me to go to bed before midnight and quite often I'll stay up until two in the morning.", true, ""]
+  ].forEach(function(item){
+    var note = item[1] ? "This sentence is correct." : "Correction: <strong>" + item[2] + "</strong>";
+    buildChoice(document.getElementById("advFixList"), item[0], ["Correct","Incorrect"], item[1] ? 0 : 1, note, "gram-adverb-fix");
+  });
+
+  buildChoice(document.getElementById("usedWouldQ"),
+    "<em>\"As a child, I would tell everyone that when I grew up, I wanted to climb Everest.\"</em> Could we use <em>used to</em> instead of <em>would</em> here?",
+    ["Yes, both work: tell is a repeated action","No, it would change the meaning"], 0, null, "gram-used-would");
+  buildChoice(document.getElementById("usedWouldQ"),
+    "<em>\"I used to have a dog.\"</em> Could we use <em>would</em> instead of <em>used to</em> here?",
+    ["Yes, both work","No: have is a state, and would doesn't work with states"], 1, null, "gram-used-would");
+
+  document.getElementById("paragraphText").innerHTML =
+    "<p>When my brother and I were little, my mum (1) <u>had</u> an executive position in a pharmaceutical company. " +
+    "She often (2) <u>worked</u> long hours and sometimes (3) <u>went away</u> on business trips for two or three days at a time. " +
+    "Our dear old gran (4) <u>looked after</u> us on those occasions, but it wasn't the same as having a mum around. " +
+    "We (5) <u>didn't like</u> her being away from home, but we never once (6) <u>said</u> anything, because we always (7) <u>thought</u> she was happy in her work.</p>" +
+    "<p>Then one day she (8) <u>announced</u> she was giving up her job to spend more time with her family. My brother and I (9) <u>were</u> delighted at the change in lifestyle, " +
+    "but I'm not sure about my mum: she often (10) <u>said</u> afterwards that being a full-time mother was harder than being a business executive!</p>";
+  [
+    [1,"had","b","a state (have = hold a position)"],
+    [2,"worked","a","a repeated action (often)"],
+    [3,"went away","a","a repeated action (sometimes)"],
+    [4,"looked after","a","a repeated action on those occasions"],
+    [5,"didn't like","b","a state (like)"],
+    [6,"said","c","\"never once\" refers to a single moment, not a habit"],
+    [7,"thought","b","a mental state (think = believe)"],
+    [8,"announced","c","\"one day\" = a single event, not a habit"],
+    [9,"were","c","a reaction to one specific event (the announcement), not a habit or a long-term state"],
+    [10,"said","a","a repeated action (often)"]
+  ].forEach(function(item){
+    buildChoice(document.getElementById("paragraphQ"),
+      "(" + item[0] + ") <em>" + item[1] + "</em>",
+      ["(a) used to and would","(b) only used to","(c) neither"],
+      {a:0,b:1,c:2}[item[2]], "It's " + item[3] + ".", "gram-used-would-paragraph");
+  });
+
+  buildChoice(document.getElementById("usedToConceptQ"),
+    "<em>\"On my travels I've had to get used to eating all kinds of strange dishes.\"</em> This describes...",
+    ["a process of becoming accustomed (a change)","a repeated action in the past","being accustomed already (no change)"], 0, null, "gram-usedto-concept");
+  buildChoice(document.getElementById("usedToConceptQ"),
+    "<em>\"I'm not used to being with people who take so much care over what they wear.\"</em> This describes...",
+    ["a process of change","a repeated action in the past","a state: (not) accustomed"], 2, null, "gram-usedto-concept");
+  buildChoice(document.getElementById("usedToConceptQ"),
+    "<em>\"If I was offered something I knew I wouldn't like, I used to cover it in lemon and salt.\"</em> This describes...",
+    ["being accustomed to something","a past habit that has stopped","a process of change"], 1, null, "gram-usedto-concept");
+  buildChoice(document.getElementById("usedToConceptQ"),
+    "Which verb form follows <em>be used to</em> and <em>get used to</em>?",
+    ["infinitive (to do)","-ing form (doing)","base form (do)"], 1, null, "gram-usedto-concept");
+
+  buildGapText(document.getElementById("gapUsedTo"), [
+    {text:"1. When she moved to Canada, it took her months to "},
+    {gap:true, answers:["get used to"]},
+    {text:" driving on icy roads.\n2. My grandfather "},
+    {gap:true, answers:["used to","would"]},
+    {text:" walk five kilometres to school every day when he was young.\n3. After ten years in the job, I'm completely "},
+    {gap:true, answers:["used to"]},
+    {text:" working night shifts.\n4. It was strange at first, but I've finally "},
+    {gap:true, answers:["got used to","gotten used to"]},
+    {text:" eating dinner so late."}
+  ]);
+
+  buildGapText(document.getElementById("gapReview"), [
+    {text:"1. My grandad's got a car, but he "},
+    {gap:true, answers:["hardly"]},
+    {text:" ever uses it. He'll only drive in good weather.\n2. "},
+    {gap:true, answers:["usually"]},
+    {text:" we play football on Sunday morning, but this week's game is in the afternoon.\n3. This nocturnal bird is "},
+    {gap:true, answers:["not"]},
+    {text:" often seen in daylight, so these early-morning images are a rare treat.\n4. It's not "},
+    {gap:true, answers:["usual"]},
+    {text:" for students to bring sandwiches; most eat in the school canteen.\n5. We "},
+    {gap:true, answers:["very"]},
+    {text:" rarely go into the town centre to shop these days; it's far too crowded.\n6. We "},
+    {gap:true, answers:["tend"]},
+    {text:" not to go abroad on holiday; there are so many places to visit here in this country.\n7. When I was at school, I "},
+    {gap:true, answers:["would"]},
+    {text:" often get into trouble for talking during lessons.\n8. Where did your mum "},
+    {gap:true, answers:["use"]},
+    {text:" to work before she retired?"}
+  ]);
+
+  /* =================================================================
+     UNIT 1 · READING & USE OF ENGLISH
+  ================================================================= */
+  document.getElementById("part7Passage").innerHTML =
+    '<p><span class="who">A · Lucas Martín, television and stage actor</span>Normally I get out of bed around midday. I\'ll sometimes go for a run after I get up, though it\'s not really my idea of fun. I\'m not a fitness fan, but I realise it\'s important. When I\'m not rehearsing or on tour, afternoons generally involve reading scripts or learning lines. My flatmates are also actors, so at home there are usually scripts lying all over the place. It\'s a bit of a mess, I\'m ashamed to say. I\'m passionate about history, and if I\'m working away from home, I\'ll often spend the afternoon in a museum. I sometimes lose track of time, and I once turned up late for a play I was in. I felt terrible, so now I always get to the theatre early. After a performance I eat and spend a few hours unwinding, so bedtime is often one or two in the morning. I\'m normally out like a light as soon as my head hits the pillow.</p>' +
+    '<p><span class="who">B · Maja Andersson, ski and snowboard instructor</span>I generally spend six months in Europe and six in New Zealand. Wherever I am, I love the fact that I usually live just a short walk from the slopes, so I can get up reasonably late and still have time for a decent breakfast before setting off for work. When I started out eight years ago, I used to teach groups of young kids. Now I\'m fully qualified, I tend to get the advanced classes, which I find more interesting. We get plenty of days off and when I\'m not working, I go skiing by myself, or catch up on my sleep. I love the lifestyle, but I\'m not sure I can carry on doing this for much longer. It might be time to settle down and get a more normal job, something steady and secure. I haven\'t made up my mind yet, though.</p>' +
+    '<p><span class="who">C · Reo Tanaka, farm vet</span>I used to have a dog and we\'d go running together most mornings, but I gave him to my mum in the end. I tend to be out all day, visiting farms, and it wasn\'t fair to leave him alone. So now I don\'t get as much exercise as I\'d like to. I love my job, especially the variety and not knowing what you\'ll be doing from one day to the next. But being a vet is not what most people think. It\'s not all cuddly lambs and cute little calves. We have to do some pretty unpleasant things sometimes, things which might put some people off working with animals for life. My mum wants to know when I\'m going to find someone to settle down with, but it\'s not as if I have loads of free time to go looking.</p>' +
+    '<p><span class="who">D · Ben Adams, mountaineer and wind turbine technician</span>As a child, I would tell everyone that when I grew up, I wanted to climb Everest. I\'ve actually climbed it three times now. And when I\'m not on a mountain, you might come across me hanging on a rope from a wind turbine, carrying out repairs to damaged blades at heights of up to 100 metres. That\'s how I make a living and pay for my climbing trips. It\'s a fairly unconventional way of life, and not one I\'d actively encourage others to adopt – there\'s a lot of danger involved – but it works for me. It\'s precisely that sense of danger that makes me feel alive.</p>';
+
+  [
+    ["admits to having an untidy house?","A"],
+    ["would not recommend their lifestyle to other people?","D"],
+    ["likes the unpredictable nature of their work?","C"],
+    ["is not particularly keen on taking exercise?","A"],
+    ["has a lot of free time?","B"],
+    ["has achieved an early ambition?","D"],
+    ["usually has no trouble getting to sleep at night?","A"],
+    ["does not normally have to go far to get to their place of work?","B"],
+    ["says that people have the wrong idea about their work?","C"],
+    ["is considering introducing more stability into their life?","B"]
+  ].forEach(function(item, idx){
+    buildChoice(document.getElementById("part7Questions"), (idx+1) + ". Which person " + item[0], ["A","B","C","D"], "ABCD".indexOf(item[1]), null, "rue-part7");
+  });
+
+  buildMatching(document.getElementById("phrasalMatchList"), [
+    {left:"turn up (A)", answer:"arrive"},
+    {left:"set off (B)", answer:"leave"},
+    {left:"catch up on (B)", answer:"catch"},
+    {left:"carry on (B)", answer:"continue"},
+    {left:"make up my mind (B)", answer:"decide"},
+    {left:"settle down (B)", answer:"settle"},
+    {left:"put off (C)", answer:"discourage"},
+    {left:"grow up (D)", answer:"grow"},
+    {left:"come across (D)", answer:"chance"},
+    {left:"carry out (D)", answer:"perform"}
+  ], [
+    {key:"arrive", label:"arrive"},
+    {key:"leave", label:"start a journey"},
+    {key:"catch", label:"do something you didn't have time for before"},
+    {key:"continue", label:"continue"},
+    {key:"decide", label:"decide"},
+    {key:"settle", label:"start a quieter, more stable life"},
+    {key:"discourage", label:"make someone not want to do something"},
+    {key:"grow", label:"become an adult"},
+    {key:"chance", label:"find or meet by chance"},
+    {key:"perform", label:"do a piece of work"}
+  ]);
+
+  document.getElementById("part1Passage").innerHTML =
+    '<p>A growing number of school-going teenagers are using the internet to <strong>(0) boost</strong> their pocket money by selling clothes and accessories online. One shopping app has over seven million users worldwide, <strong>(1) ______</strong> many enterprising under-18s who have decided they would <strong>(2) ______</strong> work for themselves than look for a part-time job in a shop or restaurant.</p>' +
+    '<p>Sixteen-year-old Eva Laidlaw, who has <strong>(3) ______</strong> up in a family of successful business people, buys second-hand garments then sells them via the app, more <strong>(4) ______</strong> than not, at a decent profit. \'I get most of my clothes from charity shops and car boot sales,\' she says. \'You can <strong>(5) ______</strong> across good quality items if you\'re <strong>(6) ______</strong> to spend the time looking.\'</p>' +
+    '<p>Katie Simmons is another young entrepreneur. <strong>(7) ______</strong> on holiday in Tuscany three years ago, she discovered that clothes sold in the markets there were extremely cheap. So, every two months, Katie, now eighteen, <strong>(8) ______</strong> for Italy and hunts for items she thinks will sell easily at home. \'I had intended to go to uni,\' says Katie, \'but now I have a business to run.\'</p>';
+  [
+    [["containing","consisting","including","introducing"], 2],
+    [["better","prefer","like","rather"], 3],
+    [["turned","grown","brought","raised"], 1],
+    [["often","ever","always","sometimes"], 0],
+    [["get","find","come","take"], 2],
+    [["prepared","disposed","organised","equipped"], 0],
+    [["Whereas","Whenever","While","Whether"], 2],
+    [["goes away","sets off","carries on","catches up"], 1]
+  ].forEach(function(item, idx){
+    var opts = item[0].map(function(w, i){ return "<b>" + "ABCD"[i] + "</b>" + w; });
+    buildChoice(document.getElementById("part1Questions"), "Gap " + (idx+1), opts, item[1], null, "rue-part1");
+  });
+
+  buildGapText(document.getElementById("part2Text"), [
+    {text:"In his book <i>The Blue Zones</i>, journalist and best-selling author Dan Buettner identifies five regions in five different countries where people are thought to live longer and better "},
+    {gap:true, answers:["than"]},
+    {text:" anywhere else. The so-called blue zones are Okinawa in Japan, Loma Linda in California, the Greek island of Ikaria, the Nicoya Peninsula in Costa Rica and the Barbagia region of Sardinia, "},
+    {gap:true, answers:["which"]},
+    {text:" has the distinction of having the highest concentration of male centenarians "},
+    {gap:true, answers:["in"]},
+    {text:" the world.\n\nThese five regions share a number of specific lifestyle habits. Inhabitants tend to grow "},
+    {gap:true, answers:["their"]},
+    {text:" own herbs and vegetables, which keeps them active and moving around naturally. They eat a mainly plant-based diet, especially beans, "},
+    {gap:true, answers:["such"]},
+    {text:" as fava, soy and lentils, and meat is consumed on average only five times "},
+    {gap:true, answers:["a","per","each","every"]},
+    {text:" month.\n\nLoved ones come first, and people in blue zones "},
+    {gap:true, answers:["take"]},
+    {text:" good care of ageing parents and grandparents, who live with younger family members, or at least nearby. Older people remain healthier and it is less common "},
+    {gap:true, answers:["for"]},
+    {text:" them to suffer heart disease and other illnesses associated with old age."}
+  ]);
+
+  var part4List = document.getElementById("part4List");
+  [
+    {orig:"Why don't you throw away that old coat?", key:"RID", stem:"How about", tail:"that old coat?", answers:["getting rid of"]},
+    {orig:"I still find it strange to wear glasses.", key:"USED", stem:"I still haven't", tail:"glasses.", answers:["got used to wearing","gotten used to wearing"]},
+    {orig:"He never asks when he borrows my things!", key:"ALWAYS", stem:"He is", tail:"asking!", answers:["always borrowing my things without"]},
+    {orig:"Simon doesn't usually drink coffee.", key:"UNUSUAL", stem:"It", tail:"drink coffee.", answers:["is unusual for Simon to","'s unusual for Simon to"]},
+    {orig:"Helen is not usually so pessimistic.", key:"LIKE", stem:"It is", tail:"so pessimistic.", answers:["not like Helen to be"]},
+    {orig:"I can't wait to see you again.", key:"FORWARD", stem:"I'm really", tail:"you again.", answers:["looking forward to seeing"]}
+  ].forEach(function(item, idx){
+    var wrap = el("div","qitem");
+    wrap.appendChild(el("p","qtext", (idx+1) + ". " + item.orig + " <span class=\"keyword\">" + item.key + "</span>"));
+    var gt = el("p","gaptext");
+    buildGapText(gt, [{text: item.stem + " "}, {gap:true, answers:item.answers}, {text: " " + item.tail}]);
+    wrap.appendChild(gt);
+    part4List.appendChild(wrap);
+  });
+  var part4Btn = el("button","btn btn-primary btn-sm","Check answers");
+  part4Btn.dataset.check = "part4List";
+  part4List.after(part4Btn);
+  var part4Result = el("p","result-line");
+  part4Result.id = "part4List-result";
+  part4Btn.after(part4Result);
+
+  /* =================================================================
+     UNIT 1 · WRITING
+  ================================================================= */
+  buildGapText(document.getElementById("letterGaps"), [
+    {text:"Dear Paula\n\nIt was great to hear from you. You've certainly got a difficult choice to make. I know how much you love skiing and I'm sure you'd be a brilliant teacher, "},
+    {gap:true, answers:["but"]},
+    {text:" maybe you should think more carefully about your future.\n\nThe good thing about being a ski instructor is that you could have an exciting lifestyle, working in different countries, meeting lots of interesting people and doing something you really enjoy. The trouble is, though, it's not very well-paid work, and the career prospects are not fantastic "},
+    {gap:true, answers:["either"]},
+    {text:" – you might still be in the same job in twenty years' time.\n\n"},
+    {gap:true, answers:["on the other hand"]},
+    {text:", if you go to university, you'll have more chance of getting a decent job later. It'll be great fun "},
+    {gap:true, answers:["as well"]},
+    {text:", especially if you choose a university in a different town and live away from home.\n\n"},
+    {gap:true, answers:["so"]},
+    {text:", if I were you, I'd do what your parents suggest and study for a degree. You could always work in a ski resort in the holidays – students get really long breaks!\n\n"},
+    {gap:true, answers:["anyway"]},
+    {text:", good luck and let me know what you decide. Looking forward to hearing from you.\n\nAll the best,\nHugo"}
+  ]);
+
+  R.wireWordCounter("letterFree","letterFreeCounter",140,190);
+  R.wireWordCounter("articleFree","articleFreeCounter",140,190);
+
+  /* =================================================================
+     UNIT 1 · LISTENING
+  ================================================================= */
+  var STATEMENTS = ["I tend to wear the same clothes all the time.","I don't really care what clothes I wear.","I refuse to wear designer clothes.",
+    "I'm careful to check the origin of the clothes I buy.","I generally wear second-hand clothes.","I only throw clothes away when absolutely necessary.",
+    "I buy quality clothes that are guaranteed to last.","I wear clothes that give me self-confidence."];
+  var part3Key = [
+    ["e","It's unusual for me to buy brand new clothes. I get most of what I wear from charity shops."],
+    ["b","I'm not the kind of person who spends time worrying about what to put on in the morning. ... I just throw on the first thing I find in my wardrobe and that's it."],
+    ["d","I only buy from companies that sell ethical clothing, made by people who earn a decent salary and work in a safe environment."],
+    ["h","They don't have to be designer clothes, but they do have to make me feel good about myself. ... any feelings of insecurity I have will just disappear as soon as I put it on."],
+    ["f","If I want to go out and get a new T-shirt, for example, then I always have to get rid of an old one first. ... I replace them, precisely because they're no use to anyone – not just me."]
+  ];
+  buildMatching(document.getElementById("part3Match"),
+    part3Key.map(function(k, i){ return {left:"Speaker " + (i+1), answer:k[0]}; }),
+    STATEMENTS.map(function(s, i){ var l = "abcdefgh"[i]; return {key:l, label:l.toUpperCase() + " – " + s}; }));
+  document.getElementById("part3Script").innerHTML = part3Key.map(function(k, i){
+    return "<p><strong>Speaker " + (i+1) + " · " + k[0].toUpperCase() + "</strong> \"" + k[1] + "\"</p>";
+  }).join("");
+
+  [
+    ["You hear two people talking about a friend of theirs.","What does the woman say about the friend?",
+      ["He talks a lot about his lifestyle.","He leads a comfortable lifestyle.","He may change his lifestyle."], 2,
+      "But he did say he might settle down one day – stay in one place."],
+    ["You overhear a man talking to a friend on his phone.","Why is he phoning?",
+      ["to persuade his friend to do something","to ask for some information","to change an arrangement"], 1,
+      "And actually, I was wondering if you could tell me what it was like, what sort of things you did."],
+    ["You hear a woman talking about her family's financial situation.","What is she going to do?",
+      ["ask someone to help her","try to sell something","look for a new job"], 1,
+      "There's nothing for it but to put my car on the market and see if I can get a decent price for it."],
+    ["You hear a man talking about his job.","Who is the man?",
+      ["a hotel manager","a hotel receptionist","a hotel doorman"], 2,
+      "I'm the first person they see before they go into the hotel. ... it can get pretty cold standing outside on the steps in winter."],
+    ["You hear two people talking about the value of their time spent living abroad.","What do they agree about?",
+      ["It has helped them develop their personality.","It has made them appreciate their own country.","It has given them better job prospects."], 0,
+      "I've become much more tolerant since I've been here ... – That's what I mean. We've grown as individuals, we're more open-minded and independent."],
+    ["You hear a man talking on the radio.","What is he doing?",
+      ["reviewing a book","advertising a product","reading a news report"], 0,
+      "The author of Back to Basics says his guide will help you achieve all these things in a matter of weeks. He's lying – ... you'd be wasting your money if you bought it."],
+    ["You hear two people talking about the village they both live in.","What does the woman think of the village?",
+      ["People are not always very friendly.","Some of the roads are dangerous.","There are not enough children."], 1,
+      "I just get a bit nervous about the traffic sometimes. ... Some drivers just don't slow down for them."],
+    ["You hear a man talking about a country in which he once lived.","What surprised him about the people?",
+      ["the importance they give to clothes","the type of food they eat","their attitude to work"], 0,
+      "What I hadn't anticipated was their way of dressing. ... Colour, style, fashion – it all mattered to them."]
+  ].forEach(function(q, idx){
+    buildChoice(document.getElementById("part1Listening"),
+      (idx+1) + ". " + q[0] + "<br><em>" + q[1] + "</em>",
+      q[2].map(function(o, i){ return "<b>" + "ABC"[i] + "</b>" + o; }), q[3],
+      "In the recording: \"" + q[4] + "\"", "listening-part1");
+  });
+
+  var dictation = document.getElementById("dictation");
+  ["Who do you want to speak to now?","Where did you go this morning?","When do you have to be there tomorrow?","Why did you say that earlier?"].forEach(function(q, i){
+    var row = el("p","gaptext");
+    row.appendChild(el("span", null, (i+1) + ". "));
+    var inp = document.createElement("input");
+    inp.type = "text"; inp.className = "gap dict"; inp.autocomplete = "off"; inp.spellcheck = false;
+    inp.dataset.answers = q;
+    inp.setAttribute("aria-label", "Question " + (i+1));
+    row.appendChild(inp);
+    dictation.appendChild(row);
+  });
+
+
+  /* =================================================================
+     UNIT 1 · SPEAKING
+  ================================================================= */
+  R.buildTimers(document.getElementById("speakingP1List"), [
+    "What do you usually do at the weekend?",
+    "Describe your morning routine before you go to school, college or work.",
+    "Do you ever meet up with your friends on weekday evenings?",
+    "What is your favourite day of the week? Why?",
+    "What did you do yesterday evening?"
+  ], 20);
+
+})();
+</script>
+</body>
+</html>
