@@ -338,15 +338,24 @@
   .margin-note p{font-size:0.92rem; color:var(--ink-soft);}
   .margin-note p + p{margin-top:6px;}
 
-  .predict{border-top:1px solid var(--ruled); padding:14px 0;}
-  .predict .situ{font-size:0.86rem; color:var(--ink-soft);}
-  .predict .qq{font-weight:700; color:var(--plum-deep); margin:2px 0 8px;}
-  .predict ol{margin:0 0 10px; padding-left:22px; font-size:0.94rem;}
-  .predict ol li::marker{font-weight:700; color:var(--plum);}
-  .predict .ideas{display:none; margin-top:4px;}
-  .predict.open .ideas{display:block;}
-  .predict .ideas li{color:var(--ink-soft); font-size:0.9rem;}
-  .predict .ideas li span{color:var(--sage); font-weight:600;}
+  .statements{margin:0 0 16px; padding-left:24px; font-size:0.95rem; line-height:1.75;}
+  .statements li::marker{font-weight:800; color:var(--plum);}
+  .audio-box{
+    display:flex; flex-wrap:wrap; align-items:center; gap:8px 14px; background:var(--plum-deep); color:#fff;
+    border-radius:14px; padding:12px 16px; margin:0 0 18px; max-width:640px;
+  }
+  .audio-box audio{flex:1 1 260px; height:40px; min-width:0;}
+  .audio-label{font-family:"Fraunces",serif; font-weight:600; font-size:0.95rem; color:var(--gold);}
+  .audio-note{font-size:0.78rem; color:rgba(255,255,255,0.75); flex-basis:100%;}
+  .script-lines{display:none; margin-top:14px; border-left:3px solid var(--sage); padding-left:14px; max-width:68ch;}
+  .script-lines.show{display:block;}
+  .script-lines p{font-size:0.9rem; color:var(--ink-soft); margin-bottom:8px;}
+  .script-lines strong{color:var(--plum-deep); margin-right:4px;}
+  .model-answer{display:none; margin-top:14px; background:#fff; border:1px solid var(--plum-line); border-radius:14px; padding:16px 18px; max-width:68ch;}
+  .model-answer.show{display:block;}
+  .model-answer .letter{font-family:"Fraunces",serif; font-size:0.98rem; line-height:1.7; white-space:pre-line; color:var(--ink);}
+  .model-answer h4{font-size:0.92rem; margin:14px 0 4px;}
+  .model-answer p{font-size:0.88rem; color:var(--ink-soft); margin-bottom:6px;}
 
   /* ---------- Rounds (phrasal / word formation quizzes) ---------- */
   .round{background:#fff; border:1px solid var(--plum-line); border-radius:18px; padding:22px 22px 20px; max-width:640px;}
@@ -682,7 +691,7 @@
           <div class="gaptext" id="letterGaps"></div>
           <button class="btn btn-primary btn-sm" data-check="letterGaps">Check answers</button>
           <p class="result-line" id="letterGaps-result"></p>
-          <div class="tip">Look at how Hugo organises his reply: paragraph 1 gives a first reaction, paragraph 2 looks at the advantages and disadvantages of one option, paragraph 3 looks at the other option, and paragraph 4 gives his advice.</div>
+          <div class="tip">Look at how Hugo organises his reply. Paragraph 1 gives a first opinion on Paula's choice; paragraph 2 gives the advantages and disadvantages of working as a ski instructor; paragraph 3 outlines the advantages of going to university; paragraph 4 advises Paula what to do; paragraph 5 makes some closing comments.</div>
         </div>
 
         <div class="block">
@@ -700,6 +709,23 @@
             <li><label><input type="checkbox"> I used vocabulary from the unit (lifestyle, get used to, settle down...)</label></li>
             <li><label><input type="checkbox"> I opened and closed it like a letter to a friend</label></li>
           </ul>
+          <button class="btn btn-ghost btn-sm" data-script="tomModel" data-open-label="Hide the sample answer" aria-expanded="false" style="margin-top:14px;">Show a sample answer</button>
+          <div class="model-answer" id="tomModel">
+            <p class="letter">Dear Tom,
+It was great to hear from you! That's a very important choice to make, and I think you should think carefully about it before choosing.
+I'm certain you would enjoy working in a hotel and that you would do it very well and, obviously, that would be a great experience and you would earn a great deal of money. However, it's true you would be far from your family and friends and, if you are not used to work many hours, you will find it exhausting.
+On the other hand, as your parents need help, if you stay, you will be giving them a rest from work and also you will be in your city and in your free time you will be able to hang out with your friends.
+Because of that, in my opinion the best thing for you to do is to stay at home and help your parents in the shop. You will have more opportunities to travel abroad when you are older.
+In any case, regardless what you decide, I'm sure you will have a great summer.
+A hug
+Lucía</p>
+            <p style="margin-top:6px;">187 words · Mark: <strong>good pass</strong></p>
+            <h4>Examiner comments</h4>
+            <p><strong>Content:</strong> All the content is relevant and informative. The writer considers both options before advising Tom which to choose.</p>
+            <p><strong>Communicative achievement:</strong> The conventions of letters are used appropriately. The opening and closing comments are generally appropriate, although "A hug" is not usual. The register is consistently informal and the tone friendly and helpful.</p>
+            <p><strong>Organisation:</strong> The letter is well organised into logical paragraphs. A range of linking words is used, particularly at the beginning of sentences (<em>However; On the other hand; Because of that; In any case</em>). However, there is an over-reliance on <em>and</em> to link ideas within sentences.</p>
+            <p><strong>Language:</strong> A reasonable range of everyday language is used (e.g. <em>think carefully; earn a great deal of money; exhausting; have more opportunities to travel abroad; hang out with your friends</em>). Both simple and complex forms are used with good control, and errors do not prevent understanding (<em>you are not used to <s>work</s> working; regardless [of] what you decide</em>).</p>
+          </div>
         </div>
 
         <div class="block">
@@ -716,28 +742,49 @@
       <!-- ================= LISTENING ================= -->
       <section class="page" data-tab="listening">
 
-        <div class="block">
-          <span class="kicker">Listening · strategy practice</span>
-          <h3>Practising without the recordings</h3>
-          <p class="instr">The book prints the questions but not the audio scripts, so there are no answers to check here. Instead, you train the habit that matters most in this paper: <strong>predicting how ideas will be expressed</strong> before you listen. In the exam you will almost never hear the exact words from the options.</p>
-        </div>
-
-        <div class="block wide" data-ex="listening-part1">
-          <span class="kicker">Part 1 · Multiple choice</span>
-          <h3>Predict the paraphrase</h3>
-          <p class="instr">Read each situation and question. For every option, think of another way a speaker might say it. Then compare with our ideas.</p>
-          <div id="listeningPredictList"></div>
-        </div>
-
-        <div class="block wide">
+        <div class="block" data-ex="listening-part3">
           <span class="kicker">Part 3 · Multiple matching</span>
-          <h3>Spot the distractor</h3>
-          <p class="instr">In Part 3, five speakers talk about the clothes they wear, and you match each one to a statement (A–H). The book gives this example of how statement A, <em>I tend to wear the same clothes all the time</em>, might sound:</p>
-          <div class="margin-note">
-            <p>"I feel really comfortable in a white shirt and jeans, and that's what I wear nearly every day. Everything else seems to stay in the wardrobe."</p>
+          <h3>Five people talk about their clothes</h3>
+          <p class="instr">You will hear five short extracts in which people are talking about the clothes they wear. For questions 1–5, choose from the list (A–H) what each speaker says. Use the letters only once. There are three extra letters which you do not need to use.</p>
+          <div class="tip">
+            <strong>Before you listen:</strong> you won't hear the same words as in sentences A–H, so think of another way of saying each idea. For example, A (<em>I tend to wear the same clothes all the time</em>) could sound like: <em>"I feel really comfortable in a white shirt and jeans, and that's what I wear nearly every day."</em><br>
+            Each extract usually has a distractor too: Speaker 1 mentions designer clothes, but C may not be the answer.
           </div>
-          <div id="distractorQ" style="max-width:720px;"></div>
-          <div class="predict" id="part3Predict"></div>
+          <ol class="statements" type="A">
+            <li>I tend to wear the same clothes all the time.</li>
+            <li>I don't really care what clothes I wear.</li>
+            <li>I refuse to wear designer clothes.</li>
+            <li>I'm careful to check the origin of the clothes I buy.</li>
+            <li>I generally wear second-hand clothes.</li>
+            <li>I only throw clothes away when absolutely necessary.</li>
+            <li>I buy quality clothes that are guaranteed to last.</li>
+            <li>I wear clothes that give me self-confidence.</li>
+          </ol>
+          <div class="audio-box">
+            <span class="audio-label">Track 1.1</span>
+            <audio controls preload="none" src="audio/unit-01/track-1.1.mp3"></audio>
+            <span class="audio-note">Listen twice, as in the exam.</span>
+          </div>
+          <div id="part3Match"></div>
+          <div class="btn-row" style="margin-top:10px;">
+            <button class="btn btn-primary btn-sm" data-check="part3Match">Check answers</button>
+            <button class="btn btn-ghost btn-sm" data-script="part3Script" data-open-label="Hide the audioscript" aria-expanded="false">Show where the answers are</button>
+          </div>
+          <p class="result-line" id="part3Match-result"></p>
+          <div class="script-lines" id="part3Script"></div>
+        </div>
+
+        <div class="block" data-ex="listening-part1">
+          <span class="kicker">Part 1 · Multiple choice</span>
+          <h3>Eight short situations</h3>
+          <p class="instr">You will hear people talking in eight different situations. For questions 1–8, choose the best answer (A, B or C).</p>
+          <div class="tip">In the exam you hear each extract twice. Only the first sentence of each question is read out (<em>You hear two people talking about a friend of theirs</em>), not the question or the options, and there are always distractors.</div>
+          <div class="audio-box">
+            <span class="audio-label">Track 1.2</span>
+            <audio controls preload="none" src="audio/unit-01/track-1.2.mp3"></audio>
+            <span class="audio-note">Listen twice, as in the exam.</span>
+          </div>
+          <div id="part1Listening"></div>
         </div>
 
       </section>
@@ -952,7 +999,7 @@
   var PROGRESS_KEY = "rff_progress_v1";
   var UNIT1_IDS = ["voc-lifestyle","voc-clothes","voc-get-meaning","voc-get-phrasal","voc-get-endings",
     "gram-adverb-position","gram-adverb-fix","gram-used-would","gram-used-would-paragraph","gram-usedto-concept","gram-usedto-gapfill","gram-review-gapfill",
-    "rue-part7","rue-part7-phrasal","rue-part1","rue-part2","rue-part4","writing-linking","listening-part1"];
+    "rue-part7","rue-part7-phrasal","rue-part1","rue-part2","rue-part4","writing-linking","listening-part3","listening-part1"];
   function markDone(id, ratio){
     if(!id) return;
     var p = store(PROGRESS_KEY, {});
@@ -1164,9 +1211,9 @@
     {gap:true, answers:["unfashionable"]},
     {text:" and too embarrassing to be seen in the next.\n5. She wore a <b>plain</b> grey dress to the awards ceremony. We expected to see her in something far more "},
     {gap:true, answers:["colourful"]},
-    {text:".\n6. As a farmer, I don't have many <b>smart</b> clothes; I spend most of my time in jeans and an old "},
+    {text:".\n6. As a farmer, I don't have many <b>smart</b> clothes; I spend most of my time in "},
     {gap:true, answers:["scruffy"]},
-    {text:" T-shirt."}
+    {text:" jeans and an old T-shirt."}
   ]);
 
   var MEANINGS = ["arrive at","become","buy","have the opportunity to","obtain","remove from"];
@@ -1262,7 +1309,7 @@
     [6,"said","c","\"never once\" refers to a single moment, not a habit"],
     [7,"thought","b","a mental state (think = believe)"],
     [8,"announced","c","\"one day\" = a single event, not a habit"],
-    [9,"were","b","a state (be)"],
+    [9,"were","c","a reaction to one specific event (the announcement), not a habit or a long-term state"],
     [10,"said","a","a repeated action (often)"]
   ].forEach(function(item){
     buildChoice(document.getElementById("paragraphQ"),
@@ -1299,15 +1346,15 @@
   buildGapText(document.getElementById("gapReview"), [
     {text:"1. My grandad's got a car, but he "},
     {gap:true, answers:["hardly"]},
-    {text:" ever uses it. He'll only drive in good weather.\n2. We "},
+    {text:" ever uses it. He'll only drive in good weather.\n2. "},
     {gap:true, answers:["usually"]},
-    {text:" play football on Sunday morning, but this week's game is in the afternoon.\n3. This nocturnal bird is "},
+    {text:" we play football on Sunday morning, but this week's game is in the afternoon.\n3. This nocturnal bird is "},
     {gap:true, answers:["not"]},
     {text:" often seen in daylight, so these early-morning images are a rare treat.\n4. It's not "},
     {gap:true, answers:["usual"]},
-    {text:" for students to bring sandwiches; most eat in the school canteen.\n5. I "},
-    {gap:true, answers:["almost"]},
-    {text:" never eat breakfast before school.\n6. We "},
+    {text:" for students to bring sandwiches; most eat in the school canteen.\n5. We "},
+    {gap:true, answers:["very"]},
+    {text:" rarely go into the town centre to shop these days; it's far too crowded.\n6. We "},
     {gap:true, answers:["tend"]},
     {text:" not to go abroad on holiday; there are so many places to visit here in this country.\n7. When I was at school, I "},
     {gap:true, answers:["would"]},
@@ -1394,7 +1441,7 @@
     {text:" own herbs and vegetables, which keeps them active and moving around naturally. They eat a mainly plant-based diet, especially beans, "},
     {gap:true, answers:["such"]},
     {text:" as fava, soy and lentils, and meat is consumed on average only five times "},
-    {gap:true, answers:["a","per"]},
+    {gap:true, answers:["a","per","each","every"]},
     {text:" month.\n\nLoved ones come first, and people in blue zones "},
     {gap:true, answers:["take"]},
     {text:" good care of ageing parents and grandparents, who live with younger family members, or at least nearby. Older people remain healthier and it is less common "},
@@ -1460,99 +1507,63 @@
   /* =================================================================
      UNIT 1 · LISTENING
   ================================================================= */
-  var predictHost = document.getElementById("listeningPredictList");
+  var STATEMENTS = ["I tend to wear the same clothes all the time.","I don't really care what clothes I wear.","I refuse to wear designer clothes.",
+    "I'm careful to check the origin of the clothes I buy.","I generally wear second-hand clothes.","I only throw clothes away when absolutely necessary.",
+    "I buy quality clothes that are guaranteed to last.","I wear clothes that give me self-confidence."];
+  var part3Key = [
+    ["e","It's unusual for me to buy brand new clothes. I get most of what I wear from charity shops."],
+    ["b","I'm not the kind of person who spends time worrying about what to put on in the morning. ... I just throw on the first thing I find in my wardrobe and that's it."],
+    ["d","I only buy from companies that sell ethical clothing, made by people who earn a decent salary and work in a safe environment."],
+    ["h","They don't have to be designer clothes, but they do have to make me feel good about myself. ... any feelings of insecurity I have will just disappear as soon as I put it on."],
+    ["f","If I want to go out and get a new T-shirt, for example, then I always have to get rid of an old one first. ... I replace them, precisely because they're no use to anyone – not just me."]
+  ];
+  buildMatching(document.getElementById("part3Match"),
+    part3Key.map(function(k, i){ return {left:"Speaker " + (i+1), answer:k[0]}; }),
+    STATEMENTS.map(function(s, i){ var l = "abcdefgh"[i]; return {key:l, label:l.toUpperCase() + " – " + s}; }));
+  document.getElementById("part3Script").innerHTML = part3Key.map(function(k, i){
+    return "<p><strong>Speaker " + (i+1) + " · " + k[0].toUpperCase() + "</strong> \"" + k[1] + "\"</p>";
+  }).join("");
+
   [
     ["You hear two people talking about a friend of theirs.","What does the woman say about the friend?",
-      [["He talks a lot about his lifestyle.","He's always going on about the way he lives."],
-       ["He leads a comfortable lifestyle.","He's got everything he needs; he's very well off."],
-       ["He may change his lifestyle.","He's thinking of doing things differently; he might give it all up."]]],
+      ["He talks a lot about his lifestyle.","He leads a comfortable lifestyle.","He may change his lifestyle."], 2,
+      "But he did say he might settle down one day – stay in one place."],
     ["You overhear a man talking to a friend on his phone.","Why is he phoning?",
-      [["to persuade his friend to do something","Come on, you'd love it. Why don't you come along?"],
-       ["to ask for some information","Do you happen to know what time it starts?"],
-       ["to change an arrangement","Can we make it Thursday instead? I can't make Friday."]]],
+      ["to persuade his friend to do something","to ask for some information","to change an arrangement"], 1,
+      "And actually, I was wondering if you could tell me what it was like, what sort of things you did."],
     ["You hear a woman talking about her family's financial situation.","What is she going to do?",
-      [["ask someone to help her","I'll have to ask my brother if he can lend us something."],
-       ["try to sell something","We're going to put the car up on a website and see what we get."],
-       ["look for a new job","I'm going to start applying for other positions."]]],
+      ["ask someone to help her","try to sell something","look for a new job"], 1,
+      "There's nothing for it but to put my car on the market and see if I can get a decent price for it."],
     ["You hear a man talking about his job.","Who is the man?",
-      [["a hotel manager","I'm responsible for all the staff and the budget."],
-       ["a hotel receptionist","I check guests in and answer the phone at the front desk."],
-       ["a hotel doorman","I stand at the entrance, carry bags and call taxis."]]],
+      ["a hotel manager","a hotel receptionist","a hotel doorman"], 2,
+      "I'm the first person they see before they go into the hotel. ... it can get pretty cold standing outside on the steps in winter."],
     ["You hear two people talking about the value of their time spent living abroad.","What do they agree about?",
-      [["It has helped them develop their personality.","It made me much more independent; I grew up a lot."],
-       ["It has made them appreciate their own country.","You don't realise what you've got at home until you leave."],
-       ["It has given them better job prospects.","Employers love seeing it on your CV."]]],
+      ["It has helped them develop their personality.","It has made them appreciate their own country.","It has given them better job prospects."], 0,
+      "I've become much more tolerant since I've been here ... – That's what I mean. We've grown as individuals, we're more open-minded and independent."],
     ["You hear a man talking on the radio.","What is he doing?",
-      [["reviewing a book","The author's latest novel is a real page-turner; I'd give it four stars."],
-       ["advertising a product","Available now in all good stores. Order yours today."],
-       ["reading a news report","Police said this morning that... Reports are coming in that..."]]],
+      ["reviewing a book","advertising a product","reading a news report"], 0,
+      "The author of Back to Basics says his guide will help you achieve all these things in a matter of weeks. He's lying – ... you'd be wasting your money if you bought it."],
     ["You hear two people talking about the village they both live in.","What does the woman think of the village?",
-      [["People are not always very friendly.","People keep themselves to themselves; nobody says hello."],
-       ["Some of the roads are dangerous.","Cars come round that bend far too fast."],
-       ["There are not enough children.","The school might have to close; it's mostly retired people now."]]],
+      ["People are not always very friendly.","Some of the roads are dangerous.","There are not enough children."], 1,
+      "I just get a bit nervous about the traffic sometimes. ... Some drivers just don't slow down for them."],
     ["You hear a man talking about a country in which he once lived.","What surprised him about the people?",
-      [["the importance they give to clothes","Everyone dresses up, even just to go to the supermarket."],
-       ["the type of food they eat","They have dinner at eleven at night, and everything's so spicy."],
-       ["their attitude to work","Nobody stays late at the office; they take two-hour lunch breaks."]]]
+      ["the importance they give to clothes","the type of food they eat","their attitude to work"], 0,
+      "What I hadn't anticipated was their way of dressing. ... Colour, style, fashion – it all mattered to them."]
   ].forEach(function(q, idx){
-    var box = el("div","predict");
-    box.appendChild(el("p","situ", (idx+1) + ". " + q[0]));
-    box.appendChild(el("p","qq", q[1]));
-    var ol = el("ol");
-    ol.type = "A";
-    q[2].forEach(function(o){ ol.appendChild(el("li", null, o[0])); });
-    box.appendChild(ol);
-    var ideas = el("ol","ideas");
-    ideas.type = "A";
-    q[2].forEach(function(o){ ideas.appendChild(el("li", null, "You might hear: <span>\"" + o[1] + "\"</span>")); });
-    var btn = el("button","btn btn-ghost btn-sm","Show paraphrase ideas");
-    btn.type = "button";
-    btn.setAttribute("aria-expanded","false");
-    btn.addEventListener("click", function(){
-      var open = box.classList.toggle("open");
-      btn.textContent = open ? "Hide ideas" : "Show paraphrase ideas";
-      btn.setAttribute("aria-expanded", String(open));
-      markDone("listening-part1", 1);
-    });
-    box.appendChild(btn);
-    box.appendChild(ideas);
-    predictHost.appendChild(box);
+    buildChoice(document.getElementById("part1Listening"),
+      (idx+1) + ". " + q[0] + "<br><em>" + q[1] + "</em>",
+      q[2].map(function(o, i){ return "<b>" + "ABC"[i] + "</b>" + o; }), q[3],
+      "In the recording: \"" + q[4] + "\"", "listening-part1");
   });
 
-  buildChoice(document.getElementById("distractorQ"),
-    "The book warns that Speaker 1 mentions designer clothes, but that statement C (<em>I refuse to wear designer clothes</em>) may not be the answer. Why?",
-    ["Mentioning something is not the same as refusing it","The word designer never appears in the recording"], 0,
-    "Every extract usually contains at least one distractor: a word or idea from a wrong option. Hearing a word from an option doesn't confirm it; the whole idea has to match.",
-    null);
-
-  var p3 = document.getElementById("part3Predict");
-  p3.appendChild(el("p","qq","Now predict: how might each of the other statements sound?"));
-  var p3list = el("ol");
-  p3list.type = "A";
-  var p3ideas = el("ol","ideas");
-  p3ideas.type = "A";
-  [
-    ["I tend to wear the same clothes all the time.","(see the example above)"],
-    ["I don't really care what clothes I wear.","I just throw on whatever's clean."],
-    ["I refuse to wear designer clothes.","You'll never catch me paying extra for a label."],
-    ["I'm careful to check the origin of the clothes I buy.","I always look at where something was made, and who made it."],
-    ["I generally wear second-hand clothes.","Most of my wardrobe comes from charity shops."],
-    ["I only throw clothes away when absolutely necessary.","I wear things until they literally fall apart."],
-    ["I buy quality clothes that are guaranteed to last.","I'd rather pay more for something that won't wear out."],
-    ["I wear clothes that give me self-confidence.","When I put that jacket on, I feel I can do anything."]
-  ].forEach(function(s){
-    p3list.appendChild(el("li", null, s[0]));
-    p3ideas.appendChild(el("li", null, "You might hear: <span>\"" + s[1] + "\"</span>"));
+  document.addEventListener("click", function(e){
+    var b = e.target.closest("[data-script]");
+    if(!b) return;
+    if(!b.dataset.closedLabel) b.dataset.closedLabel = b.textContent;
+    var open = document.getElementById(b.dataset.script).classList.toggle("show");
+    b.textContent = open ? b.dataset.openLabel : b.dataset.closedLabel;
+    b.setAttribute("aria-expanded", String(open));
   });
-  p3.appendChild(p3list);
-  var p3btn = el("button","btn btn-ghost btn-sm","Show paraphrase ideas");
-  p3btn.type = "button";
-  p3btn.addEventListener("click", function(){
-    var open = p3.classList.toggle("open");
-    p3btn.textContent = open ? "Hide ideas" : "Show paraphrase ideas";
-  });
-  p3.appendChild(p3btn);
-  p3.appendChild(p3ideas);
 
   /* =================================================================
      UNIT 1 · SPEAKING
