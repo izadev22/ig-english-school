@@ -1,0 +1,925 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Unit 2 · High energy — Ready for First practice</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Ready for First Unit 2 (High energy): interactive practice for the Cambridge B2 First exam.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Caveat:wght@600;700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/rff.css">
+</head>
+<body>
+
+<div class="tb">
+  <div class="tb-inner">
+    <a class="tb-back" href="../index.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+      IG English School
+    </a>
+    <div class="tb-title">
+      <a href="index.html"><strong>Ready for First</strong></a>
+      <span>Practice notebook · Cambridge B2 First</span>
+    </div>
+  </div>
+</div>
+
+<main class="shell">
+  <aside class="rail" id="rail"></aside>
+  <div class="content">
+    <header class="view-head">
+      <span class="kicker">Unit 2</span>
+      <h1>High energy</h1>
+      <p>Gerunds and infinitives, music and sport vocabulary, affixes, vowel sounds. Exam practice: Reading and Use of English Parts 2, 3, 4 and 6, Writing Part 2, Listening Parts 2 and 4, Speaking Parts 1, 2, 3 and 4.</p>
+    </header>
+
+    <nav class="tabs" aria-label="Unit 2 sections">
+      <button class="tab-btn active" data-tab="vocab">Vocabulary</button>
+      <button class="tab-btn" data-tab="grammar">Grammar</button>
+      <button class="tab-btn" data-tab="rue">Reading &amp; Use of English</button>
+      <button class="tab-btn" data-tab="writing">Writing</button>
+      <button class="tab-btn" data-tab="listening">Listening</button>
+      <button class="tab-btn" data-tab="speaking">Speaking</button>
+      <button class="tab-btn" data-tab="pron">Pronunciation</button>
+    </nav>
+
+    <!-- ================= VOCABULARY ================= -->
+    <section class="page active" data-tab="vocab">
+
+      <div class="block" data-ex="voc-music-1">
+        <span class="kicker">Vocabulary · Music</span>
+        <h3>Music collocations</h3>
+        <p class="instr">All the words in each group go with one word from the box. Choose the missing word for each group. There is an example at the beginning (0): <em>rock band, rock musician, rock star</em>.</p>
+        <div class="bank"><span>guitarist</span><span>in</span><span>instrument</span><span>live (adj)</span><span>on</span><span>play (v)</span><span>playlist</span><span>song</span></div>
+        <div id="musicGroups"></div>
+        <button class="btn btn-primary btn-sm" data-check="musicGroups" style="margin-top:10px;">Check answers</button>
+        <p class="result-line" id="musicGroups-result"></p>
+      </div>
+
+      <div class="block" data-ex="voc-music-2">
+        <h3>Questions about music</h3>
+        <p class="instr">Complete each question with a word combination from the exercise above. Then ask and answer the questions with a partner, giving as much detail as possible.</p>
+        <div class="gaptext" id="musicQs"></div>
+        <button class="btn btn-primary btn-sm" data-check="musicQs">Check answers</button>
+        <p class="result-line" id="musicQs-result"></p>
+      </div>
+
+      <div class="block" data-ex="voc-sport-verbs">
+        <span class="kicker">Vocabulary · Sport</span>
+        <h3>Do, go or play?</h3>
+        <p class="instr">Choose the verb we use with each sport. The first one has been done for you: <em>do athletics</em>.</p>
+        <div id="sportVerbs"></div>
+        <button class="btn btn-primary btn-sm" data-check="sportVerbs" style="margin-top:10px;">Check answers</button>
+        <p class="result-line" id="sportVerbs-result"></p>
+        <div class="tip">A useful pattern: <strong>play</strong> + ball and team games (play tennis, play golf); <strong>go</strong> + sports ending in <em>-ing</em> (go skiing, go swimming); <strong>do</strong> + athletics, gymnastics and martial arts (do judo).</div>
+      </div>
+
+      <div class="block" data-ex="voc-sport-nouns">
+        <h3>Which sport?</h3>
+        <p class="instr">Write the name of the sport each group of nouns is associated with. The first one has been done for you.</p>
+        <div class="gaptext" id="sportNouns"></div>
+        <button class="btn btn-primary btn-sm" data-check="sportNouns">Check answers</button>
+        <p class="result-line" id="sportNouns-result"></p>
+      </div>
+
+      <div class="block" data-ex="voc-sport-add">
+        <h3>Add a noun to each group</h3>
+        <p class="instr">Which sport does each of these nouns belong to?</p>
+        <div id="sportAdd"></div>
+        <button class="btn btn-primary btn-sm" data-check="sportAdd" style="margin-top:10px;">Check answers</button>
+        <p class="result-line" id="sportAdd-result"></p>
+      </div>
+
+      <div class="block" data-ex="voc-sport-quiz">
+        <h3>Sports quiz</h3>
+        <p class="instr">Complete the questions with the verbs in the box (<em>take</em> is used twice). Then try to answer the quiz questions with a partner.</p>
+        <div class="bank"><span>beat</span><span>draw</span><span>hit</span><span>kick</span><span>pass</span><span>take</span><span>take</span><span>win</span></div>
+        <div class="gaptext" id="sportQuiz"></div>
+        <div class="btn-row" style="margin-top:8px;">
+          <button class="btn btn-primary btn-sm" data-check="sportQuiz">Check answers</button>
+          <button class="btn btn-ghost btn-sm" data-script="quizAnswers" data-open-label="Hide the quiz answers" aria-expanded="false">Show the quiz answers</button>
+        </div>
+        <p class="result-line" id="sportQuiz-result"></p>
+        <div class="script-lines" id="quizAnswers">
+          <p><strong>1</strong> ice hockey, figure skating, curling</p>
+          <p><strong>2</strong> France</p>
+          <p><strong>3</strong> silver</p>
+          <p><strong>4</strong> tennis, badminton, squash</p>
+          <p><strong>5</strong> five</p>
+          <p><strong>6</strong> none</p>
+          <p><strong>7</strong> Yes. If the player uses their head, chest or knee (but not their foot), the goalkeeper can pick it up.</p>
+          <p><strong>8</strong> rugby</p>
+        </div>
+        <div class="tip">Speaking practice: Student A chooses a sport and explains the rules. Student B pretends not to know the sport and asks questions until they fully understand it. Then change roles.</div>
+      </div>
+
+      <div class="block" data-ex="voc-sport-review">
+        <span class="kicker">Review · Sport</span>
+        <h3>Complete each gap with a suitable word</h3>
+        <div class="gaptext" id="sportReview"></div>
+        <button class="btn btn-primary btn-sm" data-check="sportReview">Check answers</button>
+        <p class="result-line" id="sportReview-result"></p>
+      </div>
+
+      <div class="block" data-ex="wf-affix-people">
+        <span class="kicker">Word formation · Affixes</span>
+        <h3>People who do things: -or, -er or -ant</h3>
+        <p class="instr">Add <em>-or</em>, <em>-er</em> or <em>-ant</em> to each verb to make a noun for the person who does it. You may need to change the spelling. Example: <em>win – winner</em>.</p>
+        <div class="gaptext" id="affixPeople"></div>
+        <button class="btn btn-primary btn-sm" data-check="affixPeople">Check answers</button>
+        <p class="result-line" id="affixPeople-result"></p>
+      </div>
+
+      <div class="block" data-ex="wf-affix-people2">
+        <h3>-ist, -eer, -ee or -ian</h3>
+        <p class="instr">Use the same suffix for both words in each pair to make nouns for people. You may need to change the spelling.</p>
+        <div class="gaptext" id="affixPeople2"></div>
+        <button class="btn btn-primary btn-sm" data-check="affixPeople2">Check answers</button>
+        <p class="result-line" id="affixPeople2-result"></p>
+      </div>
+
+      <div class="block" data-ex="wf-affix-neg">
+        <h3>Negative prefixes</h3>
+        <p class="instr">Choose the prefix that makes all three adjectives negative. Example: <em>ambitious / likely / reliable</em> → <em>un-</em> (unambitious, unlikely, unreliable).</p>
+        <div id="affixNeg"></div>
+        <button class="btn btn-primary btn-sm" data-check="affixNeg" style="margin-top:10px;">Check answers</button>
+        <p class="result-line" id="affixNeg-result"></p>
+      </div>
+
+      <div class="block" data-ex="wf-affix-prefix">
+        <h3>What do these prefixes mean?</h3>
+        <p class="instr">Match each prefix in bold to its meaning.</p>
+        <div id="affixPrefix"></div>
+        <button class="btn btn-primary btn-sm" data-check="affixPrefix" style="margin-top:10px;">Check answers</button>
+        <p class="result-line" id="affixPrefix-result"></p>
+        <div class="tip">Want more? The <a href="word-formation.html">Word formation</a> page has a quick drill with the whole list from the book.</div>
+      </div>
+
+    </section>
+
+    <!-- ================= GRAMMAR ================= -->
+    <section class="page" data-tab="grammar">
+
+      <div class="block" data-ex="gram-why">
+        <span class="kicker">Grammar · Gerunds and infinitives</span>
+        <h3>Why this form?</h3>
+        <p class="instr">These extracts come from the parkour article. For each underlined word, choose why a gerund, an infinitive without <em>to</em> or an infinitive with <em>to</em> is used.</p>
+        <div class="margin-note"><p><strong>Example:</strong> ... the UK became the first country in the world <u>to recognise</u> parkour as a sport. → the infinitive with <em>to</em> is used after <em>the first</em> + noun, in place of a relative clause (<em>the first country ... which recognised parkour</em>).</p></div>
+        <div id="gramWhy"></div>
+      </div>
+
+      <div class="block">
+        <h3>The rules in brief</h3>
+        <div class="margin-note">
+          <p><strong>Gerund (-ing)</strong>: as the subject or object of a sentence (<em>Reading in the car makes me feel sick</em>); after prepositions, including <em>look forward to</em> and <em>get used to</em>; after verbs like <em>admit, avoid, can't help, can't stand, consider, enjoy, feel like, give up, mind, miss, put off, suggest</em>; after expressions like <em>have difficulty (in), it's no use, there's no point (in), it's (not) worth</em>.</p>
+          <p><strong>Infinitive with to</strong>: to express purpose (<em>I'm learning English to get a better job</em>); after adjectives (<em>It's difficult to...</em>, <em>I was surprised to hear...</em>); after nouns like <em>ability, chance, decision, idea, opportunity</em>; after verbs like <em>afford, agree, decide, hope, manage, offer, promise, refuse, seem</em>; after verb + object with <em>advise, allow, encourage, persuade, want, warn</em>; after <em>the first / the last / the only</em> + noun.</p>
+          <p><strong>Infinitive without to</strong>: after modal verbs (<em>can, must, should</em>) and after <em>let, make, would rather, had better</em>.</p>
+          <p><strong>Both, with a change of meaning</strong>: <em>remember/forget</em> (doing = a past action; to do = something you have to do), <em>stop</em> (doing = no longer do it; to do = interrupt one activity to do another), <em>try</em> (doing = an experiment; to do = an attempt), <em>mean</em> (doing = involve; to do = intend), <em>need</em> (doing = passive meaning; to do = active).</p>
+          <p><strong>Preferences</strong>: <em>prefer</em> + gerund or infinitive for general preferences; <em>would prefer</em> + infinitive with <em>to</em> and <em>would rather</em> + infinitive without <em>to</em> for specific occasions (<em>I'd rather walk than go by bus</em>).</p>
+        </div>
+      </div>
+
+      <div class="block" data-ex="gram-likes">
+        <h3>Talking about likes and dislikes</h3>
+        <p class="instr">Complete the first gap with a word from box a and the second gap with a preposition from box b. The first one has been done for you. Then say how true each sentence is for you.</p>
+        <div class="bank"><span>a:</span><span>absolutely</span><span>can't</span><span>don't</span><span>much</span><span>quite</span></div>
+        <div class="bank"><span>b:</span><span>at</span><span>in</span><span>of</span><span>on</span><span>with</span></div>
+        <div class="gaptext" id="likesGaps"></div>
+        <button class="btn btn-primary btn-sm" data-check="likesGaps">Check answers</button>
+        <p class="result-line" id="likesGaps-result"></p>
+      </div>
+
+      <div class="block" data-ex="gram-rfg1">
+        <span class="kicker">Ready for Grammar</span>
+        <h3>Gerund or infinitive with to?</h3>
+        <p class="instr">Complete each sentence with the correct form of the verbs in brackets. In each sentence, one verb is a gerund and the other is an infinitive with <em>to</em>.</p>
+        <div class="gaptext" id="rfg1"></div>
+        <button class="btn btn-primary btn-sm" data-check="rfg1">Check answers</button>
+        <p class="result-line" id="rfg1-result"></p>
+      </div>
+
+      <div class="block" data-ex="gram-rfg2">
+        <h3>Low energy</h3>
+        <p class="instr">Choose the correct option for each gap in this blog post. In some gaps, both options are correct.</p>
+        <div class="passage single" id="lowEnergyText"></div>
+        <div id="lowEnergyQs"></div>
+      </div>
+
+      <div class="block" data-ex="gram-rfg4">
+        <h3>Key word transformations</h3>
+        <p class="instr">Complete the second sentence so that it means the same as the first, using the word given. Use between two and five words, including the word given.</p>
+        <div id="rfg4"></div>
+        <button class="btn btn-primary btn-sm" data-check="rfg4" style="margin-top:6px;">Check answers</button>
+        <p class="result-line" id="rfg4-result"></p>
+      </div>
+
+      <div class="block" data-ex="gram-rfg5">
+        <h3>Preferences</h3>
+        <p class="instr">Complete the second sentence so that it means the same as the first. Use up to five words.</p>
+        <div id="rfg5"></div>
+        <button class="btn btn-primary btn-sm" data-check="rfg5" style="margin-top:6px;">Check answers</button>
+        <p class="result-line" id="rfg5-result"></p>
+      </div>
+
+    </section>
+
+    <!-- ================= READING & USE OF ENGLISH ================= -->
+    <section class="page" data-tab="rue">
+
+      <div class="block wide" data-ex="rue-part6">
+        <span class="kicker">Part 6 · Gapped text</span>
+        <h3>Inside the daredevil world of parkour</h3>
+        <p class="instr">Six sentences have been removed from the article. Choose from sentences A–G the one which fits each gap (1–6). There is one extra sentence which you do not need to use.</p>
+        <div class="tip"><strong>How to go about it:</strong> check that the whole sentence fits the meaning of the text before <em>and</em> after the gap. When you find a sentence for a gap, read the whole paragraph again to check it. At the end, make sure the sentence you haven't used doesn't fit anywhere. Look for links: pronouns (<em>he, its, their, this, those</em>) and words that repeat or paraphrase ideas in the text.</div>
+        <ol class="statements" type="A" id="part6Options"></ol>
+        <div class="passage" id="part6Text"></div>
+        <div class="btn-row">
+          <button class="btn btn-primary btn-sm" data-check="part6Text">Check answers</button>
+        </div>
+        <p class="result-line" id="part6Text-result"></p>
+        <div class="tip">Discuss: Do you think parkour should be taught in schools? Are there any high-risk or extreme sports you would like to try?</div>
+      </div>
+
+      <div class="block wide" data-ex="rue-part3">
+        <span class="kicker">Review · Part 3 · Word formation</span>
+        <h3>The Celebrated Pedestrian</h3>
+        <p class="instr">Use the word in capitals to form a word that fits in the gap. There is an example at the beginning (0).</p>
+        <div class="gaptext" id="pedestrian"></div>
+        <button class="btn btn-primary btn-sm" data-check="pedestrian">Check answers</button>
+        <p class="result-line" id="pedestrian-result"></p>
+      </div>
+
+      <div class="block wide" data-ex="rue-part2">
+        <span class="kicker">Review · Part 2 · Open cloze</span>
+        <h3>Summer holiday music camp</h3>
+        <p class="instr">Write one word in each gap. There is an example at the beginning (0). Read the whole text first, then look carefully at the words before and after each gap.</p>
+        <div class="gaptext" id="musicCamp"></div>
+        <button class="btn btn-primary btn-sm" data-check="musicCamp">Check answers</button>
+        <p class="result-line" id="musicCamp-result"></p>
+      </div>
+
+      <div class="block" data-ex="rue-part4">
+        <span class="kicker">Review · Part 4 · Key word transformation</span>
+        <h3>Same meaning, different words</h3>
+        <p class="instr">Complete the second sentence so that it means the same as the first, using the word given. Use between two and five words, including the word given.</p>
+        <div id="kwt2"></div>
+        <button class="btn btn-primary btn-sm" data-check="kwt2" style="margin-top:6px;">Check answers</button>
+        <p class="result-line" id="kwt2-result"></p>
+      </div>
+
+    </section>
+
+    <!-- ================= WRITING ================= -->
+    <section class="page" data-tab="writing">
+
+      <div class="block wide" data-ex="writing-article-paras">
+        <span class="kicker">Part 2 · Article</span>
+        <h3>My favourite sport</h3>
+        <div class="margin-note"><p><strong>The task:</strong> You see this notice in an English-language magazine. <em>ARTICLES WANTED! My favourite sport. Write us an article telling us about your favourite sport. Why do you like it and what advice would you give to someone who wants to take it up? The best articles will be published in this magazine.</em> Write your article in 140–190 words.</p></div>
+        <p class="instr">Read the model answer and match each summary (a–d) to a paragraph (1–4).</p>
+        <div class="model-answer show" style="margin-bottom:16px;">
+          <h4 style="margin-top:0; font-size:1.1rem;">A strange way to enjoy yourself</h4>
+          <p class="letter"><strong>1</strong> Have you ever seen a smile on the face of a long-distance runner? Running ten kilometres or more certainly doesn't sound much fun, but this sport is a powerful addiction and once you've started, you'll find it difficult to give it up.
+<strong>2</strong> So what is the attraction of running? For me, whether I'm working or studying, there is no better way of getting rid of stress. I can think through my problems and at the end of the race I have the answers. And simply completing a half or full marathon increases my confidence and makes me feel on top of the world.
+<strong>3</strong> If you're thinking of taking it up yourself, don't try to do too much at the beginning. You should set yourself realistic targets and always do warm-up exercises before you run. Also, make sure you buy a good pair of running shoes to protect your knees and back from injury.
+<strong>4</strong> And don't be put off by the expressions on the faces of the runners – they're enjoying every minute, and so will you!</p>
+        </div>
+        <div id="articleParas"></div>
+        <button class="btn btn-primary btn-sm" data-check="articleParas" style="margin-top:10px;">Check answers</button>
+        <p class="result-line" id="articleParas-result"></p>
+      </div>
+
+      <div class="block" data-ex="writing-article-features">
+        <h3>What makes it an article?</h3>
+        <div id="articleStyleQ"></div>
+        <p class="instr" style="margin-top:6px;">Match each feature of the model answer to its purpose.</p>
+        <div id="articleFeatures"></div>
+        <div class="btn-row" style="margin-top:10px;">
+          <button class="btn btn-primary btn-sm" data-check="articleFeatures">Check answers</button>
+          <button class="btn btn-ghost btn-sm" data-script="articleExamples" data-open-label="Hide the examples" aria-expanded="false">Find examples of informal style</button>
+        </div>
+        <p class="result-line" id="articleFeatures-result"></p>
+        <div class="script-lines" id="articleExamples">
+          <p><strong>Contractions:</strong> doesn't, you've, you'll, I'm, you're, don't, they're</p>
+          <p><strong>Informal linkers:</strong> So, And, Also</p>
+          <p><strong>Direct questions:</strong> Have you ever seen a smile on the face of a long-distance runner? So what is the attraction of running?</p>
+          <p><strong>Phrasal verbs:</strong> give it up, think through, taking it up, put off</p>
+        </div>
+      </div>
+
+      <div class="block">
+        <h3>Your turn: write your article</h3>
+        <p class="instr">Write your own answer to the task (140–190 words).</p>
+        <div class="tip"><strong>How to go about it:</strong> choose your sport and plan your answer (you could use the same four paragraphs as the model). Start with an interesting fact, a surprising statement or a direct question. Keep the reader's attention with a lively style and talk to them directly. End with a statement or question that leaves the reader something to think about. Give your article a title; you can write it at the end.</div>
+        <div class="freewrite">
+          <textarea id="articleFree" placeholder="Title ..." aria-label="Your article"></textarea>
+          <p class="word-counter" id="articleFreeCounter">0 words (target: 140–190)</p>
+        </div>
+        <ul class="checklist">
+          <li><label><input type="checkbox"> I said why I like the sport and gave advice to someone taking it up</label></li>
+          <li><label><input type="checkbox"> I used an informal style (contractions, informal linkers, direct questions)</label></li>
+          <li><label><input type="checkbox"> I organised my ideas into paragraphs</label></li>
+          <li><label><input type="checkbox"> I used a variety of informal linkers</label></li>
+          <li><label><input type="checkbox"> My article has an interesting title</label></li>
+        </ul>
+      </div>
+
+      <div class="block">
+        <span class="kicker">Review · Part 2 · Informal letter</span>
+        <h3>Your turn: a letter to Suzy</h3>
+        <p class="instr">You have received this letter from your English-speaking friend, Suzy. Write your reply in 140–190 words.</p>
+        <div class="margin-note"><p>"Hi! My brother's 21 next month and I want to do something special for him. He's a big rock music fan so I was thinking of either buying him a decent speaker so he can play his music really loud, or getting him a three-day ticket for next summer's rock festival here. What do you think I should do?"</p></div>
+        <div class="freewrite">
+          <textarea id="letterFree" placeholder="Hi Suzy, ..." aria-label="Your letter to Suzy"></textarea>
+          <p class="word-counter" id="letterFreeCounter">0 words (target: 140–190)</p>
+        </div>
+        <ul class="checklist">
+          <li><label><input type="checkbox"> I looked at the advantages and disadvantages of both ideas</label></li>
+          <li><label><input type="checkbox"> I gave Suzy clear advice</label></li>
+          <li><label><input type="checkbox"> I used linking words (but, on the other hand, so, anyway...)</label></li>
+          <li><label><input type="checkbox"> I opened and closed it like a letter to a friend</label></li>
+        </ul>
+      </div>
+
+    </section>
+
+    <!-- ================= LISTENING ================= -->
+    <section class="page" data-tab="listening">
+
+      <div class="block" data-ex="listening-part2">
+        <span class="kicker">Part 2 · Sentence completion</span>
+        <h3>Jack Suggs on music</h3>
+        <p class="instr">You will hear a man called Jack Suggs talking on the radio about music. For questions 1–10, complete the sentences with a word or short phrase.</p>
+        <div class="tip"><strong>What to expect:</strong> the words in the questions may be different from the words you hear (you read <em>directors of TV series avoid using ... artists</em>, but you hear <em>directors nowadays tend not to use ... musicians</em>), but the words you write are actually heard in the recording. Listen for distractors: in question 1 you will hear more than one number. You never need more than three words, and small spelling mistakes are accepted in the exam if the word is recognisable.</div>
+        <div class="audio-box">
+          <span class="audio-label">Track 2.1</span>
+          <audio controls preload="none" src="audio/unit-02/track-2.1.mp3"></audio>
+          <span class="audio-note">Read the sentences first and predict the type of word you need. Then listen twice.</span>
+        </div>
+        <div class="gaptext" id="part2Listening"></div>
+        <div class="btn-row" style="margin-top:8px;">
+          <button class="btn btn-primary btn-sm" data-check="part2Listening">Check answers</button>
+          <button class="btn btn-ghost btn-sm" data-script="part2Script" data-open-label="Hide the audioscript" aria-expanded="false">Show where the answers are</button>
+        </div>
+        <p class="result-line" id="part2Listening-result"></p>
+        <div class="script-lines" id="part2Script"></div>
+      </div>
+
+      <div class="block" data-ex="listening-phrasal">
+        <h3>Phrasal verbs from the recording</h3>
+        <p class="instr">Use the context to work out the meaning of each phrasal verb from Jack's programme.</p>
+        <div id="listenPhrasal"></div>
+        <button class="btn btn-primary btn-sm" data-check="listenPhrasal" style="margin-top:10px;">Check answers</button>
+        <p class="result-line" id="listenPhrasal-result"></p>
+      </div>
+
+      <div class="block" data-ex="listening-part4">
+        <span class="kicker">Part 4 · Multiple choice</span>
+        <h3>Unusual sports</h3>
+        <p class="instr">You will hear a man called Mike Taylor talking on the radio about unusual sports. For questions 1–7, choose the best answer (A, B or C).</p>
+        <div class="tip"><strong>What to expect:</strong> you will hear distractors, so listen carefully both times. An option may be true but still not answer the question: in question 2, all three statements are true, but only one is something Mike finds <em>difficult to believe</em>.</div>
+        <div class="margin-note">
+          <p><strong>Worked example, question 1.</strong> When Mike saw a chess boxing match, he was surprised by A how skilled the competitors were at both parts of the sport / B how much fun the competitors were having / C how aggressive the competitors were.</p>
+          <p>In the recording: "<u>Sounds like just a bit of fun</u>, but when I watched two men competing on German television recently, <u>I was amazed by their level of skill in each of these two very different disciplines</u>. After all, <u>boxing is such an aggressive, physical sport</u>, whereas chess is all about using the brain."</p>
+          <p>The answer is <strong>A</strong>: <em>amazed by their level of skill</em> matches <em>surprised by how skilled</em>. B and C are distractors: "a bit of fun" and "aggressive" describe the sport in general, not what surprised him.</p>
+        </div>
+        <div class="audio-box">
+          <span class="audio-label">Track 2.2</span>
+          <audio controls preload="none" src="audio/unit-02/track-2.2.mp3"></audio>
+          <span class="audio-note">Read questions 2–7, then listen twice.</span>
+        </div>
+        <div id="part4Listening"></div>
+      </div>
+
+    </section>
+
+    <!-- ================= SPEAKING ================= -->
+    <section class="page" data-tab="speaking">
+
+      <div class="block wide">
+        <span class="kicker">Part 1 · Interview</span>
+        <h3>Sport and music: answer in 20 seconds</h3>
+        <p class="instr">Press Start and answer out loud. Develop your answers by giving reasons or examples.</p>
+        <div id="speakingP1List"></div>
+      </div>
+
+      <div class="block wide">
+        <span class="kicker">Part 2 · Long turn</span>
+        <h3>Listening to music in different situations</h3>
+        <p class="instr">Student A speaks for about one minute; then Student B answers a short question in about 30 seconds. Then change roles and do the second task.</p>
+        <div class="tip"><strong>Student A:</strong> don't describe the photos in detail; talk about the similarities and differences, and answer the question written above the photos. <strong>Student B:</strong> develop your answer fully, giving reasons for your feelings or opinions.</div>
+
+        <figure class="photo-task">
+          <figcaption class="photo-q">Why have the people decided to listen to music in these situations?</figcaption>
+          <div class="photo-pair">
+            <div class="photo"><span class="photo-n">1</span><img src="https://images.unsplash.com/photo-1758273238506-d6cca51665e5?auto=format&amp;fit=crop&amp;w=900&amp;h=640&amp;q=75" alt="A young woman wearing headphones dances and sings while she mops the floor at home" loading="lazy" width="900" height="640"></div>
+            <div class="photo"><span class="photo-n">2</span><img src="https://images.unsplash.com/photo-1758525747638-25563afc9ff5?auto=format&amp;fit=crop&amp;w=900&amp;h=640&amp;q=75" alt="A man singing loudly to music while he drives his car" loading="lazy" width="900" height="640"></div>
+          </div>
+        </figure>
+        <div class="margin-note"><p><strong>Student A:</strong> Compare photographs 1 and 2 and say why you think the people have decided to listen to music in these situations.</p></div>
+        <div class="timer-box"><span class="q">Student A · 1 minute</span><span class="clock" id="clockA">1:00</span><button class="btn btn-ghost btn-sm" data-timer="60" data-clock="clockA">Start</button></div>
+        <div class="margin-note"><p><strong>Student B:</strong> When your partner has finished, say where you like listening to music.</p></div>
+        <div class="timer-box"><span class="q">Student B · 30 seconds</span><span class="clock" id="clockA2">0:30</span><button class="btn btn-ghost btn-sm" data-timer="30" data-clock="clockA2">Start</button></div>
+
+        <figure class="photo-task" style="margin-top:34px;">
+          <figcaption class="photo-q">Why have the people decided to listen to music in these situations?</figcaption>
+          <div class="photo-pair">
+            <div class="photo"><span class="photo-n">3</span><img src="https://images.unsplash.com/photo-1790749871277-70abe570c306?auto=format&amp;fit=crop&amp;w=900&amp;h=640&amp;q=75" alt="A woman wearing headphones typing on a laptop in a busy café" loading="lazy" width="900" height="640"></div>
+            <div class="photo"><span class="photo-n">4</span><img src="https://images.unsplash.com/photo-1758521959979-e3aa38696309?auto=format&amp;fit=crop&amp;w=900&amp;h=640&amp;q=75" alt="A man in a sports jacket and headphones jogging outdoors in winter" loading="lazy" width="900" height="640"></div>
+          </div>
+        </figure>
+        <div class="margin-note"><p><strong>Change roles. Student A:</strong> Compare photographs 3 and 4 and say why you think the people have decided to listen to music in these situations.</p></div>
+        <div class="timer-box"><span class="q">Student A · 1 minute</span><span class="clock" id="clockB">1:00</span><button class="btn btn-ghost btn-sm" data-timer="60" data-clock="clockB">Start</button></div>
+        <div class="margin-note"><p><strong>Student B:</strong> When your partner has finished, say where you like listening to music.</p></div>
+        <div class="timer-box"><span class="q">Student B · 30 seconds</span><span class="clock" id="clockB2">0:30</span><button class="btn btn-ghost btn-sm" data-timer="30" data-clock="clockB2">Start</button></div>
+        <p class="photo-credit">Photos from Unsplash by Vitaly Gariev.</p>
+      </div>
+
+      <div class="block wide">
+        <span class="kicker">Part 3 · Collaborative task</span>
+        <h3>What makes us happy?</h3>
+        <p class="instr">Work in pairs. Here are some things that many people believe are important if we want to feel happy. Talk to each other about how important these things are for our personal happiness.</p>
+        <div class="mindmap">
+          <span class="mm-centre">How important are these for our personal happiness?</span>
+          <span>listening to good music</span>
+          <span>being physically fit</span>
+          <span>having good friends</span>
+          <span>doing a job you like</span>
+          <span>having a lot of money</span>
+        </div>
+        <div class="timer-box"><span class="q">Task 1 · discuss together</span><span class="clock" id="clockP3a">2:00</span><button class="btn btn-ghost btn-sm" data-timer="120" data-clock="clockP3a">Start</button></div>
+        <button class="btn btn-ghost btn-sm" data-script="p3Task2" data-open-label="Hide the second question" aria-expanded="false">I've finished task 1: show the second question</button>
+        <div class="script-lines" id="p3Task2">
+          <p style="font-size:1rem; color:var(--plum-deep);"><strong>Now decide which two things are most important for our personal happiness.</strong></p>
+          <div class="timer-box"><span class="q">Task 2 · decide together</span><span class="clock" id="clockP3b">1:00</span><button class="btn btn-ghost btn-sm" data-timer="60" data-clock="clockP3b">Start</button></div>
+        </div>
+        <div class="tip"><strong>How to go about it:</strong> this is an interactive task. Give your own opinions, but also ask your partner what they think and respond by agreeing, disagreeing or adding a comment, with reasons. Don't start deciding during task 1; in the exam you won't know the second question until you finish it. You don't have to agree in task 2. In the exam you have two minutes for task 1 and one minute for task 2.</div>
+        <button class="btn btn-ghost btn-sm" data-script="p3Lang" data-open-label="Hide useful language" aria-expanded="false">Show useful language</button>
+        <div class="phrase-bank" id="p3Lang">
+          <h4>Asking your partner</h4>
+          <ul><li>What do you think about ...?</li><li>How important do you think ... is?</li><li>Do you agree?</li></ul>
+          <h4>Agreeing and disagreeing politely</h4>
+          <ul><li>That's a good point. / I couldn't agree more.</li><li>I see what you mean, but ...</li><li>I'm not so sure about that. For me, ...</li></ul>
+          <h4>Reaching a decision</h4>
+          <ul><li>So, shall we choose ... and ...?</li><li>I think we should go for ..., because ...</li><li>We'll have to agree to disagree on that one.</li></ul>
+        </div>
+      </div>
+
+      <div class="block wide">
+        <span class="kicker">Part 4 · Further discussion</span>
+        <h3>More about happiness</h3>
+        <p class="instr">The examiner asks questions related to the Part 3 topic. A question may be for you, for your partner, or for both of you to discuss. Always give full answers with reasons.</p>
+        <div id="speakingP4List"></div>
+      </div>
+
+    </section>
+
+    <!-- ================= PRONUNCIATION ================= -->
+    <section class="page" data-tab="pron">
+
+      <div class="block" data-ex="pron-odd">
+        <span class="kicker">Pronunciation · Vowel sounds</span>
+        <h3>Which word has a different vowel sound?</h3>
+        <p class="instr">Choose the word with the different vowel sound in each group. Then listen to check.</p>
+        <div class="audio-box">
+          <span class="audio-label">Track 2.3</span>
+          <audio controls preload="none" src="audio/unit-02/track-2.3.mp3"></audio>
+        </div>
+        <div id="vowelOdd"></div>
+      </div>
+
+      <div class="block" data-ex="pron-pairs">
+        <h3>Same sound?</h3>
+        <p class="instr">For each pair, choose the word whose vowel sound is the same as the word on the left. The first one has been done for you: <em>stop</em> /ɒ/ → <em>not</em> (not <em>note</em>).</p>
+        <div id="vowelPairs"></div>
+      </div>
+
+      <div class="block">
+        <h3>Numbers in code</h3>
+        <p class="instr">Write down a sequence of numbers that is important to you, like a phone number or a date of birth. Then say it to your partner using the code below, pronouncing each word as clearly as possible. Your partner writes down the numbers.</p>
+        <div class="code-grid">
+          <span><b>0</b> seat</span><span><b>1</b> sit</span><span><b>2</b> saw</span><span><b>3</b> ship</span><span><b>4</b> salt</span>
+          <span><b>5</b> surf</span><span><b>6</b> sheep</span><span><b>7</b> sat</span><span><b>8</b> sort</span><span><b>9</b> sheet</span>
+        </div>
+        <div class="margin-note"><p><em>Student A: My number is ... seat, sheet, sit, saw, sort, salt.<br>Student B: Is your number 091284?</em></p></div>
+      </div>
+
+    </section>
+
+  </div>
+</main>
+
+<footer class="rf-footer">
+  Content based on <em>Ready for First</em> (Macmillan Education), Unit 2 · High energy. For study use by IG English School students.
+</footer>
+
+<script src="assets/rff.js"></script>
+<script>
+(function(){
+  "use strict";
+  var R = RFF, el = R.el, buildChoice = R.buildChoice, buildGapText = R.buildGapText, buildMatching = R.buildMatching;
+
+  R.initPage({page:"unit-02", unit:{id:"unit-02", n:2, ids:[
+    "voc-music-1","voc-music-2","voc-sport-verbs","voc-sport-nouns","voc-sport-add","voc-sport-quiz","voc-sport-review",
+    "wf-affix-people","wf-affix-people2","wf-affix-neg","wf-affix-prefix",
+    "gram-why","gram-likes","gram-rfg1","gram-rfg2","gram-rfg4","gram-rfg5",
+    "rue-part6","rue-part3","rue-part2","rue-part4","writing-article-paras","writing-article-features",
+    "listening-part2","listening-phrasal","listening-part4","pron-odd","pron-pairs"]}});
+
+  function opts(list){ return list.map(function(w){ return {key:w, label:w}; }); }
+  // Rows of "item → ___" gaps, each on its own line
+  function gapLines(container, rows){
+    var segs = [];
+    rows.forEach(function(r, i){
+      segs.push({text:(i ? "\n" : "") + r[0]});
+      r.slice(1).forEach(function(part){ segs.push(part.gap ? part : {text:part}); });
+    });
+    buildGapText(container, segs);
+  }
+  function kwt(container, items){
+    items.forEach(function(item, idx){
+      var wrap = el("div","qitem");
+      wrap.appendChild(el("p","qtext", (idx+1) + ". " + item.orig + (item.key ? " <span class=\"keyword\">" + item.key + "</span>" : "")));
+      var gt = el("p","gaptext");
+      buildGapText(gt, [{text:item.stem + " "}, {gap:true, answers:item.answers}, {text:" " + item.tail}]);
+      wrap.appendChild(gt);
+      container.appendChild(wrap);
+    });
+  }
+
+  /* =================== VOCABULARY =================== */
+  buildMatching(document.getElementById("musicGroups"), [
+    {left:"1. a lead ___ · a session ___ · a bass ___", answer:"guitarist"},
+    {left:"2. a percussion ___ · a wind ___ · a stringed ___", answer:"instrument"},
+    {left:"3. download a ___ · perform a ___ · mime a ___", answer:"song"},
+    {left:"4. ___ tour · ___ stage · ___ the radio", answer:"on"},
+    {left:"5. ___ a track · ___ a tune · ___ a chord", answer:"play"},
+    {left:"6. a ___ album · a ___ performance · a ___ music venue", answer:"live"},
+    {left:"7. ___ the charts · ___ concert · ___ tune", answer:"in"},
+    {left:"8. create a ___ · shuffle a ___ · delete a ___", answer:"playlist"}
+  ], opts(["guitarist","in","instrument","live","on","play","playlist","song"]));
+
+  buildGapText(document.getElementById("musicQs"), [
+    {text:"0. Have you been to see a singer or a band perform in <b>a live music venue</b>?\n1. Who would you most like to see perform live "},
+    {gap:true, answers:["in concert","on stage"]},
+    {text:"?\n2. Have you ever performed or spoken "},
+    {gap:true, answers:["on stage"]},
+    {text:" in front of an audience?\n3. Can you "},
+    {gap:true, answers:["play a tune"]},
+    {text:" on any instrument?\n4. Can you sing "},
+    {gap:true, answers:["in tune"]},
+    {text:" or do people cover their ears when they hear you?\n5. Do you listen to songs that are "},
+    {gap:true, answers:["in the charts"]},
+    {text:" or do you prefer less commercial music?\n6. When you "},
+    {gap:true, answers:["create a playlist"]},
+    {text:", how do you decide which songs to include on it?"}
+  ]);
+
+  buildMatching(document.getElementById("sportVerbs"),
+    [["gymnastics","do"],["skiing","go"],["cycling","go"],["swimming","go"],["volleyball","play"],["tennis","play"],["basketball","play"],["football","play"],["golf","play"]]
+      .map(function(s){ return {left:s[0], answer:s[1]}; }),
+    opts(["do","go","play"]));
+
+  gapLines(document.getElementById("sportNouns"), [
+    ["0. court · net · racket · backhand → <b>tennis</b>"],
+    ["1. pitch · referee · corner · foul → ", {gap:true, answers:["football","hockey","soccer"]}],
+    ["2. course · green · clubs · hole → ", {gap:true, answers:["golf"]}],
+    ["3. slope · sticks · run · goggles → ", {gap:true, answers:["skiing","ski"]}],
+    ["4. track · field event · lane · meeting → ", {gap:true, answers:["athletics"]}],
+    ["5. saddle · helmet · pedals · peloton → ", {gap:true, answers:["cycling"]}]
+  ]);
+
+  buildMatching(document.getElementById("sportAdd"),
+    [["fairway","golf"],["gears","cycling"],["lift","skiing"],["red card","football"],["service","tennis"],["triple jump","athletics"]]
+      .map(function(s){ return {left:s[0], answer:s[1]}; }),
+    [{key:"tennis",label:"tennis"},{key:"football",label:"football / hockey"},{key:"golf",label:"golf"},{key:"skiing",label:"skiing"},{key:"athletics",label:"athletics"},{key:"cycling",label:"cycling"}]);
+
+  buildGapText(document.getElementById("sportQuiz"), [
+    {text:"1. Which sports "}, {gap:true, answers:["take"]},
+    {text:" place on an ice rink?\n2. Which country's football team "}, {gap:true, answers:["beat"]},
+    {text:" Croatia to win the 2018 World Cup Final?\n3. Which medal does a runner-up "}, {gap:true, answers:["win"]},
+    {text:"?\n4. In which sports do you "}, {gap:true, answers:["hit"]},
+    {text:" the ball with a racket?\n5. How many players from each team can "}, {gap:true, answers:["take"]},
+    {text:" part at one time in a game of basketball?\n6. If two hockey teams "}, {gap:true, answers:["draw"]},
+    {text:" nil-nil, how many goals are scored?\n7. In football, if you "}, {gap:true, answers:["pass"]},
+    {text:" the ball back to your own goalkeeper using your chest, can they pick it up?\n8. In which international team sport can you score points if you either "}, {gap:true, answers:["kick"]},
+    {text:" the ball with your feet over one post and between two others, or touch it down over the opponents' line using your hands?"}
+  ]);
+
+  buildGapText(document.getElementById("sportReview"), [
+    {text:"1. We stayed in a hotel next to the golf "}, {gap:true, answers:["course"]},
+    {text:", and our room overlooked the fairway of the eighteenth "}, {gap:true, answers:["hole"]},
+    {text:".\n2. When the "}, {gap:true, answers:["referee"]},
+    {text:" blew the final whistle, several fans ran onto the football "}, {gap:true, answers:["pitch"]},
+    {text:".\n3. I'm useless at tennis: I can't even "}, {gap:true, answers:["hit","get"]},
+    {text:" the ball over the net with the "}, {gap:true, answers:["racket","racquet"]},
+    {text:".\n4. The "}, {gap:true, answers:["lift"]},
+    {text:" taking us to the top of the steepest ski "}, {gap:true, answers:["slope","slopes","run","runs"]},
+    {text:" broke down halfway up and we were left hanging in the air for over an hour.\n5. Last night, Liverpool "}, {gap:true, answers:["beat","defeated"]},
+    {text:" Chelsea 2–0, and Everton "}, {gap:true, answers:["drew"]},
+    {text:" 1–1 with Arsenal."}
+  ]);
+
+  gapLines(document.getElementById("affixPeople"), [
+    ["box → ", {gap:true, answers:["boxer"]}],
+    ["play → ", {gap:true, answers:["player"]}],
+    ["spectate → ", {gap:true, answers:["spectator"]}],
+    ["compete → ", {gap:true, answers:["competitor"]}],
+    ["participate → ", {gap:true, answers:["participant"]}],
+    ["organise → ", {gap:true, answers:["organiser","organizer"]}],
+    ["run → ", {gap:true, answers:["runner"]}],
+    ["ride → ", {gap:true, answers:["rider"]}],
+    ["contest → ", {gap:true, answers:["contestant"]}]
+  ]);
+
+  gapLines(document.getElementById("affixPeople2"), [
+    ["employ / train → ", {gap:true, answers:["employee"]}, " / ", {gap:true, answers:["trainee"]}],
+    ["electric / politics → ", {gap:true, answers:["electrician"]}, " / ", {gap:true, answers:["politician"]}],
+    ["mountain / engine → ", {gap:true, answers:["mountaineer"]}, " / ", {gap:true, answers:["engineer"]}],
+    ["novel / science → ", {gap:true, answers:["novelist"]}, " / ", {gap:true, answers:["scientist"]}]
+  ]);
+
+  buildMatching(document.getElementById("affixNeg"), [
+    {left:"experienced / decisive / tolerant", answer:"in-"},
+    {left:"legal / logical / legible", answer:"il-"},
+    {left:"moral / mature / mortal", answer:"im-"},
+    {left:"practical / patient / perfect", answer:"im-"},
+    {left:"regular / responsible / relevant", answer:"ir-"},
+    {left:"honest / obedient / satisfied", answer:"dis-"}
+  ], opts(["dis-","il-","im-","in-","ir-","un-"]));
+
+  buildMatching(document.getElementById("affixPrefix"),
+    [["<b>ex</b>-wife","former"],["<b>extra</b>terrestrial","outside or beyond"],["<b>hyper</b>market","very big"],["<b>micro</b>electronics","very small"],["<b>mis</b>spell","wrongly"],
+     ["<b>over</b>sleep","too much"],["<b>pre</b>historic","before"],["<b>post</b>graduate","after"],["<b>re</b>write","again"],["<b>under</b>cook","too little"]]
+      .map(function(s){ return {left:s[0], answer:s[1]}; }),
+    opts(["after","again","before","former","outside or beyond","too little","too much","very big","very small","wrongly"]));
+
+  /* =================== GRAMMAR =================== */
+  var REASONS = ["after a preposition (gerund)","after certain verbs (gerund)","after certain verbs (infinitive with to)","to express purpose (infinitive with to)","after a modal verb (infinitive without to)"];
+  [
+    ["Its participants are capable of <u>leaping</u> to improbable heights ...", 0, "<em>leaping</em> follows the preposition <em>of</em>."],
+    ["I was a nervous kid who liked <u>playing</u> video games.", 1, "<em>like</em> is usually followed by a gerund."],
+    ["... it seemed <u>to be</u> a lot of people who didn't fit in with more conventional stuff ...", 2, "<em>seem</em> is followed by the infinitive with <em>to</em>."],
+    ["Meek ... rented a gym <u>to practise</u> parkour.", 3, "It gives the reason why he rented the gym."],
+    ["Parkour can <u>extend</u> its work in schools.", 4, "<em>can</em> is a modal verb."]
+  ].forEach(function(q, i){
+    buildChoice(document.getElementById("gramWhy"), (i+2) + ". " + q[0], REASONS, q[1], q[2], "gram-why");
+  });
+
+  buildGapText(document.getElementById("likesGaps"), [
+    {text:"1. I don't <b>really</b> enjoy going for walks in the countryside; I just can't get excited <b>about</b> being in the open air, like some people.\n2. I "},
+    {gap:true, answers:["don't"]}, {text:" mind listening to jazz now and again, but I wouldn't be interested "},
+    {gap:true, answers:["in"]}, {text:" going to a concert.\n3. I "},
+    {gap:true, answers:["absolutely"]}, {text:" love cooking, and I'm especially fond "},
+    {gap:true, answers:["of"]}, {text:" baking cakes.\n4. I "},
+    {gap:true, answers:["quite"]}, {text:" like watching basketball, but I'm not very good "},
+    {gap:true, answers:["at"]}, {text:" playing it.\n5. I "},
+    {gap:true, answers:["much"]}, {text:" prefer watching films at home; I've never been very keen "},
+    {gap:true, answers:["on"]}, {text:" going to the cinema.\n6. I "},
+    {gap:true, answers:["can't","cannot"]}, {text:" stand playing board games with my family, but I never get bored "},
+    {gap:true, answers:["with"]}, {text:" playing games on my phone."}
+  ]);
+
+  buildGapText(document.getElementById("rfg1"), [
+    {text:"1. When I suggested "}, {gap:true, answers:["going"]}, {text:" (go) skiing on Sunday, Marta was very enthusiastic, so we've arranged "},
+    {gap:true, answers:["to meet"]}, {text:" (meet) at seven.\n2. I can't help "},
+    {gap:true, answers:["smiling"]}, {text:" (smile) when I see my dad playing tennis. He's had hundreds of lessons but he still hasn't learnt "},
+    {gap:true, answers:["to hit"]}, {text:" (hit) the ball properly.\n3. Paul appears "},
+    {gap:true, answers:["to enjoy"]}, {text:" (enjoy) playing golf. He's even considering "},
+    {gap:true, answers:["buying"]}, {text:" (buy) his own set of clubs.\n4. One of my cousins has promised "},
+    {gap:true, answers:["to take"]}, {text:" (take) me windsurfing as soon as I've finished "},
+    {gap:true, answers:["studying"]}, {text:" (study).\n5. At first my parents refused "},
+    {gap:true, answers:["to let"]}, {text:" (let) me go to karate lessons, but I kept "},
+    {gap:true, answers:["asking"]}, {text:" (ask) and eventually they agreed."}
+  ]);
+
+  document.getElementById("lowEnergyText").innerHTML =
+    "<p>So as some of you know, I've been <b>trying</b> (1) to lose / losing some weight, but it's not easy. I've <b>stopped</b> (2) to buy / buying things like fizzy drinks and chocolate, but I know I <b>need</b> (3) to do / doing a lot more. The problem is, losing weight <b>means</b> (4) to be / being self-disciplined and I'm not very good at that. I really ought to <b>start</b> (5) to go / going to a gym as well. I know it'll <b>help</b> me (6) to get / get fit and I've been <b>meaning</b> (7) to join / joining one for ages, but I always <b>forget</b> (8) to do / doing anything about it. The truth is, though, I don't really <b>like</b> (9) to do / doing a lot of physical exercise; I much <b>prefer</b> (10) to watch / watching others do it. So, I'll probably just <b>continue</b> (11) to live / living life the same unhealthy way I've always done. In fact, there's a match on telly tonight; I must <b>remember</b> (12) to order / ordering a pizza for 8 o'clock.</p>";
+  [
+    ["trying","to lose","losing",0,"<em>try to do</em> = attempt; <em>try doing</em> = do something as an experiment."],
+    ["stopped","to buy","buying",1,"<em>stop doing</em> = no longer do something."],
+    ["need","to do","doing",0,"<em>need to do</em> has an active meaning; <em>need doing</em> is passive (<em>The house needs painting</em>)."],
+    ["means","to be","being",1,"<em>mean doing</em> = involve."],
+    ["start","to go","going",2,"<em>start</em> can be followed by either form with no change in meaning."],
+    ["help (me)","to get","get",2,"<em>help</em> can be followed by the infinitive with or without <em>to</em>."],
+    ["meaning","to join","joining",0,"<em>mean to do</em> = intend."],
+    ["forget","to do","doing",0,"<em>forget to do</em> = not remember something you have to do."],
+    ["like","to do","doing",2,"<em>like</em> is usually followed by a gerund, but the infinitive with <em>to</em> is also possible."],
+    ["prefer","to watch","watching",2,"For general preferences, <em>prefer</em> can be followed by either form."],
+    ["continue","to live","living",2,"<em>continue</em> can be followed by either form with no change in meaning."],
+    ["remember","to order","ordering",0,"<em>remember to do</em> = remember something you have to do."]
+  ].forEach(function(q, i){
+    buildChoice(document.getElementById("lowEnergyQs"), "(" + (i+1) + ") " + q[0] + " ...", [q[1], q[2], "both are correct"], q[3], q[4], "gram-rfg2");
+  });
+
+  kwt(document.getElementById("rfg4"), [
+    {orig:"It's impossible for me not to laugh when he starts singing.", key:"HELP", stem:"I can't", tail:"when he starts singing.", answers:["help laughing"]},
+    {orig:"I really don't want to go out this evening.", key:"FEEL", stem:"I really don't", tail:"out this evening.", answers:["feel like going"]},
+    {orig:"Amy played much better than her opponent, so it was unfair that she lost the match.", key:"DESERVE", stem:"Amy", tail:"the match, because she played much better than her opponent.", answers:["didn't deserve to lose","did not deserve to lose"]},
+    {orig:"Rock stars often wear dark glasses so that people don't recognise them.", key:"PREVENT", stem:"Rock stars often wear dark glasses", tail:"them.", answers:["to prevent people recognising","to prevent people from recognising","to prevent people recognizing","to prevent people from recognizing"]},
+    {orig:"It's obvious he shot himself in the foot by accident.", key:"MEAN", stem:"He obviously", tail:"himself in the foot.", answers:["didn't mean to shoot","did not mean to shoot"]},
+    {orig:"I hate it when I'm ill.", key:"STAND", stem:"I", tail:"ill.", answers:["can't stand being","cannot stand being"]}
+  ]);
+
+  kwt(document.getElementById("rfg5"), [
+    {orig:"We'd prefer to come back later rather than wait here.", stem:"We'd rather", tail:"here.", answers:["come back later than wait"]},
+    {orig:"I think it's better to pay by cash than use a credit card.", stem:"I prefer", tail:"using a credit card.", answers:["paying by cash to","paying in cash to","paying cash to"]},
+    {orig:"I'd rather phone him than send an email.", stem:"I'd prefer", tail:"send an email.", answers:["to phone him rather than","to call him rather than"]},
+    {orig:"She wants to stay in bed longer.", stem:"She'd rather", tail:"up until later.", answers:["not get"]}
+  ]);
+
+  /* =================== READING & USE OF ENGLISH =================== */
+  var P6 = [
+    ["a","Their interest has been propelled by parkour's high profile on YouTube and in popular culture."],
+    ["b","Some highlight the apparent risks associated with parkour, but the organisation insists that the injury rate is lower than in other sports."],
+    ["c","Later, in 2016, he set up Fluidity Freerun with fellow parkour enthusiast Craig Robinson and a £50,000 loan."],
+    ["d","Parkour is defined as the discipline of moving 'freely over and through any terrain using only the abilities of the body'."],
+    ["e","Given the lack of outdoor space and the funding challenges, the great thing about parkour is that all you need is a pair of trainers."],
+    ["f","One of those children, Sebastien Foucan, became president of Parkour UK, the sport's governing body."],
+    ["g","He started when he was just twelve years old."]
+  ];
+  var optList = document.getElementById("part6Options");
+  P6.forEach(function(s){ optList.appendChild(el("li", null, s[1])); });
+  var P6_ANS = ["d","a","g","c","f","e"];
+  function gapSel(n){
+    return '<select class="match-select" data-answer="' + P6_ANS[n-1] + '" aria-label="Gap ' + n + '"><option value="">Gap ' + n + '</option>' +
+      "abcdefg".split("").map(function(l){ return '<option value="' + l + '">' + l.toUpperCase() + '</option>'; }).join("") + '</select>';
+  }
+  document.getElementById("part6Text").innerHTML =
+    "<p>Frazer Meek jumps down from a wooden platform and jogs across the floor of the Fluidity Freerun Academy, a huge warehouse in an industrial estate on the outskirts of Cardiff. It is a wintry Thursday evening and there are only a few people practising their leaps and swings on the purpose-built equipment, designed to imitate the bollards, railings and concrete building blocks of the great urban outdoors.</p>" +
+    "<p>In early 2017, the UK became the first country in the world to recognise parkour as a sport. " + gapSel(1) + " Its participants are capable of leaping to improbable heights while almost always seeming to land, cat-like, on their feet.</p>" +
+    "<p>Also known as free running and <i>art du déplacement</i>, the sport attracts thousands of mainly young, mainly male participants across the country. " + gapSel(2) + " This includes the opening sequence of the James Bond film <i>Casino Royale</i>, as well as advertising and music videos.</p>" +
+    "<p>'A lot of people from the pedestrian world don't understand parkour,' says Meek. 'It's not just about technique, it's about the attitude. It's about exploring boundaries sensibly, seeing danger and calculating risk.' " + gapSel(3) + " 'I really hated conventional sports,' he remembers. 'I was a nervous kid who liked playing video games. Then I started to come across it on internet forums, and it seemed to be a lot of people who didn't fit in with more conventional stuff, shy people. That's what appealed to me about it.'</p>" +
+    "<p>Some years ago, Meek got together with some like-minded spirits and rented a gym to practise parkour. Within weeks, hundreds of kids were turning up. " + gapSel(4) + " It is one of a handful of purpose-built parkour centres in the UK, offering a daily timetable ranging from 'Little Ninjas' for ages two to four, to adult drop-in sessions.</p>" +
+    "<p>Their business reflects the coming of age of a sport that started in the late 1980s as little more than some friends playing around after school in a Paris suburb. " + gapSel(5) + " An early ambassador for parkour in the country, he appeared in <i>Jump London</i>, the television documentary that introduced the activity to a wider public in 2003 as he and two friends leapt across the capital's rooftops. He also played Mollaka, the bomb-maker chased by Daniel Craig's Bond in the memorable sequence at the start of <i>Casino Royale</i>.</p>" +
+    "<p>Participants point to the minimal equipment requirements as one of parkour's advantages, arguing that now that it is recognised as a sport, parkour can extend its work in schools. This is a view echoed by Parkour UK chief executive Eugene Minogue. '" + gapSel(6) + " It goes back to the core of what PE is about.'</p>" +
+    "<p>Charlotte Blake is the chair of Free Your Instinct, a charity that brings parkour to the field of mental health. It has, she says, been an effective tool in helping people with anxiety, depression and bipolar disorder to build resilience and overcome the obstacles in their lives. 'Parkour helps you to move naturally within your environment and to develop a new dialogue with your environment, to play with it and to open up a world of opportunity,' says Blake.</p>";
+
+  buildGapText(document.getElementById("pedestrian"), [
+    {text:"Pedestrianism, an early form of racewalking, was an (0) <b>extremely</b> "}, {text:'<span class="keyword">EXTREME</span>'},
+    {text:" popular sport in 18th- and 19th-century Britain, attracting huge crowds of (1) "}, {gap:true, answers:["spectators"], key:"SPECTATE"},
+    {text:". Individuals would either aim to walk a certain (2) "}, {gap:true, answers:["distance"], key:"DISTANT"},
+    {text:" within a specified period of time or else compete against other pedestrians. Cash prizes were offered but (3) "}, {gap:true, answers:["participants"], key:"PARTICIPATE"},
+    {text:" could also earn substantial amounts from the money gambled on events.\n\nPerhaps the most famous (4) "}, {gap:true, answers:["walker"], key:"WALK"},
+    {text:" was Captain Robert Barclay Allardice, whose (5) "}, {gap:true, answers:["extraordinary"], key:"ORDINARY"},
+    {text:" achievements earned him the title of 'The Celebrated Pedestrian'. The Scotsman's most memorable (6) "}, {gap:true, answers:["performance"], key:"PERFORM"},
+    {text:" took place in 1809, when he walked 1000 miles (1609 kilometres) in 1000 hours for a bet of 1000 guineas. Many considered it (7) "}, {gap:true, answers:["unlikely"], key:"LIKELY"},
+    {text:" that he would complete the challenge, which required him to walk a mile an hour, every hour, for forty-two days and nights. He proved them wrong, though the task was so (8) "}, {gap:true, answers:["physically"], key:"PHYSICAL"},
+    {text:" demanding that by the end of the walk he had lost nearly fifteen kilos in weight."}
+  ]);
+
+  buildGapText(document.getElementById("musicCamp"), [
+    {text:"If you're aged (0) <b>between</b> 12 and 18 and you're interested "}, {gap:true, answers:["in"]},
+    {text:" music, come along to the One Music school in August and "}, {gap:true, answers:["take"]},
+    {text:" part in our school holiday music camp. There's a wide range of activities on offer and you'll have the chance "}, {gap:true, answers:["to"]},
+    {text:" learn from professionals, improve your musical skills and discover your true potential. You're guaranteed to make lots of new friends "}, {gap:true, answers:["as"]},
+    {text:" well!\n\nYou'll get to try out a variety of instruments and then play them "}, {gap:true, answers:["on"]},
+    {text:" stage in front of your family and friends at the end-of-camp concert. And if you feel "}, {gap:true, answers:["like"]},
+    {text:" having a go at singing, there are classes to suit all types of voices and singing styles. Or maybe you "}, {gap:true, answers:["would","'d"]},
+    {text:" rather learn how to write songs, in which case our songwriting workshops will be perfect for you. Whatever your musical interests, join us this summer – it's impossible "}, {gap:true, answers:["not"]},
+    {text:" to have fun on a One Music holiday camp!"}
+  ]);
+
+  kwt(document.getElementById("kwt2"), [
+    {orig:"Elisa said it wasn't a problem if she had to work an extra hour on Saturday.", key:"MIND", stem:"Elisa said she", tail:"work an extra hour on Saturday.", answers:["didn't mind having to","did not mind having to","wouldn't mind having to","would not mind having to"]},
+    {orig:"Rob thinks he's always right, so it's pointless to argue with him.", key:"POINT", stem:"There's", tail:"with Rob, because he thinks he's always right.", answers:["no point arguing","no point in arguing"]},
+    {orig:"I would prefer it if nobody gave me money for my birthday.", key:"WANT", stem:"I don't", tail:"me money for my birthday.", answers:["want anybody to give","want anyone to give","want people to give"]},
+    {orig:"It wasn't difficult for Alison to find work when she left school.", key:"DIFFICULTY", stem:"Alison had", tail:"job when she left school.", answers:["no difficulty finding a","no difficulty in finding a","no difficulty getting a","no difficulty in getting a"]},
+    {orig:"Try not to get into trouble on your first day back at school.", key:"AVOID", stem:"Try", tail:"into trouble on your first day back at school.", answers:["to avoid getting"]},
+    {orig:"The lead singer was not in favour of recording a live album.", key:"IDEA", stem:"The lead singer didn't think it was a", tail:"a live album.", answers:["good idea to record","very good idea to record"]}
+  ]);
+
+  /* =================== WRITING =================== */
+  buildMatching(document.getElementById("articleParas"), [
+    {left:"a. Benefits of the sport and reasons for liking it", answer:"2"},
+    {left:"b. Closing comment", answer:"4"},
+    {left:"c. What the sport is and what is special about it", answer:"1"},
+    {left:"d. Advice to people who want to do this sport", answer:"3"}
+  ], [{key:"1",label:"Paragraph 1"},{key:"2",label:"Paragraph 2"},{key:"3",label:"Paragraph 3"},{key:"4",label:"Paragraph 4"}]);
+
+  buildChoice(document.getElementById("articleStyleQ"),
+    "Who is the article written for, and what style is it written in?",
+    ["Readers of a magazine, in an informal style","A teacher, in a formal style","A friend, in a letter"], 0,
+    "It's written for readers of the magazine, so the style is informal and lively.", "writing-article-features");
+
+  buildMatching(document.getElementById("articleFeatures"), [
+    {left:"1. The title", answer:"c"},
+    {left:"2. Direct questions", answer:"a"},
+    {left:"3. The final sentence", answer:"b"}
+  ], [{key:"a",label:"to involve the reader"},{key:"b",label:"to encourage the reader to take up the sport"},{key:"c",label:"to attract the reader's attention"}]);
+
+  R.wireWordCounter("articleFree","articleFreeCounter",140,190);
+  R.wireWordCounter("letterFree","letterFreeCounter",140,190);
+
+  /* =================== LISTENING =================== */
+  buildGapText(document.getElementById("part2Listening"), [
+    {text:"1. Jack says that people in Britain aged between 18 and 24 listen to an average of over "}, {gap:true, answers:["six thousand","6,000","6000","6 thousand"]},
+    {text:" songs a year.\n2. Jack says that music is no longer played in many "}, {gap:true, answers:["factories"]},
+    {text:" for safety reasons.\n3. The findings of one recent study recommend silence when doing work which involves "}, {gap:true, answers:["problem-solving","problem solving","solving problems"]},
+    {text:".\n4. Jack says that sales of "}, {gap:true, answers:["side dishes","side-dishes"]},
+    {text:" increased by about 11 per cent in one restaurant, when the right type of music was played.\n5. Scientists at Oxford University discovered that a certain type of music could make some food taste even "}, {gap:true, answers:["hotter"]},
+    {text:".\n6. Jack says that many directors of TV series avoid using "}, {gap:true, answers:["famous"]},
+    {text:" artists to write soundtracks.\n7. Jack says that many musicians make use of "}, {gap:true, answers:["technology"]},
+    {text:" when recording soundtracks for TV series.\n8. Eimear Noone, a composer of video game soundtracks, lives in "}, {gap:true, answers:["California"]},
+    {text:".\n9. Jack mentions a radio programme called "}, {gap:true, answers:["High Score"]},
+    {text:", which is dedicated to video game music.\n10. Jack says he is going to play some "}, {gap:true, answers:["jazz"]},
+    {text:" music on his radio programme."}
+  ]);
+  document.getElementById("part2Script").innerHTML = [
+    "And in the case of young adults aged between 18 and 24, that figure is more than <b>six thousand</b>, an average of about three and a half hours of music a day.",
+    "In fact, almost as common as it used to be in <b>factories</b>, where many employers have got rid of it because it can be distracting, and an obvious safety risk.",
+    "But if it's anything that requires <b>problem-solving</b>, then it's better to work without any noise at all – including music, of course.",
+    "One such service led to an increase of roughly 11 per cent in the sales of <b>side dishes</b> in one establishment.",
+    "They found out that traditional music played in Indian restaurants can make the food taste up to 10 per cent <b>hotter</b>.",
+    "Many directors nowadays tend not to use <b>famous</b> musicians and composers to create the soundtracks for their work, but turn instead to relatively unknown artists.",
+    "They also use <b>technology</b> to create their sound, so there's less need to hire large orchestras and big studios these days.",
+    "Eimear Noone ... comes from Ireland, but has set up home in <b>California</b>.",
+    "Its name, appropriately, is <b>High Score</b> and it's presented by Jessica Curry.",
+    "You're going to hear a piece of <b>jazz</b> from somebody we all normally associate with rock music."
+  ].map(function(t, i){ return "<p><strong>" + (i+1) + "</strong> \"" + t + "\"</p>"; }).join("");
+
+  buildMatching(document.getElementById("listenPhrasal"), [
+    {left:"... we're going to take a look at what's <b>going on</b> in the world of music.", answer:"happen"},
+    {left:"... the work involves creative thinking, then positive music can help you <b>come up with</b> original ideas.", answer:"think of"},
+    {left:"... one such service <b>carried out</b> recently ...", answer:"do (a study)"},
+    {left:"... if they play it too loud, they can <b>put</b> people <b>off</b> eating ...", answer:"discourage"},
+    {left:"They <b>found out</b> that traditional music played in Indian restaurants ...", answer:"discover"},
+    {left:"They haven't <b>worked out</b> exactly why this is ...", answer:"manage to understand"},
+    {left:"... but <b>turn</b> instead <b>to</b> relatively unknown artists ...", answer:"go to someone for help"},
+    {left:"... music that doesn't <b>stand out</b> so much ...", answer:"be easy to notice"},
+    {left:"She comes from Ireland, but has <b>set up home</b> in California.", answer:"begin living in a place"},
+    {left:"... the first series <b>turned out</b> to be a huge success ...", answer:"become"},
+    {left:"Now, on this programme, before we <b>go on</b> ...", answer:"continue"}
+  ], opts(["be easy to notice","become","begin living in a place","continue","discourage","discover","do (a study)","go to someone for help","happen","manage to understand","think of"]));
+
+  [
+    ["Having read about octopushing, Mike finds it difficult to believe that",
+      ["players do not have to hold their breath for long intervals.","a high level of fitness is not required to play it.","it is an exciting sport to watch."], 1,
+      "Apparently, you don't have to be very fit to play. But I'm not convinced – it seems physically very demanding to me."],
+    ["What impresses Mike most about the competitors in sport stacking?",
+      ["their fitness","their speed","their age"], 1,
+      "... you'll appreciate just how fast they are. It's quite staggering."],
+    ["What is Mike's criticism of some of the unusual sports?",
+      ["They are far too dangerous.","They should not be called sports.","They are difficult to take seriously."], 2,
+      "They all seem rather silly to me, and they're not sports I'd particularly want to do or even watch."],
+    ["What do we learn about the organisers of toe wrestling?",
+      ["They apply what they learn from international competitions.","They have arranged a number of events in schools.","They made a request which was rejected."], 2,
+      "... and then for organisers to apply for toe wrestling to become an Olympic sport – well, it's too daft for words. I'm just pleased the application wasn't accepted."],
+    ["How does Mike feel about the human triumphs in the Man Versus Horse Marathon?",
+      ["They are very surprising.","They deserve more recognition.","They are unlikely to be repeated."], 1,
+      "... it does seem a little unfair that the human victories are not mentioned in the same breath as some of the world's more famous sporting achievements. These people are heroes, but they're virtually unknown outside Wales."],
+    ["Why did Mike give up running?",
+      ["He was injured.","He lost interest.","He had no time."], 0,
+      "... but I damaged my knee when I was skiing and had to stop."]
+  ].forEach(function(q, i){
+    buildChoice(document.getElementById("part4Listening"), (i+2) + ". " + q[0],
+      q[1].map(function(o, k){ return "<b>" + "ABC"[k] + "</b>" + o; }), q[2],
+      "In the recording: \"" + q[3] + "\"", "listening-part4");
+  });
+
+  /* =================== SPEAKING =================== */
+  R.buildTimers(document.getElementById("speakingP1List"), [
+    "When was the last time you played a sport?",
+    "Do you prefer individual or team sports?",
+    "What are the three most popular sports in your country? Why do you think they are popular?",
+    "How important is music in your life?",
+    "Do you like dancing to music?",
+    "What is your least favourite type of music?"
+  ], 20);
+  R.buildTimers(document.getElementById("speakingP4List"), [
+    "What other things make you feel happy?",
+    "Do you think having longer holidays would make people feel happier?",
+    "Some people say that the best way to be happy is to make other people happy. What do you think?",
+    "If something is making you feel unhappy, is it better to talk about it with your friends or your family?",
+    "Some people like listening to happy music when they feel happy, and sad music when they feel sad. Why do you think this is?",
+    "Do you think it is possible to be happy all of the time?"
+  ], 45);
+
+  /* =================== PRONUNCIATION =================== */
+  [
+    [["caught","cart","court"],1],[["fool","pool","wool"],2],[["cough","front","some"],0],[["live","leaf","leave"],0],[["third","heard","where"],2]
+  ].forEach(function(g, i){
+    buildChoice(document.getElementById("vowelOdd"), (i+1) + ".", g[0], g[1], null, "pron-odd");
+  });
+
+  var pairsHost = document.getElementById("vowelPairs");
+  [
+    ["stop","/ɒ/",[["want","plant",0],["come","gone",1],["watch","catch",0],["rough","cough",1]]],
+    ["more","/ɔː/",[["work","worn",1],["warm","harm",0],["four","hour",0],["flour","floor",1],["though","thought",1]]],
+    ["you","/uː/",[["boot","book",0],["good","food",1],["chose","lose",1],["group","ground",0],["suite","fruit",1]]],
+    ["see","/iː/",[["great","treat",1],["heat","head",0],["sweet","suit",0],["pies","piece",1],["theme","them",0]]],
+    ["bird","/ɜː/",[["horse","worse",1],["were","here",0],["heart","learn",1],["word","sword",0],["pure","purse",1]]],
+    ["bus","/ʌ/",[["put","cut",1],["done","bone",0],["move","love",1],["push","brush",1],["tough","through",0]]]
+  ].forEach(function(row){
+    var r = el("div","pair-row");
+    r.appendChild(el("span","pair-head", "<b>" + row[0] + "</b> " + row[1]));
+    var wrap = el("div","pair-wrap");
+    row[2].forEach(function(p){ buildChoice(wrap, "", [p[0], p[1]], p[2], null, "pron-pairs"); });
+    r.appendChild(wrap);
+    pairsHost.appendChild(r);
+  });
+})();
+</script>
+</body>
+</html>

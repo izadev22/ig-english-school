@@ -443,3 +443,20 @@ a.unit-card:hover{border-color:var(--plum); transform:translateY(-2px);}
 .hub-h{font-size:1.3rem; margin-bottom:4px;}
 .hub-sub{color:var(--ink-soft); font-size:0.92rem; margin-bottom:14px; max-width:64ch;}
 
+
+/* ---------- Unit 2 additions ---------- */
+.mindmap{display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin:6px 0 16px; max-width:720px;}
+.mindmap span{background:var(--plum-deep); color:#fff; border-radius:10px; padding:8px 14px; font-size:0.9rem; font-weight:600;}
+.mindmap .mm-centre{flex-basis:100%; background:var(--sage-soft); color:var(--plum-deep); border:1.5px solid var(--sage); font-family:"Fraunces",serif; font-size:1.02rem;}
+.pair-row{display:flex; flex-wrap:wrap; align-items:center; gap:8px 16px; padding:10px 0; border-bottom:1px solid #EFE4D0;}
+.pair-head{min-width:96px; font-size:0.95rem; color:var(--ink-soft);}
+.pair-head b{font-family:"Fraunces",serif; font-size:1.1rem; color:var(--plum-deep);}
+.pair-wrap{display:flex; flex-wrap:wrap; gap:8px 14px;}
+.pair-wrap .qitem{margin:0;}
+.pair-wrap .qtext{display:none;}
+.code-grid{display:grid; grid-template-columns:repeat(5, minmax(0,1fr)); gap:6px; max-width:520px; margin:6px 0 14px;}
+.code-grid span{background:#fff; border:1px solid var(--plum-line); border-radius:8px; padding:6px 8px; font-size:0.9rem; text-align:center;}
+.code-grid b{color:var(--coral); margin-right:4px;}
+@media (max-width:480px){ .code-grid{grid-template-columns:repeat(2, minmax(0,1fr));} }
+.passage .match-select{font-weight:700; padding:3px 6px; margin:0 2px;}
+.pair-wrap .choice-group{background:var(--paper-alt); padding:4px; border-radius:12px; gap:4px;}
