@@ -1,0 +1,2239 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Ready for First · Practice Notebook — IG English School</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Interactive practice for the Cambridge B2 First exam, based on the Ready for First coursebook: vocabulary, grammar, Reading & Use of English, Writing, Listening, Speaking, phrasal verbs and word formation, with instant feedback.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Caveat:wght@600;700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FBF6EC;
+    --paper-alt:#F3E7CE;
+    --ink:#2E1E2C;
+    --ink-soft:#5B4756;
+    --plum:#6F4863;
+    --plum-deep:#432C3E;
+    --plum-line:#DCC9D4;
+    --coral:#EF445E;
+    --coral-dark:#CE2C46;
+    --gold:#EFC868;
+    --gold-soft:#F7E3AC;
+    --sage:#5F7A4D;
+    --sage-soft:#E3EAD8;
+    --rust:#B5563A;
+    --rust-soft:#F3DED3;
+    --ruled:#E4D2AC;
+    --maxw: 1180px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important;}
+  }
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{
+    font-family:"Fraunces", Georgia, serif;
+    font-weight:600;
+    line-height:1.12;
+    text-wrap:balance;
+    margin:0;
+    color:var(--plum-deep);
+  }
+  p{margin:0;}
+  a{color:inherit;}
+  button, input, select, textarea{font-family:inherit;}
+  ::selection{background:var(--gold-soft);}
+  :focus-visible{outline:3px solid var(--gold); outline-offset:2px;}
+
+  .kicker{
+    font-family:"Caveat", cursive;
+    font-size:1.4rem;
+    font-weight:700;
+    color:var(--coral);
+    display:block;
+    margin-bottom:2px;
+  }
+
+  /* ---------- Buttons ---------- */
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    font-weight:700; font-size:0.92rem;
+    text-decoration:none; padding:11px 20px;
+    border-radius:100px; border:2px solid transparent;
+    cursor:pointer; background:none;
+    transition:transform .15s ease, background-color .15s ease, color .15s ease, border-color .15s ease;
+    white-space:nowrap;
+  }
+  .btn svg{width:16px;height:16px;flex:none;}
+  .btn-primary{ background:var(--coral); color:#fff; box-shadow:0 12px 24px -12px rgba(239,68,94,0.6); }
+  .btn-primary:hover{background:var(--coral-dark); transform:translateY(-1px);}
+  .btn-primary:disabled{background:var(--plum-line); box-shadow:none; color:var(--ink-soft); cursor:not-allowed; transform:none;}
+  .btn-ghost{ background:transparent; border-color:var(--plum-line); color:var(--plum-deep); }
+  .btn-ghost:hover{border-color:var(--plum); background:rgba(111,72,99,0.06);}
+  .btn-ghost:disabled{opacity:.5; cursor:not-allowed;}
+  .btn-sm{padding:7px 14px; font-size:0.82rem;}
+  .btn-row{display:flex; flex-wrap:wrap; gap:8px; align-items:center;}
+
+  /* ---------- Top bar ---------- */
+  .tb{
+    position:sticky; top:0; z-index:40;
+    background:rgba(251,246,236,0.94); backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--plum-line);
+  }
+  .tb-inner{
+    max-width:var(--maxw); margin:0 auto; padding:14px 24px;
+    display:flex; align-items:center; justify-content:space-between; gap:16px;
+  }
+  .tb-back{
+    display:inline-flex; align-items:center; gap:8px;
+    font-weight:700; font-size:0.9rem; color:var(--plum-deep); text-decoration:none;
+  }
+  .tb-back svg{width:16px;height:16px;}
+  .tb-back:hover{color:var(--coral);}
+  .tb-title{ text-align:right; }
+  .tb-title strong{ font-family:"Fraunces",serif; font-size:1.05rem; color:var(--plum-deep); display:block; }
+  .tb-title span{ font-size:0.78rem; color:var(--ink-soft); }
+
+  /* ---------- Shell layout ---------- */
+  .shell{
+    max-width:var(--maxw); margin:0 auto; padding:28px 24px 80px;
+    display:grid; grid-template-columns:220px minmax(0,1fr); gap:32px; align-items:start;
+  }
+  @media (max-width:900px){ .shell{grid-template-columns:minmax(0,1fr); padding:20px 16px 60px; gap:20px;} }
+
+  /* ---------- Rail ---------- */
+  .rail{ position:sticky; top:78px; }
+  @media (max-width:900px){ .rail{position:static;} }
+  .rail-group + .rail-group{margin-top:20px;}
+  .rail-group h2{font-size:0.78rem; color:var(--ink-soft); font-family:"Plus Jakarta Sans"; font-weight:700; margin-bottom:8px;}
+  .unit-list{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:4px;}
+  @media (max-width:900px){
+    .rail-group + .rail-group{margin-top:12px;}
+    .unit-list{flex-direction:row; overflow-x:auto; padding-bottom:4px; gap:6px;}
+  }
+  .unit-item{
+    border:none; background:none; text-align:left; cursor:pointer;
+    padding:9px 12px; border-radius:12px; font-size:0.92rem; font-weight:600; color:var(--ink-soft);
+    display:flex; align-items:center; gap:8px; width:100%;
+  }
+  .unit-item:hover:not(:disabled):not(.active){background:var(--paper-alt); color:var(--plum-deep);}
+  @media (max-width:900px){ .unit-item{width:auto; white-space:nowrap; border:1px solid var(--plum-line);} }
+  .unit-item svg{width:15px;height:15px;flex:none;}
+  .unit-item.active{background:var(--plum-deep); color:#fff;}
+  .unit-item.locked{color:#b9a3b2; cursor:default;}
+  .unit-item .count{margin-left:auto; font-size:0.75rem; font-weight:700; opacity:.7;}
+
+  .rail-progress{margin-top:20px; padding-top:16px; border-top:1px dashed var(--plum-line);}
+  @media (max-width:900px){ .rail-progress{display:none;} }
+  .rail-progress .num{font-family:"Fraunces",serif; font-weight:600; font-size:1.9rem; color:var(--coral); font-variant-numeric:tabular-nums;}
+  .rail-progress .lbl{font-size:0.78rem; color:var(--ink-soft);}
+  .rail-progress .bar{height:6px; border-radius:4px; background:var(--paper-alt); margin-top:8px; overflow:hidden;}
+  .rail-progress .bar i{display:block; height:100%; background:var(--coral); border-radius:4px; transition:width .4s ease;}
+  .link-btn{margin-top:10px; font-size:0.78rem; text-decoration:underline; color:var(--ink-soft); background:none; border:none; cursor:pointer; padding:0;}
+  .link-btn:hover{color:var(--coral);}
+
+  .view{display:none;}
+  .view.active{display:block;}
+
+  /* ---------- Ticket strip (unit hero) ---------- */
+  .ticket-strip{
+    display:flex; flex-wrap:wrap; border:1.5px solid var(--plum-deep); border-radius:16px;
+    overflow:hidden; background:var(--plum-deep); color:#fff; margin-bottom:28px;
+    opacity:0; transform:scale(.97); animation:stampIn .55s .1s cubic-bezier(.2,.8,.2,1) forwards;
+  }
+  @keyframes stampIn{ to{opacity:1; transform:scale(1);} }
+  .ticket-head{
+    flex:1 1 220px; padding:20px 22px; display:flex; flex-direction:column; justify-content:center; gap:6px;
+    border-right:1px dashed rgba(255,255,255,0.35);
+    background:radial-gradient(120px 120px at 90% 10%, rgba(239,200,104,0.25), transparent);
+  }
+  .stamp{
+    width:44px; height:44px; border:2px solid var(--gold); border-radius:50%;
+    display:flex; align-items:center; justify-content:center; font-family:"Fraunces",serif; font-weight:700;
+    font-size:0.68rem; color:var(--gold); transform:rotate(-9deg); text-align:center; line-height:1.05;
+    margin-bottom:6px;
+  }
+  .ticket-head h1{color:#fff; font-size:1.35rem;}
+  .ticket-head p{color:rgba(255,255,255,0.78); font-size:0.88rem; max-width:34ch;}
+  .ticket-part{ flex:1 1 150px; padding:18px; border-right:1px dashed rgba(255,255,255,0.35); }
+  .ticket-part:last-child{border-right:none;}
+  .ticket-part .name{font-family:"Fraunces",serif; font-weight:600; font-size:0.98rem; color:#fff;}
+  .ticket-part .meta{font-size:0.78rem; color:rgba(255,255,255,0.7); margin-top:6px; display:block;}
+  .ticket-part .meta + .meta{margin-top:2px;}
+  @media (max-width:760px){ .ticket-part, .ticket-head{border-right:none; border-bottom:1px dashed rgba(255,255,255,0.35);} .ticket-part:last-child{border-bottom:none;} }
+
+  /* ---------- View header (whole-book sections) ---------- */
+  .view-head{margin-bottom:24px; max-width:680px;}
+  .view-head h1{font-size:clamp(1.8rem, 1.4rem + 1.6vw, 2.5rem);}
+  .view-head p{margin-top:10px; color:var(--ink-soft); font-size:0.98rem;}
+
+  /* ---------- Tabs & segmented modes ---------- */
+  .tabs{
+    display:flex; gap:4px 18px; flex-wrap:wrap; margin-bottom:8px;
+    border-bottom:1px solid var(--plum-line);
+  }
+  .tab-btn{
+    background:none; border:none; cursor:pointer; padding:10px 2px;
+    font-weight:700; font-size:0.92rem; color:var(--ink-soft); position:relative;
+  }
+  .tab-btn::after{content:""; position:absolute; left:0; right:0; bottom:-1px; height:3px; background:transparent; border-radius:2px;}
+  .tab-btn.active{color:var(--plum-deep);}
+  .tab-btn.active::after{background:var(--coral);}
+  .tab-btn:hover{color:var(--plum-deep);}
+  .page{display:none; padding-top:26px;}
+  .page.active{display:block;}
+
+  .seg{display:inline-flex; flex-wrap:wrap; gap:4px; background:var(--paper-alt); padding:4px; border-radius:14px; margin-bottom:18px;}
+  .seg-btn{border:none; background:none; padding:8px 14px; border-radius:10px; font-weight:700; font-size:0.86rem; color:var(--ink-soft); cursor:pointer;}
+  .seg-btn:hover{color:var(--plum-deep);}
+  .seg-btn.active{background:#fff; color:var(--plum-deep); box-shadow:0 1px 0 var(--plum-line);}
+  .mode-pane{display:none;}
+  .mode-pane.active{display:block;}
+
+  .filters{display:flex; flex-wrap:wrap; gap:10px 16px; align-items:flex-end; margin-bottom:18px;}
+  .filters label{display:flex; flex-direction:column; gap:4px; font-size:0.78rem; font-weight:700; color:var(--ink-soft);}
+  .filters select, .search{
+    border:1.5px solid var(--plum-line); border-radius:10px; padding:8px 10px; font-size:0.9rem; background:#fff; color:var(--ink); min-width:150px;
+  }
+  .filters .note{font-size:0.82rem; color:var(--ink-soft); padding-bottom:9px;}
+  .search{width:100%; max-width:360px; margin-bottom:14px;}
+
+  /* ---------- Generic exercise block ---------- */
+  .block{ margin-bottom:40px; max-width:720px; }
+  .block.wide{max-width:100%;}
+  .block h3{font-size:1.18rem; margin-bottom:4px;}
+  .block .instr{color:var(--ink-soft); font-size:0.92rem; margin-bottom:14px; max-width:64ch;}
+  .tip{
+    background:var(--paper-alt); border-radius:12px; padding:12px 14px; font-size:0.86rem; color:var(--ink-soft);
+    margin:12px 0 16px; border-left:3px solid var(--gold); max-width:68ch;
+  }
+
+  /* ---------- Choice exercises ---------- */
+  .qitem{margin-bottom:16px;}
+  .qitem .qtext{font-size:0.98rem; margin-bottom:8px; line-height:1.55;}
+  .qitem .qtext em{color:var(--plum-deep); font-style:normal; font-weight:700;}
+  .choice-group{display:flex; flex-wrap:wrap; gap:8px;}
+  .choice-btn{
+    border:1.5px solid var(--plum-line); background:#fff; border-radius:10px; padding:8px 14px;
+    font-size:0.9rem; font-weight:600; cursor:pointer; color:var(--ink); text-align:left;
+    transition:border-color .15s ease, background-color .15s ease, color .15s ease;
+  }
+  .choice-btn b{color:var(--plum); margin-right:4px;}
+  .choice-btn:hover:not(:disabled){border-color:var(--plum);}
+  .choice-btn:disabled{cursor:default;}
+  .choice-btn.is-correct{background:var(--sage-soft); border-color:var(--sage); color:var(--sage);}
+  .choice-btn.is-wrong{background:var(--rust-soft); border-color:var(--rust); color:var(--rust);}
+  .choice-btn.is-reveal{border-color:var(--sage); box-shadow:inset 0 0 0 1.5px var(--sage);}
+  .qnote{display:none; font-size:0.86rem; color:var(--ink-soft); margin-top:6px;}
+  .qnote.show{display:block;}
+  .qnote strong{color:var(--plum-deep);}
+
+  /* ---------- Gap fill ---------- */
+  .gaptext{font-size:0.98rem; line-height:2; max-width:66ch; white-space:pre-line;}
+  .gaptext b{color:var(--plum-deep);}
+  .gap{
+    border:none; border-bottom:2px solid var(--plum); background:transparent;
+    font-size:0.98rem; font-weight:700; color:var(--plum-deep); padding:2px 4px; text-align:center; max-width:100%;
+  }
+  .gap:focus{outline:none; border-color:var(--coral); background:var(--gold-soft);}
+  .gap.ok{border-color:var(--sage); background:var(--sage-soft); color:var(--sage);}
+  .gap.bad{border-color:var(--rust); background:var(--rust-soft); color:var(--rust);}
+  .gap-fix{font-size:0.8rem; font-weight:700; color:var(--sage); margin-left:4px;}
+  .keyword{
+    display:inline-block; font-size:0.72rem; font-weight:800; letter-spacing:.04em; color:var(--plum);
+    border:1px solid var(--plum-line); border-radius:6px; padding:0 6px; margin-left:4px; line-height:1.6; vertical-align:middle; background:#fff;
+  }
+  .bank{display:flex; flex-wrap:wrap; gap:6px; margin:10px 0 16px;}
+  .bank span{background:var(--paper-alt); border-radius:8px; padding:4px 10px; font-size:0.82rem; font-weight:600; color:var(--plum-deep);}
+  .result-line{margin-top:12px; font-size:0.9rem; font-weight:700; color:var(--plum-deep); display:none;}
+  .result-line.show{display:block;}
+
+  /* ---------- Matching ---------- */
+  .match-row{display:flex; align-items:center; gap:10px; margin-bottom:8px; font-size:0.94rem; flex-wrap:wrap;}
+  .match-row .lft{flex:1 1 220px;}
+  .match-select{
+    border:1.5px solid var(--plum-line); border-radius:8px; padding:6px 10px; font-size:0.88rem;
+    background:#fff; color:var(--ink); max-width:100%;
+  }
+  .match-select.ok{border-color:var(--sage); background:var(--sage-soft);}
+  .match-select.bad{border-color:var(--rust); background:var(--rust-soft);}
+
+  /* ---------- Vocabulary index cards ---------- */
+  .card-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:12px; margin:14px 0 8px;}
+  .vcard{
+    background:#fff; border:1px solid var(--plum-line); border-radius:4px 12px 4px 12px;
+    padding:14px 14px 12px; cursor:pointer; position:relative; min-height:92px; text-align:left;
+    box-shadow:2px 3px 0 var(--paper-alt); display:block; width:100%; color:inherit;
+  }
+  .vcard .w{font-family:"Caveat",cursive; font-size:1.35rem; font-weight:700; color:var(--plum-deep); display:block;}
+  .vcard .d{font-size:0.8rem; color:var(--ink-soft); margin-top:6px; display:none;}
+  .vcard.flip .d{display:block;}
+  .vcard.flip .w{color:var(--coral);}
+  .vcard::after{content:"?"; position:absolute; top:8px; right:10px; font-size:0.72rem; color:var(--plum-line); font-weight:700;}
+  .vcard.flip::after{content:"✓"; color:var(--sage);}
+
+  /* ---------- Reading passage ---------- */
+  .passage{
+    columns:2 280px; column-gap:28px; font-size:0.94rem; line-height:1.7; color:var(--ink);
+    border-top:1px solid var(--ruled); padding-top:16px; margin-bottom:18px;
+  }
+  .passage.single{columns:1; max-width:66ch;}
+  .passage p{margin-bottom:12px; break-inside:avoid-column;}
+  .passage .who{font-weight:700; color:var(--plum-deep); display:block; margin-bottom:2px;}
+
+  /* ---------- Free write ---------- */
+  .freewrite textarea{
+    width:100%; min-height:180px; border:1.5px solid var(--plum-line); border-radius:12px; padding:14px;
+    font-size:0.95rem; color:var(--ink); resize:vertical; background:#fff; line-height:1.6;
+  }
+  .freewrite textarea:focus{outline:none; border-color:var(--plum);}
+  .word-counter{font-size:0.82rem; font-weight:700; margin-top:8px; color:var(--ink-soft);}
+  .word-counter.in-range{color:var(--sage);}
+  .word-counter.out-range{color:var(--rust);}
+  .checklist{list-style:none; margin:14px 0 0; padding:0; display:flex; flex-direction:column; gap:8px;}
+  .checklist label{display:flex; align-items:flex-start; gap:8px; font-size:0.9rem; color:var(--ink-soft); cursor:pointer;}
+  .checklist input{margin-top:4px; accent-color:var(--sage);}
+
+  /* ---------- Speaking ---------- */
+  .timer-box{display:flex; align-items:center; gap:12px; background:var(--paper-alt); border-radius:12px; padding:10px 14px; margin:10px 0 12px; flex-wrap:wrap;}
+  .timer-box .q{flex:1 1 240px; font-weight:600;}
+  .timer-box .clock{font-family:"Fraunces",serif; font-weight:600; font-size:1.3rem; color:var(--plum-deep); font-variant-numeric:tabular-nums; min-width:3.2ch;}
+  .timer-box.running{background:var(--gold-soft);}
+  .phrase-bank{display:none; margin-top:12px; background:#fff; border:1px solid var(--plum-line); border-radius:12px; padding:14px 16px;}
+  .phrase-bank.show{display:block;}
+  .phrase-bank ul{margin:6px 0 0; padding-left:18px; font-size:0.9rem; color:var(--ink-soft);}
+  .phrase-bank h4{font-size:0.9rem; margin-top:12px;}
+  .phrase-bank h4:first-child{margin-top:0;}
+
+
+  .photo-task{margin:18px 0 6px; max-width:860px;}
+  .photo-q{
+    display:inline-block; font-weight:700; font-size:0.95rem; color:var(--plum-deep); background:#fff;
+    border:1.5px solid var(--plum-deep); border-radius:10px; padding:8px 14px; margin-bottom:10px;
+  }
+  .photo-pair{display:grid; grid-template-columns:1fr 1fr; gap:10px;}
+  @media (max-width:560px){ .photo-pair{grid-template-columns:1fr;} }
+  .photo{position:relative; border-radius:12px; overflow:hidden; background:var(--paper-alt); aspect-ratio:45/32;}
+  .photo img{display:block; width:100%; height:100%; object-fit:cover;}
+  .photo-n{
+    position:absolute; top:10px; left:10px; width:30px; height:30px; border-radius:8px;
+    background:var(--plum-deep); color:#fff; font-family:"Fraunces",serif; font-weight:700;
+    display:flex; align-items:center; justify-content:center; font-size:0.95rem;
+  }
+  .photo-credit{font-size:0.76rem; color:var(--ink-soft); margin-top:14px;}
+
+  .margin-note{border-left:3px solid var(--plum); padding-left:14px; margin:14px 0 18px; max-width:68ch;}
+  .margin-note p{font-size:0.92rem; color:var(--ink-soft);}
+  .margin-note p + p{margin-top:6px;}
+
+  .predict{border-top:1px solid var(--ruled); padding:14px 0;}
+  .predict .situ{font-size:0.86rem; color:var(--ink-soft);}
+  .predict .qq{font-weight:700; color:var(--plum-deep); margin:2px 0 8px;}
+  .predict ol{margin:0 0 10px; padding-left:22px; font-size:0.94rem;}
+  .predict ol li::marker{font-weight:700; color:var(--plum);}
+  .predict .ideas{display:none; margin-top:4px;}
+  .predict.open .ideas{display:block;}
+  .predict .ideas li{color:var(--ink-soft); font-size:0.9rem;}
+  .predict .ideas li span{color:var(--sage); font-weight:600;}
+
+  /* ---------- Rounds (phrasal / word formation quizzes) ---------- */
+  .round{background:#fff; border:1px solid var(--plum-line); border-radius:18px; padding:22px 22px 20px; max-width:640px;}
+  .round-meta{font-size:0.8rem; font-weight:700; color:var(--ink-soft); margin-bottom:12px; font-variant-numeric:tabular-nums;}
+  .round-bar{height:4px; background:var(--paper-alt); border-radius:4px; overflow:hidden; margin-bottom:16px;}
+  .round-bar i{display:block; height:100%; background:var(--plum); transition:width .3s ease;}
+  .prompt-label{display:block; font-size:0.85rem; color:var(--ink-soft); margin-bottom:4px;}
+  .prompt-main{display:block; font-family:"Fraunces",serif; font-size:1.45rem; font-weight:600; color:var(--plum-deep); line-height:1.25; margin-bottom:16px;}
+  .prompt-main .blank{display:inline-block; min-width:3.5ch; border-bottom:3px solid var(--coral); color:var(--coral);}
+  .prompt-sub{display:block; font-size:0.95rem; color:var(--ink-soft); margin:-8px 0 16px;}
+  .type-row{display:flex; gap:8px; flex-wrap:wrap; align-items:center;}
+  .type-input{
+    flex:1 1 220px; border:1.5px solid var(--plum-line); border-radius:10px; padding:10px 12px; font-size:1rem; font-weight:600; color:var(--plum-deep); background:var(--paper);
+  }
+  .type-input:focus{outline:none; border-color:var(--plum); background:#fff;}
+  .type-input.ok{border-color:var(--sage); background:var(--sage-soft); color:var(--sage);}
+  .type-input.bad{border-color:var(--rust); background:var(--rust-soft); color:var(--rust);}
+  .round-hint{display:none; font-size:0.86rem; color:var(--plum); margin-top:10px;}
+  .round-hint.show{display:block;}
+  .round-fb{display:none; margin:14px 0 12px; font-size:0.92rem; padding:10px 12px; border-radius:10px;}
+  .round-fb.show{display:block;}
+  .round-fb.ok{background:var(--sage-soft); color:#3f5532;}
+  .round-fb.bad{background:var(--rust-soft); color:#7c3824;}
+  .round-fb em{font-style:normal; font-weight:700;}
+  .round-score{font-family:"Fraunces",serif; font-size:3rem; font-weight:600; color:var(--coral); line-height:1; font-variant-numeric:tabular-nums;}
+  .round-msg{margin:10px 0 16px; color:var(--ink-soft);}
+  .empty{color:var(--ink-soft); font-size:0.92rem;}
+
+  /* ---------- Flashcard ---------- */
+  .flash-wrap{max-width:560px;}
+  .flash{
+    display:flex; flex-direction:column; justify-content:flex-start; align-items:stretch;
+    width:100%; min-height:230px; text-align:left; cursor:pointer; position:relative;
+    background-color:#fff;
+    background-image:linear-gradient(var(--coral), var(--coral)), repeating-linear-gradient(to bottom, transparent 0, transparent 31px, #EADFCB 31px, #EADFCB 32px);
+    background-size:100% 2px, 100% 100%;
+    background-position:0 46px, 0 46px;
+    background-repeat:no-repeat, no-repeat;
+    border:1px solid var(--plum-line); border-radius:6px 18px 6px 18px;
+    padding:14px 24px 22px; box-shadow:4px 5px 0 var(--paper-alt); color:inherit;
+  }
+  .flash .tag{font-size:0.75rem; font-weight:700; color:var(--ink-soft); display:block; height:32px;}
+  .flash .front{display:block; font-family:"Caveat",cursive; font-weight:700; font-size:2.6rem; line-height:1.1; color:var(--plum-deep); margin-top:16px;}
+  .flash .back{display:none; font-size:1.05rem; color:var(--ink); margin-top:10px; line-height:32px;}
+  .flash .back small{display:block; font-size:0.78rem; color:var(--ink-soft); line-height:1.4; margin-top:6px;}
+  .flash.flipped .back{display:block;}
+  .flash.flipped .front{font-size:1.9rem; color:var(--coral);}
+  .flash .turn{position:absolute; right:16px; bottom:10px; font-size:0.75rem; color:var(--ink-soft);}
+  .flash-meta{display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; font-size:0.82rem; color:var(--ink-soft); margin:12px 0;}
+  .flash-meta label{display:inline-flex; gap:6px; align-items:center; cursor:pointer;}
+  .flash-meta input{accent-color:var(--plum);}
+
+  /* ---------- Reference lists ---------- */
+  .ref-table{width:100%; border-collapse:collapse; font-size:0.9rem;}
+  .ref-table th{text-align:left; font-size:0.78rem; color:var(--ink-soft); padding:6px 10px 6px 0; border-bottom:1px solid var(--plum-line);}
+  .ref-table td{padding:8px 10px 8px 0; border-bottom:1px solid #EFE4D0; vertical-align:top;}
+  .ref-table td:first-child{font-weight:700; color:var(--plum-deep); white-space:nowrap;}
+  .ref-table td:last-child{color:var(--ink-soft); white-space:nowrap; font-size:0.82rem;}
+  .ref-table .known{color:var(--sage); margin-left:4px;}
+  @media (max-width:640px){ .ref-table td:first-child{white-space:normal;} .ref-table td:last-child{white-space:normal;} }
+  details.wf-group{border-bottom:1px solid var(--plum-line); padding:10px 0;}
+  details.wf-group summary{cursor:pointer; font-weight:700; color:var(--plum-deep); display:flex; gap:10px; align-items:baseline; list-style:none;}
+  details.wf-group summary::-webkit-details-marker{display:none;}
+  details.wf-group summary::before{content:"+"; color:var(--coral); font-weight:800; width:12px;}
+  details.wf-group[open] summary::before{content:"–";}
+  details.wf-group summary .suf{font-family:"Fraunces",serif; font-size:1.05rem;}
+  details.wf-group summary .from{font-weight:500; font-size:0.84rem; color:var(--ink-soft);}
+  details.wf-group summary .n{margin-left:auto; font-size:0.76rem; color:var(--ink-soft); font-weight:600;}
+  .wf-pairs{display:grid; grid-template-columns:repeat(auto-fill,minmax(210px,1fr)); gap:4px 18px; padding:10px 0 4px 22px; font-size:0.9rem;}
+  .wf-pairs span{color:var(--ink-soft);}
+  .wf-pairs b{color:var(--plum-deep); font-weight:700;}
+
+  footer.rf-footer{max-width:var(--maxw); margin:0 auto; padding:20px 24px 50px; color:var(--ink-soft); font-size:0.82rem;}
+</style>
+</head>
+<body>
+
+<div class="tb">
+  <div class="tb-inner">
+    <a class="tb-back" href="index.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg>
+      IG English School
+    </a>
+    <div class="tb-title">
+      <strong>Ready for First</strong>
+      <span>Practice notebook · Cambridge B2 First</span>
+    </div>
+  </div>
+</div>
+
+<main class="shell">
+
+  <aside class="rail">
+    <div class="rail-group">
+      <h2>Units</h2>
+      <ul class="unit-list">
+        <li><button class="unit-item active" data-view="unit1">Unit 1 · Lifestyle</button></li>
+        <li><button class="unit-item locked" disabled>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+          Unit 2 · coming soon
+        </button></li>
+        <li><button class="unit-item locked" disabled>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+          Unit 3 · coming soon
+        </button></li>
+      </ul>
+    </div>
+    <div class="rail-group">
+      <h2>Whole-book practice</h2>
+      <ul class="unit-list">
+        <li><button class="unit-item" data-view="phrasal">Phrasal verbs <span class="count" id="pvCountRail"></span></button></li>
+        <li><button class="unit-item" data-view="wf">Word formation</button></li>
+      </ul>
+    </div>
+    <div class="rail-progress">
+      <span class="num" id="progressNum">0%</span>
+      <span class="lbl">of Unit 1 done</span>
+      <div class="bar"><i id="progressBar" style="width:0%"></i></div>
+      <button class="link-btn" id="resetBtn">Reset Unit 1 progress</button>
+    </div>
+  </aside>
+
+  <div class="content">
+
+    <!-- ===================================================== UNIT 1 -->
+    <div class="view active" data-view="unit1">
+
+      <section class="ticket-strip">
+        <div class="ticket-head">
+          <div class="stamp">B2<br>FIRST</div>
+          <h1>The exam at a glance</h1>
+          <p>Based on Ready for First. Each block below trains a real part of the exam.</p>
+        </div>
+        <div class="ticket-part">
+          <span class="name">Reading &amp; Use of English</span>
+          <span class="meta">1h 15 min · 7 parts</span>
+          <span class="meta">52 questions</span>
+        </div>
+        <div class="ticket-part">
+          <span class="name">Writing</span>
+          <span class="meta">1h 20 min · 2 parts</span>
+          <span class="meta">140–190 words each</span>
+        </div>
+        <div class="ticket-part">
+          <span class="name">Listening</span>
+          <span class="meta">about 40 min · 4 parts</span>
+          <span class="meta">30 questions</span>
+        </div>
+        <div class="ticket-part">
+          <span class="name">Speaking</span>
+          <span class="meta">14 min · 4 parts</span>
+          <span class="meta">in pairs, with 2 examiners</span>
+        </div>
+      </section>
+
+      <nav class="tabs" aria-label="Unit 1 sections">
+        <button class="tab-btn active" data-tab="vocab">Vocabulary</button>
+        <button class="tab-btn" data-tab="grammar">Grammar</button>
+        <button class="tab-btn" data-tab="rue">Reading &amp; Use of English</button>
+        <button class="tab-btn" data-tab="writing">Writing</button>
+        <button class="tab-btn" data-tab="listening">Listening</button>
+        <button class="tab-btn" data-tab="speaking">Speaking</button>      </nav>
+
+      <!-- ================= VOCABULARY ================= -->
+      <section class="page active" data-tab="vocab">
+
+        <div class="block" data-ex="voc-lifestyle">
+          <span class="kicker">Vocabulary · Lifestyle</span>
+          <h3>Adjectives that go with lifestyle</h3>
+          <p class="instr">All of these adjectives collocate with <em>lifestyle</em>: you can <em>have</em>, <em>live</em> or <em>lead</em> a busy, healthy, sedentary... lifestyle. Click each card to check the meaning, then say a sentence about your own lifestyle.</p>
+          <div class="card-grid" id="vocLifestyleCards"></div>
+        </div>
+
+        <div class="block" data-ex="voc-clothes">
+          <span class="kicker">Vocabulary · Clothes</span>
+          <h3>Opposites</h3>
+          <p class="instr">Complete each sentence with the adjective from the box that means the opposite of the word in <b>bold</b>.</p>
+          <div class="bank">
+            <span>baggy</span><span>brand new</span><span>casual</span><span>colourful</span><span>scruffy</span><span>unfashionable</span>
+          </div>
+          <div class="gaptext" id="gapClothes"></div>
+          <button class="btn btn-primary btn-sm" data-check="gapClothes">Check answers</button>
+          <p class="result-line" id="gapClothes-result"></p>
+        </div>
+
+        <div class="block" data-ex="voc-get-meaning">
+          <span class="kicker">Vocabulary · Get</span>
+          <h3>Six meanings of get</h3>
+          <p class="instr">Choose what <em>get</em> means in each sentence.</p>
+          <div id="getMeaningList"></div>
+        </div>
+
+        <div class="block" data-ex="voc-get-phrasal">
+          <span class="kicker">Vocabulary · Get</span>
+          <h3>Expressions with get</h3>
+          <p class="instr">Choose the word that completes each expression.</p>
+          <div id="getPhrasalList"></div>
+        </div>
+
+        <div class="block" data-ex="voc-get-endings">
+          <span class="kicker">Review · Get</span>
+          <h3>Match the beginnings and endings</h3>
+          <p class="instr">Choose the ending that completes each sentence.</p>
+          <div id="getEndingsList"></div>
+          <button class="btn btn-primary btn-sm" data-check="getEndingsList" style="margin-top:10px;">Check answers</button>
+          <p class="result-line" id="getEndingsList-result"></p>
+        </div>
+
+      </section>
+
+      <!-- ================= GRAMMAR ================= -->
+      <section class="page" data-tab="grammar">
+
+        <div class="block" data-ex="gram-adverb-position">
+          <span class="kicker">Grammar · Habitual behaviour</span>
+          <h3>Where does the frequency adverb go?</h3>
+          <p class="instr">Frequency adverbs (always, usually, often, sometimes, rarely, never...) go <strong>before the main verb</strong> and <strong>after an auxiliary verb or be</strong>. Some can also start a sentence; others can't.</p>
+          <div id="advPositionQ"></div>
+        </div>
+
+        <div class="block" data-ex="gram-adverb-fix">
+          <h3>Correct or incorrect?</h3>
+          <p class="instr">Is the adverb in the right position in each sentence?</p>
+          <div id="advFixList"></div>
+        </div>
+
+        <div class="block" data-ex="gram-used-would">
+          <span class="kicker">Grammar · Past habits</span>
+          <h3>Used to or would?</h3>
+          <p class="instr">Both describe past habits that don't happen any more, but only one of them works with states (verbs like <em>be, have, like, know</em>).</p>
+          <div id="usedWouldQ"></div>
+          <div class="margin-note">
+            <p><strong>Rule:</strong> <em>would</em> only works with repeated actions. For states (be, have, like, want, know...), use <em>used to</em>.</p>
+          </div>
+        </div>
+
+        <div class="block" data-ex="gram-used-would-paragraph">
+          <h3>Repeated action, state or one-off event?</h3>
+          <p class="instr">Read the text. For each underlined verb, decide: <strong>(a)</strong> both used to and would are possible, <strong>(b)</strong> only used to is possible, or <strong>(c)</strong> neither is possible, because it's a single event and not a habit.</p>
+          <div class="passage single" id="paragraphText"></div>
+          <div id="paragraphQ"></div>
+        </div>
+
+        <div class="block" data-ex="gram-usedto-concept">
+          <span class="kicker">Grammar · Used to</span>
+          <h3>Be used to, get used to and used to</h3>
+          <div id="usedToConceptQ"></div>
+          <div class="margin-note">
+            <p><strong>be used to</strong> = already accustomed to something (a state).<br><strong>get used to</strong> = becoming accustomed to something (a process, a change).<br><strong>used to + infinitive</strong> = a past habit that has stopped.</p>
+            <p>After <em>be/get used to</em>, always use an <strong>-ing form</strong> or a noun, never an infinitive.</p>
+          </div>
+        </div>
+
+        <div class="block" data-ex="gram-usedto-gapfill">
+          <h3>Complete with the correct form</h3>
+          <p class="instr">Use <em>used to</em>, <em>be used to</em> or <em>get used to</em> in the right form.</p>
+          <div class="gaptext" id="gapUsedTo"></div>
+          <button class="btn btn-primary btn-sm" data-check="gapUsedTo">Check answers</button>
+          <p class="result-line" id="gapUsedTo-result"></p>
+        </div>
+
+        <div class="block" data-ex="gram-review-gapfill">
+          <span class="kicker">Review</span>
+          <h3>Habitual behaviour</h3>
+          <p class="instr">Complete each sentence with a word from the box. You won't need all the words.</p>
+          <div class="bank">
+            <span>always</span><span>almost</span><span>hardly</span><span>never</span><span>not</span><span>tend</span><span>use</span><span>usual</span><span>usually</span><span>very</span><span>will</span><span>would</span>
+          </div>
+          <div class="gaptext" id="gapReview"></div>
+          <button class="btn btn-primary btn-sm" data-check="gapReview">Check answers</button>
+          <p class="result-line" id="gapReview-result"></p>
+        </div>
+
+      </section>
+
+      <!-- ================= READING & USE OF ENGLISH ================= -->
+      <section class="page" data-tab="rue">
+
+        <div class="block wide" data-ex="rue-part7">
+          <span class="kicker">Part 7 · Multiple matching</span>
+          <h3>This is your life</h3>
+          <p class="instr">Read the four accounts. For each question, choose the person (A–D). You can choose a person more than once.</p>
+          <div class="passage" id="part7Passage"></div>
+          <div id="part7Questions"></div>
+          <div class="tip">In the exam, underline the part of the text that gives you each answer. If you get stuck, move on and scan the whole text again at the end.</div>
+        </div>
+
+        <div class="block" data-ex="rue-part7-phrasal">
+          <h3>Phrasal verbs from the text</h3>
+          <p class="instr">Match each phrasal verb to its meaning. Use the context in the texts above to help you.</p>
+          <div id="phrasalMatchList"></div>
+          <button class="btn btn-primary btn-sm" data-check="phrasalMatchList" style="margin-top:10px;">Check answers</button>
+          <p class="result-line" id="phrasalMatchList-result"></p>
+        </div>
+
+        <div class="block wide" data-ex="rue-part1">
+          <span class="kicker">Part 1 · Multiple-choice cloze</span>
+          <h3>Young entrepreneurs</h3>
+          <p class="instr">Read the text and choose the answer (A, B, C or D) that best fits each gap.</p>
+          <div class="passage" id="part1Passage"></div>
+          <div id="part1Questions"></div>
+        </div>
+
+        <div class="block wide" data-ex="rue-part2">
+          <span class="kicker">Part 2 · Open cloze</span>
+          <h3>Blue zones</h3>
+          <p class="instr">Write <strong>one word</strong> in each gap. There are no options, so look carefully at the words before and after each gap.</p>
+          <div class="gaptext" id="part2Text"></div>
+          <button class="btn btn-primary btn-sm" data-check="part2Text">Check answers</button>
+          <p class="result-line" id="part2Text-result"></p>
+        </div>
+
+        <div class="block" data-ex="rue-part4">
+          <span class="kicker">Part 4 · Key word transformation</span>
+          <h3>Same meaning, different words</h3>
+          <p class="instr">Complete the second sentence so that it means the same as the first, using the word given. Use between two and five words, including the word given, and don't change that word.</p>
+          <div id="part4List"></div>
+        </div>
+
+      </section>
+
+      <!-- ================= WRITING ================= -->
+      <section class="page" data-tab="writing">
+
+        <div class="block wide" data-ex="writing-linking">
+          <span class="kicker">Part 2 · Informal letter</span>
+          <h3>Linking words in Hugo's letter</h3>
+          <p class="instr">Paula wrote to her friend Hugo for advice. Complete Hugo's reply with the linking words from the box.</p>
+          <div class="margin-note"><p>"As you know, this is my last year at school, and I can't make up my mind what to do when I leave. My parents want me to go to university, but I'd really like to work as a ski instructor. What do you think I should do? Thanks, Paula"</p></div>
+          <div class="bank">
+            <span>anyway</span><span>as well</span><span>but</span><span>either</span><span>on the other hand</span><span>so</span>
+          </div>
+          <div class="gaptext" id="letterGaps"></div>
+          <button class="btn btn-primary btn-sm" data-check="letterGaps">Check answers</button>
+          <p class="result-line" id="letterGaps-result"></p>
+          <div class="tip">Look at how Hugo organises his reply: paragraph 1 gives a first reaction, paragraph 2 looks at the advantages and disadvantages of one option, paragraph 3 looks at the other option, and paragraph 4 gives his advice.</div>
+        </div>
+
+        <div class="block">
+          <h3>Your turn: informal letter</h3>
+          <p class="instr">You have received this letter from your English-speaking friend, Tom. Write your reply in 140–190 words.</p>
+          <div class="margin-note"><p>"I'm not sure what to do during the summer holidays next year. My parents want me to help out in the shop they own, but I'd quite like to work in a hotel in your country – there are plenty of jobs available. What do you think I should do? Write soon, Tom"</p></div>
+          <div class="freewrite">
+            <textarea id="letterFree" placeholder="Dear Tom, ..." aria-label="Your letter to Tom"></textarea>
+            <p class="word-counter" id="letterFreeCounter">0 words (target: 140–190)</p>
+          </div>
+          <ul class="checklist">
+            <li><label><input type="checkbox"> I answered Tom's question and gave clear advice</label></li>
+            <li><label><input type="checkbox"> I looked at the advantages and disadvantages of both options</label></li>
+            <li><label><input type="checkbox"> I used at least three linking words (but, on the other hand, so, anyway...)</label></li>
+            <li><label><input type="checkbox"> I used vocabulary from the unit (lifestyle, get used to, settle down...)</label></li>
+            <li><label><input type="checkbox"> I opened and closed it like a letter to a friend</label></li>
+          </ul>
+        </div>
+
+        <div class="block">
+          <h3>Your turn: article</h3>
+          <p class="instr">Write a short article (140–190 words) about your lifestyle and how you feel about it. You could write about your daily routine, your work or studies, your free-time activities, your social life, your family life or your eating habits. Use the four texts in <em>This is your life</em> as models.</p>
+          <div class="freewrite">
+            <textarea id="articleFree" placeholder="A day in my life ..." aria-label="Your article"></textarea>
+            <p class="word-counter" id="articleFreeCounter">0 words (target: 140–190)</p>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ================= LISTENING ================= -->
+      <section class="page" data-tab="listening">
+
+        <div class="block">
+          <span class="kicker">Listening · strategy practice</span>
+          <h3>Practising without the recordings</h3>
+          <p class="instr">The book prints the questions but not the audio scripts, so there are no answers to check here. Instead, you train the habit that matters most in this paper: <strong>predicting how ideas will be expressed</strong> before you listen. In the exam you will almost never hear the exact words from the options.</p>
+        </div>
+
+        <div class="block wide" data-ex="listening-part1">
+          <span class="kicker">Part 1 · Multiple choice</span>
+          <h3>Predict the paraphrase</h3>
+          <p class="instr">Read each situation and question. For every option, think of another way a speaker might say it. Then compare with our ideas.</p>
+          <div id="listeningPredictList"></div>
+        </div>
+
+        <div class="block wide">
+          <span class="kicker">Part 3 · Multiple matching</span>
+          <h3>Spot the distractor</h3>
+          <p class="instr">In Part 3, five speakers talk about the clothes they wear, and you match each one to a statement (A–H). The book gives this example of how statement A, <em>I tend to wear the same clothes all the time</em>, might sound:</p>
+          <div class="margin-note">
+            <p>"I feel really comfortable in a white shirt and jeans, and that's what I wear nearly every day. Everything else seems to stay in the wardrobe."</p>
+          </div>
+          <div id="distractorQ" style="max-width:720px;"></div>
+          <div class="predict" id="part3Predict"></div>
+        </div>
+
+      </section>
+
+      <!-- ================= SPEAKING ================= -->
+      <section class="page" data-tab="speaking">
+
+        <div class="block wide">
+          <span class="kicker">Part 1 · Interview</span>
+          <h3>Warm-up: answer in 20 seconds</h3>
+          <p class="instr">Press Start and answer out loud before the time runs out. Don't just say yes or no: give a reason or an example. And don't learn long answers by heart, because you'll sound unnatural.</p>
+          <div id="speakingP1List"></div>
+        </div>
+
+        <div class="block wide">
+          <span class="kicker">Part 2 · Long turn</span>
+          <h3>Compare, don't describe</h3>
+          <p class="instr">The four photos show people who lead different lifestyles. Student A speaks for about one minute; then Student B answers a short question in about 30 seconds.</p>
+          <div class="tip">You don't need to describe the photos in detail. Compare them: talk about similarities (<em>In both pictures...</em>) and differences (<em>In the first picture..., whereas in the second one...</em>), then answer the question.</div>
+
+          <figure class="photo-task">
+            <figcaption class="photo-q">What might the people find difficult about their lifestyles?</figcaption>
+            <div class="photo-pair">
+              <div class="photo"><span class="photo-n">1</span><img src="https://images.unsplash.com/photo-1713947506536-2edbac14d3bb?auto=format&amp;fit=crop&amp;w=900&amp;h=640&amp;q=75" alt="A woman at her office desk talking on the phone while working on a laptop" loading="lazy" width="900" height="640"></div>
+              <div class="photo"><span class="photo-n">2</span><img src="https://images.unsplash.com/photo-1762430815620-fcca603c240c?auto=format&amp;fit=crop&amp;crop=top&amp;w=900&amp;h=640&amp;q=75" alt="A model walking down a catwalk at a fashion show while the audience takes photos" loading="lazy" width="900" height="640"></div>
+            </div>
+          </figure>
+          <div class="margin-note"><p><strong>Student A:</strong> Compare photographs 1 and 2 and say what you think the people might find difficult about their lifestyles.</p></div>
+          <div class="timer-box"><span class="q">Student A · 1 minute</span><span class="clock" id="clockA">1:00</span><button class="btn btn-ghost btn-sm" data-timer="60" data-clock="clockA">Start</button></div>
+          <div class="margin-note"><p><strong>Student B:</strong> When your partner has finished, say whether you like working / would like to work in an office.</p></div>
+          <div class="timer-box"><span class="q">Student B · 30 seconds</span><span class="clock" id="clockA2">0:30</span><button class="btn btn-ghost btn-sm" data-timer="30" data-clock="clockA2">Start</button></div>
+
+          <figure class="photo-task" style="margin-top:34px;">
+            <figcaption class="photo-q">What might the people enjoy about their lifestyles?</figcaption>
+            <div class="photo-pair">
+              <div class="photo"><span class="photo-n">3</span><img src="https://images.unsplash.com/photo-1705849441027-e366643921b3?auto=format&amp;fit=crop&amp;w=900&amp;h=640&amp;q=75" alt="A cowboy on horseback rounding up a large herd of cattle on dusty grassland" loading="lazy" width="900" height="640"></div>
+              <div class="photo"><span class="photo-n">4</span><img src="https://images.unsplash.com/photo-1587391028604-b370121a40f6?auto=format&amp;fit=crop&amp;w=900&amp;h=640&amp;q=75" alt="A fisherman in yellow waterproofs on the deck of a fishing boat as a full net is lifted out of the sea" loading="lazy" width="900" height="640"></div>
+            </div>
+          </figure>
+          <div class="margin-note"><p><strong>Student A:</strong> Compare photographs 3 and 4 and say what you think the people might enjoy about their lifestyles.</p></div>
+          <div class="timer-box"><span class="q">Student A · 1 minute</span><span class="clock" id="clockB">1:00</span><button class="btn btn-ghost btn-sm" data-timer="60" data-clock="clockB">Start</button></div>
+          <div class="margin-note"><p><strong>Student B:</strong> When your partner has finished, say which lifestyle you would prefer to lead.</p></div>
+          <div class="timer-box"><span class="q">Student B · 30 seconds</span><span class="clock" id="clockB2">0:30</span><button class="btn btn-ghost btn-sm" data-timer="30" data-clock="clockB2">Start</button></div>
+          <p class="photo-credit">Photos from Unsplash by Vitaly Gariev (1), Kenula Abeywickrama (2), Carol Highsmith's America (3) and Paul Einerhand (4).</p>
+
+          <button class="btn btn-ghost btn-sm" id="phraseToggleBtn" aria-expanded="false" style="margin-top:6px;">Show useful language</button>
+          <div class="phrase-bank" id="phraseBank">
+            <h4>Student A: speculating</h4>
+            <ul>
+              <li>I get the impression it's a stressful life.</li>
+              <li>She might/may have to travel a lot.</li>
+              <li>I doubt that they have much time for a social life.</li>
+              <li>They probably enjoy being outside.</li>
+              <li>I expect/imagine they prefer doing physical work.</li>
+            </ul>
+            <h4>Student B: giving preferences</h4>
+            <ul>
+              <li>(I don't think) I would like to be an office worker.</li>
+              <li>I wouldn't mind working in an office.</li>
+              <li>I'd prefer to have this lifestyle rather than that one.</li>
+              <li>I'd rather ride a horse all day than work at sea.</li>
+            </ul>
+          </div>
+        </div>
+
+      </section>
+
+    </div>
+
+    <!-- ===================================================== PHRASAL VERBS -->
+    <div class="view" data-view="phrasal">
+      <header class="view-head">
+        <span class="kicker">Whole-book practice</span>
+        <h1>Phrasal verbs</h1>
+        <p>All <span id="pvTotal"></span> phrasal verbs from Ready for First. They appear in Reading &amp; Use of English Parts 1, 2 and 4, and using them well makes your Speaking and Writing sound more natural. Filter by unit to revise what you've just studied.</p>
+      </header>
+
+      <div class="filters">
+        <label>Unit
+          <select id="pvUnit"></select>
+        </label>
+        <label>Verb
+          <select id="pvVerb"></select>
+        </label>
+        <span class="note" id="pvSelectionNote"></span>
+      </div>
+
+      <div class="seg" role="tablist" aria-label="Phrasal verb practice modes">
+        <button class="seg-btn active" data-mode="pv-cards">Flashcards</button>
+        <button class="seg-btn" data-mode="pv-meaning">Meaning quiz</button>
+        <button class="seg-btn" data-mode="pv-particle">Particle builder</button>
+        <button class="seg-btn" data-mode="pv-list">Full list</button>
+      </div>
+
+      <div class="mode-pane active" data-mode="pv-cards">
+        <div class="flash-wrap" id="pvCards"></div>
+      </div>
+      <div class="mode-pane" data-mode="pv-meaning">
+        <p class="instr" style="color:var(--ink-soft); font-size:0.92rem; margin-bottom:14px;">Read the meaning and choose the phrasal verb. Ten questions per round.</p>
+        <div class="round" id="pvMeaningRound"></div>
+      </div>
+      <div class="mode-pane" data-mode="pv-particle">
+        <p class="instr" style="color:var(--ink-soft); font-size:0.92rem; margin-bottom:14px;">Choose the missing particle. This is exactly what Use of English Parts 1 and 2 test.</p>
+        <div class="round" id="pvParticleRound"></div>
+      </div>
+      <div class="mode-pane" data-mode="pv-list">
+        <input class="search" type="search" id="pvSearch" placeholder="Search phrasal verbs or meanings" aria-label="Search phrasal verbs">
+        <table class="ref-table">
+          <thead><tr><th>Phrasal verb</th><th>Meaning</th><th>Unit</th></tr></thead>
+          <tbody id="pvTable"></tbody>
+        </table>
+        <p class="instr" style="font-size:0.82rem; color:var(--ink-soft); margin-top:12px;">With some phrasal verbs, a noun can go after the particle, but a pronoun must go before it: <em>give out the books</em> / <em>give them out</em>.</p>
+      </div>
+    </div>
+
+    <!-- ===================================================== WORD FORMATION -->
+    <div class="view" data-view="wf">
+      <header class="view-head">
+        <span class="kicker">Reading &amp; Use of English · Part 3</span>
+        <h1>Word formation</h1>
+        <p>In Part 3 you read a text with eight gaps and change the word in capitals so it fits each gap. You'll often need a prefix, a suffix, a plural or a negative form. These exercises use the word formation list from Ready for First.</p>
+      </header>
+
+      <div class="seg" role="tablist" aria-label="Word formation practice modes">
+        <button class="seg-btn active" data-mode="wf-drill">Quick drill</button>
+        <button class="seg-btn" data-mode="wf-exam">Exam-style texts</button>
+        <button class="seg-btn" data-mode="wf-inged">-ing or -ed?</button>
+        <button class="seg-btn" data-mode="wf-list">Word list</button>
+      </div>
+
+      <div class="mode-pane active" data-mode="wf-drill">
+        <div class="filters">
+          <label>Practise
+            <select id="wfCat">
+              <option value="all">All word types</option>
+              <option value="opposite">Opposites (negative prefixes)</option>
+              <option value="person">People (applicant, musician...)</option>
+              <option value="noun">Nouns</option>
+              <option value="adjective">Adjectives</option>
+              <option value="adverb">Adverbs</option>
+              <option value="verb">Verbs</option>
+            </select>
+          </label>
+          <span class="note" id="wfBest"></span>
+        </div>
+        <div class="round" id="wfRound"></div>
+        <p class="instr" style="font-size:0.82rem; color:var(--ink-soft); margin-top:12px;">Use British spelling, as in the book: organiser, behaviour, colourful, skilful.</p>
+      </div>
+
+      <div class="mode-pane" data-mode="wf-exam">
+        <div class="block wide">
+          <h3>A year on the other side of the world</h3>
+          <p class="instr">Use the word in capitals to form a word that fits in the gap. There is an example at the beginning (0).</p>
+          <div class="gaptext" id="wfText1"></div>
+          <button class="btn btn-primary btn-sm" data-check="wfText1">Check answers</button>
+          <p class="result-line" id="wfText1-result"></p>
+        </div>
+        <div class="block wide">
+          <h3>Slow down and live longer</h3>
+          <p class="instr">Use the word in capitals to form a word that fits in the gap.</p>
+          <div class="gaptext" id="wfText2"></div>
+          <button class="btn btn-primary btn-sm" data-check="wfText2">Check answers</button>
+          <p class="result-line" id="wfText2-result"></p>
+        </div>
+        <div class="tip">Before you write, ask yourself: what kind of word goes here (noun, adjective, verb, adverb)? Is it positive or negative? Singular or plural? Then check your spelling, because a misspelt word scores zero.</div>
+      </div>
+
+      <div class="mode-pane" data-mode="wf-inged">
+        <div class="block">
+          <h3>-ing or -ed adjectives?</h3>
+          <div class="margin-note">
+            <p><strong>-ed</strong> adjectives describe how we feel: <em>I'm tired after the journey.</em><br><strong>-ing</strong> adjectives describe the thing or person that causes the feeling: <em>The journey was very tiring.</em></p>
+          </div>
+          <div id="ingEdList"></div>
+        </div>
+      </div>
+
+      <div class="mode-pane" data-mode="wf-list">
+        <input class="search" type="search" id="wfSearch" placeholder="Search for a word" aria-label="Search the word formation list">
+        <div id="wfList"></div>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer class="rf-footer">
+  Content based on <em>Ready for First</em> (Macmillan Education): Unit 1 · Lifestyle, and the book's phrasal verbs and word formation lists. For study use by IG English School students.
+</footer>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ---------------- helpers ---------------- */
+  function el(tag, cls, html){
+    var e = document.createElement(tag);
+    if(cls) e.className = cls;
+    if(html !== undefined) e.innerHTML = html;
+    return e;
+  }
+  function norm(s){ return (s||"").trim().toLowerCase().replace(/[’‘]/g,"'").replace(/\s+/g," ").replace(/[.!?]+$/,""); }
+  function shuffle(a){
+    a = a.slice();
+    for(var i = a.length - 1; i > 0; i--){ var j = Math.floor(Math.random() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; }
+    return a;
+  }
+  function store(key, fallback){ try{ var v = localStorage.getItem(key); return v ? JSON.parse(v) : fallback; }catch(e){ return fallback; } }
+  function save(key, val){ try{ localStorage.setItem(key, JSON.stringify(val)); }catch(e){} }
+
+  /* ---------------- Unit 1 progress ---------------- */
+  var PROGRESS_KEY = "rff_progress_v1";
+  var UNIT1_IDS = ["voc-lifestyle","voc-clothes","voc-get-meaning","voc-get-phrasal","voc-get-endings",
+    "gram-adverb-position","gram-adverb-fix","gram-used-would","gram-used-would-paragraph","gram-usedto-concept","gram-usedto-gapfill","gram-review-gapfill",
+    "rue-part7","rue-part7-phrasal","rue-part1","rue-part2","rue-part4","writing-linking","listening-part1"];
+  function markDone(id, ratio){
+    if(!id) return;
+    var p = store(PROGRESS_KEY, {});
+    p[id] = ratio;
+    save(PROGRESS_KEY, p);
+    updateProgressBar();
+  }
+  function updateProgressBar(){
+    var p = store(PROGRESS_KEY, {});
+    var done = UNIT1_IDS.filter(function(id){ return id in p; }).length;
+    var pct = Math.round(done / UNIT1_IDS.length * 100);
+    document.getElementById("progressNum").textContent = pct + "%";
+    document.getElementById("progressBar").style.width = pct + "%";
+  }
+
+  /* ---------------- views (rail) ---------------- */
+  var VIEW_HASH = {unit1:"", phrasal:"#phrasal-verbs", wf:"#word-formation"};
+  var viewInit = {};
+  function showView(v, keepScroll){
+    document.querySelectorAll(".view").forEach(function(x){ x.classList.toggle("active", x.dataset.view === v); });
+    document.querySelectorAll(".unit-item[data-view]").forEach(function(b){ b.classList.toggle("active", b.dataset.view === v); });
+    if(history.replaceState) history.replaceState(null, "", location.pathname + location.search + VIEW_HASH[v]);
+    if(!viewInit[v]){
+      viewInit[v] = true;
+      if(v === "phrasal") initPhrasal();
+      if(v === "wf") initWordFormation();
+    }
+    if(!keepScroll) window.scrollTo({top:0, behavior:"smooth"});
+  }
+  document.querySelectorAll(".unit-item[data-view]").forEach(function(b){
+    b.addEventListener("click", function(){ showView(b.dataset.view); });
+  });
+
+  /* ---------------- unit tabs ---------------- */
+  document.querySelectorAll(".tab-btn").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      document.querySelectorAll(".tab-btn").forEach(function(b){ b.classList.toggle("active", b === btn); });
+      document.querySelectorAll(".page").forEach(function(p){ p.classList.toggle("active", p.dataset.tab === btn.dataset.tab); });
+    });
+  });
+
+  /* ---------------- segmented modes ---------------- */
+  var modeHooks = {};
+  document.querySelectorAll(".seg").forEach(function(seg){
+    var view = seg.closest(".view");
+    seg.querySelectorAll(".seg-btn").forEach(function(btn){
+      btn.addEventListener("click", function(){
+        seg.querySelectorAll(".seg-btn").forEach(function(b){ b.classList.toggle("active", b === btn); });
+        view.querySelectorAll(".mode-pane").forEach(function(p){ p.classList.toggle("active", p.dataset.mode === btn.dataset.mode); });
+        if(modeHooks[btn.dataset.mode]) modeHooks[btn.dataset.mode]();
+      });
+    });
+  });
+
+  /* ---------------- MCQ builder ---------------- */
+  function buildChoice(container, qtextHTML, options, correctIndex, note, exId){
+    var wrap = el("div","qitem");
+    wrap.appendChild(el("p","qtext",qtextHTML));
+    var grp = el("div","choice-group");
+    var noteEl = note ? el("p","qnote", note) : null;
+    var answered = false;
+    options.forEach(function(opt, i){
+      var b = el("button","choice-btn", opt);
+      b.type = "button";
+      b.addEventListener("click", function(){
+        if(answered) return;
+        answered = true;
+        Array.prototype.forEach.call(grp.children, function(c, ci){
+          c.disabled = true;
+          if(ci === correctIndex) c.classList.add(ci === i ? "is-correct" : "is-reveal");
+        });
+        if(i !== correctIndex) b.classList.add("is-wrong");
+        if(noteEl) noteEl.classList.add("show");
+        markDone(exId, 1);
+      });
+      grp.appendChild(b);
+    });
+    wrap.appendChild(grp);
+    if(noteEl) wrap.appendChild(noteEl);
+    container.appendChild(wrap);
+  }
+
+  /* ---------------- gap-fill builder ---------------- */
+  // segments: {text} (HTML allowed) or {gap:true, answers:[...], key:"WORD"}
+  function buildGapText(container, segments){
+    segments.forEach(function(seg){
+      if(seg.gap){
+        var inp = document.createElement("input");
+        inp.type = "text";
+        inp.className = "gap";
+        inp.autocomplete = "off";
+        inp.spellcheck = false;
+        inp.dataset.answers = seg.answers.join("|");
+        var longest = Math.max.apply(null, seg.answers.map(function(a){ return a.length; }));
+        inp.style.width = (longest > 12 ? 24 : 11) + "ch";
+        inp.setAttribute("aria-label", seg.key ? "Gap: form a word from " + seg.key : "Gap");
+        container.appendChild(inp);
+        if(seg.key) container.appendChild(el("span","keyword", seg.key));
+      } else {
+        container.appendChild(el("span", null, seg.text));
+      }
+    });
+  }
+  function checkGaps(container, exId){
+    var inputs = container.querySelectorAll(".gap");
+    var correct = 0;
+    inputs.forEach(function(inp){
+      var accepted = inp.dataset.answers.split("|");
+      var ok = accepted.map(norm).indexOf(norm(inp.value)) !== -1;
+      inp.classList.remove("ok","bad");
+      inp.classList.add(ok ? "ok" : "bad");
+      var after = inp.nextElementSibling;
+      if(after && after.classList.contains("keyword")) after = after.nextElementSibling;
+      var fix = after && after.classList.contains("gap-fix") ? after : null;
+      if(ok){ correct++; if(fix) fix.remove(); }
+      else if(!fix){
+        var f = el("span","gap-fix", accepted[0]);
+        var anchor = inp.nextElementSibling && inp.nextElementSibling.classList.contains("keyword") ? inp.nextElementSibling : inp;
+        anchor.after(f);
+      }
+    });
+    return {correct:correct, total:inputs.length};
+  }
+  function showResult(id, r){
+    var resultEl = document.getElementById(id + "-result");
+    if(!resultEl) return;
+    var msg = r.correct + " of " + r.total + " correct";
+    if(r.correct < r.total) msg += ". Correct answers are shown in green — try the others again.";
+    resultEl.textContent = msg;
+    resultEl.classList.add("show");
+  }
+  document.addEventListener("click", function(e){
+    var btn = e.target.closest("[data-check]");
+    if(!btn) return;
+    var id = btn.dataset.check;
+    var container = document.getElementById(id);
+    var block = btn.closest(".block");
+    var exId = block ? block.dataset.ex : null;
+    var r = container.querySelector(".gap") ? checkGaps(container) : checkMatches(container);
+    showResult(id, r);
+    markDone(exId, r.correct / r.total);
+  });
+
+  /* ---------------- matching builder ---------------- */
+  function buildMatching(container, rows, options){
+    rows.forEach(function(row){
+      var r = el("div","match-row");
+      r.appendChild(el("span","lft", row.left));
+      var sel = document.createElement("select");
+      sel.className = "match-select";
+      sel.dataset.answer = row.answer;
+      sel.setAttribute("aria-label", "Match for " + row.left.replace(/<[^>]+>/g,""));
+      sel.appendChild(new Option("Choose...", ""));
+      options.forEach(function(opt){ sel.appendChild(new Option(opt.label, opt.key)); });
+      r.appendChild(sel);
+      container.appendChild(r);
+    });
+  }
+  function checkMatches(container){
+    var sels = container.querySelectorAll(".match-select");
+    var correct = 0;
+    sels.forEach(function(s){
+      var ok = s.value === s.dataset.answer;
+      s.classList.remove("ok","bad");
+      s.classList.add(ok ? "ok" : "bad");
+      if(ok) correct++;
+    });
+    return {correct:correct, total:sels.length};
+  }
+
+  /* =================================================================
+     UNIT 1 · VOCABULARY
+  ================================================================= */
+  var lifestyleWords = [
+    ["active","involves a lot of movement or exercise"],
+    ["alternative","different from the usual or conventional way of living"],
+    ["busy","full of things to do, with little free time"],
+    ["chaotic","disorganised and unpredictable"],
+    ["comfortable","easy and pleasant, without hardship"],
+    ["healthy","good for your body and mind"],
+    ["luxurious","very comfortable and expensive"],
+    ["outdoor","happens outside rather than indoors"],
+    ["relaxed","calm and free from stress"],
+    ["sedentary","involves a lot of sitting down and little exercise"],
+    ["simple","uncomplicated, with few possessions or worries"],
+    ["stressful","causes a lot of worry and pressure"]
+  ];
+  var vocGrid = document.getElementById("vocLifestyleCards");
+  lifestyleWords.forEach(function(pair){
+    var c = el("button","vcard");
+    c.type = "button";
+    c.appendChild(el("span","w", pair[0]));
+    c.appendChild(el("span","d", pair[1]));
+    c.addEventListener("click", function(){
+      c.classList.toggle("flip");
+      if(vocGrid.querySelectorAll(".vcard.flip").length === lifestyleWords.length) markDone("voc-lifestyle", 1);
+    });
+    vocGrid.appendChild(c);
+  });
+
+  buildGapText(document.getElementById("gapClothes"), [
+    {text:"1. Charlie bought a great <b>second-hand</b> designer sweatshirt in Vintage Gear – it looks "},
+    {gap:true, answers:["brand new","brand-new"]},
+    {text:".\n2. Haven't you got a more <b>formal</b> jacket? That one's a little too "},
+    {gap:true, answers:["casual"]},
+    {text:" for the wedding.\n3. My sister prefers <b>tight-fitting</b> tops and jeans, whereas I like everything to be really "},
+    {gap:true, answers:["baggy"]},
+    {text:".\n4. Clothes that are considered <b>trendy</b> and worn by everyone one year are often "},
+    {gap:true, answers:["unfashionable"]},
+    {text:" and too embarrassing to be seen in the next.\n5. She wore a <b>plain</b> grey dress to the awards ceremony. We expected to see her in something far more "},
+    {gap:true, answers:["colourful"]},
+    {text:".\n6. As a farmer, I don't have many <b>smart</b> clothes; I spend most of my time in jeans and an old "},
+    {gap:true, answers:["scruffy"]},
+    {text:" T-shirt."}
+  ]);
+
+  var MEANINGS = ["arrive at","become","buy","have the opportunity to","obtain","remove from"];
+  [
+    ["I <em>get</em> most of what I wear from charity shops.", "buy"],
+    ["You <em>get</em> to support good causes.", "have the opportunity to"],
+    ["I <em>get</em> suspicious when I see that everything on sale is incredibly cheap.", "become"],
+    ["I usually <em>get</em> that kind of information online.", "obtain"],
+    ["I can <em>get</em> something out of the wardrobe and any feelings of insecurity will just disappear.", "remove from"],
+    ["When I <em>get</em> to work and someone says, 'Hey, that shirt really suits you', it gives me a real lift.", "arrive at"]
+  ].forEach(function(item){
+    buildChoice(document.getElementById("getMeaningList"), item[0], MEANINGS, MEANINGS.indexOf(item[1]), null, "voc-get-meaning");
+  });
+
+  [
+    ["That jumper looks so scruffy. When are you going to get ___ of it?", ["away","along","lost","rid"], 3, "<strong>get rid of</strong> = throw away or remove something you don't want"],
+    ["Here's my phone number in case you need to get in ___ with me.", ["talk","speak","touch","tact"], 2, "<strong>get in touch with</strong> = contact"],
+    ["He was a lovely man – a pity you never got the ___ to meet him.", ["way","event","ability","chance"], 3, "<strong>get the chance</strong> = have the opportunity"],
+    ["I asked Emma how much she got ___, but she refused to tell me.", ["paid","earned","money","salary"], 0, "<strong>get paid</strong> = receive money for work (get + past participle)"],
+    ["Come on, hurry up and get ___! Your bus leaves in five minutes.", ["moved","ready","ordered","fit"], 1, "<strong>get ready</strong> = prepare yourself"],
+    ["Paul's parents are worried about him. He's always getting into ___ at school.", ["problem","trouble","punishment","damage"], 1, "<strong>get into trouble</strong> = do something that gets you punished"],
+    ["Amy was upset when her sister moved out, but she got ___ it eventually.", ["out","off","by","over"], 3, "<strong>get over</strong> = recover from"],
+    ["I can't speak French, but I always manage to get ___ with a dictionary and a few gestures.", ["across","through","by","over"], 2, "<strong>get by</strong> = manage with what you have"],
+    ["We got ___ in a traffic jam and missed the beginning of the concert.", ["stuck","held","kept","halted"], 0, "<strong>get stuck</strong> = be unable to move"]
+  ].forEach(function(item){
+    buildChoice(document.getElementById("getPhrasalList"), item[0], item[1], item[2], item[3], "voc-get-phrasal");
+  });
+
+  buildMatching(document.getElementById("getEndingsList"), [
+    {left:"1. Please do not hesitate to get", answer:"c"},
+    {left:"2. Come in. I have to finish getting", answer:"a"},
+    {left:"3. I want to change jobs. I don't get", answer:"e"},
+    {left:"4. I'm sorry I'm so late. My bus got", answer:"f"},
+    {left:"5. I don't own a car; I can easily get", answer:"g"},
+    {left:"6. When we lived in Australia, I got", answer:"b"},
+    {left:"7. I enjoyed the party once I had got", answer:"d"}
+  ], [
+    {key:"a", label:"ready. I won't keep you waiting long."},
+    {key:"b", label:"the chance to go diving on a coral reef there."},
+    {key:"c", label:"in touch with our sales team if you have any questions."},
+    {key:"d", label:"over my shyness and talked to a few people."},
+    {key:"e", label:"paid enough for the work I do here."},
+    {key:"f", label:"stuck in the snow and I had to walk."},
+    {key:"g", label:"by without one. I just use public transport."}
+  ]);
+
+  /* =================================================================
+     UNIT 1 · GRAMMAR
+  ================================================================= */
+  buildChoice(document.getElementById("advPositionQ"),
+    "Which pair of adverbs can naturally start this sentence? <em>\"___ I get out of bed around midday.\"</em>",
+    ["Normally / Sometimes","Always / Never"], 0,
+    "<em>Normally</em> and <em>Sometimes</em> can start a sentence. <em>Always</em> and <em>Never</em> sound wrong in that position (or need inversion: <em>Never do I...</em>), so put them before the main verb instead.",
+    "gram-adverb-position");
+  buildChoice(document.getElementById("advPositionQ"),
+    "<em>\"Now I'm fully qualified, I ___ the advanced classes.\"</em> Which option is grammatically wrong?",
+    ["tend to get","use to get","usually get"], 1,
+    "<em>use to get</em> is wrong. The correct form is <em>used to get</em>, but that refers to the past, which doesn't fit with <em>Now</em>. <em>Tend to get</em> and <em>usually get</em> are both fine.",
+    "gram-adverb-position");
+
+  [
+    ["I rarely go out on weekday evenings.", true, ""],
+    ["I have usually my dinner in front of the television.", false, "I usually have my dinner in front of the television."],
+    ["Never I spend more than ten minutes doing my English homework.", false, "I never spend more than ten minutes doing my English homework."],
+    ["Someone is always telling me what to do and what not to do – it gets on my nerves.", true, ""],
+    ["Hardly I ever play games on my phone – it hurts my eyes.", false, "I hardly ever play games on my phone."],
+    ["It's rare for me to go to bed before midnight and quite often I'll stay up until two in the morning.", true, ""]
+  ].forEach(function(item){
+    var note = item[1] ? "This sentence is correct." : "Correction: <strong>" + item[2] + "</strong>";
+    buildChoice(document.getElementById("advFixList"), item[0], ["Correct","Incorrect"], item[1] ? 0 : 1, note, "gram-adverb-fix");
+  });
+
+  buildChoice(document.getElementById("usedWouldQ"),
+    "<em>\"As a child, I would tell everyone that when I grew up, I wanted to climb Everest.\"</em> Could we use <em>used to</em> instead of <em>would</em> here?",
+    ["Yes, both work: tell is a repeated action","No, it would change the meaning"], 0, null, "gram-used-would");
+  buildChoice(document.getElementById("usedWouldQ"),
+    "<em>\"I used to have a dog.\"</em> Could we use <em>would</em> instead of <em>used to</em> here?",
+    ["Yes, both work","No: have is a state, and would doesn't work with states"], 1, null, "gram-used-would");
+
+  document.getElementById("paragraphText").innerHTML =
+    "<p>When my brother and I were little, my mum (1) <u>had</u> an executive position in a pharmaceutical company. " +
+    "She often (2) <u>worked</u> long hours and sometimes (3) <u>went away</u> on business trips for two or three days at a time. " +
+    "Our dear old gran (4) <u>looked after</u> us on those occasions, but it wasn't the same as having a mum around. " +
+    "We (5) <u>didn't like</u> her being away from home, but we never once (6) <u>said</u> anything, because we always (7) <u>thought</u> she was happy in her work.</p>" +
+    "<p>Then one day she (8) <u>announced</u> she was giving up her job to spend more time with her family. My brother and I (9) <u>were</u> delighted at the change in lifestyle, " +
+    "but I'm not sure about my mum: she often (10) <u>said</u> afterwards that being a full-time mother was harder than being a business executive!</p>";
+  [
+    [1,"had","b","a state (have = hold a position)"],
+    [2,"worked","a","a repeated action (often)"],
+    [3,"went away","a","a repeated action (sometimes)"],
+    [4,"looked after","a","a repeated action on those occasions"],
+    [5,"didn't like","b","a state (like)"],
+    [6,"said","c","\"never once\" refers to a single moment, not a habit"],
+    [7,"thought","b","a mental state (think = believe)"],
+    [8,"announced","c","\"one day\" = a single event, not a habit"],
+    [9,"were","b","a state (be)"],
+    [10,"said","a","a repeated action (often)"]
+  ].forEach(function(item){
+    buildChoice(document.getElementById("paragraphQ"),
+      "(" + item[0] + ") <em>" + item[1] + "</em>",
+      ["(a) used to and would","(b) only used to","(c) neither"],
+      {a:0,b:1,c:2}[item[2]], "It's " + item[3] + ".", "gram-used-would-paragraph");
+  });
+
+  buildChoice(document.getElementById("usedToConceptQ"),
+    "<em>\"On my travels I've had to get used to eating all kinds of strange dishes.\"</em> This describes...",
+    ["a process of becoming accustomed (a change)","a repeated action in the past","being accustomed already (no change)"], 0, null, "gram-usedto-concept");
+  buildChoice(document.getElementById("usedToConceptQ"),
+    "<em>\"I'm not used to being with people who take so much care over what they wear.\"</em> This describes...",
+    ["a process of change","a repeated action in the past","a state: (not) accustomed"], 2, null, "gram-usedto-concept");
+  buildChoice(document.getElementById("usedToConceptQ"),
+    "<em>\"If I was offered something I knew I wouldn't like, I used to cover it in lemon and salt.\"</em> This describes...",
+    ["being accustomed to something","a past habit that has stopped","a process of change"], 1, null, "gram-usedto-concept");
+  buildChoice(document.getElementById("usedToConceptQ"),
+    "Which verb form follows <em>be used to</em> and <em>get used to</em>?",
+    ["infinitive (to do)","-ing form (doing)","base form (do)"], 1, null, "gram-usedto-concept");
+
+  buildGapText(document.getElementById("gapUsedTo"), [
+    {text:"1. When she moved to Canada, it took her months to "},
+    {gap:true, answers:["get used to"]},
+    {text:" driving on icy roads.\n2. My grandfather "},
+    {gap:true, answers:["used to","would"]},
+    {text:" walk five kilometres to school every day when he was young.\n3. After ten years in the job, I'm completely "},
+    {gap:true, answers:["used to"]},
+    {text:" working night shifts.\n4. It was strange at first, but I've finally "},
+    {gap:true, answers:["got used to","gotten used to"]},
+    {text:" eating dinner so late."}
+  ]);
+
+  buildGapText(document.getElementById("gapReview"), [
+    {text:"1. My grandad's got a car, but he "},
+    {gap:true, answers:["hardly"]},
+    {text:" ever uses it. He'll only drive in good weather.\n2. We "},
+    {gap:true, answers:["usually"]},
+    {text:" play football on Sunday morning, but this week's game is in the afternoon.\n3. This nocturnal bird is "},
+    {gap:true, answers:["not"]},
+    {text:" often seen in daylight, so these early-morning images are a rare treat.\n4. It's not "},
+    {gap:true, answers:["usual"]},
+    {text:" for students to bring sandwiches; most eat in the school canteen.\n5. I "},
+    {gap:true, answers:["almost"]},
+    {text:" never eat breakfast before school.\n6. We "},
+    {gap:true, answers:["tend"]},
+    {text:" not to go abroad on holiday; there are so many places to visit here in this country.\n7. When I was at school, I "},
+    {gap:true, answers:["would"]},
+    {text:" often get into trouble for talking during lessons.\n8. Where did your mum "},
+    {gap:true, answers:["use"]},
+    {text:" to work before she retired?"}
+  ]);
+
+  /* =================================================================
+     UNIT 1 · READING & USE OF ENGLISH
+  ================================================================= */
+  document.getElementById("part7Passage").innerHTML =
+    '<p><span class="who">A · Lucas Martín, television and stage actor</span>Normally I get out of bed around midday. I\'ll sometimes go for a run after I get up, though it\'s not really my idea of fun. I\'m not a fitness fan, but I realise it\'s important. When I\'m not rehearsing or on tour, afternoons generally involve reading scripts or learning lines. My flatmates are also actors, so at home there are usually scripts lying all over the place. It\'s a bit of a mess, I\'m ashamed to say. I\'m passionate about history, and if I\'m working away from home, I\'ll often spend the afternoon in a museum. I sometimes lose track of time, and I once turned up late for a play I was in. I felt terrible, so now I always get to the theatre early. After a performance I eat and spend a few hours unwinding, so bedtime is often one or two in the morning. I\'m normally out like a light as soon as my head hits the pillow.</p>' +
+    '<p><span class="who">B · Maja Andersson, ski and snowboard instructor</span>I generally spend six months in Europe and six in New Zealand. Wherever I am, I love the fact that I usually live just a short walk from the slopes, so I can get up reasonably late and still have time for a decent breakfast before setting off for work. When I started out eight years ago, I used to teach groups of young kids. Now I\'m fully qualified, I tend to get the advanced classes, which I find more interesting. We get plenty of days off and when I\'m not working, I go skiing by myself, or catch up on my sleep. I love the lifestyle, but I\'m not sure I can carry on doing this for much longer. It might be time to settle down and get a more normal job, something steady and secure. I haven\'t made up my mind yet, though.</p>' +
+    '<p><span class="who">C · Reo Tanaka, farm vet</span>I used to have a dog and we\'d go running together most mornings, but I gave him to my mum in the end. I tend to be out all day, visiting farms, and it wasn\'t fair to leave him alone. So now I don\'t get as much exercise as I\'d like to. I love my job, especially the variety and not knowing what you\'ll be doing from one day to the next. But being a vet is not what most people think. It\'s not all cuddly lambs and cute little calves. We have to do some pretty unpleasant things sometimes, things which might put some people off working with animals for life. My mum wants to know when I\'m going to find someone to settle down with, but it\'s not as if I have loads of free time to go looking.</p>' +
+    '<p><span class="who">D · Ben Adams, mountaineer and wind turbine technician</span>As a child, I would tell everyone that when I grew up, I wanted to climb Everest. I\'ve actually climbed it three times now. And when I\'m not on a mountain, you might come across me hanging on a rope from a wind turbine, carrying out repairs to damaged blades at heights of up to 100 metres. That\'s how I make a living and pay for my climbing trips. It\'s a fairly unconventional way of life, and not one I\'d actively encourage others to adopt – there\'s a lot of danger involved – but it works for me. It\'s precisely that sense of danger that makes me feel alive.</p>';
+
+  [
+    ["admits to having an untidy house?","A"],
+    ["would not recommend their lifestyle to other people?","D"],
+    ["likes the unpredictable nature of their work?","C"],
+    ["is not particularly keen on taking exercise?","A"],
+    ["has a lot of free time?","B"],
+    ["has achieved an early ambition?","D"],
+    ["usually has no trouble getting to sleep at night?","A"],
+    ["does not normally have to go far to get to their place of work?","B"],
+    ["says that people have the wrong idea about their work?","C"],
+    ["is considering introducing more stability into their life?","B"]
+  ].forEach(function(item, idx){
+    buildChoice(document.getElementById("part7Questions"), (idx+1) + ". Which person " + item[0], ["A","B","C","D"], "ABCD".indexOf(item[1]), null, "rue-part7");
+  });
+
+  buildMatching(document.getElementById("phrasalMatchList"), [
+    {left:"turn up (A)", answer:"arrive"},
+    {left:"set off (B)", answer:"leave"},
+    {left:"catch up on (B)", answer:"catch"},
+    {left:"carry on (B)", answer:"continue"},
+    {left:"make up my mind (B)", answer:"decide"},
+    {left:"settle down (B)", answer:"settle"},
+    {left:"put off (C)", answer:"discourage"},
+    {left:"grow up (D)", answer:"grow"},
+    {left:"come across (D)", answer:"chance"},
+    {left:"carry out (D)", answer:"perform"}
+  ], [
+    {key:"arrive", label:"arrive"},
+    {key:"leave", label:"start a journey"},
+    {key:"catch", label:"do something you didn't have time for before"},
+    {key:"continue", label:"continue"},
+    {key:"decide", label:"decide"},
+    {key:"settle", label:"start a quieter, more stable life"},
+    {key:"discourage", label:"make someone not want to do something"},
+    {key:"grow", label:"become an adult"},
+    {key:"chance", label:"find or meet by chance"},
+    {key:"perform", label:"do a piece of work"}
+  ]);
+
+  document.getElementById("part1Passage").innerHTML =
+    '<p>A growing number of school-going teenagers are using the internet to <strong>(0) boost</strong> their pocket money by selling clothes and accessories online. One shopping app has over seven million users worldwide, <strong>(1) ______</strong> many enterprising under-18s who have decided they would <strong>(2) ______</strong> work for themselves than look for a part-time job in a shop or restaurant.</p>' +
+    '<p>Sixteen-year-old Eva Laidlaw, who has <strong>(3) ______</strong> up in a family of successful business people, buys second-hand garments then sells them via the app, more <strong>(4) ______</strong> than not, at a decent profit. \'I get most of my clothes from charity shops and car boot sales,\' she says. \'You can <strong>(5) ______</strong> across good quality items if you\'re <strong>(6) ______</strong> to spend the time looking.\'</p>' +
+    '<p>Katie Simmons is another young entrepreneur. <strong>(7) ______</strong> on holiday in Tuscany three years ago, she discovered that clothes sold in the markets there were extremely cheap. So, every two months, Katie, now eighteen, <strong>(8) ______</strong> for Italy and hunts for items she thinks will sell easily at home. \'I had intended to go to uni,\' says Katie, \'but now I have a business to run.\'</p>';
+  [
+    [["containing","consisting","including","introducing"], 2],
+    [["better","prefer","like","rather"], 3],
+    [["turned","grown","brought","raised"], 1],
+    [["often","ever","always","sometimes"], 0],
+    [["get","find","come","take"], 2],
+    [["prepared","disposed","organised","equipped"], 0],
+    [["Whereas","Whenever","While","Whether"], 2],
+    [["goes away","sets off","carries on","catches up"], 1]
+  ].forEach(function(item, idx){
+    var opts = item[0].map(function(w, i){ return "<b>" + "ABCD"[i] + "</b>" + w; });
+    buildChoice(document.getElementById("part1Questions"), "Gap " + (idx+1), opts, item[1], null, "rue-part1");
+  });
+
+  buildGapText(document.getElementById("part2Text"), [
+    {text:"In his book <i>The Blue Zones</i>, journalist and best-selling author Dan Buettner identifies five regions in five different countries where people are thought to live longer and better "},
+    {gap:true, answers:["than"]},
+    {text:" anywhere else. The so-called blue zones are Okinawa in Japan, Loma Linda in California, the Greek island of Ikaria, the Nicoya Peninsula in Costa Rica and the Barbagia region of Sardinia, "},
+    {gap:true, answers:["which"]},
+    {text:" has the distinction of having the highest concentration of male centenarians "},
+    {gap:true, answers:["in"]},
+    {text:" the world.\n\nThese five regions share a number of specific lifestyle habits. Inhabitants tend to grow "},
+    {gap:true, answers:["their"]},
+    {text:" own herbs and vegetables, which keeps them active and moving around naturally. They eat a mainly plant-based diet, especially beans, "},
+    {gap:true, answers:["such"]},
+    {text:" as fava, soy and lentils, and meat is consumed on average only five times "},
+    {gap:true, answers:["a","per"]},
+    {text:" month.\n\nLoved ones come first, and people in blue zones "},
+    {gap:true, answers:["take"]},
+    {text:" good care of ageing parents and grandparents, who live with younger family members, or at least nearby. Older people remain healthier and it is less common "},
+    {gap:true, answers:["for"]},
+    {text:" them to suffer heart disease and other illnesses associated with old age."}
+  ]);
+
+  var part4List = document.getElementById("part4List");
+  [
+    {orig:"Why don't you throw away that old coat?", key:"RID", stem:"How about", tail:"that old coat?", answers:["getting rid of"]},
+    {orig:"I still find it strange to wear glasses.", key:"USED", stem:"I still haven't", tail:"glasses.", answers:["got used to wearing","gotten used to wearing"]},
+    {orig:"He never asks when he borrows my things!", key:"ALWAYS", stem:"He is", tail:"asking!", answers:["always borrowing my things without"]},
+    {orig:"Simon doesn't usually drink coffee.", key:"UNUSUAL", stem:"It", tail:"drink coffee.", answers:["is unusual for Simon to","'s unusual for Simon to"]},
+    {orig:"Helen is not usually so pessimistic.", key:"LIKE", stem:"It is", tail:"so pessimistic.", answers:["not like Helen to be"]},
+    {orig:"I can't wait to see you again.", key:"FORWARD", stem:"I'm really", tail:"you again.", answers:["looking forward to seeing"]}
+  ].forEach(function(item, idx){
+    var wrap = el("div","qitem");
+    wrap.appendChild(el("p","qtext", (idx+1) + ". " + item.orig + " <span class=\"keyword\">" + item.key + "</span>"));
+    var gt = el("p","gaptext");
+    buildGapText(gt, [{text: item.stem + " "}, {gap:true, answers:item.answers}, {text: " " + item.tail}]);
+    wrap.appendChild(gt);
+    part4List.appendChild(wrap);
+  });
+  var part4Btn = el("button","btn btn-primary btn-sm","Check answers");
+  part4Btn.dataset.check = "part4List";
+  part4List.after(part4Btn);
+  var part4Result = el("p","result-line");
+  part4Result.id = "part4List-result";
+  part4Btn.after(part4Result);
+
+  /* =================================================================
+     UNIT 1 · WRITING
+  ================================================================= */
+  buildGapText(document.getElementById("letterGaps"), [
+    {text:"Dear Paula\n\nIt was great to hear from you. You've certainly got a difficult choice to make. I know how much you love skiing and I'm sure you'd be a brilliant teacher, "},
+    {gap:true, answers:["but"]},
+    {text:" maybe you should think more carefully about your future.\n\nThe good thing about being a ski instructor is that you could have an exciting lifestyle, working in different countries, meeting lots of interesting people and doing something you really enjoy. The trouble is, though, it's not very well-paid work, and the career prospects are not fantastic "},
+    {gap:true, answers:["either"]},
+    {text:" – you might still be in the same job in twenty years' time.\n\n"},
+    {gap:true, answers:["on the other hand"]},
+    {text:", if you go to university, you'll have more chance of getting a decent job later. It'll be great fun "},
+    {gap:true, answers:["as well"]},
+    {text:", especially if you choose a university in a different town and live away from home.\n\n"},
+    {gap:true, answers:["so"]},
+    {text:", if I were you, I'd do what your parents suggest and study for a degree. You could always work in a ski resort in the holidays – students get really long breaks!\n\n"},
+    {gap:true, answers:["anyway"]},
+    {text:", good luck and let me know what you decide. Looking forward to hearing from you.\n\nAll the best,\nHugo"}
+  ]);
+
+  function wireWordCounter(taId, counterId, min, max){
+    var ta = document.getElementById(taId);
+    var counter = document.getElementById(counterId);
+    ta.addEventListener("input", function(){
+      var words = ta.value.trim() ? ta.value.trim().split(/\s+/).length : 0;
+      counter.textContent = words + (words === 1 ? " word" : " words") + " (target: " + min + "–" + max + ")";
+      counter.classList.remove("in-range","out-range");
+      if(words) counter.classList.add(words >= min && words <= max ? "in-range" : "out-range");
+    });
+  }
+  wireWordCounter("letterFree","letterFreeCounter",140,190);
+  wireWordCounter("articleFree","articleFreeCounter",140,190);
+
+  /* =================================================================
+     UNIT 1 · LISTENING
+  ================================================================= */
+  var predictHost = document.getElementById("listeningPredictList");
+  [
+    ["You hear two people talking about a friend of theirs.","What does the woman say about the friend?",
+      [["He talks a lot about his lifestyle.","He's always going on about the way he lives."],
+       ["He leads a comfortable lifestyle.","He's got everything he needs; he's very well off."],
+       ["He may change his lifestyle.","He's thinking of doing things differently; he might give it all up."]]],
+    ["You overhear a man talking to a friend on his phone.","Why is he phoning?",
+      [["to persuade his friend to do something","Come on, you'd love it. Why don't you come along?"],
+       ["to ask for some information","Do you happen to know what time it starts?"],
+       ["to change an arrangement","Can we make it Thursday instead? I can't make Friday."]]],
+    ["You hear a woman talking about her family's financial situation.","What is she going to do?",
+      [["ask someone to help her","I'll have to ask my brother if he can lend us something."],
+       ["try to sell something","We're going to put the car up on a website and see what we get."],
+       ["look for a new job","I'm going to start applying for other positions."]]],
+    ["You hear a man talking about his job.","Who is the man?",
+      [["a hotel manager","I'm responsible for all the staff and the budget."],
+       ["a hotel receptionist","I check guests in and answer the phone at the front desk."],
+       ["a hotel doorman","I stand at the entrance, carry bags and call taxis."]]],
+    ["You hear two people talking about the value of their time spent living abroad.","What do they agree about?",
+      [["It has helped them develop their personality.","It made me much more independent; I grew up a lot."],
+       ["It has made them appreciate their own country.","You don't realise what you've got at home until you leave."],
+       ["It has given them better job prospects.","Employers love seeing it on your CV."]]],
+    ["You hear a man talking on the radio.","What is he doing?",
+      [["reviewing a book","The author's latest novel is a real page-turner; I'd give it four stars."],
+       ["advertising a product","Available now in all good stores. Order yours today."],
+       ["reading a news report","Police said this morning that... Reports are coming in that..."]]],
+    ["You hear two people talking about the village they both live in.","What does the woman think of the village?",
+      [["People are not always very friendly.","People keep themselves to themselves; nobody says hello."],
+       ["Some of the roads are dangerous.","Cars come round that bend far too fast."],
+       ["There are not enough children.","The school might have to close; it's mostly retired people now."]]],
+    ["You hear a man talking about a country in which he once lived.","What surprised him about the people?",
+      [["the importance they give to clothes","Everyone dresses up, even just to go to the supermarket."],
+       ["the type of food they eat","They have dinner at eleven at night, and everything's so spicy."],
+       ["their attitude to work","Nobody stays late at the office; they take two-hour lunch breaks."]]]
+  ].forEach(function(q, idx){
+    var box = el("div","predict");
+    box.appendChild(el("p","situ", (idx+1) + ". " + q[0]));
+    box.appendChild(el("p","qq", q[1]));
+    var ol = el("ol");
+    ol.type = "A";
+    q[2].forEach(function(o){ ol.appendChild(el("li", null, o[0])); });
+    box.appendChild(ol);
+    var ideas = el("ol","ideas");
+    ideas.type = "A";
+    q[2].forEach(function(o){ ideas.appendChild(el("li", null, "You might hear: <span>\"" + o[1] + "\"</span>")); });
+    var btn = el("button","btn btn-ghost btn-sm","Show paraphrase ideas");
+    btn.type = "button";
+    btn.setAttribute("aria-expanded","false");
+    btn.addEventListener("click", function(){
+      var open = box.classList.toggle("open");
+      btn.textContent = open ? "Hide ideas" : "Show paraphrase ideas";
+      btn.setAttribute("aria-expanded", String(open));
+      markDone("listening-part1", 1);
+    });
+    box.appendChild(btn);
+    box.appendChild(ideas);
+    predictHost.appendChild(box);
+  });
+
+  buildChoice(document.getElementById("distractorQ"),
+    "The book warns that Speaker 1 mentions designer clothes, but that statement C (<em>I refuse to wear designer clothes</em>) may not be the answer. Why?",
+    ["Mentioning something is not the same as refusing it","The word designer never appears in the recording"], 0,
+    "Every extract usually contains at least one distractor: a word or idea from a wrong option. Hearing a word from an option doesn't confirm it; the whole idea has to match.",
+    null);
+
+  var p3 = document.getElementById("part3Predict");
+  p3.appendChild(el("p","qq","Now predict: how might each of the other statements sound?"));
+  var p3list = el("ol");
+  p3list.type = "A";
+  var p3ideas = el("ol","ideas");
+  p3ideas.type = "A";
+  [
+    ["I tend to wear the same clothes all the time.","(see the example above)"],
+    ["I don't really care what clothes I wear.","I just throw on whatever's clean."],
+    ["I refuse to wear designer clothes.","You'll never catch me paying extra for a label."],
+    ["I'm careful to check the origin of the clothes I buy.","I always look at where something was made, and who made it."],
+    ["I generally wear second-hand clothes.","Most of my wardrobe comes from charity shops."],
+    ["I only throw clothes away when absolutely necessary.","I wear things until they literally fall apart."],
+    ["I buy quality clothes that are guaranteed to last.","I'd rather pay more for something that won't wear out."],
+    ["I wear clothes that give me self-confidence.","When I put that jacket on, I feel I can do anything."]
+  ].forEach(function(s){
+    p3list.appendChild(el("li", null, s[0]));
+    p3ideas.appendChild(el("li", null, "You might hear: <span>\"" + s[1] + "\"</span>"));
+  });
+  p3.appendChild(p3list);
+  var p3btn = el("button","btn btn-ghost btn-sm","Show paraphrase ideas");
+  p3btn.type = "button";
+  p3btn.addEventListener("click", function(){
+    var open = p3.classList.toggle("open");
+    p3btn.textContent = open ? "Hide ideas" : "Show paraphrase ideas";
+  });
+  p3.appendChild(p3btn);
+  p3.appendChild(p3ideas);
+
+  /* =================================================================
+     UNIT 1 · SPEAKING
+  ================================================================= */
+  var speakingP1List = document.getElementById("speakingP1List");
+  [
+    "What do you usually do at the weekend?",
+    "Describe your morning routine before you go to school, college or work.",
+    "Do you ever meet up with your friends on weekday evenings?",
+    "What is your favourite day of the week? Why?",
+    "What did you do yesterday evening?"
+  ].forEach(function(q, idx){
+    var row = el("div","timer-box");
+    var clockId = "spClock" + idx;
+    row.innerHTML = '<span class="q">' + (idx+1) + '. ' + q + '</span><span class="clock" id="' + clockId + '">0:20</span>';
+    var b = el("button","btn btn-ghost btn-sm","Start");
+    b.dataset.timer = "20"; b.dataset.clock = clockId;
+    row.appendChild(b);
+    speakingP1List.appendChild(row);
+  });
+
+  var timerHandles = {};
+  function fmt(sec){ return Math.floor(sec/60) + ":" + (sec%60 < 10 ? "0" : "") + sec%60; }
+  document.addEventListener("click", function(e){
+    var b = e.target.closest("[data-timer]");
+    if(!b) return;
+    var key = b.dataset.clock, total = parseInt(b.dataset.timer, 10);
+    var clock = document.getElementById(key), box = b.closest(".timer-box");
+    if(timerHandles[key]){
+      clearInterval(timerHandles[key]); timerHandles[key] = null;
+      clock.textContent = fmt(total); b.textContent = "Start"; box.classList.remove("running");
+      return;
+    }
+    var remaining = total;
+    b.textContent = "Stop";
+    box.classList.add("running");
+    timerHandles[key] = setInterval(function(){
+      remaining--;
+      clock.textContent = fmt(remaining);
+      if(remaining <= 0){
+        clearInterval(timerHandles[key]); timerHandles[key] = null;
+        clock.textContent = "Time!";
+        b.textContent = "Start again";
+        box.classList.remove("running");
+      }
+    }, 1000);
+  });
+
+  document.getElementById("phraseToggleBtn").addEventListener("click", function(){
+    var open = document.getElementById("phraseBank").classList.toggle("show");
+    this.textContent = open ? "Hide useful language" : "Show useful language";
+    this.setAttribute("aria-expanded", String(open));
+  });
+
+
+  document.getElementById("resetBtn").addEventListener("click", function(){
+    if(confirm("Reset all your Unit 1 progress?")){
+      try{ localStorage.removeItem(PROGRESS_KEY); }catch(e){}
+      location.reload();
+    }
+  });
+
+  /* =================================================================
+     ROUND ENGINE (one question at a time)
+  ================================================================= */
+  // question: {type:"choice", prompt, options[], correct, explain} or {type:"type", prompt, accept[], explain, hint}
+  function Round(host, generator, onFinish){
+    var qs = [], i = 0, score = 0;
+    function start(){
+      qs = generator(); i = 0; score = 0;
+      if(!qs.length){ host.innerHTML = '<p class="empty">No items match these filters. Choose a different unit or verb.</p>'; return; }
+      show(false);
+    }
+    function show(focus){
+      var q = qs[i];
+      host.innerHTML = "";
+      var meta = el("p","round-meta");
+      function setMeta(){ meta.textContent = "Question " + (i+1) + " of " + qs.length + " · Score " + score; }
+      setMeta();
+      host.appendChild(meta);
+      var bar = el("div","round-bar","<i style=\"width:" + (i / qs.length * 100) + "%\"></i>");
+      host.appendChild(bar);
+      host.appendChild(el("div", null, q.prompt));
+      var fb = el("p","round-fb");
+      var next = el("button","btn btn-primary btn-sm", i + 1 < qs.length ? "Next question" : "See my score");
+      next.type = "button";
+      next.hidden = true;
+      next.addEventListener("click", function(){ i++; if(i < qs.length) show(true); else finish(); });
+      function done(ok){
+        if(ok) score++;
+        setMeta();
+        fb.innerHTML = (ok ? "<strong>Correct.</strong> " : "<strong>Not quite.</strong> ") + (q.explain || "");
+        fb.className = "round-fb show " + (ok ? "ok" : "bad");
+        next.hidden = false;
+        next.focus();
+      }
+      if(q.type === "choice"){
+        var grp = el("div","choice-group");
+        q.options.forEach(function(o, oi){
+          var b = el("button","choice-btn", o);
+          b.type = "button";
+          b.addEventListener("click", function(){
+            Array.prototype.forEach.call(grp.children, function(c, ci){
+              c.disabled = true;
+              if(ci === q.correct) c.classList.add(ci === oi ? "is-correct" : "is-reveal");
+            });
+            if(oi !== q.correct) b.classList.add("is-wrong");
+            done(oi === q.correct);
+          });
+          grp.appendChild(b);
+        });
+        host.appendChild(grp);
+        if(focus) grp.firstChild.focus();
+      } else {
+        var row = el("div","type-row");
+        var inp = document.createElement("input");
+        inp.type = "text"; inp.className = "type-input"; inp.autocomplete = "off"; inp.spellcheck = false;
+        inp.setAttribute("autocapitalize","off");
+        inp.setAttribute("aria-label","Your answer");
+        var chk = el("button","btn btn-primary btn-sm","Check");
+        chk.type = "button";
+        var hintBtn = el("button","btn btn-ghost btn-sm","Hint");
+        hintBtn.type = "button";
+        var hintP = el("p","round-hint");
+        hintBtn.addEventListener("click", function(){ hintP.innerHTML = q.hint; hintP.classList.add("show"); hintBtn.disabled = true; });
+        function check(){
+          if(!norm(inp.value)){ inp.focus(); return; }
+          var ok = q.accept.map(norm).indexOf(norm(inp.value)) !== -1;
+          inp.disabled = true; chk.disabled = true; hintBtn.disabled = true;
+          inp.classList.add(ok ? "ok" : "bad");
+          done(ok);
+        }
+        chk.addEventListener("click", check);
+        inp.addEventListener("keydown", function(e){ if(e.key === "Enter"){ e.preventDefault(); check(); } });
+        row.appendChild(inp); row.appendChild(chk);
+        if(q.hint) row.appendChild(hintBtn);
+        host.appendChild(row);
+        host.appendChild(hintP);
+        if(focus) inp.focus();
+      }
+      host.appendChild(fb);
+      host.appendChild(next);
+    }
+    function finish(){
+      host.innerHTML = "";
+      host.appendChild(el("p","round-meta","Round complete"));
+      host.appendChild(el("p","round-score", score + "/" + qs.length));
+      var ratio = score / qs.length;
+      var msg = ratio >= 0.9 ? "Excellent. You know these well." : ratio >= 0.6 ? "Good work. Another round will help fix the ones you missed." : "Keep going. Review the list or the flashcards, then try again.";
+      host.appendChild(el("p","round-msg", msg));
+      var again = el("button","btn btn-primary btn-sm","Start a new round");
+      again.type = "button";
+      again.addEventListener("click", function(){ start(); var f = host.querySelector("button, input"); if(f) f.focus(); });
+      host.appendChild(again);
+      if(onFinish) onFinish(score, qs.length);
+    }
+    return {start:start};
+  }
+
+  /* =================================================================
+     PHRASAL VERBS (whole book)
+  ================================================================= */
+  // [form with [particle], meaning, units, confusion group]
+  var PV_RAW = [
+    ["back something [up]","support an explanation","10"],
+    ["bolt something [down]","eat something very quickly","12"],
+    ["bring someone [up]","take care of a child until they become an adult","6"],
+    ["bring something [about]","cause","7"],
+    ["carry [on] (doing) something","continue","1/12","continue"],
+    ["carry [out] something","do some work or research","1/2/9"],
+    ["catch [on]","become popular or fashionable","7"],
+    ["catch [on]","begin to understand","8","understand"],
+    ["catch [up on] something","do something that you didn't do enough of before","1"],
+    ["cheer (someone) [up]","become or make (someone) less sad","6"],
+    ["come [across] something/someone","find or meet something/someone by chance","1/8"],
+    ["come [over]","visit someone in the place where they are, especially their house","10","visit"],
+    ["come [up with] something","think of (an idea or plan)","2/7/8"],
+    ["draw something [up]","prepare and write (a plan)","7"],
+    ["fall [out with] someone","stop being friendly with someone because you have had an argument","6"],
+    ["find something [out]","discover","2/7"],
+    ["get [about] (a place)","travel around","8"],
+    ["get [away with] something","manage to do something bad without being punished or criticised for it","10"],
+    ["get [by]","manage to survive or live","1"],
+    ["get [on with] someone","have a good relationship with someone","6"],
+    ["get [over] something","recover from","1/12"],
+    ["give [away] information","tell information that should be kept secret","9"],
+    ["give homework [in]","hand homework to the teacher","9"],
+    ["give [in] (to someone's requests)","agree to something after initial resistance","9"],
+    ["give oneself [up]","allow oneself to be arrested","9"],
+    ["give [out] (books/paper)","distribute something to several people","9","giveout"],
+    ["give [out] information","give information to a lot of people","9","giveout"],
+    ["give something [back]","return something","9","return"],
+    ["give something [up]","stop doing something you do regularly","2/5/6/9/12"],
+    ["go [in for] (a competition)","enter (a competition)","5"],
+    ["go [on]","happen","2/7"],
+    ["go [on] (with something)","continue","2","continue"],
+    ["go [round]","visit a person or place","10","visit"],
+    ["grow [up]","change from being a child to becoming an adult","1/6"],
+    ["gulp something [down]","drink something very quickly","12"],
+    ["head [for] somewhere","go somewhere","8","goto"],
+    ["hit it [off with] someone","like each other on the first meeting","RfR","like"],
+    ["kick someone [out]","force someone to leave a place or organisation; expel","10"],
+    ["let someone [down]","disappoint","6"],
+    ["look [forward to] something","feel happy about something that is going to happen","1/7/12"],
+    ["look [up to] someone","admire and respect","6"],
+    ["make something [up]","invent an explanation for something","10"],
+    ["make [up] one's mind","decide","1/8"],
+    ["move [on to] something","stop discussing something and begin discussing something different","6"],
+    ["open [up to] someone","talk more about your personal feelings","10"],
+    ["own [up to] something","admit or confess that you have done something wrong","10"],
+    ["pick [up] (a bargain)","buy something (cheap)","7"],
+    ["push something [up]","make something increase","7","increase"],
+    ["put clothes [on]","place clothes on your body","11"],
+    ["put [on] an event","organise an event","11"],
+    ["put prices [up]","increase prices","11","increase"],
+    ["put someone [off]","distract someone","11"],
+    ["put someone [off] something","discourage someone","1/2/11/12"],
+    ["put someone [up] (for the night)","accommodate someone","11"],
+    ["put something [off]","postpone something","11"],
+    ["put something [together]","produce (by combining several different things)","7"],
+    ["put music [on]","get something ready to listen to","11"],
+    ["put [up with] something/someone","tolerate something/someone","6"],
+    ["put weight [on]","gain weight","11"],
+    ["put your hand [up]","raise your hand into the air","11"],
+    ["run [into] (thousands of pounds)","reach a particular number or amount","10"],
+    ["run [out of] something","use all of something so that none is left","6/10"],
+    ["sell [out of] something","sell all of something","7"],
+    ["set [off] for somewhere","start going somewhere","1","goto"],
+    ["set something [up]","start (a business)","7"],
+    ["set [up] home","begin living in a place","2"],
+    ["settle [down]","live a quieter life by staying permanently in one place and perhaps getting married","1"],
+    ["show [off]","behave in a way that is intended to attract attention and make people admire you","10"],
+    ["sign [up for] something","agree to do; book","RfR"],
+    ["sort [out] a problem","solve a problem","6"],
+    ["split [up with] someone","end a romantic relationship with someone","6"],
+    ["stand [out]","be easy to notice","2"],
+    ["take [after] someone","resemble (an older family member)","4"],
+    ["take [off]","start to become successful","4","success"],
+    ["take [over]","gain control","4"],
+    ["take someone [aside]","move someone away from other people to talk","4"],
+    ["take someone [on]","employ someone","4/9"],
+    ["take something [back]","return something","7","return"],
+    ["take something [in]","accept something as true","4"],
+    ["take [to] something/someone","start to like something/someone","4","like"],
+    ["take [up] a new sport/hobby","start doing a new sport/hobby","2/4/12"],
+    ["tell someone [off]","criticise someone angrily for doing something wrong","6/12"],
+    ["try something [on]","put on a piece of clothing to see how it looks and whether it fits","7"],
+    ["turn [out]","go somewhere to take part in an event","8"],
+    ["turn [out] (to be a success)","become (a success)","2","success"],
+    ["turn [out] (well/badly)","end (well/badly)","6"],
+    ["turn something [down]","reject something","7"],
+    ["turn something [into]","make something change into something different","7"],
+    ["turn [to] someone","go to someone for help","2"],
+    ["turn [up]","arrive","1"],
+    ["work something [out]","manage to understand","2","understand"]
+  ];
+  var PV = PV_RAW.map(function(r, idx){
+    var m = r[0].match(/\[([^\]]+)\]/);
+    return {
+      id: idx,
+      plain: r[0].replace(/[\[\]]/g,""),
+      blanked: r[0].replace(/\[[^\]]+\]/, "<span class=\"blank\">___</span>"),
+      particle: m[1],
+      verb: r[0].split(" ")[0],
+      meaning: r[1],
+      units: r[2].split("/"),
+      group: r[3] || null
+    };
+  });
+  function unitLabel(u){ return u === "RfR" ? "Ready for Reading" : "Unit " + u; }
+  function unitsText(e){ return e.units.map(unitLabel).join(", "); }
+
+  var PV_KNOWN_KEY = "rff_pv_known_v1";
+  var pvKnown = store(PV_KNOWN_KEY, []);
+  function isKnown(e){ return pvKnown.indexOf(e.plain + "|" + e.meaning) !== -1; }
+  function setKnown(e, yes){
+    var k = e.plain + "|" + e.meaning;
+    var i = pvKnown.indexOf(k);
+    if(yes && i === -1) pvKnown.push(k);
+    if(!yes && i !== -1) pvKnown.splice(i, 1);
+    save(PV_KNOWN_KEY, pvKnown);
+  }
+  document.getElementById("pvCountRail").textContent = PV.length;
+  document.getElementById("pvTotal").textContent = PV.length;
+
+  function initPhrasal(){
+    var unitSel = document.getElementById("pvUnit");
+    var verbSel = document.getElementById("pvVerb");
+    var units = [];
+    PV.forEach(function(e){ e.units.forEach(function(u){ if(units.indexOf(u) === -1) units.push(u); }); });
+    units.sort(function(a, b){ return (a === "RfR" ? 99 : +a) - (b === "RfR" ? 99 : +b); });
+    unitSel.appendChild(new Option("All units", "all"));
+    units.forEach(function(u){ unitSel.appendChild(new Option(unitLabel(u), u)); });
+
+    var verbCounts = {};
+    PV.forEach(function(e){ verbCounts[e.verb] = (verbCounts[e.verb] || 0) + 1; });
+    verbSel.appendChild(new Option("All verbs", "all"));
+    Object.keys(verbCounts).filter(function(v){ return verbCounts[v] >= 3; }).sort().forEach(function(v){
+      verbSel.appendChild(new Option(v + " (" + verbCounts[v] + ")", v));
+    });
+
+    function pool(){
+      return PV.filter(function(e){
+        return (unitSel.value === "all" || e.units.indexOf(unitSel.value) !== -1) &&
+               (verbSel.value === "all" || e.verb === verbSel.value);
+      });
+    }
+
+    /* ----- flashcards ----- */
+    var cardsHost = document.getElementById("pvCards");
+    var deck = [], pos = 0, hideKnown = false;
+    function buildDeck(){
+      var p = pool();
+      deck = shuffle(hideKnown ? p.filter(function(e){ return !isKnown(e); }) : p);
+      pos = 0;
+      renderCard();
+    }
+    function renderCard(){
+      cardsHost.innerHTML = "";
+      var p = pool();
+      var knownCount = p.filter(isKnown).length;
+      if(!deck.length){
+        cardsHost.appendChild(el("p","empty", p.length ? "You've marked every card in this selection as known. Untick \"Hide cards I know\" to review them, or choose another unit." : "No phrasal verbs match these filters."));
+        cardsHost.appendChild(metaRow(knownCount, p.length));
+        return;
+      }
+      if(pos >= deck.length){ deck = shuffle(deck); pos = 0; }
+      var e = deck[pos];
+      var card = el("button","flash");
+      card.type = "button";
+      card.setAttribute("aria-label","Flashcard: " + e.plain + ". Press to see the meaning.");
+      card.innerHTML = '<span class="tag">' + unitsText(e) + (isKnown(e) ? ' · you know this one' : '') + '</span>' +
+        '<span class="front">' + e.plain + '</span>' +
+        '<span class="back">' + e.meaning + '</span>' +
+        '<span class="turn">Click to turn over</span>';
+      card.addEventListener("click", function(){
+        var f = card.classList.toggle("flipped");
+        card.querySelector(".turn").textContent = f ? "Click to turn back" : "Click to turn over";
+      });
+      cardsHost.appendChild(card);
+      cardsHost.appendChild(metaRow(knownCount, p.length));
+      var row = el("div","btn-row");
+      var again = el("button","btn btn-ghost btn-sm","Still learning");
+      again.type = "button";
+      again.addEventListener("click", function(){ setKnown(e, false); pos++; renderCard(); });
+      var gotIt = el("button","btn btn-primary btn-sm","I know this");
+      gotIt.type = "button";
+      gotIt.addEventListener("click", function(){
+        setKnown(e, true);
+        if(hideKnown){ deck.splice(pos, 1); } else { pos++; }
+        renderCard();
+      });
+      var shuf = el("button","btn btn-ghost btn-sm","Shuffle");
+      shuf.type = "button";
+      shuf.addEventListener("click", function(){ deck = shuffle(deck); pos = 0; renderCard(); });
+      row.appendChild(again); row.appendChild(gotIt); row.appendChild(shuf);
+      cardsHost.appendChild(row);
+    }
+    function metaRow(knownCount, total){
+      var m = el("div","flash-meta");
+      m.appendChild(el("span", null, (deck.length ? "Card " + (pos+1) + " of " + deck.length + " · " : "") + knownCount + " of " + total + " known in this selection"));
+      var lab = el("label");
+      var cb = document.createElement("input");
+      cb.type = "checkbox"; cb.checked = hideKnown;
+      cb.addEventListener("change", function(){ hideKnown = cb.checked; buildDeck(); });
+      lab.appendChild(cb);
+      lab.appendChild(document.createTextNode("Hide cards I know"));
+      m.appendChild(lab);
+      return m;
+    }
+
+    /* ----- meaning quiz ----- */
+    function meaningQuestions(){
+      return shuffle(pool()).slice(0, 10).map(function(e){
+        var candidates = PV.filter(function(x){
+          return x.plain !== e.plain && x.meaning !== e.meaning && !(e.group && x.group === e.group);
+        });
+        var same = shuffle(candidates.filter(function(x){ return x.verb === e.verb; }));
+        var other = shuffle(candidates.filter(function(x){ return x.verb !== e.verb; }));
+        var picks = [];
+        same.concat(other).forEach(function(x){
+          if(picks.length < 3 && picks.indexOf(x.plain) === -1) picks.push(x.plain);
+        });
+        var options = shuffle(picks.concat([e.plain]));
+        return {
+          type:"choice",
+          prompt:'<span class="prompt-label">Which phrasal verb means...</span><span class="prompt-main">' + e.meaning + '</span>',
+          options: options,
+          correct: options.indexOf(e.plain),
+          explain:'<em>' + e.plain + '</em> = ' + e.meaning + ' (' + unitsText(e) + ')'
+        };
+      });
+    }
+    var meaningRound = Round(document.getElementById("pvMeaningRound"), meaningQuestions);
+
+    /* ----- particle builder ----- */
+    var COMMON = ["up","off","on","out","down","over","in","back","away","by","into","round"];
+    function particleQuestions(){
+      return shuffle(pool()).slice(0, 10).map(function(e){
+        var sameVerb = [];
+        PV.forEach(function(x){ if(x.verb === e.verb && x.particle !== e.particle && sameVerb.indexOf(x.particle) === -1) sameVerb.push(x.particle); });
+        var picks = [];
+        shuffle(sameVerb).concat(shuffle(COMMON)).forEach(function(p){
+          if(picks.length < 3 && p !== e.particle && picks.indexOf(p) === -1) picks.push(p);
+        });
+        var options = shuffle(picks.concat([e.particle]));
+        return {
+          type:"choice",
+          prompt:'<span class="prompt-label">Complete the phrasal verb</span><span class="prompt-main">' + e.blanked + '</span><span class="prompt-sub">' + e.meaning + '</span>',
+          options: options,
+          correct: options.indexOf(e.particle),
+          explain:'<em>' + e.plain + '</em> = ' + e.meaning
+        };
+      });
+    }
+    var particleRound = Round(document.getElementById("pvParticleRound"), particleQuestions);
+
+    /* ----- full list ----- */
+    var search = document.getElementById("pvSearch");
+    function renderList(){
+      var q = norm(search.value);
+      var rows = pool().filter(function(e){ return !q || norm(e.plain).indexOf(q) !== -1 || norm(e.meaning).indexOf(q) !== -1; });
+      var tbody = document.getElementById("pvTable");
+      tbody.innerHTML = "";
+      if(!rows.length){ tbody.innerHTML = '<tr><td colspan="3" class="empty">No phrasal verbs match your search.</td></tr>'; return; }
+      rows.forEach(function(e){
+        var tr = el("tr");
+        tr.appendChild(el("td", null, e.plain + (isKnown(e) ? '<span class="known" title="You marked this as known">✓</span>' : '')));
+        tr.appendChild(el("td", null, e.meaning));
+        tr.appendChild(el("td", null, e.units.map(function(u){ return u === "RfR" ? "RfR" : u; }).join(", ")));
+        tbody.appendChild(tr);
+      });
+    }
+    search.addEventListener("input", renderList);
+
+    var started = {};
+    function refreshActive(){
+      var active = document.querySelector('.view[data-view="phrasal"] .seg-btn.active').dataset.mode;
+      var p = pool();
+      document.getElementById("pvSelectionNote").textContent = p.length + (p.length === 1 ? " phrasal verb" : " phrasal verbs") + " selected";
+      if(active === "pv-cards") buildDeck();
+      if(active === "pv-meaning"){ meaningRound.start(); started.meaning = true; }
+      if(active === "pv-particle"){ particleRound.start(); started.particle = true; }
+      if(active === "pv-list") renderList();
+      if(active !== "pv-meaning") started.meaning = false;
+      if(active !== "pv-particle") started.particle = false;
+    }
+    unitSel.addEventListener("change", function(){ started = {}; refreshActive(); });
+    verbSel.addEventListener("change", function(){ started = {}; refreshActive(); });
+    modeHooks["pv-cards"] = buildDeck;
+    modeHooks["pv-meaning"] = function(){ if(!started.meaning){ meaningRound.start(); started.meaning = true; } };
+    modeHooks["pv-particle"] = function(){ if(!started.particle){ particleRound.start(); started.particle = true; } };
+    modeHooks["pv-list"] = renderList;
+    refreshActive();
+  }
+
+  /* =================================================================
+     WORD FORMATION (whole book)
+  ================================================================= */
+  // pairs separated by |, "base derived/alternative"
+  var WF_GROUPS = [
+    {cls:"opposite", suf:"un-", from:"adjective", list:"clear unclear|common uncommon|concerned unconcerned|happy unhappy|known unknown|likely unlikely|lucky unlucky|pleasant unpleasant|reliable unreliable|selfish unselfish|sociable unsociable|sure unsure|usual unusual"},
+    {cls:"opposite", suf:"in-", from:"adjective", list:"accurate inaccurate|capable incapable|competent incompetent|correct incorrect|direct indirect|efficient inefficient|experienced inexperienced|formal informal|sensitive insensitive|significant insignificant|sincere insincere|sufficient insufficient|tolerant intolerant"},
+    {cls:"opposite", suf:"dis-", from:"adjective", list:"abled disabled|honest dishonest|obedient disobedient|satisfied dissatisfied"},
+    {cls:"opposite", suf:"il-", from:"adjective", list:"legal illegal|legible illegible|literate illiterate|logical illogical"},
+    {cls:"opposite", suf:"im-", from:"adjective", list:"mature immature|modest immodest|moral immoral|patient impatient|perfect imperfect|personal impersonal|polite impolite|possible impossible|practical impractical|probable improbable"},
+    {cls:"opposite", suf:"ir-", from:"adjective", list:"rational irrational|regular irregular|relevant irrelevant|responsible irresponsible"},
+
+    {cls:"person", suf:"-ant", from:"verb", list:"apply applicant|assist assistant|contest contestant|immigrate immigrant|inhabit inhabitant|participate participant"},
+    {cls:"person", suf:"-ee", from:"verb", list:"employ employee|interview interviewee|train trainee"},
+    {cls:"person", suf:"-eer", from:"noun", list:"engine engineer|mountain mountaineer"},
+    {cls:"person", suf:"-er", from:"verb", list:"box boxer|employ employer|entertain entertainer|interview interviewer|listen listener|organise organiser|perform performer|photograph photographer|play player|research researcher|ride rider|run runner|support supporter|teach teacher|train trainer|walk walker|win winner"},
+    {cls:"person", suf:"-ian", from:"noun", list:"comedy comedian|electricity electrician|history historian|library librarian|magic magician|mathematics mathematician|music musician|politics politician"},
+    {cls:"person", suf:"-ist", from:"noun", list:"bicycle cyclist|biology biologist|economy economist|novel novelist|psychology psychologist|science scientist|tour tourist"},
+    {cls:"person", suf:"-or", from:"verb", list:"act actor|collect collector|compete competitor|construct constructor|direct director|instruct instructor|invent inventor|spectate spectator"},
+
+    {cls:"noun", suf:"-al", from:"verb", list:"approve approval/disapproval|arrive arrival|deny denial|propose proposal|refuse refusal|rehearse rehearsal|remove removal|survive survival"},
+    {cls:"noun", suf:"-ance", from:"verb", list:"appear appearance/disappearance|annoy annoyance|assist assistance|enter entrance|perform performance|tolerate tolerance"},
+    {cls:"noun", suf:"-ance", from:"adjective", list:"distant distance|important importance|relevant relevance"},
+    {cls:"noun", suf:"-ence", from:"verb", list:"exist existence|occur occurrence|refer reference"},
+    {cls:"noun", suf:"-ence", from:"adjective", list:"absent absence|convenient convenience/inconvenience|dependent dependence/independence|different difference|evident evidence|innocent innocence|intelligent intelligence|obedient obedience/disobedience|patient patience/impatience|present presence|violent violence"},
+    {cls:"noun", suf:"-ation", from:"verb", list:"adapt adaptation|admire admiration|apply application|combine combination|communicate communication|consider consideration|explain explanation|identify identification|imagine imagination|inform information|inspire inspiration|oblige obligation|observe observation|occupy occupation|present presentation|publish publication|qualify qualification|recommend recommendation|reserve reservation|resign resignation"},
+    {cls:"noun", suf:"-ion", from:"verb", list:"accommodate accommodation|associate association|collect collection|compete competition|complete completion|complicate complication|concentrate concentration|conclude conclusion|confuse confusion|congratulate congratulation/congratulations|connect connection|convert conversion|decide decision|describe description|divide division|expand expansion|explode explosion|fascinate fascination|graduate graduation|imitate imitation|instruct instruction|intend intention|invade invasion|investigate investigation|locate location|object objection|operate operation|permit permission|persuade persuasion|pollute pollution|predict prediction|prescribe prescription|react reaction|reduce reduction|satisfy satisfaction/dissatisfaction|solve solution|substitute substitution"},
+    {cls:"noun", suf:"-ion", from:"adjective", list:"extinct extinction"},
+    {cls:"noun", suf:"-ight", from:"verb", list:"fly flight|see sight|weigh weight"},
+    {cls:"noun", suf:"-ight", from:"adjective", list:"high height"},
+    {cls:"noun", suf:"-ing", from:"verb", list:"advertise advertising|be being|build building|live living|meet meeting|record recording|say saying|set setting|surround surroundings"},
+    {cls:"noun", suf:"-ity", from:"adjective", list:"able ability/inability|active activity/inactivity|available availability/unavailability|complex complexity|curious curiosity|equal equality/inequality|formal formality/informality|generous generosity|hostile hostility|intense intensity|major majority|minor minority|original originality/unoriginality|personal personality|popular popularity/unpopularity|possible possibility/impossibility|prosperous prosperity|pure purity/impurity|real reality|responsible responsibility/irresponsibility|secure security/insecurity|sensitive sensitivity/insensitivity|severe severity|similar similarity|sincere sincerity/insincerity|stupid stupidity"},
+    {cls:"noun", suf:"-ness", from:"adjective", list:"aware awareness|careful carefulness|careless carelessness|conscious consciousness|fit fitness|friendly friendliness|happy happiness|hopeless hopelessness|ill illness|lonely loneliness|mad madness|sad sadness|serious seriousness|sore soreness|thick thickness|tired tiredness|useful usefulness|weak weakness"},
+    {cls:"noun", suf:"-ment", from:"verb", list:"achieve achievement|agree agreement/disagreement|amaze amazement|amuse amusement|announce announcement|argue argument|arrange arrangement|commit commitment|develop development|disappoint disappointment|discourage discouragement|embarrass embarrassment|employ employment/unemployment|encourage encouragement|enjoy enjoyment|entertain entertainment|equip equipment|excite excitement|govern government|improve improvement|invest investment|involve involvement|judge judgement/judgment|manage management|measure measurement|move movement|pay payment|punish punishment|replace replacement|require requirement|retire retirement|state statement|treat treatment"},
+    {cls:"noun", suf:"-ship", from:"noun", list:"champion championship|friend friendship|leader leadership|member membership|partner partnership"},
+    {cls:"noun", suf:"-th", from:"verb", list:"die death|grow growth"},
+    {cls:"noun", suf:"-th", from:"adjective", list:"deep depth|long length|strong strength|true truth|warm warmth|wide width|young youth"},
+    {cls:"noun", suf:"-ure", from:"verb", list:"depart departure|fail failure|please pleasure|press pressure|proceed procedure|sculpt sculpture|sign signature"},
+    {cls:"noun", suf:"-y", from:"adjective", list:"certain certainty|difficult difficulty|honest honesty|poor poverty|safe safety"},
+    {cls:"noun", suf:"-y", from:"verb", list:"discover discovery|enter entry|injure injury"},
+    {cls:"noun", suf:"other changes", from:"verb", list:"advise advice|analyse analysis|behave behaviour|believe belief|complain complaint|choose choice|give gift|know knowledge|laugh laughter|lose loss|practise practice|prove proof|receive receipt|relieve relief|respond response|rob robbery|sell sale|speak speech|succeed success|try trial"},
+    {cls:"noun", suf:"other changes", from:"adjective", list:"hot heat"},
+    {cls:"noun", suf:"other changes", from:"noun", list:"scene scenery"},
+
+    {cls:"adjective", suf:"-able", from:"verb", list:"accept acceptable/unacceptable|advise advisable/inadvisable|avoid avoidable/unavoidable|bear bearable/unbearable|believe believable/unbelievable|consider considerable|enjoy enjoyable/unenjoyable|forget forgettable/unforgettable|imagine imaginable/unimaginable|notice noticeable|predict predictable/unpredictable|prefer preferable|rely reliable/unreliable|remark remarkable/unremarkable|respect respectable|suit suitable/unsuitable|understand understandable"},
+    {cls:"adjective", suf:"-able", from:"noun", list:"comfort comfortable/uncomfortable|fashion fashionable/unfashionable|knowledge knowledgeable|memory memorable/unmemorable|profit profitable/unprofitable|reason reasonable/unreasonable|value valuable/invaluable"},
+    {cls:"adjective", suf:"-ible", from:"noun", list:"access accessible/inaccessible|sense sensible"},
+    {cls:"adjective", suf:"-ible", from:"verb", list:"resist resistible/irresistible|respond responsible/irresponsible"},
+    {cls:"adjective", suf:"-al / -ial", from:"noun", list:"accident accidental|addition additional|benefit beneficial|centre central|commerce commercial|controversy controversial|criticism critical|culture cultural|education educational|emotion emotional/unemotional|environment environmental|exception exceptional/unexceptional|experiment experimental|fiction fictional|finance financial|globe global|industry industrial|influence influential|intention intentional/unintentional|nation national|nature natural/unnatural|occasion occasional|origin original/unoriginal|person personal/impersonal|politics political|practice practical/impractical|profession professional/unprofessional|residence residential|sensation sensational|society social|tradition traditional|universe universal"},
+    {cls:"adjective", suf:"-ical", from:"noun", list:"alphabet alphabetical|biology biological|chemistry chemical|ecology ecological|economy economical/uneconomical|geography geographical|history historical/historic|psychology psychological"},
+    {cls:"adjective", suf:"-ant", from:"verb", list:"ignore ignorant|please pleasant/unpleasant|resist resistant|signify significant/insignificant|tolerate tolerant/intolerant"},
+    {cls:"adjective", suf:"-ant", from:"noun", list:"distance distant|importance important/unimportant|vacancy vacant"},
+    {cls:"adjective", suf:"-ent", from:"verb", list:"appear apparent|confide confident|depend dependent/independent|differ different|obey obedient/disobedient"},
+    {cls:"adjective", suf:"-ent", from:"noun", list:"absence absent|convenience convenient/inconvenient|efficiency efficient/inefficient|evidence evident|frequency frequent/infrequent|innocence innocent|intelligence intelligent/unintelligent|patience patient/impatient|presence present|violence violent"},
+    {cls:"adjective", suf:"-ful / -less", from:"noun", list:"beauty beautiful|breath breathless|care careful/careless|cheer cheerful/cheerless|colour colourful/colourless|delight delightful|effort effortless|end endless|event eventful/uneventful|fault faultless|gratitude grateful/ungrateful|harm harmful/harmless|help helpful/helpless/unhelpful|home homeless|hope hopeful/hopeless|limit limitless/unlimited|meaning meaningful/meaningless|motion motionless|pain painful/painless|peace peaceful|point pointless|power powerful/powerless|price priceless|skill skilful/skilled/unskilled|sleep sleepless|stress stressful/unstressful|success successful/unsuccessful|taste tasty/tasteful/tasteless|thank thankful/thankless|thought thoughtful/thoughtless|use useful/useless|wonder wonderful|worth worthless"},
+    {cls:"adjective", suf:"-ive", from:"noun", list:"aggression aggressive|effect effective/ineffective|expense expensive/inexpensive|mass massive|secret secretive|sense sensitive/insensitive"},
+    {cls:"adjective", suf:"-ive", from:"verb", list:"attract attractive/unattractive|communicate communicative/uncommunicative|compete competitive/uncompetitive|construct constructive/unconstructive|create creative/uncreative|decide decisive/indecisive|defend defensive|describe descriptive|explode explosive|extend extensive|imagine imaginative/unimaginative|impress impressive/unimpressive|inform informative/uninformative|include inclusive|invent inventive|offend offensive/inoffensive|persuade persuasive|possess possessive|produce productive/unproductive|protect protective|receive receptive/unreceptive|represent representative/unrepresentative|support supportive/unsupportive"},
+    {cls:"adjective", suf:"-ous", from:"noun", list:"ambition ambitious/unambitious|advantage advantageous/disadvantageous|anxiety anxious|caution cautious|curiosity curious|danger dangerous|disaster disastrous|generosity generous/ungenerous|humour humorous|infection infectious|marvel marvellous|mystery mysterious|nerve nervous|number numerous|poison poisonous|religion religious|suspicion suspicious|variety various"},
+    {cls:"adjective", suf:"-y", from:"noun", list:"anger angry|cloud cloudy|fault faulty|fog foggy|frost frosty|fun funny|grass grassy|guilt guilty|hair hairy|health healthy|hill hilly|hunger hungry|ice icy|luck lucky/unlucky|mist misty|mud muddy|noise noisy|price pricey/pricy|rain rainy|rock rocky|sleep sleepy|storm stormy|sun sunny|thirst thirsty|wealth wealthy|wind windy"},
+
+    {cls:"adverb", suf:"-ly", from:"adjective", list:"apparent apparently|nervous nervously|pleasant pleasantly|proud proudly|short shortly"},
+    {cls:"adverb", suf:"-ly after -l", from:"adjective", list:"accidental accidentally|careful carefully|eventual eventually|gradual gradually|original originally|total totally"},
+    {cls:"adverb", suf:"-ly after -e", from:"adjective", list:"complete completely|effective effectively/ineffectively|extreme extremely|fortunate fortunately/unfortunately|late lately|sole solely"},
+    {cls:"adverb", suf:"-ly replacing -e", from:"adjective", list:"gentle gently|humble humbly|regrettable regrettably|remarkable remarkably|simple simply|subtle subtly"},
+    {cls:"adverb", suf:"-ally", from:"adjective", list:"automatic automatically|dramatic dramatically|energetic energetically|enthusiastic enthusiastically|historic historically|scientific scientifically"},
+    {cls:"adverb", suf:"-ily", from:"adjective", list:"angry angrily|extraordinary extraordinarily|happy happily|healthy healthily|lucky luckily/unluckily|noisy noisily"},
+    {cls:"adverb", suf:"-ingly", from:"verb", list:"annoy annoyingly|astonish astonishingly|increase increasingly|interest interestingly|surprise surprisingly/unsurprisingly|worry worryingly"},
+    {cls:"adverb", suf:"other changes", from:"adjective", list:"full fully|public publicly|shy shyly|true truly|whole wholly"},
+    {cls:"adverb", suf:"-edly", from:"verb", list:"expect expectedly/unexpectedly|repeat repeatedly|report reportedly|suppose supposedly"},
+    {cls:"adverb", suf:"-ly", from:"noun", list:"day daily"},
+
+    {cls:"verb", suf:"-en", from:"adjective", list:"bright brighten|broad broaden|dark darken|deaf deafen|deep deepen|fat fatten|flat flatten|hard harden|high heighten|less lessen|long lengthen|loose loosen|sad sadden|sharp sharpen|short shorten|soft soften|stiff stiffen|straight straighten|strong strengthen|sweet sweeten|thick thicken|tight tighten|weak weaken|wide widen|worse worsen"},
+    {cls:"verb", suf:"-en", from:"noun", list:"threat threaten"},
+    {cls:"verb", suf:"en-", from:"adjective", list:"able enable|large enlarge|rich enrich|sure ensure"},
+    {cls:"verb", suf:"en-", from:"noun", list:"courage encourage|danger endanger|force enforce"}
+  ];
+  var CLS_LABEL = {opposite:"Opposites", person:"People", noun:"Nouns", adjective:"Adjectives", adverb:"Adverbs", verb:"Verbs"};
+  var CLS_TASK = {opposite:"Make the opposite", person:"Make a noun for a person", noun:"Make a noun", adjective:"Make an adjective", adverb:"Make an adverb", verb:"Make a verb"};
+  var CLS_TO = {opposite:"negative adjective", person:"person", noun:"noun", adjective:"adjective", adverb:"adverb", verb:"verb"};
+
+  var WF = [];
+  WF_GROUPS.forEach(function(g, gi){
+    g.list.split("|").forEach(function(pair){
+      var sp = pair.indexOf(" ");
+      WF.push({base:pair.slice(0, sp), forms:pair.slice(sp + 1).split("/"), cls:g.cls, suf:g.suf, from:g.from, group:gi});
+    });
+  });
+
+  function initWordFormation(){
+    var catSel = document.getElementById("wfCat");
+    var BEST_KEY = "rff_wf_best_v1";
+    var best = store(BEST_KEY, {});
+    function showBest(){
+      var b = best[catSel.value];
+      document.getElementById("wfBest").textContent = b ? "Your best score here: " + b + "/10" : "";
+    }
+    function drillQuestions(){
+      var pool = WF.filter(function(w){ return catSel.value === "all" || w.cls === catSel.value; });
+      var used = {};
+      var picks = [];
+      shuffle(pool).forEach(function(w){
+        var k = w.base + "|" + w.cls;
+        if(picks.length < 10 && !used[k]){ used[k] = true; picks.push(w); }
+      });
+      return picks.map(function(w){
+        var accept = [];
+        WF.forEach(function(x){
+          if(x.base === w.base && x.cls === w.cls) x.forms.forEach(function(f){ if(accept.indexOf(f) === -1) accept.push(f); });
+        });
+        return {
+          type:"type",
+          prompt:'<span class="prompt-label">' + CLS_TASK[w.cls] + ' from this ' + w.from + '</span><span class="prompt-main">' + w.base.toUpperCase() + '</span>',
+          accept: accept,
+          hint: "Try " + (w.suf === "other changes" ? "a spelling change rather than a regular suffix" : "<strong>" + w.suf + "</strong>") + " (" + w.from + " → " + CLS_TO[w.cls] + ").",
+          explain: (accept.length > 1 ? "Possible answers: " : "Answer: ") + "<em>" + accept.join("</em>, <em>") + "</em>."
+        };
+      });
+    }
+    var round = Round(document.getElementById("wfRound"), drillQuestions, function(score, total){
+      if(total === 10 && (!best[catSel.value] || score > best[catSel.value])){
+        best[catSel.value] = score; save(BEST_KEY, best); showBest();
+      }
+    });
+    catSel.addEventListener("change", function(){ showBest(); round.start(); });
+    showBest();
+    round.start();
+
+    /* ----- exam-style texts ----- */
+    buildGapText(document.getElementById("wfText1"), [
+      {text:"I had always been (0) <b>curious</b> "},
+      {text:'<span class="keyword">CURIOSITY</span>'},
+      {text:" about life abroad, so when I was offered a job in New Zealand, I didn't hesitate. Moving there was the most (1) "},
+      {gap:true, answers:["exciting"], key:"EXCITE"},
+      {text:" decision I have ever made.\n\nFinding (2) "},
+      {gap:true, answers:["accommodation"], key:"ACCOMMODATE"},
+      {text:" was difficult at first, and I had to rely on the (3) "},
+      {gap:true, answers:["generosity"], key:"GENEROUS"},
+      {text:" of a family I had met online. Luckily, the local (4) "},
+      {gap:true, answers:["inhabitants"], key:"INHABIT"},
+      {text:" were incredibly welcoming, and I soon developed a close (5) "},
+      {gap:true, answers:["friendship"], key:"FRIEND"},
+      {text:" with my neighbours.\n\nLife wasn't always easy. The weather was completely (6) "},
+      {gap:true, answers:["unpredictable"], key:"PREDICT"},
+      {text:", and I spent many days stuck indoors. But the experience taught me a great deal of (7) "},
+      {gap:true, answers:["patience"], key:"PATIENT"},
+      {text:", and I would recommend it to anyone who feels (8) "},
+      {gap:true, answers:["dissatisfied"], key:"SATISFY"},
+      {text:" with their routine at home."}
+    ]);
+    buildGapText(document.getElementById("wfText2"), [
+      {text:"Modern life is full of (1) "},
+      {gap:true, answers:["pressure"], key:"PRESS"},
+      {text:": emails, deadlines and endless notifications. Even people with busy social lives often experience a sense of (2) "},
+      {gap:true, answers:["loneliness"], key:"LONELY"},
+      {text:".\n\nScientists have found a clear (3) "},
+      {gap:true, answers:["connection"], key:"CONNECT"},
+      {text:" between stress and illness, but the good news is that small changes can make a (4) "},
+      {gap:true, answers:["considerable"], key:"CONSIDER"},
+      {text:" difference. Spending time outdoors, for example, is (5) "},
+      {gap:true, answers:["surprisingly"], key:"SURPRISE"},
+      {text:" effective: even a short daily walk can (6) "},
+      {gap:true, answers:["strengthen"], key:"STRONG"},
+      {text:" your immune system and improve your (7) "},
+      {gap:true, answers:["ability"], key:"ABLE"},
+      {text:" to concentrate.\n\nAbove all, experts say, try not to become too (8) "},
+      {gap:true, answers:["dependent"], key:"DEPEND"},
+      {text:" on your phone."}
+    ]);
+
+    /* ----- -ing / -ed ----- */
+    var ingEd = document.getElementById("ingEdList");
+    [
+      ["I was really ___ by the end of the film. It lasted nearly four hours.", ["bored","boring"], 0],
+      ["The instructions were so ___ that nobody knew what to do.", ["confused","confusing"], 1],
+      ["We were ___ to hear that the concert had been cancelled.", ["disappointed","disappointing"], 0],
+      ["Climbing Everest three times is an ___ achievement.", ["amazed","amazing"], 1],
+      ["Lucas finds horror films absolutely ___.", ["terrified","terrifying"], 1],
+      ["After a twelve-hour day visiting farms, Reo felt completely ___.", ["exhausted","exhausting"], 0],
+      ["It's really ___ when people check their phones during a conversation.", ["annoyed","annoying"], 1],
+      ["Maja finds the advanced classes more ___ than teaching young kids.", ["interested","interesting"], 1],
+      ["I'm not ___ that this is the right decision. Can we talk about it again?", ["convinced","convincing"], 0],
+      ["Sitting by the fire with a good book is so ___.", ["relaxed","relaxing"], 1]
+    ].forEach(function(item){
+      var why = item[2] === 0 ? "This describes how the person feels, so use <strong>-ed</strong>." : "This describes the thing that causes the feeling, so use <strong>-ing</strong>.";
+      buildChoice(ingEd, item[0], item[1], item[2], why, null);
+    });
+
+    /* ----- word list ----- */
+    var listHost = document.getElementById("wfList");
+    var search = document.getElementById("wfSearch");
+    function renderWfList(){
+      var q = norm(search.value);
+      listHost.innerHTML = "";
+      var lastCls = null, shown = 0;
+      WF_GROUPS.forEach(function(g, gi){
+        var items = WF.filter(function(w){
+          return w.group === gi && (!q || w.base.indexOf(q) !== -1 || w.forms.some(function(f){ return f.indexOf(q) !== -1; }));
+        });
+        if(!items.length) return;
+        if(g.cls !== lastCls){
+          var h = el("h3", null, CLS_LABEL[g.cls]);
+          h.style.margin = (lastCls ? "26px" : "0") + " 0 4px";
+          listHost.appendChild(h);
+          lastCls = g.cls;
+        }
+        var d = el("details","wf-group");
+        if(q) d.open = true;
+        d.appendChild(el("summary", null, '<span class="suf">' + g.suf + '</span><span class="from">' + g.from + ' → ' + CLS_TO[g.cls] + '</span><span class="n">' + items.length + (items.length === 1 ? " word" : " words") + '</span>'));
+        var pairs = el("div","wf-pairs");
+        items.forEach(function(w){ pairs.appendChild(el("span", null, w.base + " → <b>" + w.forms.join(" / ") + "</b>")); });
+        d.appendChild(pairs);
+        listHost.appendChild(d);
+        shown += items.length;
+      });
+      if(!shown) listHost.appendChild(el("p","empty","No words match your search."));
+    }
+    search.addEventListener("input", renderWfList);
+    renderWfList();
+  }
+
+  /* ---------------- start ---------------- */
+  updateProgressBar();
+  var initial = location.hash === "#phrasal-verbs" ? "phrasal" : location.hash === "#word-formation" ? "wf" : "unit1";
+  if(initial !== "unit1") showView(initial, true);
+})();
+</script>
+</body>
+</html>
